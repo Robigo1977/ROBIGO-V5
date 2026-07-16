@@ -1,0 +1,58 @@
+import styles from "./QuoteCalculator.module.css";
+import type { EstimateResult } from "./types";
+
+interface EstimateCardProps {
+  estimate: EstimateResult;
+}
+
+export default function EstimateCard({
+  estimate,
+}: EstimateCardProps) {
+  const isNumeric = estimate.price > 0;
+  const showBestValue = estimate.price >= 180;
+
+  return (
+    <div className={styles.estimateCard}>
+      <div className={styles.estimateHeader}>
+        <p className={styles.estimateLabel}>
+          Instant Estimate
+        </p>
+
+        {showBestValue && (
+          <span className={styles.bestValueBadge}>
+            BEST VALUE
+          </span>
+        )}
+      </div>
+
+      <h3 className={styles.estimatePrice}>
+        {estimate.formattedPrice}
+      </h3>
+
+      <p className={styles.estimateNote}>
+        Guide price based on the information provided.
+      </p>
+
+      <div className={styles.trustPanel}>
+        <div className={styles.trustItem}>
+          📏 Laser Measured Accuracy
+        </div>
+
+        <div className={styles.trustItem}>
+          ✅ No Call-Out Charge
+        </div>
+
+        <div className={styles.trustItem}>
+          💬 Final quote confirmed via WhatsApp
+        </div>
+      </div>
+
+      {isNumeric && (
+        <p className={styles.smallPrint}>
+          Final pricing may vary depending on staining, access,
+          furniture movement and optional additional services.
+        </p>
+      )}
+    </div>
+  );
+}

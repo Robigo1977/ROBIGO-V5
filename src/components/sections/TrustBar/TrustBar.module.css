@@ -1,0 +1,42 @@
+.bar {
+  background: white;
+
+  border-top: 1px solid #eef2f7;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 1.5rem;
+
+  padding: 1.25rem 0;
+}
+
+.item {
+  display: flex;
+
+  align-items: center;
+
+  gap: .75rem;
+
+  justify-content: center;
+
+  font-weight: 600;
+
+  color: var(--color-text);
+}
+
+.item svg {
+  color: var(--color-primary);
+}
+
+@media (min-width:992px){
+
+.grid{
+grid-template-columns:repeat(5,1fr);
+}
+
+}

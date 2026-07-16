@@ -1,0 +1,133 @@
+.section {
+  padding: clamp(4rem, 8vw, 7rem) 0;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f8fbff 100%
+  );
+}
+
+.header {
+  max-width: 720px;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+.header h2 {
+  margin-bottom: 1rem;
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--color-dark);
+}
+
+.header p {
+  color: var(--color-text);
+  line-height: 1.8;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.card {
+  overflow: hidden;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 55px rgba(15, 23, 42, 0.15);
+}
+
+.images {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.imageWrapper {
+  position: relative;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.label,
+.labelAfter {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: .45rem .85rem;
+  border-radius: 999px;
+  color: #fff;
+  font-size: .75rem;
+  font-weight: 700;
+}
+
+.label {
+  background: #ef4444;
+}
+
+.labelAfter {
+  background: #10b981;
+}
+
+.content {
+  padding: 1.75rem;
+}
+
+.category {
+  display: inline-block;
+  margin-bottom: .75rem;
+  color: var(--color-primary);
+  font-size: .8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.content h3 {
+  margin: 0 0 .75rem;
+  color: var(--color-dark);
+}
+
+.content p {
+  margin: 0;
+  color: var(--color-text);
+  line-height: 1.7;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0,0,0,.08);
+  font-size: .9rem;
+}
+
+.result {
+  color: #10b981;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

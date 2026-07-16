@@ -1,0 +1,107 @@
+.section {
+  padding: var(--space-8) 0;
+  background: var(--color-background);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.title {
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-heading);
+  color: var(--color-dark);
+}
+
+.subtitle {
+  margin: 0;
+  text-align: center;
+  color: var(--color-text);
+}
+
+.serviceGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.serviceCard {
+  width: 100%;
+  padding: 1.25rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color .2s ease, transform .2s ease;
+}
+
+.serviceCard:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+}
+
+.active {
+  border-color: var(--color-primary);
+}
+
+.serviceCard h3 {
+  margin: 0 0 .5rem;
+}
+
+.serviceCard p {
+  margin: 0;
+  color: var(--color-text);
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.inputGroup input {
+  width: 100%;
+}
+
+.estimateCard {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: #f8fafc;
+  text-align: center;
+}
+
+.estimateLabel {
+  margin: 0;
+  color: var(--color-text);
+}
+
+.estimatePrice {
+  margin: .5rem 0;
+  font-size: 2rem;
+  color: var(--color-primary);
+}
+
+.estimateNote {
+  margin: 0;
+  font-size: .875rem;
+  color: var(--color-text);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .serviceGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .actions {
+    flex-direction: row;
+  }
+}

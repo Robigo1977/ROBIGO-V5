@@ -1,0 +1,10 @@
+{
+  "name": "ROBIGO",
+  "short_name": "ROBIGO",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0F6CBD",
+  "description": "Professional carpet and upholstery cleaning in Winchester.",
+  "icons": []
+}
