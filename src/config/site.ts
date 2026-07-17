@@ -1,42 +1,134 @@
+const whatsappNumber = "447777449931";
+
 export const site = {
-  businessName: "ROBIGO",
+  business: {
+    name: "ROBIGO",
+    legalName: "ROBIGO",
 
-  owner: "Robert",
+    domain: "https://robigo.co.uk",
 
-  website: "https://robigo.co.uk",
+    phone: "+447777449931",
 
-  serviceArea: "Winchester & surrounding areas",
+    email: "info@robigo.co.uk",
 
-  phone: "+447777449931",
+    whatsapp: "+447777449931",
 
-  whatsapp: "447777449931",
+    priceRange: "££",
 
-  email: "info@robigo.co.uk",
+    openingHours: {
+      opens: "08:00",
+      closes: "20:00",
+      days: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
+    },
+  },
 
-  openingHours: "Monday – Sunday • 8:00 AM – 8:00 PM",
+  location: {
+    city: "Winchester",
+    county: "Hampshire",
+    country: "United Kingdom",
+
+    serviceAreas: [
+      "Winchester",
+      "Kings Worthy",
+      "Eastleigh",
+      "Twyford",
+      "Hursley",
+      "Compton",
+      "Shawford",
+    ],
+
+    geo: {
+      latitude: null as number | null,
+      longitude: null as number | null,
+    },
+  },
+
+  branding: {
+    title: "ROBIGO | Carpet & Upholstery Cleaning in Winchester",
+
+    shortName: "ROBIGO",
+
+    description:
+      "Professional carpet, upholstery, mattress and chemical-free steam cleaning in Winchester and surrounding areas.",
+
+    logo: "/logo.svg",
+
+    favicon: "/favicon.svg",
+
+    ogImage: "/og-image.jpg",
+
+    themeColor: "#0F6CBD",
+  },
+
+  seo: {
+    defaultTitle:
+      "Professional Carpet Cleaning in Winchester | ROBIGO",
+
+    titleTemplate: "%s | ROBIGO",
+
+    defaultDescription:
+      "Professional carpet, upholstery, mattress and chemical-free steam cleaning in Winchester. Honest pricing. No call-out charge. Free quotations.",
+
+    keywords: [
+      "carpet cleaning Winchester",
+      "upholstery cleaning Winchester",
+      "mattress cleaning Winchester",
+      "steam cleaning Winchester",
+      "rug cleaning Winchester",
+      "professional carpet cleaner",
+      "deep carpet cleaning",
+      "pet stain removal",
+      "carpet cleaner Hampshire",
+    ],
+  },
 
   cta: {
-    primary: "Get My Free Quote",
-    secondary: "Call Robert",
-    whatsappLabel: "WhatsApp Robert",
-    response: "Fast WhatsApp response",
+    primary: "Get Free Quote",
+    secondary: "Call Now",
+    whatsappLabel: "WhatsApp Us",
   },
 
-  trust: {
-    noCallOut: "No Call-Out Charge",
-    freeQuotes: "Free Quotes",
-    sevenDays: "7 Days a Week",
-    honestPricing: "Honest Fixed Pricing",
+  social: {
+    facebook: "",
+    instagram: "",
+    googleBusiness: "",
+    linkedin: "",
+    youtube: "",
   },
 
-  whatsappMessage(message?: string) {
-    return `https://wa.me/${this.whatsapp}?text=${encodeURIComponent(
-      message ??
-        "Hi Robert, I'd like a free quote for professional cleaning."
-    )}`;
+  analytics: {
+    googleAnalytics: "",
+    googleTagManager: "",
+    microsoftClarity: "",
   },
 
   tel() {
-    return `tel:${this.phone}`;
+    return `tel:${this.business.phone}`;
   },
-};
+
+  mailto() {
+    return `mailto:${this.business.email}`;
+  },
+
+  whatsappMessage(message?: string) {
+    const text = message
+      ? encodeURIComponent(message)
+      : encodeURIComponent(
+          "Hi ROBIGO, I'd like to request a free quotation."
+        );
+
+    return `https://wa.me/${whatsappNumber}?text=${text}`;
+  },
+} as const;
+
+export const siteConfig = site;
+
+export type SiteConfig = typeof site;

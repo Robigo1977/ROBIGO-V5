@@ -1,10 +1,26 @@
 {
   "name": "ROBIGO",
   "short_name": "ROBIGO",
+  "description": "Professional carpet, upholstery, mattress and chemical-free steam cleaning in Winchester and surrounding areas.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0F6CBD",
-  "description": "Professional carpet and upholstery cleaning in Winchester.",
-  "icons": []
+  "orientation": "portrait-primary",
+  "lang": "en-GB",
+  "icons": [
+    {
+      "src": "/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
 }

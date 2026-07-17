@@ -1,67 +1,56 @@
-type Review = {
-  name: string;
-  location: string;
-  rating: number;
-  text: string;
-};
+import styles from "./ReviewCard.module.css";
+import { CheckCircle, Star } from "lucide-react";
+import type { Review } from "./reviews.data";
 
-type ReviewCardProps = {
+interface ReviewCardProps {
   review: Review;
-};
+}
 
-export function ReviewCard({ review }: ReviewCardProps) {
+export default function ReviewCard({ review }: ReviewCardProps) {
   return (
-    <article>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          marginBottom: "1rem",
-        }}
-      >
-        <div>
-          <h3
-            style={{
-              margin: 0,
-              fontSize: "1.1rem",
-              fontWeight: 700,
-            }}
-          >
-            {review.name}
-          </h3>
-
-          <p
-            style={{
-              margin: 0,
-              color: "#64748b",
-              fontSize: ".9rem",
-            }}
-          >
-            {review.location}
-          </p>
+    <article className={styles.card}>
+      <div className={styles.header}>
+        <div className={styles.avatar}>
+          {review.name.charAt(0)}
         </div>
 
-        <div
-          style={{
-            color: "#f59e0b",
-            fontSize: "1.1rem",
-            letterSpacing: "2px",
-          }}
-        >
-          {"★".repeat(review.rating)}
+        <div className={styles.customer}>
+          <h3>{review.name}</h3>
+          <p>{review.location}</p>
         </div>
       </div>
 
-      <p
-        style={{
-          margin: 0,
-          lineHeight: 1.7,
-          color: "#334155",
-        }}
-      >
-        “{review.text}”
+      <div className={styles.rating}>
+        {Array.from({ length: review.rating }).map((_, index) => (
+          <Star
+            key={index}
+            size={16}
+            className={styles.star}
+            fill="currentColor"
+          />
+        ))}
+      </div>
+
+      <p className={styles.review}>
+        "{review.review}"
       </p>
+
+      <div className={styles.footer}>
+        <span className={styles.service}>
+          {review.service}
+        </span>
+
+        {review.verified && (
+          <span className={styles.verified}>
+            <CheckCircle size={15} />
+            Verified Customer
+          </span>
+        )}
+      </div>
+
+      <span className={styles.date}>
+        {review.date}
+      </span>
     </article>
   );
 }

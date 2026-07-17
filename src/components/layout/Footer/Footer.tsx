@@ -6,33 +6,34 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <h3>{site.businessName}</h3>
+        <h3>{site.business.name}</h3>
 
         <p>
           Professional Carpet, Upholstery, Mattress & Chemical-Free Steam
-          Cleaning throughout {site.serviceArea}.
+          Cleaning throughout {site.location.city} & surrounding areas.
         </p>
 
         <p>
           <a
             href={site.tel()}
-            aria-label={`Call ${site.businessName}`}
+            aria-label={`Call ${site.business.name}`}
           >
-            {site.phone}
+            {site.business.phone}
           </a>
         </p>
 
         <p>
           <a
-            href={`mailto:${site.email}`}
-            aria-label={`Email ${site.businessName}`}
+            href={site.mailto()}
+            aria-label={`Email ${site.business.name}`}
           >
-            {site.email}
+            {site.business.email}
           </a>
         </p>
 
         <p>
-          © {new Date().getFullYear()} {site.businessName}. All rights reserved.
+          © {new Date().getFullYear()} {site.business.name}. All rights
+          reserved.
         </p>
       </div>
     </footer>
