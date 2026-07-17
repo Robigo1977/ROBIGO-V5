@@ -3,6 +3,7 @@ import Footer from "./components/layout/Footer";
 import FloatingWhatsApp from "./components/layout/FloatingWhatsApp/FloatingWhatsApp";
 
 import Hero from "./components/sections/Hero";
+import Pricing from "./components/sections/Pricing/Pricing";
 import TrustBar from "./components/sections/TrustBar";
 import QuoteCalculator from "./components/sections/QuoteCalculator";
 import Services from "./components/sections/Services";
@@ -18,6 +19,7 @@ function App() {
 
       <main>
         <Hero />
+        <Pricing />
         <TrustBar />
         <QuoteCalculator />
         <Services />
