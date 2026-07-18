@@ -1,56 +1,42 @@
-import styles from "./ReviewCard.module.css";
-import { CheckCircle, Star } from "lucide-react";
+import { Star, BadgeCheck } from "lucide-react";
 import type { Review } from "./reviews.data";
 
-interface ReviewCardProps {
+interface Props {
   review: Review;
 }
 
-export default function ReviewCard({ review }: ReviewCardProps) {
+export default function ReviewCard({ review }: Props) {
   return (
-    <article className={styles.card}>
-      <div className={styles.header}>
-        <div className={styles.avatar}>
-          {review.name.charAt(0)}
+    <article className="review-card">
+      <div className="review-header">
+        <div>
+          <h3>{review.name}</h3>
+
+          <p className="review-location">
+            {review.location} • {review.service}
+          </p>
         </div>
 
-        <div className={styles.customer}>
-          <h3>{review.name}</h3>
-          <p>{review.location}</p>
+        <div className="verified">
+          <BadgeCheck size={16} />
+          <span>Verified Customer</span>
         </div>
       </div>
 
-      <div className={styles.rating}>
+      <div className="stars">
         {Array.from({ length: review.rating }).map((_, index) => (
           <Star
             key={index}
-            size={16}
-            className={styles.star}
+            size={18}
             fill="currentColor"
+            strokeWidth={1.5}
           />
         ))}
       </div>
 
-      <p className={styles.review}>
-        "{review.review}"
+      <p className="review-text">
+        "{review.text}"
       </p>
-
-      <div className={styles.footer}>
-        <span className={styles.service}>
-          {review.service}
-        </span>
-
-        {review.verified && (
-          <span className={styles.verified}>
-            <CheckCircle size={15} />
-            Verified Customer
-          </span>
-        )}
-      </div>
-
-      <span className={styles.date}>
-        {review.date}
-      </span>
     </article>
   );
 }

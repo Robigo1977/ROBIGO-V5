@@ -4,9 +4,7 @@ export interface Review {
   location: string;
   service: string;
   rating: number;
-  date: string;
-  verified: boolean;
-  review: string;
+  text: string;
 }
 
 export const reviews: Review[] = [
@@ -16,64 +14,52 @@ export const reviews: Review[] = [
     location: "Winchester",
     service: "Carpet Cleaning",
     rating: 5,
-    date: "2 weeks ago",
-    verified: true,
-    review:
-      "Outstanding service from start to finish. Our carpets look brand new and dried much faster than expected. Robert was friendly, professional and took great care throughout the job."
+    text:
+      "Absolutely fantastic service. The carpets look brand new and dried much quicker than expected. Friendly, professional and excellent value."
   },
   {
     id: 2,
-    name: "James T.",
+    name: "James R.",
     location: "Kings Worthy",
     service: "Upholstery Cleaning",
     rating: 5,
-    date: "1 month ago",
-    verified: true,
-    review:
-      "Our sofa had years of stains from children and our dog. I honestly didn't think it could be saved, but the results were incredible. Highly recommended."
+    text:
+      "Our sofa had years of stains from children and our dog. ROBIGO completely transformed it. Highly recommended."
   },
   {
     id: 3,
-    name: "Emma W.",
+    name: "Emily T.",
     location: "Eastleigh",
     service: "Mattress Cleaning",
     rating: 5,
-    date: "3 weeks ago",
-    verified: true,
-    review:
-      "Very punctual, polite and professional. The mattress feels fresh again and it's reassuring knowing it's properly sanitised."
+    text:
+      "Very punctual, polite and professional. The mattress feels fresh and smells amazing. Great attention to detail."
   },
   {
     id: 4,
-    name: "David R.",
+    name: "David P.",
     location: "Twyford",
     service: "Steam Cleaning",
     rating: 5,
-    date: "5 days ago",
-    verified: true,
-    review:
-      "We wanted a chemical-free clean because of our young children. The steam cleaning was fantastic and the floors looked amazing afterwards."
+    text:
+      "We wanted chemical-free cleaning because of our young children. The results were outstanding. We'll definitely book again."
   },
   {
     id: 5,
-    name: "Helen B.",
+    name: "Rebecca L.",
     location: "Compton",
     service: "Carpet Cleaning",
     rating: 5,
-    date: "3 months ago",
-    verified: true,
-    review:
-      "Excellent communication, fair pricing and superb results. We'll definitely be booking again."
+    text:
+      "Quick quotation, arrived on time and delivered exactly what was promised. Couldn't be happier."
   },
   {
     id: 6,
-    name: "Michael P.",
-    location: "Shawford",
+    name: "Michael S.",
+    location: "Hursley",
     service: "Upholstery Cleaning",
     rating: 5,
-    date: "Last week",
-    verified: true,
-    review:
-      "Professional equipment, attention to detail and fantastic customer service. Couldn't ask for more."
+    text:
+      "Professional from start to finish. Honest pricing, no hidden costs and incredible results."
   }
 ];

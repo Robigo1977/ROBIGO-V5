@@ -1,10 +1,26 @@
 export interface BeforeAfterItem {
   id: number;
+
+  featured: boolean;
+
   title: string;
   category: string;
-  description: string;
-  location: string;
+
   service: string;
+  location: string;
+
+  description: string;
+  story: string;
+
+  process: {
+    inspect: boolean;
+    preTreat: boolean;
+    steam: boolean;
+    extraction: boolean;
+  };
+
+  stains: string[];
+
   beforeImage: string;
   afterImage: string;
 }
@@ -12,35 +28,119 @@ export interface BeforeAfterItem {
 export const beforeAfterItems: BeforeAfterItem[] = [
   {
     id: 1,
-    title: "Living Room Carpet",
+
+    featured: true,
+
+    title: "Living Room Carpet Restoration",
+
     category: "Carpet Cleaning",
-    description:
-      "Deep extraction removed embedded dirt, traffic marks and restored the carpet's appearance.",
-    location: "Winchester",
+
     service: "Deep Carpet Cleaning",
-    beforeImage: "/images/before-after/carpet-before.webp",
-    afterImage: "/images/before-after/carpet-after.webp",
+
+    location: "Winchester",
+
+    description:
+      "Heavy traffic marks, embedded dirt and dull fibres restored with professional deep extraction cleaning.",
+
+    story:
+      "After a full inspection, targeted pre-treatment was applied before high-temperature steam helped loosen embedded contamination. Professional extraction restored the carpet's appearance, leaving it noticeably cleaner, fresher and brighter.",
+
+    process: {
+      inspect: true,
+      preTreat: true,
+      steam: true,
+      extraction: true,
+    },
+
+    stains: [
+      "Traffic Marks",
+      "Embedded Dirt",
+      "General Soiling",
+      "Everyday Wear",
+    ],
+
+    beforeImage:
+      "/images/before-after/carpet-before.webp",
+
+    afterImage:
+      "/images/before-after/carpet-after.webp",
   },
+
   {
     id: 2,
-    title: "Corner Sofa",
+
+    featured: false,
+
+    title: "Professional Upholstery Revival",
+
     category: "Upholstery Cleaning",
-    description:
-      "Professional upholstery cleaning removed stains and refreshed the fabric.",
-    location: "Eastleigh",
+
     service: "Upholstery Cleaning",
-    beforeImage: "/images/before-after/sofa-before.webp",
-    afterImage: "/images/before-after/sofa-after.webp",
+
+    location: "Eastleigh",
+
+    description:
+      "Fabric professionally cleaned to remove everyday dirt, refresh colour and improve overall appearance.",
+
+    story:
+      "Every fabric requires a different approach. After inspection we selected the safest cleaning method to lift dirt while protecting the material.",
+
+    process: {
+      inspect: true,
+      preTreat: true,
+      steam: false,
+      extraction: true,
+    },
+
+    stains: [
+      "Food Stains",
+      "Drink Spills",
+      "General Dirt",
+    ],
+
+    beforeImage:
+      "/images/before-after/sofa-before.webp",
+
+    afterImage:
+      "/images/before-after/sofa-after.webp",
   },
+
   {
     id: 3,
-    title: "Bedroom Carpet",
+
+    featured: false,
+
+    title: "Bedroom Carpet Refresh",
+
     category: "Carpet Cleaning",
-    description:
-      "Deep cleaned to remove everyday dirt and leave the carpet fresh and hygienic.",
-    location: "King's Worthy",
+
     service: "Carpet Cleaning",
-    beforeImage: "/images/before-after/bedroom-before.webp",
-    afterImage: "/images/before-after/bedroom-after.webp",
+
+    location: "King's Worthy",
+
+    description:
+      "Professional deep clean removing everyday dirt, restoring freshness and improving appearance.",
+
+    story:
+      "A routine maintenance clean that brought life back to the carpet while removing built-up dirt from daily use.",
+
+    process: {
+      inspect: true,
+      preTreat: true,
+      steam: true,
+      extraction: true,
+    },
+
+    stains: [
+      "Dust",
+      "Traffic Marks",
+      "General Soiling",
+    ],
+
+    beforeImage:
+      "/images/before-after/bedroom-before.webp",
+
+    afterImage:
+      "/images/before-after/bedroom-after.webp",
   },
 ];

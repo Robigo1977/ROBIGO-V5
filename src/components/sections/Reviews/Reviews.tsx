@@ -1,59 +1,83 @@
-import styles from "./Reviews.module.css";
+import "./Reviews.css";
+import { Star, Quote } from "lucide-react";
 import ReviewCard from "./ReviewCard";
 import { reviews } from "./reviews.data";
-import Button from "../../ui/Button";
 
 export default function Reviews() {
   return (
-    <section className={styles.section} id="reviews">
+    <section
+      className="reviews-section"
+      id="reviews"
+    >
       <div className="container">
-        <div className={styles.heading}>
-          <span className={styles.badge}>
-            ★★★★★ Trusted Across Winchester
+
+        <div className="reviews-heading">
+
+          <span className="reviews-badge">
+            <Star
+              size={16}
+              fill="currentColor"
+            />
+            Trusted by Local Homeowners
           </span>
 
-          <h2>Loved by Homeowners Across Winchester</h2>
+          <h2>
+            Why Winchester Homeowners Recommend ROBIGO
+          </h2>
 
           <p>
-            We take pride in delivering outstanding results and exceptional
-            customer service. Here are just a few of the experiences our
-            customers have shared.
+            Inviting someone into your home requires trust.
+            That's why we focus on outstanding results,
+            honest communication and a professional service
+            people genuinely recommend to friends and family.
           </p>
+
         </div>
 
-        <div className={styles.stats}>
-          <div className={styles.score}>
-            <span className={styles.number}>5.0</span>
-            <span className={styles.stars}>★★★★★</span>
-          </div>
+        <div className="reviews-highlight">
 
-          <div className={styles.info}>
-            Based on verified customer feedback from carpet, upholstery,
-            mattress and steam cleaning services.
-          </div>
+          <Quote size={42} />
+
+          <blockquote>
+            "Our reputation has been built one home at a time.
+            Every review represents a customer who trusted us
+            with their home—and we'd love to earn your trust too."
+          </blockquote>
+
         </div>
 
-        <div className={styles.grid}>
+        <div className="reviews-grid">
+
           {reviews.map((review) => (
             <ReviewCard
               key={review.id}
               review={review}
             />
           ))}
+
         </div>
 
-        <div className={styles.cta}>
-          <h3>Ready to become our next happy customer?</h3>
+        <div className="reviews-footer">
+
+          <h3>
+            Your Home Could Be Our Next Five-Star Review
+          </h3>
 
           <p>
-            Request your free quote today and experience the ROBIGO
-            difference.
+            Send us a few photos on WhatsApp and receive
+            a fast, free quotation with absolutely no
+            obligation and no call-out charge.
           </p>
 
-          <Button href="#contact">
-            Get Your Free Quote
-          </Button>
+          <a
+            href="https://wa.me/447777449931"
+            className="reviews-button"
+          >
+            Get My Free Quote
+          </a>
+
         </div>
+
       </div>
     </section>
   );

@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import styles from "./BeforeAfterSlider.module.css";
 
 interface BeforeAfterSliderProps {
@@ -19,8 +18,9 @@ export default function BeforeAfterSlider({
     <div className={styles.slider}>
       <img
         src={beforeImage}
-        alt={`${title} before`}
+        alt={`${title} before cleaning`}
         className={styles.image}
+        draggable={false}
       />
 
       <div
@@ -31,8 +31,9 @@ export default function BeforeAfterSlider({
       >
         <img
           src={afterImage}
-          alt={`${title} after`}
+          alt={`${title} after cleaning`}
           className={styles.image}
+          draggable={false}
         />
       </div>
 
@@ -41,19 +42,25 @@ export default function BeforeAfterSlider({
         style={{
           left: `${position}%`,
         }}
-      >
-        <div className={styles.handle} />
-      </div>
+      />
+
+      <div
+        className={styles.handle}
+        style={{
+          left: `${position}%`,
+        }}
+      />
 
       <input
         className={styles.range}
         type="range"
-        min="0"
-        max="100"
+        min={0}
+        max={100}
         value={position}
         onChange={(e) =>
           setPosition(Number(e.target.value))
         }
+        aria-label="Before and after comparison"
       />
     </div>
   );

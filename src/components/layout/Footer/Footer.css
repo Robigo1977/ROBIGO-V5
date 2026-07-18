@@ -1,49 +1,127 @@
 .footer {
-  background: #0f172a;
-  color: white;
-  padding: 48px 24px;
+  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  color: #ffffff;
+  padding: 72px 24px 32px;
   margin-top: 80px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  text-align: center;
 }
 
-.footer h3 {
-  margin-bottom: 12px;
-  font-size: 1.5rem;
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.footer-column h3 {
+  font-size: 1.7rem;
   font-weight: 800;
+  margin-bottom: 16px;
+  color: #ffffff;
 }
 
-.footer p {
+.footer-column h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #ffffff;
+}
+
+.footer-description {
   color: #cbd5e1;
-  margin: 8px 0;
-  line-height: 1.6;
+  line-height: 1.8;
+  margin-bottom: 24px;
 }
 
-.footer a {
-  color: white;
-  text-decoration: none;
+.footer-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-badges span {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
   font-weight: 600;
 }
 
-.footer a:hover {
-  text-decoration: underline;
+.footer-link {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  margin-bottom: 14px;
+  font-weight: 600;
+  transition: color 0.25s ease;
+}
+
+.footer-link:hover {
+  color: #38bdf8;
+}
+
+.footer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-list li {
+  color: #cbd5e1;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 28px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: #94a3b8;
+  margin: 8px 0;
+  line-height: 1.7;
+}
+
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+  }
 }
 
 @media (max-width: 768px) {
   .footer {
-    padding: 40px 20px;
-    margin-top: 60px;
+    padding: 56px 20px 28px;
+    margin-top: 64px;
   }
 
-  .footer h3 {
-    font-size: 1.35rem;
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
   }
 
-  .footer p {
-    font-size: 0.95rem;
+  .footer-badges {
+    justify-content: center;
+  }
+
+  .footer-column h3 {
+    font-size: 1.5rem;
+  }
+
+  .footer-column h4 {
+    font-size: 1rem;
+  }
+
+  .footer-link {
+    font-size: 1rem;
   }
 }
