@@ -7,7 +7,17 @@ import styles from "./Hero.module.css";
 
 export default function Hero() {
   return (
-    <section id="home" className={styles.hero}>
+    <section
+      id="home"
+      className={styles.hero}
+    >
+      {/* Background */}
+      <div className={styles.background}>
+        <div className={styles.glowPrimary} />
+        <div className={styles.glowSecondary} />
+        <div className={styles.gridPattern} />
+      </div>
+
       <Container>
         <div className={styles.grid}>
           <HeroContent />
@@ -17,6 +27,13 @@ export default function Hero() {
           </div>
         </div>
       </Container>
+
+      <div
+        className={styles.scrollIndicator}
+        aria-hidden="true"
+      >
+        <span />
+      </div>
     </section>
   );
 }

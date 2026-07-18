@@ -5,7 +5,10 @@ import styles from "./Hero.module.css";
 
 export default function HeroButtons() {
   return (
-    <div className={styles.actions}>
+    <nav
+      className={styles.actions}
+      aria-label="Hero call to actions"
+    >
       <Button
         href={site.whatsappMessage()}
         target="_blank"
@@ -20,6 +23,6 @@ export default function HeroButtons() {
       >
         {site.cta.secondary}
       </Button>
-    </div>
+    </nav>
   );
 }

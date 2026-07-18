@@ -14,13 +14,19 @@ export default function EstimateCard({
   return (
     <div className={styles.estimateCard}>
       <div className={styles.estimateHeader}>
-        <p className={styles.estimateLabel}>
-          Instant Estimate
-        </p>
+        <div>
+          <p className={styles.estimateLabel}>
+            Instant Price Estimate
+          </p>
+
+          <p className={styles.estimateSubtitle}>
+            Professional cleaning with transparent pricing.
+          </p>
+        </div>
 
         {showBestValue && (
           <span className={styles.bestValueBadge}>
-            BEST VALUE
+            ⭐ BEST VALUE
           </span>
         )}
       </div>
@@ -30,7 +36,7 @@ export default function EstimateCard({
       </h3>
 
       <p className={styles.estimateNote}>
-        Guide price based on the information provided.
+        Estimated price based on the information provided.
       </p>
 
       <div className={styles.trustPanel}>
@@ -43,15 +49,27 @@ export default function EstimateCard({
         </div>
 
         <div className={styles.trustItem}>
-          💬 Final quote confirmed via WhatsApp
+          💬 Final Quote Confirmed Before We Start
+        </div>
+
+        <div className={styles.trustItem}>
+          🕒 Same-Day WhatsApp Replies
         </div>
       </div>
 
       {isNumeric && (
-        <p className={styles.smallPrint}>
-          Final pricing may vary depending on staining, access,
-          furniture movement and optional additional services.
-        </p>
+        <>
+          <p className={styles.smallPrint}>
+            Final pricing may vary depending on staining,
+            furniture movement, access and any optional extras
+            selected during inspection.
+          </p>
+
+          <div className={styles.priceGuarantee}>
+            We will always confirm the final price with you before
+            any cleaning begins.
+          </div>
+        </>
       )}
     </div>
   );

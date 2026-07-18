@@ -53,13 +53,17 @@ Thank you.`;
 
   return (
     <div className={styles.actions}>
+      <div className={styles.actionTrust}>
+        ⭐ Free Quote &nbsp;•&nbsp; 🚐 No Call-Out Charge &nbsp;•&nbsp; 📅 7 Days a Week
+      </div>
+
       <Button
         href={site.whatsappMessage(message)}
         target="_blank"
         rel="noopener noreferrer"
         fullWidth
       >
-        {site.cta.primary}
+        📲 Get My Free Quote on WhatsApp
       </Button>
 
       <Button
@@ -69,8 +73,12 @@ Thank you.`;
         variant="outline"
         fullWidth
       >
-        {site.cta.whatsappLabel}
+        💬 Ask a Question First
       </Button>
+
+      <p className={styles.responsePromise}>
+        We usually reply the same day and always confirm your final price before any cleaning begins.
+      </p>
     </div>
   );
 }

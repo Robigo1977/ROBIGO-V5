@@ -11,6 +11,14 @@ interface ServiceCardProps {
 export default function ServiceCard({
   service,
 }: ServiceCardProps) {
+  const message = `Hi ROBIGO,
+
+I'm interested in your ${service.title} service.
+
+Could you please send me a free quotation and let me know your next available appointment?
+
+Thank you.`;
+
   return (
     <article className={styles.card}>
       <div className={styles.imageWrapper}>
@@ -25,6 +33,7 @@ export default function ServiceCard({
           alt={service.title}
           className={styles.image}
           loading="lazy"
+          decoding="async"
         />
       </div>
 
@@ -40,12 +49,13 @@ export default function ServiceCard({
         </ul>
 
         <Button
-          href={site.whatsappMessage(service.title)}
+          href={site.whatsappMessage(message)}
           target="_blank"
           rel="noopener noreferrer"
           fullWidth
+          aria-label={`Get a free ${service.title} quote`}
         >
-          {service.cta}
+          {site.cta.primary}
         </Button>
       </div>
     </article>
