@@ -9,7 +9,11 @@ import ServiceOptions from "./ServiceOptions";
 import EstimateCard from "./EstimateCard";
 import QuoteActions from "./QuoteActions";
 
-import { calculateCarpetPrice } from "./priceEngine";
+import {
+  calculateCarpetPrice,
+  calculateSteamPrice,
+} from "./priceEngine";
+
 import type { ServiceType } from "./types";
 
 import { fadeUp } from "../../../motion/variants";
@@ -21,12 +25,18 @@ export default function QuoteCalculator() {
   const [service, setService] = useState<ServiceType>("carpet");
   const [area, setArea] = useState(30);
 
-  const currentStep: 1 | 2 | 3 = service === "carpet" ? 2 : 1;
+  const currentStep: 1 | 2 | 3 =
+    service === "carpet" || service === "steam"
+      ? 2
+      : 1;
 
   const estimate = useMemo(() => {
     switch (service) {
       case "carpet":
         return calculateCarpetPrice(area);
+
+      case "steam":
+        return calculateSteamPrice(area);
 
       default:
         return {
@@ -37,7 +47,11 @@ export default function QuoteCalculator() {
   }, [service, area]);
 
   return (
-    <section id="quote" className={styles.section}>
+    <section
+      id="quote"
+      className={styles.section}
+      aria-labelledby="quote-heading"
+    >
       <Container>
         <motion.div
           variants={fadeUp}
@@ -45,7 +59,10 @@ export default function QuoteCalculator() {
           whileInView="show"
           viewport={viewport}
         >
-          <ProgressHeader currentStep={currentStep} />
+          <ProgressHeader
+            currentStep={currentStep}
+            id="quote-heading"
+          />
 
           <ServiceCards
             selected={service}

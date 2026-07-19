@@ -18,12 +18,16 @@ function getServiceName(service: ServiceType): string {
   switch (service) {
     case "carpet":
       return "Carpet Cleaning";
+
     case "upholstery":
       return "Upholstery Cleaning";
+
     case "mattress":
       return "Mattress Cleaning";
+
     case "steam":
       return "Chemical-Free Steam Cleaning";
+
     default:
       return "Cleaning Service";
   }
@@ -34,27 +38,34 @@ export default function QuoteActions({
   area,
   estimate,
 }: QuoteActionsProps) {
-  const message = `Hi ROBIGO,
+  const serviceName = getServiceName(service);
 
-I'd like a free quote.
-
-Service:
-${getServiceName(service)}
-
-Approximate Area:
-${area} m²
-
-Estimated Price:
-${estimate.formattedPrice}
-
-Please let me know your next available appointment.
-
-Thank you.`;
+  const message = [
+    "Hi ROBIGO,",
+    "",
+    "I'd like a free quote.",
+    "",
+    "Service:",
+    serviceName,
+    "",
+    "Approximate Area:",
+    `${area} m²`,
+    "",
+    "Estimated Price:",
+    estimate.formattedPrice,
+    "",
+    "Please let me know your next available appointment.",
+    "",
+    "Thank you.",
+  ].join("\n");
 
   return (
-    <div className={styles.actions}>
+    <div
+      className={styles.actions}
+      aria-label="Quote actions"
+    >
       <div className={styles.actionTrust}>
-        ⭐ Free Quote &nbsp;•&nbsp; 🚐 No Call-Out Charge &nbsp;•&nbsp; 📅 7 Days a Week
+        ⭐ Rated 5★ • 🚐 No Call-Out Charge • 📅 Available 7 Days a Week
       </div>
 
       <Button
@@ -62,8 +73,9 @@ Thank you.`;
         target="_blank"
         rel="noopener noreferrer"
         fullWidth
+        aria-label={`Request a WhatsApp quote for ${serviceName}`}
       >
-        📲 Get My Free Quote on WhatsApp
+        📲 Get My Free WhatsApp Quote
       </Button>
 
       <Button
@@ -72,12 +84,14 @@ Thank you.`;
         rel="noopener noreferrer"
         variant="outline"
         fullWidth
+        aria-label="Ask a quick question on WhatsApp"
       >
-        💬 Ask a Question First
+        💬 Ask a Quick Question
       </Button>
 
       <p className={styles.responsePromise}>
-        We usually reply the same day and always confirm your final price before any cleaning begins.
+        Usually replied to the same day. Your final price is always confirmed
+        before any work begins.
       </p>
     </div>
   );

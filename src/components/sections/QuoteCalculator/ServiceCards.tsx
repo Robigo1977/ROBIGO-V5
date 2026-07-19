@@ -12,20 +12,30 @@ export default function ServiceCards({
   onSelect,
 }: ServiceCardsProps) {
   return (
-    <div className={styles.serviceGrid}>
-      {services.map((service) => (
-        <button
-          key={service.id}
-          type="button"
-          onClick={() => onSelect(service.id)}
-          className={`${styles.serviceCard} ${
-            selected === service.id ? styles.active : ""
-          }`}
-        >
-          <h3>{service.title}</h3>
-          <p>{service.description}</p>
-        </button>
-      ))}
+    <div
+      className={styles.serviceGrid}
+      role="group"
+      aria-label="Select a cleaning service"
+    >
+      {services.map((service) => {
+        const isSelected = selected === service.id;
+
+        return (
+          <button
+            key={service.id}
+            type="button"
+            onClick={() => onSelect(service.id)}
+            className={`${styles.serviceCard} ${
+              isSelected ? styles.active : ""
+            }`}
+            aria-pressed={isSelected}
+            aria-label={service.title}
+          >
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
+          </button>
+        );
+      })}
     </div>
   );
 }

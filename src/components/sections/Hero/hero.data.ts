@@ -1,10 +1,10 @@
 export const heroData = {
-  badge: "WINCHESTER'S PREMIUM CLEANING SPECIALISTS",
+  badge: "TRUSTED CARPET & UPHOLSTERY CLEANING IN WINCHESTER",
 
-  title: "Professional Cleaning. Exceptional Results.",
+  title: "A Cleaner, Healthier Home Starts Here.",
 
   subtitle:
-    "Premium carpet, upholstery, mattress and chemical-free steam cleaning with professional equipment, honest pricing and outstanding customer care throughout Winchester and the surrounding areas.",
+    "Professional carpet, upholstery, mattress and chemical-free steam cleaning for homes across Winchester. Honest pricing, premium equipment and exceptional attention to detail—delivering results you'll see, feel and enjoy.",
 
   primaryButton: {
     label: "Get My Free Quote",
@@ -19,12 +19,12 @@ export const heroData = {
   trustItems: [
     "Fully Insured",
     "No Call-Out Charge",
-    "Same-Day Quotes",
+    "Card Payments Accepted",
     "7 Days a Week",
   ],
 
   stats: {
     rating: "★★★★★ 5.0",
-    reviews: "250+ Happy Customers",
+    reviews: "Trusted by 250+ Happy Customers",
   },
 };

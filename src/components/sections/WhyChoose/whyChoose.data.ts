@@ -3,44 +3,44 @@ import type { WhyChooseItem } from "./types";
 export const whyChooseItems: WhyChooseItem[] = [
   {
     id: 1,
-    title: "Local Winchester Business",
+    title: "Local Winchester Specialist",
     description:
-      "Friendly local service with attention to every detail.",
+      "Friendly, reliable service from a local independent business that genuinely cares about every home.",
     icon: "📍",
   },
   {
     id: 2,
-    title: "No Call-Out Charge",
+    title: "No Call-Out Charges",
     description:
-      "You only pay for the cleaning. No hidden travel fees.",
+      "You'll only ever pay for the cleaning itself. No travel fees, no hidden extras, no surprises.",
     icon: "🚐",
   },
   {
     id: 3,
-    title: "7 Days a Week",
+    title: "Available 7 Days a Week",
     description:
-      "Appointments available every day from 8am until 8pm.",
+      "Flexible appointments every day from 8:00am to 8:00pm, including weekends.",
     icon: "📅",
   },
   {
     id: 4,
-    title: "Professional Equipment",
+    title: "Professional Kärcher Equipment",
     description:
-      "Commercial Kärcher machines delivering deep cleaning results.",
+      "Commercial-grade Kärcher cleaning systems that deliver deeper cleaning and faster drying times.",
     icon: "🧼",
   },
   {
     id: 5,
-    title: "Pet & Family Friendly",
+    title: "Safe for Children & Pets",
     description:
-      "Safe cleaning methods for homes with children and pets.",
+      "Cleaning methods designed to create a fresher, healthier home for your family and your pets.",
     icon: "🐶",
   },
   {
     id: 6,
-    title: "Fast WhatsApp Quotes",
+    title: "Fast WhatsApp Quotations",
     description:
-      "Send photos and receive a fast, no-obligation quotation.",
+      "Send a few photos via WhatsApp and receive a free, no-obligation quotation as quickly as possible.",
     icon: "💬",
   },
 ];

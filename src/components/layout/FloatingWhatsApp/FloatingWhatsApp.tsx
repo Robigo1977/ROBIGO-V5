@@ -10,17 +10,26 @@ export default function FloatingWhatsApp() {
       href={site.whatsappMessage()}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Chat with ROBIGO on WhatsApp"
+      aria-label="Get a free quote on WhatsApp"
+      title="Get a free quote on WhatsApp"
     >
-      <MessageCircle size={22} strokeWidth={2.3} />
+      <span
+        className="floating-whatsapp-icon"
+        aria-hidden="true"
+      >
+        <MessageCircle
+          size={22}
+          strokeWidth={2.3}
+        />
+      </span>
 
-      <div className="floating-whatsapp-text">
+      <span className="floating-whatsapp-text">
         <span className="floating-whatsapp-label">
-          Need a Quote?
+          Free Quote
         </span>
 
         <strong>Chat on WhatsApp</strong>
-      </div>
+      </span>
     </a>
   );
 }

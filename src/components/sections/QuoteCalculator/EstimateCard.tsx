@@ -12,21 +12,27 @@ export default function EstimateCard({
   const showBestValue = estimate.price >= 180;
 
   return (
-    <div className={styles.estimateCard}>
+    <div
+      className={styles.estimateCard}
+      aria-live="polite"
+    >
       <div className={styles.estimateHeader}>
         <div>
           <p className={styles.estimateLabel}>
-            Instant Price Estimate
+            Estimated Price
           </p>
 
           <p className={styles.estimateSubtitle}>
-            Professional cleaning with transparent pricing.
+            Based on your selections.
           </p>
         </div>
 
         {showBestValue && (
-          <span className={styles.bestValueBadge}>
-            ⭐ BEST VALUE
+          <span
+            className={styles.bestValueBadge}
+            aria-label="Excellent value"
+          >
+            ⭐ Excellent Value
           </span>
         )}
       </div>
@@ -36,38 +42,43 @@ export default function EstimateCard({
       </h3>
 
       <p className={styles.estimateNote}>
-        Estimated price based on the information provided.
+        Instant estimate • Final quote confirmed before work begins.
       </p>
 
-      <div className={styles.trustPanel}>
+      <div
+        className={styles.trustPanel}
+        aria-label="Why customers choose ROBIGO"
+      >
         <div className={styles.trustItem}>
-          📏 Laser Measured Accuracy
+          📏 Laser Measured
         </div>
 
         <div className={styles.trustItem}>
-          ✅ No Call-Out Charge
+          🚐 No Call-Out Fee
         </div>
 
         <div className={styles.trustItem}>
-          💬 Final Quote Confirmed Before We Start
+          ⭐ Fully Insured
         </div>
 
         <div className={styles.trustItem}>
-          🕒 Same-Day WhatsApp Replies
+          💬 Same-Day WhatsApp Reply
         </div>
       </div>
 
       {isNumeric && (
         <>
           <p className={styles.smallPrint}>
-            Final pricing may vary depending on staining,
-            furniture movement, access and any optional extras
-            selected during inspection.
+            Final price depends on the condition of the items and any
+            optional extras you choose.
           </p>
 
-          <div className={styles.priceGuarantee}>
-            We will always confirm the final price with you before
-            any cleaning begins.
+          <div
+            className={styles.priceGuarantee}
+            role="note"
+          >
+            ✅ You'll always approve the final price before any cleaning
+            begins.
           </div>
         </>
       )}

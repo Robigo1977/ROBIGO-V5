@@ -12,10 +12,17 @@ export default function ContactCard({
     <a
       href={method.href}
       className={styles.card}
+      aria-label={`${method.title}: ${method.value}`}
     >
-      <h3>{method.title}</h3>
+      <div className={styles.cardContent}>
+        <h3>{method.title}</h3>
 
-      <p>{method.value}</p>
+        <p>{method.value}</p>
+      </div>
+
+      <span className={styles.cardAction}>
+        Contact Now →
+      </span>
     </a>
   );
 }

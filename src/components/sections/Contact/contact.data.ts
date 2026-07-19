@@ -6,12 +6,12 @@ export const contactMethods: ContactMethod[] = [
   {
     id: 1,
     title: "WhatsApp",
-    value: site.business.phone,
+    value: "Fastest way to get your free quote",
     href: site.whatsappMessage(),
   },
   {
     id: 2,
-    title: "Phone",
+    title: "Call Us",
     value: site.business.phone,
     href: site.tel(),
   },

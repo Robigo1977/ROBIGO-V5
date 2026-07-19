@@ -10,19 +10,29 @@ export default function Contact() {
     <section
       id="contact"
       className={styles.section}
+      aria-labelledby="contact-title"
     >
       <Container>
-        <div className={styles.header}>
-          <h2>Get Your Free Quote</h2>
+        <header className={styles.header}>
+          <span className={styles.badge}>
+            FREE QUOTE • SAME-DAY RESPONSE
+          </span>
+
+          <h2 id="contact-title">
+            Get Your Free Cleaning Quote
+          </h2>
 
           <p>
-            The fastest way to get a quotation is to send us a WhatsApp
-            message with a few photos. We'll get back to you as soon as
-            possible.
+            Send us a few photos on WhatsApp for a fast, no-obligation quote.
+            Prefer to call or email? That's absolutely fine too. We proudly
+            serve Winchester and the surrounding areas, with no call-out charge.
           </p>
-        </div>
+        </header>
 
-        <div className={styles.grid}>
+        <div
+          className={styles.grid}
+          role="list"
+        >
           {contactMethods.map((method) => (
             <ContactCard
               key={method.id}

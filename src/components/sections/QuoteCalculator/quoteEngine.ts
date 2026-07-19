@@ -2,9 +2,13 @@
 
 import { SERVICE_PRICES } from "./servicePrices";
 
-export interface CarpetQuoteInput {
+export interface AreaQuoteInput {
   area: number;
 }
+
+export interface CarpetQuoteInput extends AreaQuoteInput {}
+
+export interface SteamQuoteInput extends AreaQuoteInput {}
 
 export interface QuoteResult {
   price: number;
@@ -26,24 +30,23 @@ export function formatCurrency(price: number): string {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Carpet                                                                     */
+/* Shared Area Engine                                                         */
 /* -------------------------------------------------------------------------- */
 
-export function calculateCarpetQuote(
-  input: CarpetQuoteInput
+function calculateAreaBasedQuote(
+  area: number,
+  pricing: typeof SERVICE_PRICES.carpet
 ): QuoteResult {
-  const { area } = input;
-
   const band =
-    SERVICE_PRICES.carpet.bands.find(
+    pricing.bands.find(
       (band) => area >= band.min && area <= band.max
-    ) ?? SERVICE_PRICES.carpet.bands[0];
+    ) ?? pricing.bands[0];
 
   const calculatedPrice = Math.round(area * band.pricePerSqm);
 
   const finalPrice = Math.max(
     calculatedPrice,
-    SERVICE_PRICES.carpet.minimumCharge
+    pricing.minimumCharge
   );
 
   return {
@@ -51,8 +54,36 @@ export function calculateCarpetQuote(
     formattedPrice: formatCurrency(finalPrice),
     pricePerSqm: band.pricePerSqm,
     minimumChargeApplied:
-      finalPrice === SERVICE_PRICES.carpet.minimumCharge,
+      finalPrice === pricing.minimumCharge,
   };
+}
+
+/* -------------------------------------------------------------------------- */
+/* Carpet                                                                     */
+/* -------------------------------------------------------------------------- */
+
+export function calculateCarpetQuote(
+  input: CarpetQuoteInput
+): QuoteResult {
+  return calculateAreaBasedQuote(
+    input.area,
+    SERVICE_PRICES.carpet
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/* Steam                                                                      */
+/* -------------------------------------------------------------------------- */
+
+export function calculateSteamQuote(
+  input: SteamQuoteInput
+): QuoteResult {
+  // Steam intentionally shares the same pricing model
+  // as Carpet Cleaning.
+  return calculateAreaBasedQuote(
+    input.area,
+    SERVICE_PRICES.carpet
+  );
 }
 
 /* -------------------------------------------------------------------------- */

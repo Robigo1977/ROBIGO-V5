@@ -1,42 +1,72 @@
-import { Star, BadgeCheck } from "lucide-react";
-import type { Review } from "./reviews.data";
+import { CheckCircle, MapPin, Star } from "lucide-react";
 
-interface Props {
+import type { Review } from "../../../data/reviews.data";
+
+import styles from "./ReviewCard.module.css";
+
+interface ReviewCardProps {
   review: Review;
 }
 
-export default function ReviewCard({ review }: Props) {
+export default function ReviewCard({
+  review,
+}: ReviewCardProps) {
+  const headingId = `review-${review.id}`;
+
   return (
-    <article className="review-card">
-      <div className="review-header">
-        <div>
-          <h3>{review.name}</h3>
-
-          <p className="review-location">
-            {review.location} • {review.service}
-          </p>
+    <article
+      className={`${styles.card} ${
+        review.featured ? styles.featured : ""
+      }`}
+      aria-labelledby={headingId}
+    >
+      <header className={styles.header}>
+        <div
+          className={styles.stars}
+          aria-label={`${review.rating} out of 5 stars`}
+        >
+          {Array.from({ length: review.rating }).map((_, index) => (
+            <Star
+              key={index}
+              size={16}
+              fill="currentColor"
+              aria-hidden="true"
+            />
+          ))}
         </div>
 
-        <div className="verified">
-          <BadgeCheck size={16} />
-          <span>Verified Customer</span>
-        </div>
-      </div>
+        {review.verified && (
+          <span className={styles.verified}>
+            <CheckCircle
+              size={14}
+              aria-hidden="true"
+            />
+            Verified Customer
+          </span>
+        )}
+      </header>
 
-      <div className="stars">
-        {Array.from({ length: review.rating }).map((_, index) => (
-          <Star
-            key={index}
-            size={18}
-            fill="currentColor"
-            strokeWidth={1.5}
-          />
-        ))}
-      </div>
-
-      <p className="review-text">
-        "{review.text}"
+      <p className={styles.review}>
+        “{review.review}”
       </p>
+
+      <footer className={styles.footer}>
+        <div>
+          <h3 id={headingId}>{review.name}</h3>
+
+          <span className={styles.location}>
+            <MapPin
+              size={14}
+              aria-hidden="true"
+            />
+            {review.location}
+          </span>
+        </div>
+
+        <span className={styles.service}>
+          {review.service}
+        </span>
+      </footer>
     </article>
   );
 }

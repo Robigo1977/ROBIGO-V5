@@ -11,6 +11,7 @@ export default function HeroButtons() {
     >
       <Button
         href={site.whatsappMessage()}
+        size="lg"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -20,6 +21,7 @@ export default function HeroButtons() {
       <Button
         href={site.tel()}
         variant="secondary"
+        size="lg"
       >
         {site.cta.secondary}
       </Button>

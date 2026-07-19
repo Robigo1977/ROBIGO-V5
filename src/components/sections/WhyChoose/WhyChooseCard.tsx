@@ -8,11 +8,22 @@ interface WhyChooseCardProps {
 export default function WhyChooseCard({
   item,
 }: WhyChooseCardProps) {
-  return (
-    <article className={styles.card}>
-      <div className={styles.icon}>{item.icon}</div>
+  const headingId = `why-choose-${item.id}`;
 
-      <h3>{item.title}</h3>
+  return (
+    <article
+      className={styles.card}
+      role="listitem"
+      aria-labelledby={headingId}
+    >
+      <div
+        className={styles.icon}
+        aria-hidden="true"
+      >
+        {item.icon}
+      </div>
+
+      <h3 id={headingId}>{item.title}</h3>
 
       <p>{item.description}</p>
     </article>

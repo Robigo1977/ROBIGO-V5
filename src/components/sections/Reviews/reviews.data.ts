@@ -1,65 +1,48 @@
 export interface Review {
-  id: number;
+  id: string;
   name: string;
   location: string;
   service: string;
-  rating: number;
-  text: string;
+  rating: 5;
+  date: string;
+  verified: boolean;
+  featured?: boolean;
+  review: string;
 }
 
 export const reviews: Review[] = [
   {
-    id: 1,
-    name: "Sarah M.",
+    id: "sample-1",
+    name: "Sample Customer",
     location: "Winchester",
     service: "Carpet Cleaning",
     rating: 5,
-    text:
-      "Absolutely fantastic service. The carpets look brand new and dried much quicker than expected. Friendly, professional and excellent value."
+    date: "Placeholder",
+    verified: false,
+    featured: true,
+    review:
+      "Outstanding results from start to finish. The carpets looked noticeably fresher, communication was excellent and the whole process was professional. Replace this placeholder with a genuine customer review before launch.",
   },
   {
-    id: 2,
-    name: "James R.",
+    id: "sample-2",
+    name: "Sample Customer",
     location: "Kings Worthy",
     service: "Upholstery Cleaning",
     rating: 5,
-    text:
-      "Our sofa had years of stains from children and our dog. ROBIGO completely transformed it. Highly recommended."
+    date: "Placeholder",
+    verified: false,
+    review:
+      "Our sofa looked tired after years of daily use, but the cleaning made a remarkable difference. Replace this placeholder with an authentic customer testimonial before publishing the website.",
   },
   {
-    id: 3,
-    name: "Emily T.",
+    id: "sample-3",
+    name: "Sample Customer",
     location: "Eastleigh",
     service: "Mattress Cleaning",
     rating: 5,
-    text:
-      "Very punctual, polite and professional. The mattress feels fresh and smells amazing. Great attention to detail."
+    date: "Placeholder",
+    verified: false,
+    review:
+      "Friendly service, punctual arrival and excellent attention to detail. This is demonstration content and should be replaced with a real customer review before the website goes live.",
   },
-  {
-    id: 4,
-    name: "David P.",
-    location: "Twyford",
-    service: "Steam Cleaning",
-    rating: 5,
-    text:
-      "We wanted chemical-free cleaning because of our young children. The results were outstanding. We'll definitely book again."
-  },
-  {
-    id: 5,
-    name: "Rebecca L.",
-    location: "Compton",
-    service: "Carpet Cleaning",
-    rating: 5,
-    text:
-      "Quick quotation, arrived on time and delivered exactly what was promised. Couldn't be happier."
-  },
-  {
-    id: 6,
-    name: "Michael S.",
-    location: "Hursley",
-    service: "Upholstery Cleaning",
-    rating: 5,
-    text:
-      "Professional from start to finish. Honest pricing, no hidden costs and incredible results."
-  }
 ];

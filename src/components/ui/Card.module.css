@@ -1,0 +1,76 @@
+.card {
+  position: relative;
+
+  border-radius: var(--radius-xl, 1.5rem);
+
+  padding: 1.5rem;
+
+  background: var(--color-surface, #ffffff);
+
+  border: 1px solid rgba(15, 23, 42, 0.06);
+
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.06),
+    0 4px 12px rgba(15, 23, 42, 0.04);
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    border-color .3s ease;
+}
+
+
+.card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(37, 99, 235, 0.12);
+
+  box-shadow:
+    0 20px 45px rgba(15, 23, 42, 0.10),
+    0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+
+/* ===========================
+   Soft Variant
+=========================== */
+
+.soft {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(248,250,252,1),
+      rgba(255,255,255,1)
+    );
+}
+
+
+/* ===========================
+   Glass Variant
+=========================== */
+
+.glass {
+  background:
+    rgba(255,255,255,.72);
+
+  backdrop-filter: blur(18px);
+
+  border-color:
+    rgba(255,255,255,.5);
+}
+
+
+/* ===========================
+   Reduced Motion
+=========================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .card {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}

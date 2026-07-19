@@ -10,9 +10,13 @@ export default function Hero() {
     <section
       id="home"
       className={styles.hero}
+      aria-labelledby="hero-title"
     >
-      {/* Background */}
-      <div className={styles.background}>
+      {/* Decorative background */}
+      <div
+        className={styles.background}
+        aria-hidden="true"
+      >
         <div className={styles.glowPrimary} />
         <div className={styles.glowSecondary} />
         <div className={styles.gridPattern} />

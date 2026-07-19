@@ -5,10 +5,12 @@ import styles from "./QuoteCalculator.module.css";
 
 type ProgressHeaderProps = {
   currentStep: 1 | 2 | 3;
+  id?: string;
 };
 
 export default function ProgressHeader({
   currentStep,
+  id,
 }: ProgressHeaderProps) {
   return (
     <header className={styles.progressHeader}>
@@ -16,7 +18,10 @@ export default function ProgressHeader({
         FREE INSTANT ESTIMATE
       </span>
 
-      <h2 className={styles.progressTitle}>
+      <h2
+        id={id}
+        className={styles.progressTitle}
+      >
         Get Your Quote in Less Than 30 Seconds
       </h2>
 

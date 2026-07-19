@@ -6,81 +6,103 @@ import Button from "../../ui/Button/Button";
 import BeforeAfterSlider from "./BeforeAfterSlider";
 import { beforeAfterItems } from "./beforeAfter.data";
 
+import { site } from "../../../config/site";
+
 import styles from "./BeforeAfter.module.css";
+
+const fadeUp = {
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.2 },
+  transition: { duration: 0.5 },
+};
 
 export default function BeforeAfter() {
   return (
     <section
       id="before-after"
       className={styles.section}
+      aria-labelledby="before-after-heading"
     >
       <Container>
-        <motion.div
+        <motion.header
           className={styles.header}
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          {...fadeUp}
         >
           <span className={styles.badge}>
             REAL RESULTS
           </span>
 
-          <h2>See The Difference Professional Cleaning Makes</h2>
+          <h2 id="before-after-heading">
+            See the Difference Professional Cleaning Makes
+          </h2>
 
           <p>
-            Every carpet, sofa and mattress tells a story.
-            Here are just a few examples of the transformation
-            our professional cleaning can achieve.
+            Every carpet, sofa, and mattress tells a story. Here are just a few
+            examples of the transformation our professional cleaning can
+            achieve.
           </p>
-        </motion.div>
+        </motion.header>
 
-        <div className={styles.gallery}>
-          {beforeAfterItems.map((item) => (
-            <article
-              key={item.id}
-              className={styles.card}
-            >
-              <BeforeAfterSlider
-                beforeImage={item.beforeImage}
-                afterImage={item.afterImage}
-                title={item.title}
-              />
+        <div
+          className={styles.gallery}
+          role="list"
+        >
+          {beforeAfterItems.map((item) => {
+            const headingId = `before-after-${item.id}`;
 
-              <div className={styles.content}>
-                <h3>{item.title}</h3>
+            return (
+              <article
+                key={item.id}
+                className={styles.card}
+                role="listitem"
+                aria-labelledby={headingId}
+              >
+                <BeforeAfterSlider
+                  beforeImage={item.beforeImage}
+                  afterImage={item.afterImage}
+                  title={item.title}
+                />
 
-                <p>
-                  <strong>{item.location}</strong>
-                  {" • "}
-                  {item.service}
-                </p>
-              </div>
-            </article>
-          ))}
+                <div className={styles.content}>
+                  <h3 id={headingId}>{item.title}</h3>
+
+                  <p>
+                    <strong>{item.location}</strong>
+                    {" • "}
+                    {item.service}
+                  </p>
+                </div>
+              </article>
+            );
+          })}
         </div>
 
-        <motion.div
+        <motion.footer
           className={styles.footer}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
         >
           <h3>Imagine what we could do in your home.</h3>
 
           <p>
-            Send us a few photos on WhatsApp and receive a
-            fast, free quotation with no obligation.
+            Send us a few photos on WhatsApp and receive a fast, free quotation
+            with no obligation.
           </p>
 
           <Button
-            href="https://wa.me/447777449931"
+            href={site.whatsappMessage()}
+            target="_blank"
+            rel="noopener noreferrer"
             variant="primary"
             size="lg"
+            aria-label="Request a free quote on WhatsApp"
           >
             Get My Free Quote
           </Button>
-        </motion.div>
+        </motion.footer>
       </Container>
     </section>
   );

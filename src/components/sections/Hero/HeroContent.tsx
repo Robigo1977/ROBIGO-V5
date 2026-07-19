@@ -22,7 +22,10 @@ export default function HeroContent() {
         {heroData.badge}
       </span>
 
-      <h1 className={styles.title}>
+      <h1
+        id="hero-title"
+        className={styles.title}
+      >
         {heroData.title}
       </h1>
 
@@ -30,7 +33,11 @@ export default function HeroContent() {
         {heroData.subtitle}
       </p>
 
-      <div className={styles.actions}>
+      <div
+        className={styles.actions}
+        role="group"
+        aria-label="Primary actions"
+      >
         <HeroButtons />
       </div>
 
@@ -50,9 +57,7 @@ export default function HeroContent() {
         </span>
       </div>
 
-      <div className={styles.trust}>
-        <HeroTrust />
-      </div>
+      <HeroTrust />
     </motion.div>
   );
 }
