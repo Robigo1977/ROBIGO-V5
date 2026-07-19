@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { SEOConfig } from "./seoTypes";
+import type { SEOConfig } from "./seoTypes";
 
 interface SEOProps {
   config: SEOConfig;
@@ -13,33 +13,55 @@ export default function SEO({ config, schema }: SEOProps) {
     <Helmet>
       <title>{config.title}</title>
 
-      <meta name="description" content={config.description} />
+      <meta
+        name="description"
+        content={config.description}
+      />
 
-      <link rel="canonical" href={config.canonical} />
+      <link
+        rel="canonical"
+        href={config.canonical}
+      />
 
-      <meta property="og:title" content={config.ogTitle ?? config.title} />
+      <meta
+        property="og:title"
+        content={config.ogTitle ?? config.title}
+      />
+
       <meta
         property="og:description"
         content={config.ogDescription ?? config.description}
       />
+
       {config.ogImage && (
-        <meta property="og:image" content={config.ogImage} />
+        <meta
+          property="og:image"
+          content={config.ogImage}
+        />
       )}
 
       <meta
         name="twitter:title"
         content={config.twitterTitle ?? config.title}
       />
+
       <meta
         name="twitter:description"
         content={config.twitterDescription ?? config.description}
       />
+
       {config.twitterImage && (
-        <meta name="twitter:image" content={config.twitterImage} />
+        <meta
+          name="twitter:image"
+          content={config.twitterImage}
+        />
       )}
 
       {config.noIndex && (
-        <meta name="robots" content="noindex,nofollow" />
+        <meta
+          name="robots"
+          content="noindex,nofollow"
+        />
       )}
 
       {schemas.map((item, index) => (
