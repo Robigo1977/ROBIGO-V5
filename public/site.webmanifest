@@ -4,7 +4,7 @@
   "description": "Professional carpet, upholstery, mattress and chemical-free steam cleaning in Winchester and surrounding areas.",
   "start_url": "/",
   "scope": "/",
-  "display": "standalone",
+  "display": "browser",
   "background_color": "#ffffff",
   "theme_color": "#0F6CBD",
   "orientation": "portrait-primary",

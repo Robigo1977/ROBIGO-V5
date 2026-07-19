@@ -1,100 +1,75 @@
-import "./Footer.css";
-
-import Container from "../../ui/Container";
+import Container from "../../ui/Container/Container";
 import Button from "../../ui/Button/Button";
 import { site } from "../../../config/site";
 
+import styles from "./Footer.module.css";
+
+const services = [
+  "Carpet Cleaning",
+  "Upholstery Cleaning",
+  "Mattress Cleaning",
+  "Steam Cleaning",
+];
+
 export default function Footer() {
-  const year = new Date().getFullYear();
-
   return (
-    <footer className="footer">
+    <footer className={styles.footer}>
       <Container>
-        <div className="footer-grid">
-          <section className="footer-column">
-            <h3>{site.business.name}</h3>
+        <div className={styles.top}>
+          <section className={styles.brand}>
+            <h2>{site.business.name}</h2>
 
-            <p className="footer-description">
-              Premium carpet, upholstery, mattress and chemical-free steam
-              cleaning throughout{" "}
-              <strong>{site.location.city}</strong> and the surrounding areas.
+            <p>
+              Professional carpet, upholstery, mattress and chemical-free steam
+              cleaning throughout Winchester and surrounding Hampshire.
             </p>
 
-            <div className="footer-badges">
-              <span>✓ Fully Insured</span>
-              <span>✓ No Call-Out Charge</span>
-              <span>✓ Card Payments Accepted</span>
-              <span>✓ 7 Days a Week</span>
-            </div>
+            <a
+              href={site.whatsappMessage()}
+              className={styles.cta}
+            >
+              <Button>{site.cta.primary}</Button>
+            </a>
           </section>
 
-          <section className="footer-column">
-            <h4>Contact</h4>
+          <section className={styles.column}>
+            <h3>Services</h3>
 
-            <a
-              href={site.tel()}
-              className="footer-link"
-              aria-label={`Call ${site.business.name}`}
-            >
-              📞 {site.business.phone}
-            </a>
-
-            <a
-              href={site.mailto()}
-              className="footer-link"
-              aria-label={`Email ${site.business.name}`}
-            >
-              ✉ {site.business.email}
-            </a>
-
-            <p className="footer-hours">
-              Open every day • 8:00 AM – 8:00 PM
-            </p>
-
-            <div className="footer-cta">
-              <Button
-                href={site.whatsappMessage()}
-                target="_blank"
-                rel="noopener noreferrer"
-                fullWidth
-                aria-label={`Get a free quote from ${site.business.name} on WhatsApp`}
-              >
-                Get a Free WhatsApp Quote
-              </Button>
-            </div>
-          </section>
-
-          <section className="footer-column">
-            <h4>Our Services</h4>
-
-            <ul className="footer-list">
-              <li>Carpet Cleaning</li>
-              <li>Upholstery Cleaning</li>
-              <li>Mattress Cleaning</li>
-              <li>Chemical-Free Steam Cleaning</li>
+            <ul>
+              {services.map((service) => (
+                <li key={service}>{service}</li>
+              ))}
             </ul>
           </section>
 
-          <section className="footer-column">
-            <h4>Why Choose ROBIGO?</h4>
+          <section className={styles.column}>
+            <h3>Contact</h3>
 
-            <ul className="footer-list">
-              <li>Local Winchester Business</li>
-              <li>Professional Equipment</li>
-              <li>Honest Pricing</li>
-              <li>Fast WhatsApp Quotes</li>
+            <ul>
+              <li>
+                <a href={site.tel()}>{site.business.phone}</a>
+              </li>
+
+              <li>
+                <a href={site.mailto()}>{site.business.email}</a>
+              </li>
+
+              <li>
+                {site.location.city}, {site.location.county}
+              </li>
+
+              <li>Every day • 8:00 AM – 8:00 PM</li>
             </ul>
           </section>
         </div>
 
-        <div className="footer-bottom">
+        <div className={styles.bottom}>
           <p>
-            © {year} {site.business.name}. All rights reserved.
+            © {new Date().getFullYear()} {site.business.name}. All rights
+            reserved.
           </p>
 
-          <p>
-            When you feel good in your home, you feel better everywhere else.
-          </p>
+          <p>No Call-Out Charge • Card Payments Accepted</p>
         </div>
       </Container>
     </footer>
