@@ -12,7 +12,14 @@ export default function BeforeAfterSlider({
   afterImage,
   title,
 }: BeforeAfterSliderProps) {
+  console.log("BeforeAfterSlider", {
+    title,
+    beforeImage,
+    afterImage,
+  });
+
   const [position, setPosition] = useState(50);
+
   const sliderRef = useRef<HTMLDivElement>(null);
   const dragging = useRef(false);
 
@@ -21,10 +28,9 @@ export default function BeforeAfterSlider({
 
     const rect = sliderRef.current.getBoundingClientRect();
 
-    const value =
-      ((clientX - rect.left) / rect.width) * 100;
+    const value = ((clientX - rect.left) / rect.width) * 100;
 
-    setPosition(Math.min(100, Math.max(0, value)));
+    setPosition(Math.max(0, Math.min(100, value)));
   }
 
   function handlePointerDown(
@@ -39,6 +45,7 @@ export default function BeforeAfterSlider({
     e: React.PointerEvent<HTMLDivElement>
   ) {
     if (!dragging.current) return;
+
     updatePosition(e.clientX);
   }
 
@@ -46,7 +53,10 @@ export default function BeforeAfterSlider({
     e: React.PointerEvent<HTMLDivElement>
   ) {
     dragging.current = false;
-    e.currentTarget.releasePointerCapture(e.pointerId);
+
+    if (e.currentTarget.hasPointerCapture(e.pointerId)) {
+      e.currentTarget.releasePointerCapture(e.pointerId);
+    }
   }
 
   return (
@@ -56,6 +66,7 @@ export default function BeforeAfterSlider({
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
+      onPointerCancel={handlePointerUp}
       onPointerLeave={handlePointerUp}
     >
       <img
@@ -109,10 +120,9 @@ export default function BeforeAfterSlider({
         type="range"
         min={0}
         max={100}
+        step={1}
         value={position}
-        onChange={(e) =>
-          setPosition(Number(e.target.value))
-        }
+        onChange={(e) => setPosition(Number(e.target.value))}
         aria-label={`Compare before and after cleaning for ${title}`}
       />
     </div>

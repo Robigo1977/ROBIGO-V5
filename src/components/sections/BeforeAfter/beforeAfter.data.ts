@@ -1,6 +1,8 @@
 export interface BeforeAfterItem {
   id: number;
 
+  slug: string;
+
   featured: boolean;
 
   title: string;
@@ -12,6 +14,8 @@ export interface BeforeAfterItem {
   description: string;
   story: string;
 
+  completedAt: string;
+
   process: {
     inspect: boolean;
     preTreat: boolean;
@@ -19,15 +23,17 @@ export interface BeforeAfterItem {
     extraction: boolean;
   };
 
-  stains: string[];
+  stains: readonly string[];
 
   beforeImage: string;
   afterImage: string;
 }
 
-export const beforeAfterItems: BeforeAfterItem[] = [
+export const beforeAfterItems: readonly BeforeAfterItem[] = [
   {
     id: 1,
+
+    slug: "living-room-carpet-restoration",
 
     featured: true,
 
@@ -44,6 +50,8 @@ export const beforeAfterItems: BeforeAfterItem[] = [
 
     story:
       "After a full inspection, targeted pre-treatment was applied before high-temperature steam helped loosen embedded contamination. Professional extraction restored the carpet's appearance, leaving it noticeably cleaner, fresher and brighter.",
+
+    completedAt: "2026",
 
     process: {
       inspect: true,
@@ -69,6 +77,8 @@ export const beforeAfterItems: BeforeAfterItem[] = [
   {
     id: 2,
 
+    slug: "professional-upholstery-revival",
+
     featured: false,
 
     title: "Professional Upholstery Revival",
@@ -84,6 +94,8 @@ export const beforeAfterItems: BeforeAfterItem[] = [
 
     story:
       "Every fabric requires a different approach. After inspection we selected the safest cleaning method to lift dirt while protecting the material.",
+
+    completedAt: "2026",
 
     process: {
       inspect: true,
@@ -108,6 +120,8 @@ export const beforeAfterItems: BeforeAfterItem[] = [
   {
     id: 3,
 
+    slug: "bedroom-carpet-refresh",
+
     featured: false,
 
     title: "Bedroom Carpet Refresh",
@@ -123,6 +137,8 @@ export const beforeAfterItems: BeforeAfterItem[] = [
 
     story:
       "A routine maintenance clean that brought life back to the carpet while removing built-up dirt from daily use.",
+
+    completedAt: "2026",
 
     process: {
       inspect: true,
@@ -143,4 +159,4 @@ export const beforeAfterItems: BeforeAfterItem[] = [
     afterImage:
       "/images/before-after/bedroom-after.webp",
   },
-];
+] as const;

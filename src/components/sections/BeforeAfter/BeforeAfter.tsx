@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Container from "../../ui/Container/Container";
 import Button from "../../ui/Button/Button";
 
-import BeforeAfterSlider from "./BeforeAfterSlider";
+import BeforeAfterCard from "./BeforeAfterCard";
 import { beforeAfterItems } from "./beforeAfter.data";
 
 import { site } from "../../../config/site";
@@ -11,13 +11,32 @@ import { site } from "../../../config/site";
 import styles from "./BeforeAfter.module.css";
 
 const fadeUp = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.2 },
-  transition: { duration: 0.5 },
+  initial: {
+    opacity: 0,
+    y: 30,
+  },
+  whileInView: {
+    opacity: 1,
+    y: 0,
+  },
+  viewport: {
+    once: true,
+    amount: 0.2,
+  },
+  transition: {
+    duration: 0.55,
+  },
 };
 
 export default function BeforeAfter() {
+  const featuredProject =
+    beforeAfterItems.find((item) => item.featured) ??
+    beforeAfterItems[0];
+
+  const galleryItems = beforeAfterItems.filter(
+    (item) => item.id !== featuredProject.id
+  );
+
   return (
     <section
       id="before-after"
@@ -38,58 +57,82 @@ export default function BeforeAfter() {
           </h2>
 
           <p>
-            Every carpet, sofa, and mattress tells a story. Here are just a few
-            examples of the transformation our professional cleaning can
-            achieve.
+            Every carpet, sofa and mattress tells a story.
+            These are genuine cleaning transformations from
+            homes across Winchester and the surrounding
+            area.
           </p>
         </motion.header>
 
-        <div
-          className={styles.gallery}
-          role="list"
+        <motion.section
+          className={styles.featured}
+          aria-labelledby="featured-project-heading"
+          {...fadeUp}
         >
-          {beforeAfterItems.map((item) => {
-            const headingId = `before-after-${item.id}`;
+          <BeforeAfterCard item={featuredProject} />
 
-            return (
-              <article
+          <div className={styles.featuredContent}>
+            <span className={styles.category}>
+              Featured Project
+            </span>
+
+            <h3 id="featured-project-heading">
+              {featuredProject.title}
+            </h3>
+
+            <p className={styles.meta}>
+              <strong>{featuredProject.location}</strong>
+              {" • "}
+              {featuredProject.service}
+            </p>
+
+            <p>
+              {featuredProject.description}
+            </p>
+
+            <p className={styles.story}>
+              {featuredProject.story}
+            </p>
+          </div>
+        </motion.section>
+
+        {galleryItems.length > 0 && (
+          <motion.section
+            className={styles.gallery}
+            role="list"
+            {...fadeUp}
+          >
+            {galleryItems.map((item) => (
+              <div
                 key={item.id}
-                className={styles.card}
                 role="listitem"
-                aria-labelledby={headingId}
               >
-                <BeforeAfterSlider
-                  beforeImage={item.beforeImage}
-                  afterImage={item.afterImage}
-                  title={item.title}
-                />
-
-                <div className={styles.content}>
-                  <h3 id={headingId}>{item.title}</h3>
-
-                  <p>
-                    <strong>{item.location}</strong>
-                    {" • "}
-                    {item.service}
-                  </p>
-                </div>
-              </article>
-            );
-          })}
-        </div>
+                <BeforeAfterCard item={item} />
+              </div>
+            ))}
+          </motion.section>
+        )}
 
         <motion.footer
-          className={styles.footer}
+          className={styles.sectionFooter}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.5 }}
+          viewport={{
+            once: true,
+            amount: 0.2,
+          }}
+          transition={{
+            duration: 0.55,
+          }}
         >
-          <h3>Imagine what we could do in your home.</h3>
+          <h3>
+            Imagine what we could do in your home.
+          </h3>
 
           <p>
-            Send us a few photos on WhatsApp and receive a fast, free quotation
-            with no obligation.
+            Send us a few photos on WhatsApp and
+            receive a fast, free quotation with
+            absolutely no obligation.
           </p>
 
           <Button

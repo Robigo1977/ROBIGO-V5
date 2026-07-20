@@ -19,20 +19,20 @@ export default function EstimateCard({
       <div className={styles.estimateHeader}>
         <div>
           <p className={styles.estimateLabel}>
-            Estimated Price
+            Your Instant Estimate
           </p>
 
           <p className={styles.estimateSubtitle}>
-            Based on your selections.
+            Calculated instantly from your selections.
           </p>
         </div>
 
         {showBestValue && (
           <span
             className={styles.bestValueBadge}
-            aria-label="Excellent value"
+            aria-label="Best value"
           >
-            ⭐ Excellent Value
+            ⭐ Best Value
           </span>
         )}
       </div>
@@ -42,7 +42,8 @@ export default function EstimateCard({
       </h3>
 
       <p className={styles.estimateNote}>
-        Instant estimate • Final quote confirmed before work begins.
+        No obligation • No call-out charge • Final price agreed before any work
+        starts.
       </p>
 
       <div
@@ -50,11 +51,11 @@ export default function EstimateCard({
         aria-label="Why customers choose ROBIGO"
       >
         <div className={styles.trustItem}>
-          📏 Laser Measured
+          🚐 No Call-Out Charge
         </div>
 
         <div className={styles.trustItem}>
-          🚐 No Call-Out Fee
+          💬 Fast WhatsApp Quote
         </div>
 
         <div className={styles.trustItem}>
@@ -62,23 +63,23 @@ export default function EstimateCard({
         </div>
 
         <div className={styles.trustItem}>
-          💬 Same-Day WhatsApp Reply
+          📏 Laser-Measured Pricing
         </div>
       </div>
 
       {isNumeric && (
         <>
           <p className={styles.smallPrint}>
-            Final price depends on the condition of the items and any
-            optional extras you choose.
+            Your final quotation is confirmed before any cleaning begins. If
+            additional work is required, we'll explain everything first—there
+            are no surprises.
           </p>
 
           <div
             className={styles.priceGuarantee}
             role="note"
           >
-            ✅ You'll always approve the final price before any cleaning
-            begins.
+            ✅ You always approve the final price before we start any work.
           </div>
         </>
       )}

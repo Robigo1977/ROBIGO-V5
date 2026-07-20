@@ -43,20 +43,18 @@ export default function QuoteActions({
   const message = [
     "Hi ROBIGO,",
     "",
-    "I'd like a free quote.",
+    "I'd like a FREE quotation.",
     "",
-    "Service:",
-    serviceName,
+    `Service: ${serviceName}`,
+    `Approximate Area: ${area} m²`,
+    `Instant Estimate: ${estimate.formattedPrice}`,
     "",
-    "Approximate Area:",
-    `${area} m²`,
+    "Please let me know:",
+    "• Your next available appointment",
+    "• The expected drying time (if applicable)",
+    "• Whether you need any photos before providing the final quote",
     "",
-    "Estimated Price:",
-    estimate.formattedPrice,
-    "",
-    "Please let me know your next available appointment.",
-    "",
-    "Thank you.",
+    "Thank you!",
   ].join("\n");
 
   return (
@@ -65,7 +63,7 @@ export default function QuoteActions({
       aria-label="Quote actions"
     >
       <div className={styles.actionTrust}>
-        ⭐ Rated 5★ • 🚐 No Call-Out Charge • 📅 Available 7 Days a Week
+        🚐 No Call-Out Charge • ⭐ Fully Insured • 📅 Available 7 Days a Week
       </div>
 
       <Button
@@ -73,7 +71,7 @@ export default function QuoteActions({
         target="_blank"
         rel="noopener noreferrer"
         fullWidth
-        aria-label={`Request a WhatsApp quote for ${serviceName}`}
+        aria-label={`Request a free WhatsApp quote for ${serviceName}`}
       >
         📲 Get My Free WhatsApp Quote
       </Button>
@@ -84,14 +82,14 @@ export default function QuoteActions({
         rel="noopener noreferrer"
         variant="outline"
         fullWidth
-        aria-label="Ask a quick question on WhatsApp"
+        aria-label="Ask a question on WhatsApp"
       >
         💬 Ask a Quick Question
       </Button>
 
       <p className={styles.responsePromise}>
-        Usually replied to the same day. Your final price is always confirmed
-        before any work begins.
+        We usually reply the same day. Your final quotation is always confirmed
+        before any cleaning begins, so you'll never face unexpected charges.
       </p>
     </div>
   );

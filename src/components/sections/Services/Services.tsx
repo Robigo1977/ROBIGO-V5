@@ -7,6 +7,10 @@ import { services } from "./services.data";
 import styles from "./Services.module.css";
 
 export default function Services() {
+  if (services.length === 0) {
+    return null;
+  }
+
   return (
     <Section
       id="services"
