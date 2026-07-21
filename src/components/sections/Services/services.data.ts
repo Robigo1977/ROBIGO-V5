@@ -1,12 +1,15 @@
-import carpetImage from "../../../assets/images/services/carpet-cleaning.webp";
+import carpetImage from "../../../assets/optimized/carpet-cleaning.webp";
 import upholsteryImage from "../../../assets/images/services/upholstery-cleaning.png";
-import mattressImage from "../../../assets/images/services/mattress-cleaning.webp";
-import steamImage from "../../../assets/images/services/steam-cleaning.webp";
+import mattressImage from "../../../assets/optimized/mattress-cleaning.webp";
+import steamImage from "../../../assets/optimized/servicessteam-cleaning.webp.webp";
+
 
 export interface ServiceItem {
+
   id: number;
 
   title: string;
+
   description: string;
 
   image: string;
@@ -14,105 +17,187 @@ export interface ServiceItem {
   features: string[];
 
   fromPrice: string;
+
   duration: string;
 
   cta: string;
 
   popular?: boolean;
+
 }
 
+
+
+
 export const services: readonly ServiceItem[] = [
+
+
   {
+
     id: 1,
+
 
     title: "Carpet Cleaning",
 
+
     description:
-      "Deep extraction cleaning that removes embedded dirt, stains and allergens while helping carpets look and feel fresh again.",
+
+      "Professional carpet cleaning in Winchester using deep extraction methods to remove embedded dirt, stains, allergens and everyday odours. Ideal for homes, families and pet owners.",
+
 
     image: carpetImage,
 
+
     features: [
-      "Deep Extraction",
-      "Fast Drying",
-      "Pet Friendly",
-      "Free Quotations",
+
+      "Deep Dirt & Stain Removal",
+
+      "Pet & Family Friendly",
+
+      "Professional Equipment",
+
+      "Clear Upfront Pricing",
+
     ],
 
+
     fromPrice: "From £60",
+
     duration: "1–3 hours",
 
-    cta: "Get Carpet Quote",
+
+    cta: "Get Carpet Quotation",
+
   },
 
+
+
+
+
   {
+
     id: 2,
+
 
     title: "Upholstery Cleaning",
 
+
     description:
-      "Professional cleaning for sofas, armchairs and fabric furniture to restore freshness and extend their life.",
+
+      "Professional upholstery cleaning for sofas, armchairs and fabric furniture in Winchester. Restore freshness, comfort and appearance with careful professional treatment.",
+
 
     image: upholsteryImage,
 
+
     features: [
-      "All Fabrics",
+
       "Sofas & Chairs",
+
+      "Fabric Safe Cleaning",
+
       "Fresh Finish",
-      "Safe Products",
+
+      "Family Friendly",
+
     ],
 
+
     fromPrice: "From £30",
+
     duration: "30–120 mins",
 
-    cta: "Get Upholstery Quote",
+
+    cta: "Get Upholstery Quotation",
+
   },
 
+
+
+
+
   {
+
     id: 3,
+
 
     title: "Mattress Cleaning",
 
+
     description:
-      "Reduce dust mites, allergens and unwanted odours for a cleaner and healthier sleeping environment.",
+
+      "Deep mattress cleaning designed to reduce dust, allergens and unwanted odours, helping create a fresher and healthier sleeping environment.",
+
 
     image: mattressImage,
 
+
     features: [
-      "Dust Mite Removal",
-      "Odour Treatment",
-      "Allergy Friendly",
-      "Deep Sanitisation",
+
+      "Dust & Allergen Reduction",
+
+      "Odour Removal",
+
+      "Deep Cleaning",
+
+      "Fresh Sleeping Environment",
+
     ],
 
+
     fromPrice: "From £30",
+
     duration: "30–60 mins",
 
-    cta: "Get Mattress Quote",
+
+    cta: "Get Mattress Quotation",
+
   },
 
+
+
+
+
   {
+
     id: 4,
+
 
     title: "Chemical-Free Steam Cleaning",
 
+
     description:
-      "Powerful dry steam cleaning for hard floors, kitchens and bathrooms using high-temperature steam with little or no chemicals.",
+
+      "High-temperature dry steam cleaning for kitchens, bathrooms and hard floors using professional equipment with little or no chemicals for powerful cleaning results.",
+
 
     image: steamImage,
 
+
     features: [
-      "Chemical Free",
-      "Hard Floors",
-      "Bathrooms",
-      "Kitchens",
+
+      "Chemical-Free Cleaning",
+
+      "Hard Floor Cleaning",
+
+      "Kitchen & Bathroom",
+
+      "Professional Steam Equipment",
+
     ],
 
+
     fromPrice: "From £60",
+
     duration: "1–4 hours",
+
 
     cta: "Book Steam Cleaning",
 
+
     popular: true,
+
   },
+
+
 ] as const;

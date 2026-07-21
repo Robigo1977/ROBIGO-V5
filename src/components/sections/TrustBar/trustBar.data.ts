@@ -8,16 +8,16 @@ import {
 
 export const trustItems = [
   {
+    icon: ShieldCheck,
+    title: "Fully Insured",
+  },
+  {
     icon: BadgeCheck,
     title: "No Call-Out Charge",
   },
   {
     icon: CreditCard,
-    title: "Free Quotes",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Fully Insured",
+    title: "Free Quotations",
   },
   {
     icon: CalendarDays,
@@ -25,6 +25,6 @@ export const trustItems = [
   },
   {
     icon: MapPin,
-    title: "Winchester Local",
+    title: "Local Winchester Business",
   },
 ];

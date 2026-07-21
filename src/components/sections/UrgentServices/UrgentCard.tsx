@@ -1,58 +1,54 @@
-import { CheckCircle2 } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowRight, CheckCircle, Clock } from "lucide-react";
 
 import Button from "../../ui/Button/Button";
 
-import type { UrgentItem } from "./types";
-
+import type { UrgentService } from "./types";
 import styles from "./UrgentServices.module.css";
 
 interface UrgentCardProps {
-  item: UrgentItem;
+  service: UrgentService;
 }
 
-export default function UrgentCard({ item }: UrgentCardProps) {
-  const Icon = item.icon;
-
+export default function UrgentCard({ service }: UrgentCardProps) {
   return (
-    <article
+    <motion.article
       className={`${styles.card} ${
-        item.accent === "priority"
-          ? styles.priority
-          : styles.emergency
+        service.primary ? styles.primary : styles.secondary
       }`}
+      whileHover={{ y: -8, scale: 1.015 }}
+      transition={{ duration: 0.25 }}
     >
-      <div className={styles.icon}>
-        <Icon size={34} />
+      <div className={styles.badge}>
+        <Clock size={15} />
+        <span>{service.badge}</span>
       </div>
 
-      <span className={styles.price}>
-        {item.price}
-      </span>
+      <h3>{service.title}</h3>
 
-      <h3>{item.title}</h3>
+      <p>{service.description}</p>
 
-      <h4>{item.subtitle}</h4>
-
-      <p className={styles.description}>
-        {item.description}
-      </p>
-
-      <ul className={styles.list}>
-        {item.highlights.map((highlight) => (
-          <li key={highlight}>
-            <CheckCircle2 size={18} />
-            <span>{highlight}</span>
+      <ul className={styles.features}>
+        {service.features.map((feature) => (
+          <li key={feature}>
+            <CheckCircle size={18} strokeWidth={2.4} />
+            <span>{feature}</span>
           </li>
         ))}
       </ul>
 
-      <Button
-        href={item.buttonLink}
-        variant="primary"
-        size="md"
-      >
-        {item.buttonText}
-      </Button>
-    </article>
+      <div className={styles.footer}>
+        {service.available ? (
+          <Button href={service.href} fullWidth size="lg">
+            {service.button}
+            <ArrowRight size={18} />
+          </Button>
+        ) : (
+          <button className={styles.disabledButton} disabled>
+            {service.button}
+          </button>
+        )}
+      </div>
+    </motion.article>
   );
 }

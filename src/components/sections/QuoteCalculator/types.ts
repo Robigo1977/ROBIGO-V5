@@ -7,45 +7,33 @@ export type ServiceType =
   | "rug"
   | "steam";
 
+
 export interface ServiceCard {
   id: ServiceType;
   title: string;
   description: string;
 }
 
-/**
- * Legacy estimate type.
- * Kept for compatibility with the current UI.
- */
+
+/* ------------------------------------------------------------------ */
+/* Current UI Compatibility                                           */
+/* ------------------------------------------------------------------ */
+
 export interface EstimateResult {
   price: number;
   formattedPrice: string;
 }
 
-/**
- * Legacy type.
- * Can be removed once the UI fully uses QuoteResult.
- */
-export interface QuoteEstimate {
-  service: ServiceType;
-  price: number;
-}
 
 /* ------------------------------------------------------------------ */
-/* Universal Quote Engine                                              */
+/* Quote Item Structure                                               */
 /* ------------------------------------------------------------------ */
 
 export interface QuoteItem {
   service: ServiceType;
 
-  /**
-   * Carpet / Steam Cleaning
-   */
   area?: number;
 
-  /**
-   * Upholstery
-   */
   item?:
     | "armchair"
     | "diningChair"
@@ -54,18 +42,12 @@ export interface QuoteItem {
     | "sofa4"
     | "cornerSofa";
 
-  /**
-   * Mattress
-   */
   mattressSize?:
     | "single"
     | "double"
     | "king"
     | "superKing";
 
-  /**
-   * Rug
-   */
   rugSize?:
     | "small"
     | "medium"
@@ -75,35 +57,71 @@ export interface QuoteItem {
   quantity?: number;
 }
 
+
+/* ------------------------------------------------------------------ */
+/* Extras                                                             */
+/* ------------------------------------------------------------------ */
+
 export interface QuoteExtras {
   petOdour?: boolean;
   heavyStains?: boolean;
   priority24?: boolean;
 }
 
+
+/* ------------------------------------------------------------------ */
+/* Quote Request                                                      */
+/* ------------------------------------------------------------------ */
+
 export interface QuoteRequest {
   items: QuoteItem[];
+
   extras?: QuoteExtras;
 }
 
+
+/* ------------------------------------------------------------------ */
+/* Detailed Breakdown                                                 */
+/* ------------------------------------------------------------------ */
+
 export interface QuoteBreakdownItem {
+
   service: ServiceType;
+
   description: string;
+
   quantity: number;
+
   price: number;
+
 }
 
+
+/* ------------------------------------------------------------------ */
+/* Premium Quote Result                                               */
+/* ------------------------------------------------------------------ */
+
 export interface QuoteResult {
+
   total: number;
+
   formattedTotal: string;
+
 
   breakdown: QuoteBreakdownItem[];
 
+
   extras: {
+
     petOdour: number;
+
     heavyStains: number;
+
     priority24: number;
+
   };
 
+
   minimumChargeApplied: boolean;
+
 }

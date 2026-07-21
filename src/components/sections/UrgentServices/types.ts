@@ -1,14 +1,18 @@
-import type { LucideIcon } from "lucide-react";
-
-export interface UrgentItem {
+export interface UrgentService {
   id: number;
+
   title: string;
-  subtitle: string;
-  price: string;
+  badge: string;
+
   description: string;
-  icon: LucideIcon;
-  highlights: string[];
-  buttonText: string;
-  buttonLink: string;
-  accent: "priority" | "emergency";
+
+  features: string[];
+
+  button: string;
+
+  href: string;
+
+  available: boolean;
+
+  primary: boolean;
 }

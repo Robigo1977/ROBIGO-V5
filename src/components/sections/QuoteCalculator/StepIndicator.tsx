@@ -1,5 +1,3 @@
-// src/components/sections/QuoteCalculator/StepIndicator.tsx
-
 import styles from "./QuoteCalculator.module.css";
 
 type Step = {
@@ -18,11 +16,11 @@ const steps: Step[] = [
   },
   {
     id: 2,
-    label: "Your Details",
+    label: "Add Details",
   },
   {
     id: 3,
-    label: "Get Estimate",
+    label: "Your Estimate",
   },
 ];
 
@@ -36,7 +34,10 @@ export default function StepIndicator({
         const active = step.id === currentStep;
 
         return (
-          <div key={step.id} className={styles.stepWrapper}>
+          <div
+            key={step.id}
+            className={styles.stepWrapper}
+          >
             <div
               className={[
                 styles.stepCircle,

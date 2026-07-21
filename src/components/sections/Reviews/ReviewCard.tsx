@@ -1,4 +1,4 @@
-import { CheckCircle, MapPin, Star } from "lucide-react";
+import { MapPin, Star } from "lucide-react";
 
 import type { Review } from "../../../data/reviews.data";
 
@@ -34,16 +34,6 @@ export default function ReviewCard({
             />
           ))}
         </div>
-
-        {review.verified && (
-          <span className={styles.verified}>
-            <CheckCircle
-              size={14}
-              aria-hidden="true"
-            />
-            Verified Customer
-          </span>
-        )}
       </header>
 
       <p className={styles.review}>

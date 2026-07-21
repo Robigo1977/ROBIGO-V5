@@ -1,24 +1,27 @@
 import type { SEOConfig } from "./seoTypes";
 
 export const defaultSEO: SEOConfig = {
-  title: "ROBIGO | Premium Carpet Cleaning in Winchester",
+  title:
+    "Professional Carpet & Upholstery Cleaning in Winchester | ROBIGO",
 
   description:
-    "Professional carpet, upholstery, mattress and chemical-free steam cleaning in Winchester. Honest pricing, premium equipment and outstanding results.",
+    "Professional carpet cleaning, upholstery cleaning, mattress cleaning and chemical-free steam cleaning in Winchester and surrounding areas. Free quotations, honest pricing and outstanding results.",
 
   canonical: "https://robigo.co.uk",
 
-  ogTitle: "ROBIGO | Premium Carpet Cleaning Winchester",
+  ogTitle:
+    "Professional Carpet & Upholstery Cleaning in Winchester | ROBIGO",
 
   ogDescription:
-    "Professional carpet, upholstery, mattress and steam cleaning across Winchester and surrounding areas.",
+    "Premium carpet, upholstery, mattress and chemical-free steam cleaning in Winchester. Free quotations, honest pricing and outstanding results.",
 
   ogImage: "https://robigo.co.uk/og-image.jpg",
 
-  twitterTitle: "ROBIGO",
+  twitterTitle:
+    "Professional Carpet & Upholstery Cleaning | ROBIGO",
 
   twitterDescription:
-    "Premium Carpet Cleaning in Winchester",
+    "Premium carpet, upholstery, mattress and chemical-free steam cleaning in Winchester.",
 
   twitterImage: "https://robigo.co.uk/og-image.jpg",
 };

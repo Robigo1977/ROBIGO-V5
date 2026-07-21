@@ -7,9 +7,9 @@ export interface FAQItem {
 export const faqs: FAQItem[] = [
   {
     id: 1,
-    question: "How long will my carpets take to dry?",
+    question: "How long does it take for carpets to dry after cleaning?",
     answer:
-      "Most carpets are dry within 4–8 hours, depending on the carpet type, room temperature and ventilation. We'll always advise you before we leave.",
+      "Most carpets are dry within 3–5 hours, depending on the carpet type, room temperature and ventilation. We'll always advise you on the expected drying time before we leave.",
   },
   {
     id: 2,
@@ -39,6 +39,6 @@ export const faqs: FAQItem[] = [
     id: 6,
     question: "How do I get a quote?",
     answer:
-      "The quickest way is to send us a WhatsApp message with a few photos and a short description of what you'd like cleaned. Robert will review everything and provide a free quotation.",
+      "The quickest way is to send us a WhatsApp message with a few photos and a short description of what you'd like cleaned. We'll review everything and provide a free, no-obligation quotation.",
   },
 ];

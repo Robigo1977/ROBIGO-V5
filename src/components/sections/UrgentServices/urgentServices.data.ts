@@ -1,42 +1,56 @@
-import { Clock3, TriangleAlert } from "lucide-react";
+import type { UrgentService } from "./types";
 
-import type { UrgentItem } from "./types";
-
-export const urgentServices: UrgentItem[] = [
+export const urgentServices: UrgentService[] = [
   {
     id: 1,
-    title: "Priority Booking",
-    subtitle: "Need us as soon as possible?",
-    price: "+£30",
+
+    title: "Priority 24",
+
+    badge: "AVAILABLE NOW",
+
     description:
-      "Jump to the front of our schedule whenever availability allows. Ideal if you're expecting guests, preparing for an event, or simply need your carpets cleaned quickly.",
-    icon: Clock3,
-    accent: "priority",
-    highlights: [
-      "Priority scheduling",
-      "Usually within 24 hours",
-      "Perfect before guests arrive",
-      "Fast WhatsApp confirmation",
+      "Need your carpets or upholstery cleaned within the next 24 hours? We'll always do our best to fit you in and provide a fast professional service.",
+
+    features: [
+      "Priority booking",
+      "24-hour response",
+      "WhatsApp confirmation",
+      "£30 Priority Upgrade",
     ],
-    buttonText: "Book Priority",
-    buttonLink: "https://wa.me/447777449931",
+
+    button: "Book Priority 24",
+
+    href:
+      "https://wa.me/447446695979?text=Hi%20ROBIGO!%20I'd%20like%20to%20book%20a%20Priority%2024%20clean.",
+
+    available: true,
+
+    primary: true,
   },
+
   {
     id: 2,
-    title: "Emergency Spot Cleaning",
-    subtitle: "Accidents happen.",
-    price: "From £50",
+
+    title: "Emergency Cleaning",
+
+    badge: "COMING SOON",
+
     description:
-      "Whether it's red wine, coffee, pet accidents or unexpected spills, we'll do our best to remove the stain before it becomes permanent.",
-    icon: TriangleAlert,
-    accent: "emergency",
-    highlights: [
+      "Unexpected spills and accidents happen. Our emergency stain response service will be launching soon.",
+
+    features: [
+      "Coffee spills",
+      "Wine stains",
       "Pet accidents",
-      "Coffee & tea spills",
-      "Red wine stains",
-      "Emergency call-out",
+      "Rapid response",
     ],
-    buttonText: "Emergency WhatsApp",
-    buttonLink: "https://wa.me/447777449931",
+
+    button: "Join Waiting List",
+
+    href: "#",
+
+    available: false,
+
+    primary: false,
   },
 ];

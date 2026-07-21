@@ -4,26 +4,13 @@ export const services: ServiceCard[] = [
   {
     id: "carpet",
     title: "Carpet Cleaning",
-    description: "Professional deep carpet cleaning for every home.",
-  },
-  {
-    id: "upholstery",
-    title: "Upholstery Cleaning",
-    description: "Sofas, armchairs and fabric furniture.",
-  },
-  {
-    id: "mattress",
-    title: "Mattress Cleaning",
-    description: "Fresh, hygienic mattress cleaning.",
-  },
-  {
-    id: "rug",
-    title: "Rug Cleaning",
-    description: "Professional cleaning for all rug sizes.",
+    description:
+      "Deep extraction cleaning to remove embedded dirt, everyday stains and refresh your carpets.",
   },
   {
     id: "steam",
-    title: "Steam Cleaning",
-    description: "Chemical-free hard floor steam cleaning.",
+    title: "Chemical-Free Steam Cleaning",
+    description:
+      "High-temperature steam cleaning for hard floors, kitchens and bathrooms with little or no chemicals.",
   },
 ];

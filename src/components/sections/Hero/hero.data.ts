@@ -1,13 +1,13 @@
 export const heroData = {
-  badge: "TRUSTED CARPET & UPHOLSTERY CLEANING IN WINCHESTER",
+  badge: "WINCHESTER'S PREMIUM CLEANING SPECIALISTS",
 
-  title: "A Cleaner, Healthier Home Starts Here.",
+  title: "Professional Carpet & Upholstery Cleaning in Winchester",
 
   subtitle:
-    "Professional carpet, upholstery, mattress and chemical-free steam cleaning for homes across Winchester. Honest pricing, premium equipment and exceptional attention to detail—delivering results you'll see, feel and enjoy.",
+    "Premium carpet, upholstery, mattress and chemical-free steam cleaning with honest pricing, fast response and exceptional results. Trusted by homeowners across Winchester.",
 
   primaryButton: {
-    label: "Get My Free Quote",
+    label: "Get My Free WhatsApp Quote",
     href: "#quote",
   },
 
@@ -25,6 +25,6 @@ export const heroData = {
 
   stats: {
     rating: "★★★★★ 5.0",
-    reviews: "Trusted by 250+ Happy Customers",
+    reviews: "250+ Happy Customers",
   },
 };
