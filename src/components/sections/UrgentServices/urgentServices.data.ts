@@ -33,10 +33,10 @@ export const urgentServices: UrgentService[] = [
 
     title: "Emergency Cleaning",
 
-    badge: "COMING SOON",
+    badge: "AVAILABLE NOW",
 
     description:
-      "Unexpected spills and accidents happen. Our emergency stain response service will be launching soon.",
+      "Unexpected spills and accidents happen. Our emergency stain response service provides fast help when you need it most. Send us a photo on WhatsApp and we'll advise on the quickest solution.",
 
     features: [
       "Coffee spills",
@@ -45,11 +45,12 @@ export const urgentServices: UrgentService[] = [
       "Rapid response",
     ],
 
-    button: "Join Waiting List",
+    button: "Request Emergency Help",
 
-    href: "#",
+    href:
+      "https://wa.me/447446695979?text=Hi%20ROBIGO!%20I%20need%20emergency%20cleaning%20help.",
 
-    available: false,
+    available: true,
 
     primary: false,
   },
