@@ -1,4 +1,5 @@
 import type { UrgentService } from "./types";
+import { site } from "../../../config/site";
 
 export const urgentServices: UrgentService[] = [
   {
@@ -20,8 +21,9 @@ export const urgentServices: UrgentService[] = [
 
     button: "Book Priority 24",
 
-    href:
-      "https://wa.me/447446695979?text=Hi%20ROBIGO!%20I'd%20like%20to%20book%20a%20Priority%2024%20clean.",
+    href: site.whatsappMessage(
+      "Hi ROBIGO! I'd like to book a Priority 24 clean."
+    ),
 
     available: true,
 
@@ -47,8 +49,9 @@ export const urgentServices: UrgentService[] = [
 
     button: "Request Emergency Help",
 
-    href:
-      "https://wa.me/447446695979?text=Hi%20ROBIGO!%20I%20need%20emergency%20cleaning%20help.",
+    href: site.whatsappMessage(
+      "Hi ROBIGO! I need emergency cleaning help."
+    ),
 
     available: true,
 
