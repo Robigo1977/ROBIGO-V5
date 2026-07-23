@@ -25,3 +25,5 @@ export const defaultSEO: SEOConfig = {
 
   twitterImage: "https://robigo.co.uk/og-image.jpg",
 };
+
+export default defaultSEO;
