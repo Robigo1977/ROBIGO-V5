@@ -12,23 +12,13 @@ export default function Hero() {
       className={styles.hero}
       aria-labelledby="hero-title"
     >
-      {/* Decorative background */}
-      <div
-        className={styles.background}
-        aria-hidden="true"
-      >
-        <div className={styles.glowPrimary} />
-        <div className={styles.glowSecondary} />
-        <div className={styles.gridPattern} />
+      <div className={styles.imageWrapper}>
+        <HeroImage />
       </div>
 
       <Container>
-        <div className={styles.grid}>
+        <div className={styles.contentLayout}>
           <HeroContent />
-
-          <div className={styles.imageWrapper}>
-            <HeroImage />
-          </div>
         </div>
       </Container>
 

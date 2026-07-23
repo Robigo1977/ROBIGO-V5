@@ -1,10 +1,10 @@
 export const heroData = {
-  badge: "WINCHESTER'S PREMIUM CLEANING SPECIALISTS",
+  badge: "WINCHESTER • FULLY INSURED",
 
-  title: "Professional Carpet & Upholstery Cleaning in Winchester",
+  title: "Premium Carpet Cleaning in Winchester",
 
   subtitle:
-    "Premium carpet, upholstery, mattress and chemical-free steam cleaning with honest pricing, fast response and exceptional results. Trusted by homeowners across Winchester.",
+    "Carpets, upholstery and chemical-free steam cleaning — professionally cleaned, beautifully finished.",
 
   primaryButton: {
     label: "Get My Free WhatsApp Quote",

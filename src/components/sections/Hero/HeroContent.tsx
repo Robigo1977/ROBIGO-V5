@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 
 import HeroButtons from "./HeroButtons";
-import HeroTrust from "./HeroTrust";
 import { heroData } from "./hero.data";
 
 import { fadeUp } from "../../../motion/variants";
@@ -33,13 +32,7 @@ export default function HeroContent() {
         {heroData.subtitle}
       </p>
 
-      <div
-        className={styles.actions}
-        role="group"
-        aria-label="Primary actions"
-      >
-        <HeroButtons />
-      </div>
+      <HeroButtons />
 
       <div
         className={styles.rating}
@@ -56,8 +49,6 @@ export default function HeroContent() {
           {heroData.stats.reviews}
         </span>
       </div>
-
-      <HeroTrust />
     </motion.div>
   );
 }

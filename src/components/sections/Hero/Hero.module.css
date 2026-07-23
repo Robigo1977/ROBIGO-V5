@@ -1,410 +1,187 @@
-/* =========================================================
-   HERO SECTION
-   Mobile First
-========================================================= */
-
 .hero {
   position: relative;
-  overflow: hidden;
   isolation: isolate;
-
-  padding-block: clamp(6rem, 10vw, 9rem);
-  background:
-    radial-gradient(circle at top left,
-      rgba(26,115,232,.12),
-      transparent 40%),
-    radial-gradient(circle at bottom right,
-      rgba(0,170,255,.08),
-      transparent 45%),
-    linear-gradient(
-      180deg,
-      var(--color-surface, #ffffff) 0%,
-      var(--color-background, #f7f9fc) 100%
-    );
-}
-
-.background {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
   overflow: hidden;
+  display: flex;
+  min-height: calc(100svh - 5rem);
+  align-items: center;
+  padding-block: clamp(3rem, 8vh, 5.5rem);
+  background: #071426;
+}
+
+.hero::after {
+  position: absolute;
   z-index: -1;
-}
-
-/* =========================================================
-   BACKGROUND GLOWS
-========================================================= */
-
-.glowPrimary,
-.glowSecondary {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(90px);
-  opacity: .45;
-}
-
-.glowPrimary {
-  width: 420px;
-  height: 420px;
-
-  top: -120px;
-  left: -120px;
-
-  background: rgba(37, 99, 235, .25);
-}
-
-.glowSecondary {
-  width: 360px;
-  height: 360px;
-
-  right: -100px;
-  bottom: -120px;
-
-  background: rgba(14,165,233,.18);
-}
-
-/* =========================================================
-   GRID PATTERN
-========================================================= */
-
-.gridPattern {
-  position: absolute;
   inset: 0;
-
-  opacity: .05;
-
-  background-image:
-    linear-gradient(
-      rgba(0,0,0,.15) 1px,
-      transparent 1px
-    ),
+  content: "";
+  background:
     linear-gradient(
       90deg,
-      rgba(0,0,0,.15) 1px,
-      transparent 1px
+      rgba(3, 12, 28, .96) 0%,
+      rgba(3, 12, 28, .82) 47%,
+      rgba(3, 12, 28, .22) 78%,
+      rgba(3, 12, 28, .08) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(3, 12, 28, .72) 0%,
+      transparent 45%
     );
-
-  background-size: 40px 40px;
 }
 
-/* =========================================================
-   MAIN GRID
-========================================================= */
+.imageWrapper {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+}
 
-.grid {
-  display: grid;
-  gap: 3rem;
+.heroImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 64% center;
+}
+
+.contentLayout {
+  display: flex;
   align-items: center;
 }
 
 .content {
   display: flex;
+  width: min(100%, 36rem);
   flex-direction: column;
   align-items: flex-start;
+  color: #fff;
 }
-
-.imageWrapper {
-  position: relative;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* =========================================================
-   BADGE
-========================================================= */
 
 .badge {
   display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-
-  margin-bottom: 1.25rem;
-  padding: .55rem 1rem;
-
+  margin-bottom: 1rem;
+  padding: .55rem .9rem;
+  border: 1px solid rgba(125, 211, 252, .35);
   border-radius: 999px;
-
-  background: rgba(37,99,235,.08);
-  color: var(--color-primary, #2563eb);
-
-  font-size: .82rem;
-  font-weight: 700;
+  background: rgba(15, 64, 116, .62);
+  box-shadow: 0 8px 30px rgba(2, 8, 23, .2);
+  color: #dff5ff;
+  font-size: clamp(.76rem, 2.8vw, .86rem);
+  font-weight: 800;
   letter-spacing: .08em;
+  line-height: 1.25;
   text-transform: uppercase;
-
   backdrop-filter: blur(10px);
-}/* =========================================================
-   TITLE
-========================================================= */
+}
 
 .title {
   margin: 0;
-
-  font-size: clamp(2.5rem, 7vw, 4.8rem);
+  color: #fff;
+  font-size: clamp(2.65rem, 11.5vw, 4.65rem);
   font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.04em;
-
-  color: var(--color-heading, #111827);
-
+  letter-spacing: -.045em;
+  line-height: .98;
   text-wrap: balance;
+  text-shadow: 0 5px 25px rgba(0, 0, 0, .45);
 }
 
 .title + .subtitle {
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
 }
-
-/* =========================================================
-   SUBTITLE
-========================================================= */
 
 .subtitle {
-  max-width: 42rem;
-
+  max-width: 34rem;
   margin: 0;
-
-  color: var(--color-text, #4b5563);
-
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  line-height: 1.75;
-
+  color: rgba(255, 255, 255, .9);
+  font-size: clamp(1rem, 4.2vw, 1.18rem);
+  font-weight: 500;
+  line-height: 1.55;
   text-wrap: pretty;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, .55);
 }
-
-/* =========================================================
-   ACTIONS
-========================================================= */
 
 .actions {
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: stretch;
-
-  gap: 1rem;
-
-  width: 100%;
-  margin-top: 2rem;
+  gap: .75rem;
+  margin-top: 1.6rem;
 }
 
-/* =========================================================
-   RATING
-========================================================= */
-
-.rating {
-  display: inline-flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: .65rem;
-
-  margin-top: 2rem;
-}
-
-.stars {
-  font-size: 1.2rem;
-  line-height: 1;
-
-  color: #fbbf24;
-
-  letter-spacing: .15rem;
-}
-
-.ratingText {
-  color: var(--color-text, #4b5563);
-
-  font-size: .95rem;
-  font-weight: 600;
-}
-
-/* =========================================================
-   TRUST
-========================================================= */
-
-.trust {
-  margin-top: 2.5rem;
-
-  width: 100%;
-}
-
-/* =========================================================
-   SPACING IMPROVEMENTS
-========================================================= */
-
-.content > *:first-child {
-  margin-top: 0;
-}
-
-.content > *:last-child {
-  margin-bottom: 0;
-}
-
-.content > * + * {
-  transition: opacity .25s ease;
-}/* =========================================================
-   HERO IMAGE
-========================================================= */
-
-.heroImage {
-  display: block;
-
-  width: 100%;
-  max-width: 34rem;
-  height: auto;
-
-  object-fit: cover;
-
-  border-radius: 2rem;
-
-  box-shadow:
-    0 20px 60px rgba(15, 23, 42, 0.12),
-    0 8px 24px rgba(15, 23, 42, 0.08);
-
-  transition:
-    transform .45s ease,
-    box-shadow .45s ease;
-}
-
-.imageWrapper:hover .heroImage {
-  transform: translateY(-6px) scale(1.015);
-
-  box-shadow:
-    0 32px 80px rgba(15, 23, 42, 0.18),
-    0 12px 32px rgba(15, 23, 42, 0.10);
-}
-
-/* =========================================================
-   SCROLL INDICATOR
-========================================================= */
-
-.scrollIndicator {
-  position: absolute;
-
-  left: 50%;
-  bottom: 2rem;
-
-  transform: translateX(-50%);
-
+.actions > :nth-child(2) {
   display: none;
 }
 
-.scrollIndicator span {
-  display: block;
-
-  width: 2px;
-  height: 2.75rem;
-
-  border-radius: 999px;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(37, 99, 235, 0),
-      rgba(37, 99, 235, .9),
-      rgba(37, 99, 235, 0)
-    );
-
-  animation: heroScroll 2s ease-in-out infinite;
+.rating {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .65rem;
+  margin-top: 1.1rem;
 }
 
-/* =========================================================
-   TABLET
-========================================================= */
+.stars {
+  color: #fbbf24;
+  font-size: 1.05rem;
+  letter-spacing: .1rem;
+  line-height: 1;
+}
 
-@media (min-width: 768px) {
+.ratingText {
+  color: rgba(255, 255, 255, .92);
+  font-size: .9rem;
+  font-weight: 700;
+}
 
-  .hero {
-    padding-block: clamp(7rem, 10vw, 10rem);
-  }
+.trustList {
+  display: none;
+}
 
+.scrollIndicator {
+  display: none;
+}
+
+@media (min-width: 480px) {
   .actions {
+    width: auto;
     flex-direction: row;
     flex-wrap: wrap;
+  }
 
-    width: auto;
+  .actions > :nth-child(2) {
+    display: inline-flex;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    min-height: calc(100svh - 5.5rem);
   }
 
   .heroImage {
-    max-width: 38rem;
-  }
-
-  .scrollIndicator {
-    display: block;
-  }
-}
-
-/* =========================================================
-   DESKTOP
-========================================================= */
-
-@media (min-width: 1024px) {
-
-  .grid {
-    grid-template-columns:
-      minmax(0, 1.05fr)
-      minmax(0, .95fr);
-
-    gap: 5rem;
+    object-position: center;
   }
 
   .content {
-    max-width: 42rem;
-  }
-
-  .heroImage {
-    max-width: 100%;
+    width: min(58%, 39rem);
   }
 }
 
-/* =========================================================
-   LARGE DESKTOP
-========================================================= */
-
-@media (min-width: 1280px) {
-
-  .hero {
-    min-height: 92vh;
-
-    display: flex;
-    align-items: center;
-  }
-
-  .grid {
-    gap: 6rem;
+@media (min-width: 1024px) {
+  .hero::after {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(3, 12, 28, .94) 0%,
+        rgba(3, 12, 28, .76) 42%,
+        rgba(3, 12, 28, .1) 73%
+      ),
+      linear-gradient(0deg, rgba(3, 12, 28, .45), transparent 42%);
   }
 }
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-
-  .heroImage,
-  .imageWrapper:hover .heroImage,
-  .scrollIndicator span {
+  .heroImage {
     transition: none;
-    animation: none;
-    transform: none;
-  }
-}
-
-/* =========================================================
-   KEYFRAMES
-========================================================= */
-
-@keyframes heroScroll {
-
-  0% {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-    transform: translateY(8px);
   }
 }
