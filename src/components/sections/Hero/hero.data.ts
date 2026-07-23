@@ -1,5 +1,5 @@
 export const heroData = {
-  badge: "WINCHESTER • FULLY INSURED",
+  badge: "WINCHESTER AREA",
 
   title: "Premium Carpet Cleaning in Winchester",
 
@@ -25,6 +25,6 @@ export const heroData = {
 
   stats: {
     rating: "★★★★★ 5.0",
-    reviews: "250+ Happy Customers",
+    reviews: "100+ Happy Customers",
   },
 };
