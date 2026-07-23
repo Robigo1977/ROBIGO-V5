@@ -63,7 +63,7 @@
 }
 
 .secondary {
-  opacity: .92;
+  border-color: rgba(239,68,68,.45);
 }
 
 .badge {
@@ -88,8 +88,8 @@
 }
 
 .secondary .badge {
-  background: rgba(245,158,11,.16);
-  color: #fde68a;
+  background: rgba(239,68,68,.18);
+  color: #fca5a5;
 }
 
 .card h3 {
@@ -123,6 +123,10 @@
 .features svg {
   color: #22c55e;
   flex-shrink: 0;
+}
+
+.secondary .features svg {
+  color: #ef4444;
 }
 
 .disabledButton {

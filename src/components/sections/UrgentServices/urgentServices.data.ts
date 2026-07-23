@@ -44,7 +44,7 @@ export const urgentServices: UrgentService[] = [
       "Coffee spills",
       "Wine stains",
       "Pet accidents",
-      "Rapid response",
+      "Emergency Call-Out £50",
     ],
 
     button: "Request Emergency Help",
