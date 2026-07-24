@@ -1,6 +1,7 @@
 import LocalTrust from "../components/sections/LocalTrust/LocalTrust";
 import BeforeAfter from "../components/sections/BeforeAfter";
 import WhyChoose from "../components/sections/WhyChoose";
+import Reviews from "../components/sections/Reviews";
 import Pricing from "../components/sections/Pricing/Pricing";
 import ServiceAreas from "../components/sections/ServiceAreas";
 import FAQ from "../components/sections/FAQ";
@@ -43,6 +44,7 @@ export default function MoreInformation() {
       <LocalTrust />
       <BeforeAfter />
       <WhyChoose />
+      <Reviews />
       <Pricing />
       <ServiceAreas />
       <FAQ />
