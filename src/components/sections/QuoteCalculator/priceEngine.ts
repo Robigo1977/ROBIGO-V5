@@ -1,276 +1,132 @@
-// src/components/sections/QuoteCalculator/priceEngine.ts
-
 import type {
   EstimateResult,
   QuoteBreakdownItem,
+  QuoteExtras,
   QuoteItem,
   QuoteResult,
 } from "./types";
-
+import { SERVICE_PRICES } from "./servicePrices";
 import {
   calculateCarpetPrice,
-  calculateSteamPrice,
-  calculateUpholsteryItem,
   calculateMattressItem,
   calculateRugItem,
+  calculateSteamPrice,
+  calculateUpholsteryItem,
 } from "./quoteEngine";
 
-
-/* -------------------------------------------------------------------------- */
-/* FORMATTING                                                                 */
-/* -------------------------------------------------------------------------- */
-
-export function formatPrice(
-  price: number
-): string {
-
-  return new Intl.NumberFormat(
-    "en-GB",
-    {
-      style: "currency",
-      currency: "GBP",
-      maximumFractionDigits: 0,
-    }
-  ).format(price);
-
+export function formatPrice(price: number): string {
+  return new Intl.NumberFormat("en-GB", {
+    style: "currency",
+    currency: "GBP",
+    maximumFractionDigits: 0,
+  }).format(price);
 }
 
-
-
-/* -------------------------------------------------------------------------- */
-/* DESCRIPTION                                                                */
-/* -------------------------------------------------------------------------- */
-
-function getDescription(
-  item: QuoteItem
-): string {
-
-  switch (item.service) {
-
-    case "carpet":
-      return `Carpet Cleaning ${item.area ?? 0}m²`;
-
-
-    case "steam":
-      return `Chemical-Free Steam Cleaning ${item.area ?? 0}m²`;
-
-
-    case "upholstery":
-
-      switch (item.item) {
-
-        case "armchair":
-          return "Armchair Cleaning";
-
-        case "diningChair":
-          return "Dining Chair Cleaning";
-
-        case "sofa2":
-          return "2 Seater Sofa Cleaning";
-
-        case "sofa3":
-          return "3 Seater Sofa Cleaning";
-
-        case "sofa4":
-          return "4 Seater Sofa Cleaning";
-
-        case "cornerSofa":
-          return "Corner Sofa Cleaning";
-
-        default:
-          return "Upholstery Cleaning";
-      }
-
-
-    case "mattress":
-      return `${item.mattressSize ?? "Mattress"} Mattress Cleaning`;
-
-
-    case "rug":
-      return `${item.rugSize ?? "Rug"} Cleaning`;
-
-
-    default:
-      return "Cleaning Service";
-
+function getDescription(item: QuoteItem): string {
+  if (item.service === "carpet") return `Carpet Cleaning ${item.area ?? 0}m²`;
+  if (item.service === "steam") {
+    return `Chemical-Free Steam Cleaning ${item.area ?? 0}m²`;
   }
-
+  if (item.service === "upholstery") {
+    const labels = {
+      armchair: "Armchair Cleaning",
+      diningChair: "Dining Chair Cleaning",
+      sofa2: "2 Seater Sofa Cleaning",
+      sofa3: "3 Seater Sofa Cleaning",
+      sofa4: "4 Seater Sofa Cleaning",
+      cornerSofa: "Corner Sofa Cleaning",
+    };
+    return item.item ? labels[item.item] : "Upholstery Cleaning";
+  }
+  if (item.service === "mattress") {
+    const labels = {
+      single: "Single Mattress Cleaning",
+      double: "Double Mattress Cleaning",
+      king: "King Mattress Cleaning",
+      superKing: "Super King Mattress Cleaning",
+    };
+    return item.mattressSize
+      ? labels[item.mattressSize]
+      : "Mattress Cleaning";
+  }
+  const labels = {
+    small: "Small Rug Cleaning",
+    medium: "Medium Rug Cleaning",
+    large: "Large Rug Cleaning",
+    extraLarge: "Extra Large Rug Cleaning",
+  };
+  return item.rugSize ? labels[item.rugSize] : "Rug Cleaning";
 }
 
-
-
-/* -------------------------------------------------------------------------- */
-/* PREMIUM QUOTE RESULT                                                       */
-/* -------------------------------------------------------------------------- */
+const EMPTY_EXTRAS: QuoteExtras = {
+  petOdour: false,
+  heavyStains: false,
+  priority24: false,
+  emergency: false,
+};
 
 export function calculateQuoteResult(
-  items: QuoteItem[]
+  items: QuoteItem[],
+  selectedExtras: QuoteExtras = EMPTY_EXTRAS,
 ): QuoteResult {
-
   let total = 0;
-
-
+  let minimumChargeApplied = false;
   const breakdown: QuoteBreakdownItem[] = [];
 
-
-
   items.forEach((item) => {
-
     let price = 0;
 
-
-
-    switch (item.service) {
-
-
-      case "carpet":
-
-        if (item.area) {
-          price =
-            calculateCarpetPrice(
-              item.area
-            ).price;
-        }
-
-        break;
-
-
-
-      case "steam":
-
-        if (item.area) {
-          price =
-            calculateSteamPrice(
-              item.area
-            ).price;
-        }
-
-        break;
-
-
-
-      case "upholstery":
-
-        if (item.item) {
-          price =
-            calculateUpholsteryItem(
-              item.item,
-              item.quantity ?? 1
-            );
-        }
-
-        break;
-
-
-
-      case "mattress":
-
-        if (item.mattressSize) {
-          price =
-            calculateMattressItem(
-              item.mattressSize,
-              item.quantity ?? 1
-            );
-        }
-
-        break;
-
-
-
-      case "rug":
-
-        if (item.rugSize) {
-          price =
-            calculateRugItem(
-              item.rugSize,
-              item.quantity ?? 1
-            );
-        }
-
-        break;
-
+    if (item.service === "carpet" && item.area) {
+      const result = calculateCarpetPrice(item.area);
+      price = result.price;
+      minimumChargeApplied ||= result.minimumChargeApplied;
+    } else if (item.service === "steam" && item.area) {
+      const result = calculateSteamPrice(item.area);
+      price = result.price;
+      minimumChargeApplied ||= result.minimumChargeApplied;
+    } else if (item.service === "upholstery" && item.item) {
+      price = calculateUpholsteryItem(item.item, item.quantity ?? 1);
+    } else if (item.service === "mattress" && item.mattressSize) {
+      price = calculateMattressItem(item.mattressSize, item.quantity ?? 1);
+    } else if (item.service === "rug" && item.rugSize) {
+      price = calculateRugItem(item.rugSize, item.quantity ?? 1);
     }
-
-
 
     if (price > 0) {
-
       total += price;
-
-
       breakdown.push({
-
         service: item.service,
-
-        description:
-          getDescription(item),
-
-        quantity:
-          item.quantity ?? 1,
-
+        description: getDescription(item),
+        quantity: item.quantity ?? 1,
         price,
-
       });
-
     }
-
   });
 
-
+  const extras = {
+    petOdour: selectedExtras.petOdour ? SERVICE_PRICES.extras.petOdour : 0,
+    heavyStains: selectedExtras.heavyStains
+      ? SERVICE_PRICES.extras.heavyStains
+      : 0,
+    priority24: selectedExtras.priority24
+      ? SERVICE_PRICES.extras.priority24
+      : 0,
+    emergency: selectedExtras.emergency
+      ? SERVICE_PRICES.extras.emergency
+      : 0,
+  };
+  total += Object.values(extras).reduce((sum, price) => sum + price, 0);
 
   return {
-
     total,
-
-    formattedTotal:
-      formatPrice(total),
-
-
+    formattedTotal: formatPrice(total),
     breakdown,
-
-
-    extras: {
-
-      petOdour: 0,
-
-      heavyStains: 0,
-
-      priority24: 0,
-
-    },
-
-
-    minimumChargeApplied:
-      false,
-
+    extras,
+    minimumChargeApplied,
   };
-
 }
 
-
-
-/* -------------------------------------------------------------------------- */
-/* CURRENT UI COMPATIBILITY                                                   */
-/* -------------------------------------------------------------------------- */
-
-export function calculateQuoteItems(
-  items: QuoteItem[]
-): EstimateResult {
-
-  const result =
-    calculateQuoteResult(items);
-
-
-
-  return {
-
-    price:
-      result.total,
-
-
-    formattedPrice:
-      result.formattedTotal,
-
-  };
-
+export function calculateQuoteItems(items: QuoteItem[]): EstimateResult {
+  const result = calculateQuoteResult(items);
+  return { price: result.total, formattedPrice: result.formattedTotal };
 }

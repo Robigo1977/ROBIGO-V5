@@ -125,6 +125,15 @@ export default function QuoteActions({
 
     .join("\n");
 
+  const extras = [
+    estimate.extras.petOdour > 0 ? "✓ Pet Odour Treatment" : "",
+    estimate.extras.heavyStains > 0 ? "✓ Heavy Stain Treatment" : "",
+    estimate.extras.priority24 > 0 ? "✓ Priority 24" : "",
+    estimate.extras.emergency > 0 ? "✓ Emergency Spot Cleaning" : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
+
 
 
 
@@ -151,7 +160,7 @@ export default function QuoteActions({
     "",
 
 
-    services ||
+    [services, extras].filter(Boolean).join("\n") ||
 
       "I would like advice on the best option.",
 

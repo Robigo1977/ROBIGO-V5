@@ -1,773 +1,650 @@
-/* =========================================================
-   ROBIGO V5
-   PREMIUM QUOTE CALCULATOR
-   Mobile First
-========================================================= */
-
 .section {
-  position: relative;
-  padding-block: clamp(4rem, 8vw, 7rem);
-
-  background:
-    linear-gradient(
-      180deg,
-      var(--color-background, #f7f9fc),
-      var(--color-surface, #ffffff)
-    );
+  padding-block: clamp(3.5rem, 8vw, 7rem);
+  background: linear-gradient(180deg, #f4f7fb 0%, #fff 100%);
 }
-
-
-/* =========================================================
-   MAIN CONTAINER
-========================================================= */
 
 .calculator {
-  position: relative;
-
+  --navy: #07172d;
+  --navy-light: #0d2545;
+  --blue: #46a6ff;
+  --gold: #f5bd4f;
   display: flex;
   flex-direction: column;
-
-  gap: 2rem;
-
-  padding: clamp(1.25rem, 4vw, 3rem);
-
-  border-radius: var(--radius-xl, 1.5rem);
-
-  background: rgba(255,255,255,.94);
-
-  border: 1px solid rgba(15,23,42,.06);
-
-  box-shadow:
-    0 24px 70px rgba(15,23,42,.08),
-    0 8px 24px rgba(15,23,42,.05);
-
-  backdrop-filter: blur(18px);
+  gap: 1.5rem;
+  padding: clamp(1rem, 4vw, 2.75rem);
+  overflow: hidden;
+  border: 1px solid rgba(106, 177, 255, 0.25);
+  border-radius: 1.5rem;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(45, 136, 229, 0.2), transparent 35%),
+    linear-gradient(150deg, var(--navy-light), var(--navy) 60%);
+  box-shadow: 0 28px 70px rgba(7, 23, 45, 0.24);
+  color: #fff;
 }
 
+.progressHeader {
+  text-align: center;
+}
 
-/* =========================================================
-   PROGRESS
-========================================================= */
+.progressBadge {
+  display: inline-flex;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid rgba(91, 177, 255, 0.38);
+  border-radius: 999px;
+  background: rgba(53, 147, 238, 0.13);
+  color: #9bd3ff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
 
-.progress {
+.progressTitle {
+  margin: 0.9rem 0 0;
+  color: #fff;
+  font-size: clamp(1.8rem, 7vw, 3rem);
+  line-height: 1.12;
+}
+
+.progressSubtitle {
+  max-width: 48rem;
+  margin: 0.75rem auto 0;
+  color: #c7d8ec;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.65;
+}
+
+.stepIndicator {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  gap: .75rem;
-
-  margin-bottom: 1rem;
+  justify-content: center;
+  margin-top: 1.4rem;
 }
 
+.stepWrapper {
+  position: relative;
+  display: flex;
+  flex: 1;
+  max-width: 9rem;
+  flex-direction: column;
+  align-items: center;
+}
 
-/* =========================================================
-   SERVICE GRID
-========================================================= */
-
-.serviceGrid {
+.stepCircle {
+  z-index: 1;
   display: grid;
+  width: 2.3rem;
+  height: 2.3rem;
+  place-items: center;
+  border: 2px solid #526985;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #aec2d9;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
 
+.stepActive,
+.stepCompleted {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: #06172c;
+}
+
+.stepLabel {
+  margin-top: 0.45rem;
+  color: #b9cce1;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.stepLine {
+  position: absolute;
+  top: 1.08rem;
+  left: calc(50% + 1.15rem);
+  width: calc(100% - 2.3rem);
+  height: 2px;
+  background: #526985;
+}
+
+.serviceGrid,
+.optionGrid,
+.extrasGrid {
+  display: grid;
   grid-template-columns: 1fr;
+  gap: 0.8rem;
+}
 
-  gap: 1rem;
-
-  margin: 1.5rem 0 2rem;
+.serviceCard,
+.optionCard,
+.extraCard {
+  width: 100%;
+  border: 1px solid rgba(151, 190, 229, 0.22);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
 
 .serviceCard {
   display: flex;
+  min-height: 11rem;
   flex-direction: column;
-
   align-items: flex-start;
-
-  width: 100%;
-
-  padding: 1.25rem;
-
-  border-radius: 1rem;
-
-  border: 1px solid rgba(15,23,42,.08);
-
-  background: #fff;
-
-  cursor: pointer;
-
-  transition:
-    transform .22s ease,
-    box-shadow .22s ease,
-    border-color .22s ease,
-    background .22s ease;
+  padding: 1.1rem;
+  text-align: left;
 }
 
-.serviceCard:hover {
-  transform: translateY(-3px);
-
-  border-color: rgba(37,99,235,.22);
-
-  box-shadow:
-    0 16px 40px rgba(15,23,42,.08);
+.serviceCard:hover,
+.optionCard:hover,
+.extraCard:hover {
+  border-color: rgba(70, 166, 255, 0.7);
+  background: rgba(70, 166, 255, 0.12);
+  transform: translateY(-2px);
 }
 
 .active {
-  border-color: var(--color-primary,#2563eb);
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(37,99,235,.08),
-      rgba(14,165,233,.05)
-    );
-
-  box-shadow:
-    0 18px 42px rgba(37,99,235,.12);
+  border-color: var(--blue);
+  background: linear-gradient(145deg, rgba(70, 166, 255, 0.24), rgba(70, 166, 255, 0.1));
+  box-shadow: inset 0 0 0 1px rgba(70, 166, 255, 0.35);
 }
 
 .serviceCardTop {
   display: flex;
-
-  align-items: center;
-  justify-content: space-between;
-
   width: 100%;
-
-  gap: .75rem;
-
-  margin-bottom: .8rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
 }
 
 .serviceCard h3 {
   margin: 0;
-
+  color: #fff;
   font-size: 1.05rem;
-
-  font-weight: 700;
-
-  color: var(--color-heading,#111827);
+  line-height: 1.25;
 }
 
 .serviceCard p {
-  margin: 0;
-
-  line-height: 1.6;
-
-  color: var(--color-text,#4b5563);
+  margin: 0.55rem 0 0;
+  color: #bcd0e6;
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.5;
 }
 
-.selectedIcon {
-  color: var(--color-primary,#2563eb);
-
-  flex-shrink: 0;
+.selectedIcon,
+.selectLabel {
+  color: #77beff;
 }
 
 .selectLabel {
-  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: auto;
+  padding-top: 0.65rem;
+  font-size: 0.77rem;
+  font-weight: 800;
+}
 
-  font-size: .82rem;
+.servicePrice,
+.featuredServicePrice {
+  display: block;
+  margin-top: 0.75rem;
+  color: #fff;
+  font-size: 1.45rem;
+  line-height: 1;
+}
 
-  font-weight: 700;
-
-  color: var(--color-primary,#2563eb);
-}/* =========================================================
-   SERVICE OPTIONS
-========================================================= */
+.featuredServicePrice {
+  color: var(--gold);
+  font-size: 1.7rem;
+}
 
 .inputGroup {
   display: flex;
   flex-direction: column;
-
   gap: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(151, 190, 229, 0.18);
+  border-radius: 1.1rem;
+  background: rgba(0, 8, 23, 0.22);
 }
 
 .sliderHeader {
   display: flex;
-
-  justify-content: space-between;
-  align-items: flex-start;
-
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.85rem;
 }
 
 .sliderLabel {
-  display: block;
-
   margin: 0;
-
-  font-size: .95rem;
-  font-weight: 700;
-
-  color: var(--color-heading,#111827);
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 800;
 }
 
 .sliderDescription {
-  margin: .35rem 0 0;
-
-  font-size: .88rem;
-
+  margin: 0.35rem 0 0;
+  color: #bcd0e6;
+  font-size: 0.95rem;
+  font-weight: 600;
   line-height: 1.5;
-
-  color: var(--color-text,#6b7280);
 }
 
 .areaBadge {
-  display: flex;
+  display: inline-flex;
+  width: fit-content;
   align-items: baseline;
-
-  gap: .25rem;
-
-  padding: .65rem .95rem;
-
-  border-radius: 999px;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(37,99,235,.10),
-      rgba(14,165,233,.06)
-    );
-
-  border:
-    1px solid rgba(37,99,235,.14);
-
-  white-space: nowrap;
+  gap: 0.3rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(70, 166, 255, 0.45);
+  border-radius: 0.9rem;
+  background: rgba(70, 166, 255, 0.16);
 }
 
 .areaNumber {
-  font-size: 1.5rem;
-
-  font-weight: 800;
-
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 900;
   line-height: 1;
-
-  color: var(--color-heading,#111827);
 }
 
 .areaUnit {
-  font-size: .9rem;
-
-  font-weight: 700;
-
-  color: var(--color-primary,#2563eb);
+  color: #86c7ff;
+  font-size: 1.1rem;
+  font-weight: 800;
 }
 
 .slider {
-  appearance: none;
-
   width: 100%;
-
-  height: 10px;
-
+  height: 11px;
+  appearance: none;
   border-radius: 999px;
-
-  background:
-    linear-gradient(
-      90deg,
-      var(--color-primary,#2563eb) 0%,
-      var(--color-primary,#2563eb) var(--progress),
-      rgba(226,232,240,1) var(--progress),
-      rgba(226,232,240,1) 100%
-    );
-
-  outline: none;
-
+  background: linear-gradient(
+    90deg,
+    var(--blue) 0%,
+    var(--blue) var(--progress),
+    #405570 var(--progress),
+    #405570 100%
+  );
   cursor: pointer;
 }
 
 .slider::-webkit-slider-thumb {
+  width: 29px;
+  height: 29px;
   appearance: none;
-
-  width: 24px;
-  height: 24px;
-
-  border-radius: 50%;
-
   border: 4px solid #fff;
-
-  background: var(--color-primary,#2563eb);
-
-  box-shadow:
-    0 8px 20px rgba(37,99,235,.35);
-
-  cursor: pointer;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.35);
 }
 
 .slider::-moz-range-thumb {
-  width: 24px;
-  height: 24px;
-
+  width: 23px;
+  height: 23px;
   border: 4px solid #fff;
-
   border-radius: 50%;
-
-  background: var(--color-primary,#2563eb);
-
-  box-shadow:
-    0 8px 20px rgba(37,99,235,.35);
-
-  cursor: pointer;
+  background: var(--blue);
 }
 
 .sliderMarkers {
   display: flex;
-
   justify-content: space-between;
-
-  font-size: .8rem;
-
-  color: #94a3b8;
-}
-
-.sliderHints {
-  display: grid;
-
-  grid-template-columns: repeat(3,1fr);
-
-  gap: .5rem;
-}
-
-.sliderHints span {
-  text-align: center;
-
-  padding: .55rem;
-
-  border-radius: .75rem;
-
-  font-size: .8rem;
-
-  font-weight: 700;
-
-  background: rgba(241,245,249,.9);
-
-  transition: .25s ease;
-}
-
-.activeHint {
-  color: #fff !important;
-
-  background:
-    linear-gradient(
-      145deg,
-      var(--color-primary,#2563eb),
-      #1d4ed8
-    ) !important;
-
-  box-shadow:
-    0 10px 24px rgba(37,99,235,.20);
+  color: #d7e7f8;
+  font-size: 1.05rem;
+  font-weight: 800;
 }
 
 .rateBanner {
   display: flex;
   flex-direction: column;
-
-  gap: .3rem;
-
-  margin-top: .25rem;
-
-  padding: 1rem 1.15rem;
-
-  border-radius: 1rem;
-
-  background:
-    rgba(37,99,235,.06);
-
-  border:
-    1px solid rgba(37,99,235,.12);
+  gap: 0.25rem;
+  padding: 0.9rem;
+  border: 1px solid rgba(70, 166, 255, 0.25);
+  border-radius: 0.85rem;
+  background: rgba(70, 166, 255, 0.08);
 }
 
 .rateBanner strong {
-  font-size: .95rem;
-
-  color: var(--color-heading,#111827);
+  color: #fff;
 }
 
 .rateBanner span {
-  font-size: .85rem;
-
+  color: #bdd2e8;
+  font-size: 0.88rem;
+  font-weight: 600;
   line-height: 1.5;
+}
 
-  color: var(--color-text,#4b5563);
-}/* =========================================================
-   ESTIMATE CARD
-========================================================= */
+.optionCard {
+  display: grid;
+  min-height: 7.4rem;
+  padding: 1rem;
+  text-align: left;
+}
+
+.optionName {
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.optionDetail {
+  margin-top: 0.25rem;
+  color: #b8cee5;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.optionPrice {
+  align-self: end;
+  margin-top: 0.55rem;
+  color: #85c8ff;
+  font-size: 1.55rem;
+}
+
+.quantityRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.3rem;
+}
+
+.quantityLabel {
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.quantityControl {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.quantityButton {
+  display: grid;
+  width: 3.4rem;
+  height: 3.4rem;
+  place-items: center;
+  border: 1px solid rgba(111, 190, 255, 0.55);
+  border-radius: 0.85rem;
+  background: rgba(70, 166, 255, 0.16);
+  color: #fff;
+  font-size: 2.1rem;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.quantityButton:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.quantityNumber {
+  min-width: 2.4rem;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.extraCard {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 6.3rem;
+  padding: 0.9rem;
+  text-align: left;
+}
+
+.extraCheck {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border: 1px solid rgba(91, 177, 255, 0.5);
+  border-radius: 50%;
+  color: #8bcaff;
+  font-size: 1.55rem;
+  font-weight: 900;
+}
+
+.extraCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.extraCopy strong {
+  color: #fff;
+  font-size: 0.98rem;
+}
+
+.extraCopy small {
+  color: #b9cee4;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.extraPrice {
+  color: #87c9ff;
+  font-size: 1.55rem;
+  white-space: nowrap;
+}
+
+.featuredExtra .extraPrice {
+  color: var(--gold);
+  font-size: 1.8rem;
+}
 
 .estimateCard {
-  padding: clamp(1.25rem, 4vw, 2rem);
-
-  border-radius: var(--radius-xl, 1.5rem);
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(37,99,235,.08),
-      rgba(14,165,233,.04)
-    );
-
-  border: 1px solid rgba(37,99,235,.14);
-
-  box-shadow:
-    0 18px 45px rgba(37,99,235,.10);
+  padding: 1.1rem;
+  border: 1px solid rgba(112, 188, 255, 0.35);
+  border-radius: 1.2rem;
+  background: linear-gradient(145deg, rgba(30, 91, 153, 0.34), rgba(0, 8, 22, 0.42));
 }
 
 .estimateHeader {
   display: flex;
-
   align-items: flex-start;
   justify-content: space-between;
-
-  gap: 1rem;
-
-  margin-bottom: 1.25rem;
+  gap: 0.75rem;
 }
 
 .estimateLabel {
   margin: 0;
-
-  font-size: .85rem;
-
-  font-weight: 700;
-
-  letter-spacing: .08em;
-
+  color: #8ecbff;
+  font-size: 0.79rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+}
 
-  color: var(--color-primary,#2563eb);
+.estimateSubtitle,
+.estimateNote {
+  color: #c1d5e9;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.55;
 }
 
 .estimateSubtitle {
-  margin: .45rem 0 0;
-
-  font-size: .95rem;
-
-  line-height: 1.5;
-
-  color: var(--color-text,#4b5563);
+  margin: 0.35rem 0 0;
 }
 
 .bestValueBadge {
-  flex-shrink: 0;
-
-  padding: .45rem .85rem;
-
+  padding: 0.4rem 0.7rem;
   border-radius: 999px;
-
-  background:
-    rgba(37,99,235,.12);
-
-  color:
-    var(--color-primary,#2563eb);
-
-  font-size: .75rem;
-
-  font-weight: 800;
+  background: rgba(245, 189, 79, 0.16);
+  color: #ffd276;
+  font-size: 0.75rem;
+  font-weight: 900;
 }
 
-.estimatePrice {
-  margin: .5rem 0;
-
-  font-size: clamp(2.5rem,8vw,3.8rem);
-
-  line-height: 1;
-
-  letter-spacing: -.04em;
-
-  font-weight: 800;
-
-  color: var(--color-heading,#111827);
-}
-
-.estimateNote {
-  margin: 0;
-
-  line-height: 1.6;
-
-  color: var(--color-text,#4b5563);
-
-  font-size: .92rem;
-}
-
-
-/* =========================================================
-   TRUST PANEL
-========================================================= */
-
-.trustPanel {
+.breakdown {
   display: grid;
-
-  gap: .75rem;
-
-  margin-top: 1.5rem;
-}
-
-.trustItem {
-  display: flex;
-
-  align-items: center;
-
-  gap: .6rem;
-
-  padding: .9rem 1rem;
-
-  border-radius: 1rem;
-
-  background: rgba(255,255,255,.72);
-
-  border: 1px solid rgba(15,23,42,.06);
-
-  font-size: .9rem;
-
-  font-weight: 600;
-
-  color: var(--color-text,#374151);
-}
-
-.smallPrint {
-  margin-top: 1.35rem;
-
-  font-size: .82rem;
-
-  line-height: 1.7;
-
-  color: var(--color-text,#6b7280);
-}
-
-.priceGuarantee {
+  gap: 0.55rem;
   margin-top: 1rem;
+}
 
-  padding: 1rem 1.15rem;
-
-  border-radius: 1rem;
-
-  background:
-    rgba(16,185,129,.08);
-
-  border:
-    1px solid rgba(16,185,129,.18);
-
-  color: #047857;
-
-  font-size: .9rem;
-
+.breakdownItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(176, 208, 238, 0.15);
+  color: #e4f0fb;
+  font-size: 0.9rem;
   font-weight: 700;
 }
 
+.breakdownItem div {
+  display: flex;
+  flex-direction: column;
+}
 
-/* =========================================================
-   ACTIONS
-========================================================= */
+.breakdownItem small {
+  margin-top: 0.2rem;
+  color: #a9bfd6;
+}
+
+.breakdownItem strong {
+  color: #fff;
+  font-size: 1.15rem;
+}
+
+.totalBlock {
+  padding-block: 1rem;
+}
+
+.totalLabel {
+  margin: 0;
+  color: #bcd2e8;
+  font-weight: 700;
+}
+
+.estimatePrice {
+  margin: 0.35rem 0 0;
+  color: #fff;
+  font-size: clamp(2.8rem, 11vw, 4.2rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.trustPanel {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.trustItem {
+  padding: 0.75rem;
+  border: 1px solid rgba(167, 202, 235, 0.16);
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: #d8e8f7;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.estimateNote {
+  margin: 1rem 0 0;
+}
 
 .actions {
   display: flex;
   flex-direction: column;
-
-  gap: 1rem;
-
-  margin-top: .5rem;
+  gap: 0.85rem;
 }
 
 .actionTrust {
-  text-align: center;
-
-  padding: .9rem 1rem;
-
-  border-radius: 1rem;
-
-  background:
-    rgba(37,99,235,.05);
-
-  border:
-    1px solid rgba(37,99,235,.10);
-
-  font-size: .88rem;
-
+  padding: 0.75rem;
+  border-radius: 0.8rem;
+  background: rgba(70, 166, 255, 0.08);
+  color: #d5e6f6;
+  font-size: 0.8rem;
   font-weight: 700;
-
-  line-height: 1.6;
-
-  color: var(--color-heading,#111827);
+  line-height: 1.55;
+  text-align: center;
 }
 
 .responsePromise {
   margin: 0;
-
+  color: #b9cde1;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.5;
   text-align: center;
-
-  font-size: .85rem;
-
-  line-height: 1.6;
-
-  color: var(--color-text,#6b7280);
-}/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media (min-width:768px){
-
-  .serviceGrid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .trustPanel{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .actions{
-    flex-direction:row;
-    flex-wrap:wrap;
-    align-items:flex-start;
-  }
-
-  .actionTrust{
-    width:100%;
-  }
-
-  .responsePromise{
-    width:100%;
-  }
-
-  .sliderHeader{
-    align-items:center;
-  }
-
 }
-
-@media (min-width:1024px){
-
-  .calculator{
-    padding:3rem;
-  }
-
-  .serviceGrid{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .estimateCard{
-    padding:2.25rem;
-  }
-
-}
-
-
-/* =========================================================
-   ACCESSIBILITY
-========================================================= */
 
 .serviceCard:focus-visible,
-.slider:focus-visible{
-  outline:3px solid rgba(37,99,235,.35);
-  outline-offset:3px;
+.optionCard:focus-visible,
+.extraCard:focus-visible,
+.quantityButton:focus-visible,
+.slider:focus-visible {
+  outline: 3px solid #8dcbff;
+  outline-offset: 3px;
 }
 
-button:focus-visible{
-  outline-offset:3px;
+@media (min-width: 600px) {
+  .serviceGrid,
+  .optionGrid,
+  .extrasGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sliderHeader {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .trustPanel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
-
-@media (prefers-reduced-motion:reduce){
-
-  *,
-  *::before,
-  *::after{
-    animation:none !important;
-    transition:none !important;
-    scroll-behavior:auto !important;
+@media (min-width: 960px) {
+  .serviceGrid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
-  .calculator{
-    backdrop-filter:none;
+  .optionGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-
 }
 
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width:380px){
-
-  .estimatePrice{
-    font-size:2.15rem;
+@media (max-width: 380px) {
+  .calculator {
+    padding: 0.8rem;
   }
 
-  .areaBadge{
-    padding:.55rem .8rem;
+  .extraCard {
+    grid-template-columns: auto 1fr;
   }
 
-  .sliderHints{
-    grid-template-columns:1fr;
+  .extraPrice {
+    grid-column: 2;
   }
 
-  .sliderHeader{
-    flex-direction:column;
-    align-items:flex-start;
+  .stepLabel {
+    font-size: 0.62rem;
   }
-
 }
 
-
-/* =========================================================
-   END OF FILE
-========================================================= *//* =========================================================
-   ROBIGO V5 MOBILE CONVERSION REFINEMENTS
-========================================================= */
-
-@media (max-width:767px){
-
-  .calculator{
-    gap:1.5rem;
-    padding:1rem;
-    border-radius:1.25rem;
+@media (prefers-reduced-motion: reduce) {
+  .serviceCard,
+  .optionCard,
+  .extraCard {
+    transition: none;
   }
-
-
-  .serviceGrid{
-    gap:.85rem;
-    margin:1rem 0 1.5rem;
-  }
-
-
-  .serviceCard{
-    padding:1.1rem;
-  }
-
-
-  .estimateCard{
-    padding:1.15rem;
-    border-radius:1.25rem;
-  }
-
-
-  .estimateHeader{
-    margin-bottom:1rem;
-  }
-
-
-  .estimatePrice{
-    font-size:2.8rem;
-  }
-
-
-  .trustPanel{
-    margin-top:1.15rem;
-    gap:.6rem;
-  }
-
-
-  .trustItem{
-    padding:.8rem .9rem;
-  }
-
-
-  .actions{
-    gap:.85rem;
-  }
-
-
-  .actionTrust{
-    padding:.75rem .85rem;
-  }
-
 }

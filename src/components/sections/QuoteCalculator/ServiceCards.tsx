@@ -12,6 +12,7 @@ import type {
 import {
   services,
 } from "./quote.data";
+import { SERVICE_PRICES } from "./servicePrices";
 
 import styles from "./QuoteCalculator.module.css";
 
@@ -32,6 +33,14 @@ export default function ServiceCards({
   selected,
   onSelect,
 }: ServiceCardsProps) {
+
+  const priceLabels: Record<ServiceType, string> = {
+    carpet: `from £${SERVICE_PRICES.carpet.minimumCharge}`,
+    steam: `from £${SERVICE_PRICES.steam.minimumCharge}`,
+    upholstery: `from £${SERVICE_PRICES.upholstery.diningChair}`,
+    mattress: `from £${SERVICE_PRICES.mattress.single}`,
+    rug: `from £${SERVICE_PRICES.rugs.small}`,
+  };
 
 
   return (
@@ -114,6 +123,16 @@ export default function ServiceCards({
             <p>
               {service.description}
             </p>
+
+            <strong
+              className={
+                service.id === "steam"
+                  ? styles.featuredServicePrice
+                  : styles.servicePrice
+              }
+            >
+              {priceLabels[service.id]}
+            </strong>
 
 
 

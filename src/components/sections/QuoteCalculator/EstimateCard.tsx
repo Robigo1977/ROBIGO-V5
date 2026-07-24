@@ -202,6 +202,36 @@ export default function EstimateCard({
 
       )}
 
+      {isDetailed &&
+        Object.values(estimate.extras).some((price) => price > 0) && (
+          <div className={styles.breakdown}>
+            {estimate.extras.petOdour > 0 && (
+              <div className={styles.breakdownItem}>
+                <span>✓ Pet Odour Treatment</span>
+                <strong>£{estimate.extras.petOdour}</strong>
+              </div>
+            )}
+            {estimate.extras.heavyStains > 0 && (
+              <div className={styles.breakdownItem}>
+                <span>✓ Heavy Stain Treatment</span>
+                <strong>£{estimate.extras.heavyStains}</strong>
+              </div>
+            )}
+            {estimate.extras.priority24 > 0 && (
+              <div className={styles.breakdownItem}>
+                <span>✓ Priority 24</span>
+                <strong>£{estimate.extras.priority24}</strong>
+              </div>
+            )}
+            {estimate.extras.emergency > 0 && (
+              <div className={styles.breakdownItem}>
+                <span>✓ Emergency Spot Cleaning</span>
+                <strong>£{estimate.extras.emergency}</strong>
+              </div>
+            )}
+          </div>
+        )}
+
 
 
 
