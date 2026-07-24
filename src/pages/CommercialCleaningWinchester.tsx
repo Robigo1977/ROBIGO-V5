@@ -1,12 +1,12 @@
 import {
-  BedDouble,
   Building2,
   CheckCircle2,
+  Hotel,
   KeyRound,
   MoonStar,
-  Sparkles,
   Utensils,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import Container from "../components/ui/Container";
 import Button from "../components/ui/Button";
@@ -16,31 +16,66 @@ import { site } from "../config/site";
 
 import styles from "./CommercialCleaningWinchester.module.css";
 
-const sectors = [
+const audiences = [
   {
-    icon: Utensils,
-    title: "Restaurants & Cafés",
-    text: "Carpets, dining chairs, banquettes and customer-facing areas.",
-  },
-  {
-    icon: Sparkles,
-    title: "Chemical-Free Steam",
-    text: "Professional dry-steam cleaning for suitable hard floors and surfaces.",
-  },
-  {
+    number: "01",
+    path: "/business/offices",
     icon: Building2,
-    title: "Offices",
-    text: "Carpets, meeting-room chairs, reception seating and hard floors.",
+    title: "Offices & Office Buildings",
+    label: "Workplaces and managed office sites",
+    image: "/images/commercial/commercial-office-hero.webp",
+    alt: "Professional commercial carpet cleaning in a modern office building",
+    text: "Keep receptions, meeting rooms and shared workspaces looking professional with flexible appointments that minimise disruption.",
+    services: [
+      "Office carpets and high-traffic areas",
+      "Meeting-room chairs and reception seating",
+      "Suitable hard floors and communal spaces",
+    ],
   },
   {
-    icon: BedDouble,
-    title: "Airbnb & B&B",
-    text: "Fast guest-change refreshes and scheduled deep-clean plans.",
+    number: "02",
+    path: "/business/hospitality",
+    icon: Utensils,
+    title: "Bars, Restaurants & Hospitality",
+    label: "Customer-facing venues",
+    image: "/images/commercial/commercial-restaurant-booths.webp",
+    alt: "Premium upholstered restaurant booth seating",
+    text: "Professional care for the carpets and upholstered seating your guests see, touch and judge from the moment they arrive.",
+    services: [
+      "Dining chairs, booths and banquette seating",
+      "Carpets, entrances and customer areas",
+      "Evening and out-of-hours appointments",
+    ],
   },
   {
+    number: "03",
+    path: "/business/accommodation",
+    icon: Hotel,
+    title: "Airbnb, Hotels & Booking.com Properties",
+    label: "Guest accommodation",
+    image: "/images/commercial/commercial-airbnb.webp",
+    alt: "Clean premium Airbnb and hotel accommodation",
+    text: "Guest-ready carpet, upholstery and mattress cleaning for better first impressions, comfortable stays and consistently high standards.",
+    services: [
+      "Carpets, rugs and upholstered furniture",
+      "Mattresses and bedroom seating",
+      "Scheduled deep cleans between busy periods",
+    ],
+  },
+  {
+    number: "04",
+    path: "/business/rental-properties",
     icon: KeyRound,
-    title: "Estate Agencies",
-    text: "Presentation-ready carpet and upholstery cleaning between tenancies.",
+    title: "Rental & Tenancy Properties",
+    label: "Landlords, tenants and estate agencies",
+    image: "/images/commercial/commercial-airbnb.webp",
+    alt: "Presentation-ready rental property interior",
+    text: "Presentation-ready cleaning after move-out or before move-in, helping rental properties feel fresh, cared for and ready to occupy.",
+    services: [
+      "End-of-tenancy carpets and upholstery",
+      "Move-in and move-out deep-clean support",
+      "Chemical-free dry steam for suitable sealed tile, hard floors and parquet after inspection",
+    ],
   },
 ];
 
@@ -66,7 +101,7 @@ export default function CommercialCleaningWinchester() {
         config={{
           title: "Commercial Cleaning Winchester | ROBIGO",
           description:
-            "Commercial carpet and upholstery cleaning plus chemical-free dry steam for suitable hard floors in Winchester restaurants, offices and Airbnb properties.",
+            "Commercial cleaning for offices, office buildings, hospitality venues, hotels, Airbnb and rental properties in Winchester. Carpet, upholstery and suitable hard-floor care.",
           canonical: "https://robigo.co.uk/commercial-cleaning-winchester",
           ogTitle: "Commercial Cleaning Winchester | ROBIGO",
           ogDescription:
@@ -117,7 +152,7 @@ export default function CommercialCleaningWinchester() {
               <a href="#business-rates">View Business Rates</a>
             </div>
             <p className={styles.heroMeta}>
-              Flexible appointments · Fixed quotations · Available 7 days a week
+              Out-of-hours cleaning available · Fixed quotations · 7 days a week
             </p>
           </div>
         </Container>
@@ -126,44 +161,48 @@ export default function CommercialCleaningWinchester() {
       <section className={styles.section}>
         <Container>
           <header className={styles.sectionHeader}>
-            <p>WHO WE HELP</p>
-            <h2>Immaculate spaces your customers will notice</h2>
+            <p>CHOOSE YOUR BUSINESS TYPE</p>
+            <h2>Professional cleaning designed around your property</h2>
+            <span>
+              Select the section that best matches your premises and see the
+              services most relevant to you.
+            </span>
           </header>
 
-          <div className={styles.showcase}>
-            <article className={styles.showcaseCard}>
-              <img
-                src="/images/commercial/commercial-restaurant-booths.webp"
-                alt="Elegant restaurant with premium upholstered booth seating"
-                loading="lazy"
-              />
-              <div>
-                <span>Restaurants & hospitality</span>
-                <h3>Beautiful seating. Better first impressions.</h3>
-              </div>
-            </article>
-            <article className={styles.showcaseCard}>
-              <img
-                src="/images/commercial/commercial-airbnb.webp"
-                alt="Premium clean Airbnb and boutique B&B interior"
-                loading="lazy"
-              />
-              <div>
-                <span>Airbnb, B&B & property</span>
-                <h3>Guest-ready rooms with a fresh, refined finish.</h3>
-              </div>
-            </article>
-          </div>
-
-          <div className={styles.sectorGrid}>
-            {sectors.map((sector) => {
-              const Icon = sector.icon;
+          <div className={styles.audienceGrid}>
+            {audiences.map((audience) => {
+              const Icon = audience.icon;
               return (
-                <article className={styles.sectorCard} key={sector.title}>
-                  <Icon aria-hidden="true" />
-                  <div>
-                    <h3>{sector.title}</h3>
-                    <p>{sector.text}</p>
+                <article className={styles.audienceCard} key={audience.number}>
+                  <div className={styles.audienceVisual}>
+                    <img
+                      src={audience.image}
+                      alt={audience.alt}
+                      loading="lazy"
+                    />
+                    <strong>{audience.number}</strong>
+                  </div>
+                  <div className={styles.audienceBody}>
+                    <div className={styles.audienceHeading}>
+                      <Icon aria-hidden="true" />
+                      <div>
+                        <span>{audience.label}</span>
+                        <h3>{audience.title}</h3>
+                      </div>
+                    </div>
+                    <p>{audience.text}</p>
+                    <ul>
+                      {audience.services.map((service) => (
+                        <li key={service}>
+                          <CheckCircle2 aria-hidden="true" />
+                          {service}
+                        </li>
+                      ))}
+                    </ul>
+                    <Link className={styles.audienceLink} to={audience.path}>
+                      View services for this sector
+                      <span aria-hidden="true">→</span>
+                    </Link>
                   </div>
                 </article>
               );
