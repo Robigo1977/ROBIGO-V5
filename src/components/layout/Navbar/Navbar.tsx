@@ -21,10 +21,10 @@ export default function Navbar() {
             className="navbar-nav"
             aria-label="Primary navigation"
           >
-            <a href="#services">Services</a>
-            <a href="#quote">Quote</a>
-            <a href="#reviews">Reviews</a>
-            <a href="#contact">Contact</a>
+            <a href="/#services">Services</a>
+            <a href="/#quote">Quote</a>
+            <a href="/#reviews">Reviews</a>
+            <a href="/#contact">Contact</a>
           </nav>
 
           <Button
