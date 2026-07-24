@@ -6,7 +6,6 @@ import {
   MoonStar,
   Utensils,
 } from "lucide-react";
-import { Link } from "react-router-dom";
 
 import Container from "../components/ui/Container";
 import Button from "../components/ui/Button";
@@ -199,10 +198,10 @@ export default function CommercialCleaningWinchester() {
                         </li>
                       ))}
                     </ul>
-                    <Link className={styles.audienceLink} to={audience.path}>
+                    <a className={styles.audienceLink} href={audience.path}>
                       View services for this sector
                       <span aria-hidden="true">→</span>
-                    </Link>
+                    </a>
                   </div>
                 </article>
               );
