@@ -6,7 +6,7 @@
   min-height: calc(100svh - 5rem);
   align-items: center;
   padding: clamp(4.5rem, 10vw, 7rem) 0;
-  background: transparent;
+  background: #071426;
 }
 
 .hero::before {
@@ -41,7 +41,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 68% center;
+  object-position: 74% center;
 }
 
 .heroInner {
@@ -273,6 +273,12 @@
   }
 }
 
+@media (min-width: 768px) {
+  .heroImage {
+    object-position: center;
+  }
+}
+
 @media (min-width: 1050px) {
   .grid,
   .processGrid {
@@ -292,7 +298,11 @@
   }
 
   .heroImage {
-    object-position: 62% center;
+    object-position: 74% center;
+  }
+
+  .heroTitle {
+    font-size: clamp(2.45rem, 10.5vw, 3.8rem);
   }
 }
 
