@@ -1,5 +1,7 @@
 import Container from "../../ui/Container";
 
+import styles from "./CarpetCleaningPage.module.css";
+
 const steps = [
   {
     number: "01",
@@ -25,22 +27,22 @@ const steps = [
 
 export default function Process() {
   return (
-    <section>
+    <section className={`${styles.section} ${styles.alternate}`}>
       <Container>
-        <h2>Our Professional Cleaning Process</h2>
+        <header className={styles.sectionHeader}>
+          <h2>Our Professional Cleaning Process</h2>
 
-        <p>
-          A proven step-by-step system designed to achieve outstanding cleaning
-          results while protecting your carpets.
-        </p>
+          <p>
+            A proven step-by-step system designed to achieve outstanding
+            results while protecting your carpets.
+          </p>
+        </header>
 
-        <div>
+        <div className={styles.processGrid}>
           {steps.map((step) => (
-            <article key={step.number}>
-              <strong>{step.number}</strong>
-
+            <article className={styles.step} key={step.number}>
+              <strong className={styles.stepNumber}>{step.number}</strong>
               <h3>{step.title}</h3>
-
               <p>{step.text}</p>
             </article>
           ))}
