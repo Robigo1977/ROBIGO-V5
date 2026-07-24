@@ -39,7 +39,7 @@ export default function ClickFeedback() {
       }
 
       const interactive = target.closest(
-        "a, button, [role='button']",
+        "#quote button, #quote [role='button']",
       );
 
       if (
