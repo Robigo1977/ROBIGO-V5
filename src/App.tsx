@@ -16,6 +16,7 @@ import Contact from "./components/sections/Contact";
 import CarpetCleaningWinchester from "./pages/CarpetCleaningWinchester";
 import MoreInformation from "./pages/MoreInformation";
 import CommercialCleaningWinchester from "./pages/CommercialCleaningWinchester";
+import CommercialSectorPage from "./pages/CommercialSectorPage";
 
 function HomePage() {
   return (
@@ -49,6 +50,7 @@ function App() {
           element={<CommercialCleaningWinchester />}
         />
         <Route path="/business" element={<CommercialCleaningWinchester />} />
+        <Route path="/business/:sector" element={<CommercialSectorPage />} />
       </Routes>
 
       <Footer />
