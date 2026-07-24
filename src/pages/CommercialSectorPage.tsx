@@ -26,6 +26,7 @@ type Sector = {
   results: string[];
   scheduling: string;
   pricing: string;
+  faqs: { question: string; answer: string }[];
   whatsapp: string;
 };
 
@@ -64,6 +65,23 @@ const sectors: Record<string, Sector> = {
       "We clean outside your opening hours, including early mornings, evenings and agreed weekend appointments, to reduce disruption to staff, visitors and normal working hours.",
     pricing:
       "Commercial carpets start from £1.80/m² for areas of 100 m² or more. Upholstered chairs start from £8 each for bookings of 10 or more. Regular office-building plans receive a tailored fixed quotation.",
+    faqs: [
+      {
+        question: "Can you clean outside our office hours?",
+        answer:
+          "Yes. Early-morning, evening and agreed weekend appointments are available to minimise disruption to staff, visitors and normal working hours.",
+      },
+      {
+        question: "Can several office areas be included in one quotation?",
+        answer:
+          "Yes. Carpets, reception seating, meeting-room chairs and suitable sealed hard floors can be assessed together and included in one clear fixed quotation.",
+      },
+      {
+        question: "Do you offer regular office-building cleaning plans?",
+        answer:
+          "Yes. Regular fixed appointments can be arranged for offices and managed buildings after an initial assessment of the areas, access and preferred schedule.",
+      },
+    ],
     whatsapp:
       "Hi ROBIGO, I'd like a quotation for an office or office building.",
   },
@@ -94,6 +112,23 @@ const sectors: Record<string, Sector> = {
       "Out-of-hours cleaning is available before opening, after closing or on agreed quieter days, helping your venue stay presentation-ready without cleaning around guests.",
     pricing:
       "Upholstered chairs start from £8 each for 10 or more. Reception sofas start from £49. Large carpet areas start from £1.80/m² at 100 m² or more. Fixed recurring plans are quoted individually.",
+    faqs: [
+      {
+        question: "Can you clean after the venue closes?",
+        answer:
+          "Yes. Out-of-hours appointments can be arranged before opening, after closing or on an agreed quieter day so cleaning does not take place around guests.",
+      },
+      {
+        question: "Do you clean fixed booths and banquette seating?",
+        answer:
+          "Yes. Fixed upholstered seating, booths, dining chairs and bar seating are inspected before cleaning so the correct method can be selected for the fabric and construction.",
+      },
+      {
+        question: "Can carpets, seating and hard floors be quoted together?",
+        answer:
+          "Yes. We can combine carpets, upholstery and chemical-free dry steam for suitable sealed hard floors into one clear commercial quotation.",
+      },
+    ],
     whatsapp:
       "Hi ROBIGO, I'd like a quotation for a restaurant, bar or hospitality venue.",
   },
@@ -124,6 +159,23 @@ const sectors: Record<string, Sector> = {
       "Out-of-hours appointments can be coordinated around check-in windows, quieter booking periods and planned property-maintenance days.",
     pricing:
       "Accommodation packages are quoted according to room count and the items being cleaned. Carpet, upholstery, mattress and repeat-property work can be combined into one clear fixed quotation.",
+    faqs: [
+      {
+        question: "Can cleaning be arranged around check-in times?",
+        answer:
+          "Yes. Appointments can be coordinated around check-out, check-in, quieter booking periods and planned property-maintenance days.",
+      },
+      {
+        question: "Can you clean mattresses and bedroom upholstery?",
+        answer:
+          "Yes. Mattresses, headboards, bedroom chairs, sofas, rugs and carpets can be included according to the needs of each property.",
+      },
+      {
+        question: "Do you offer repeat-property or regular plans?",
+        answer:
+          "Yes. Hosts and accommodation managers can request a tailored plan for repeat deep cleans across one or several properties.",
+      },
+    ],
     whatsapp:
       "Hi ROBIGO, I'd like a quotation for an Airbnb, hotel or Booking.com property.",
   },
@@ -153,6 +205,23 @@ const sectors: Record<string, Sector> = {
       "Out-of-hours cleaning can be coordinated with landlords, tenants or agents around key collection, inventory appointments and tenancy handover dates.",
     pricing:
       "Minimum booking is £60. Carpets are laser measured for accurate area pricing. Upholstery, mattresses and suitable hard-floor dry-steam cleaning can be combined into one fixed property quotation.",
+    faqs: [
+      {
+        question: "Can you coordinate access with an agent or landlord?",
+        answer:
+          "Yes. Appointments can be coordinated around key collection, inventory visits, property viewings and tenancy handover dates.",
+      },
+      {
+        question: "What can be included before a new tenant moves in?",
+        answer:
+          "Carpets, rugs, furnished-property upholstery, mattresses and suitable sealed hard floors can be assessed and combined into one quotation.",
+      },
+      {
+        question: "Can parquet or wood flooring be steam cleaned?",
+        answer:
+          "Only suitable sealed parquet is considered, and only after careful inspection. Unsealed or water-sensitive wood should not be steam cleaned.",
+      },
+    ],
     whatsapp:
       "Hi ROBIGO, I'd like a quotation for a rental or end-of-tenancy property.",
   },
@@ -272,6 +341,25 @@ export default function CommercialSectorPage() {
               <h2>Built around your timetable</h2>
               <span>{sector.scheduling}</span>
             </article>
+          </div>
+        </Container>
+      </section>
+
+      <section className={styles.quote}>
+        <Container>
+          <div className={styles.faq}>
+            <header>
+              <p>BUSINESS QUESTIONS</p>
+              <h2>Useful details before you request a quote</h2>
+            </header>
+            <div>
+              {sector.faqs.map((faq) => (
+                <details key={faq.question}>
+                  <summary>{faq.question}</summary>
+                  <p>{faq.answer}</p>
+                </details>
+              ))}
+            </div>
           </div>
         </Container>
       </section>

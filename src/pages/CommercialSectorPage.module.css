@@ -299,6 +299,76 @@
   padding: clamp(4rem, 7vw, 5.5rem) 0;
 }
 
+.faq {
+  display: grid;
+  gap: 2rem;
+  padding: clamp(1.5rem, 5vw, 2.75rem);
+  border: 1px solid #dbeafe;
+  border-radius: 1.35rem;
+  background: #f4f9fe;
+}
+
+.faq header > p {
+  margin: 0 0 0.75rem;
+  color: #0f6cbd;
+  font-size: 0.75rem;
+  font-weight: 850;
+  letter-spacing: 0.11em;
+}
+
+.faq h2 {
+  margin: 0;
+  color: #10233d;
+}
+
+.faq > div {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.faq details {
+  overflow: hidden;
+  border: 1px solid #d9e6f3;
+  border-radius: 0.9rem;
+  background: #fff;
+  box-shadow: 0 10px 25px rgba(15, 35, 61, 0.05);
+}
+
+.faq summary {
+  position: relative;
+  padding: 1rem 3rem 1rem 1.1rem;
+  color: #10233d;
+  font-weight: 850;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  position: absolute;
+  top: 50%;
+  right: 1.1rem;
+  color: #0f6cbd;
+  font-size: 1.35rem;
+  line-height: 1;
+  content: "+";
+  transform: translateY(-50%);
+}
+
+.faq details[open] summary::after {
+  content: "−";
+}
+
+.faq details > p {
+  margin: 0;
+  padding: 0 1.1rem 1.1rem;
+  color: #52657a;
+  line-height: 1.65;
+}
+
 .quoteCard {
   display: grid;
   gap: 1.5rem;
@@ -347,6 +417,11 @@
   .includedGrid,
   .valueGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .faq {
+    grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+    align-items: start;
   }
 
   .quoteCard {
@@ -456,10 +531,20 @@
   }
 
   .quote {
-    padding: 3.25rem 0;
+    padding: 3rem 0;
   }
 
   .quoteCard {
     padding: 1.4rem;
+  }
+
+  .faq {
+    gap: 1.35rem;
+    padding: 1.25rem;
+  }
+
+  .faq summary {
+    padding: 0.9rem 2.7rem 0.9rem 1rem;
+    font-size: 0.94rem;
   }
 }
