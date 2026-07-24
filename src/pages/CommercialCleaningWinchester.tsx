@@ -4,6 +4,7 @@ import {
   CheckCircle2,
   KeyRound,
   MoonStar,
+  Sparkles,
   Utensils,
 } from "lucide-react";
 
@@ -20,6 +21,11 @@ const sectors = [
     icon: Utensils,
     title: "Restaurants & Cafés",
     text: "Carpets, dining chairs, banquettes and customer-facing areas.",
+  },
+  {
+    icon: Sparkles,
+    title: "Chemical-Free Steam",
+    text: "Professional dry-steam cleaning for suitable hard floors and surfaces.",
   },
   {
     icon: Building2,
@@ -40,14 +46,15 @@ const sectors = [
 
 const rates = [
   ["Commercial carpet areas", "from £1.80/m²", "For areas of 100 m² or more"],
+  ["Chemical-free steam", "£2.50/m²", "Suitable hard floors · minimum £50"],
   ["Upholstered chairs", "from £8 each", "For bookings of 10 or more"],
   ["Reception sofas", "from £49", "Fabric inspection included"],
-  ["Regular fixed slots", "Tailored quote", "Weekly or monthly service plans"],
 ];
 
 const benefits = [
   "Evening and out-of-hours appointments",
   "Professional commercial equipment",
+  "Chemical-free dry steam for suitable hard floors",
   "Clear fixed quotations before work begins",
   "No call-out charge within our regular service area",
 ];
@@ -59,7 +66,7 @@ export default function CommercialCleaningWinchester() {
         config={{
           title: "Commercial Cleaning Winchester | ROBIGO",
           description:
-            "Commercial carpet, upholstery and steam floor cleaning for restaurants, offices, Airbnb properties and estate agencies in Winchester. Free fixed quotations.",
+            "Commercial carpet and upholstery cleaning plus chemical-free dry steam for suitable hard floors in Winchester restaurants, offices and Airbnb properties.",
           canonical: "https://robigo.co.uk/commercial-cleaning-winchester",
           ogTitle: "Commercial Cleaning Winchester | ROBIGO",
           ogDescription:
@@ -91,8 +98,9 @@ export default function CommercialCleaningWinchester() {
             </p>
             <h1>A cleaner space. A stronger first impression.</h1>
             <p className={styles.heroText}>
-              Premium carpet, upholstery and steam floor cleaning for businesses
-              that care about presentation, hygiene and customer confidence.
+              Premium carpet and upholstery care, plus chemical-free dry-steam
+              cleaning for suitable hard floors — for businesses that care about
+              presentation, hygiene and customer confidence.
             </p>
             <div className={styles.actions}>
               <Button
@@ -202,7 +210,8 @@ export default function CommercialCleaningWinchester() {
               <h2>Premium results with less disruption</h2>
               <p>
                 Reserve a weekly or monthly slot. Evening cleaning helps your
-                premises stay ready without interrupting normal business.
+                premises stay ready without interrupting normal business. Every
+                regular plan receives a tailored quotation.
               </p>
             </div>
 
