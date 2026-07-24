@@ -3,6 +3,8 @@ import Button from "../../ui/Button";
 import SEO from "../../../seo/SEO";
 import businessSchema from "../../../seo/schema";
 
+import carpetCleaningImage from "../../../assets/optimized/carpet-cleaning.webp";
+
 import styles from "./CarpetCleaningPage.module.css";
 
 export default function Hero() {
@@ -26,6 +28,16 @@ export default function Hero() {
       />
 
       <section className={styles.hero}>
+        <div className={styles.heroImageWrapper} aria-hidden="true">
+          <img
+            className={styles.heroImage}
+            src={carpetCleaningImage}
+            alt=""
+            decoding="async"
+            fetchPriority="high"
+          />
+        </div>
+
         <Container>
           <div className={styles.heroInner}>
             <span className={styles.eyebrow}>
