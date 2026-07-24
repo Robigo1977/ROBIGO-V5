@@ -135,105 +135,155 @@
   line-height: 1.7;
 }
 
-.showcase {
+.audienceGrid {
   display: grid;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  gap: 1.25rem;
 }
 
-.showcaseCard {
+.audienceCard {
   position: relative;
   overflow: hidden;
-  min-height: 22rem;
+  border: 1px solid #dbeafe;
   border-radius: 1.35rem;
-  background: #071426;
+  background: #fff;
   box-shadow: 0 22px 55px rgba(15, 35, 61, 0.16);
 }
 
-.showcaseCard img {
+.audienceVisual {
+  position: relative;
+  overflow: hidden;
+  height: 13rem;
+  background: #071426;
+}
+
+.audienceVisual::after {
   position: absolute;
   inset: 0;
+  content: "";
+  background: linear-gradient(0deg, rgba(4, 14, 29, 0.55), transparent 55%);
+}
+
+.audienceVisual img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
 
-.showcaseCard::after {
-  position: absolute;
-  inset: 0;
-  content: "";
-  background: linear-gradient(0deg, rgba(4, 14, 29, 0.9), transparent 65%);
-}
-
-.showcaseCard > div {
+.audienceVisual strong {
   position: absolute;
   z-index: 1;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1.5rem;
+  bottom: 1rem;
+  left: 1rem;
   color: #fff;
+  font-size: 2.6rem;
+  line-height: 1;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.38);
 }
 
-.showcaseCard span {
-  color: #7dd3fc;
+.audienceBody {
+  padding: 1.5rem;
+}
+
+.audienceHeading {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.audienceHeading > svg {
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 auto;
+  color: #0f6cbd;
+}
+
+.audienceHeading span {
+  color: #0f6cbd;
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
-.showcaseCard h3 {
-  max-width: 28rem;
-  margin: 0.45rem 0 0;
-  color: #fff;
-  font-size: clamp(1.35rem, 3vw, 1.85rem);
+.audienceHeading h3 {
+  margin: 0.3rem 0 0;
+  color: #10233d;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
   line-height: 1.2;
 }
 
-.sectorGrid,
+.audienceBody > p {
+  margin: 1rem 0;
+  color: #52657a;
+  line-height: 1.65;
+}
+
+.audienceBody ul {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.audienceBody li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  color: #10233d;
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.audienceBody li svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  margin-top: 0.15rem;
+  flex: 0 0 auto;
+  color: #16a34a;
+}
+
+.audienceLink {
+  display: flex;
+  margin-top: 1.35rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: 0.75rem;
+  background: #071426;
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.audienceLink span {
+  color: #38bdf8;
+  font-size: 1.35rem;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.audienceLink:hover span {
+  transform: translateX(0.2rem);
+}
+
+.ratesSection {
+  background: #f4f9fe;
+}
+
 .rateGrid {
   display: grid;
   gap: 1rem;
 }
 
-.sectorCard,
 .rateCard {
   border: 1px solid #dbeafe;
   border-radius: 1rem;
   background: #fff;
   box-shadow: 0 15px 35px rgba(15, 23, 42, 0.07);
-}
-
-.sectorCard {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  padding: 1.25rem;
-}
-
-.sectorCard svg {
-  width: 1.8rem;
-  height: 1.8rem;
-  flex: 0 0 auto;
-  color: #0f6cbd;
-}
-
-.sectorCard h3 {
-  margin: 0 0 0.35rem;
-  color: #10233d;
-}
-
-.sectorCard p {
-  margin: 0;
-  color: #52657a;
-  font-size: 0.94rem;
-  line-height: 1.55;
-}
-
-.ratesSection {
-  background: #f4f9fe;
 }
 
 .rateGrid {
@@ -360,14 +410,13 @@
 }
 
 @media (hover: hover) {
-  .showcaseCard:hover img {
+  .audienceCard:hover .audienceVisual img {
     transform: scale(1.035);
   }
 }
 
 @media (min-width: 700px) {
-  .showcase,
-  .sectorGrid {
+  .audienceGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -378,7 +427,6 @@
 }
 
 @media (min-width: 1050px) {
-  .sectorGrid,
   .rateGrid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -415,11 +463,7 @@
     background: rgba(7, 20, 38, 0.9);
   }
 
-  .showcaseCard {
-    min-height: 18rem;
-  }
-
-  .sectorCard:nth-child(n + 3) {
-    display: none;
+  .audienceVisual {
+    height: 11.5rem;
   }
 }
