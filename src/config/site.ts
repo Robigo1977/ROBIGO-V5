@@ -9,7 +9,7 @@ export const site = {
 
     phone: "+447777449931",
 
-    email: "info@robigo.co.uk",
+    email: "robigo.hun@gmail.com",
 
     whatsapp: "+447777449931",
 
