@@ -5,7 +5,7 @@ import {
   MessageCircle,
   ShieldCheck,
 } from "lucide-react";
-import { Link, Navigate, useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 
 import Button from "../components/ui/Button";
 import Container from "../components/ui/Container";
@@ -179,21 +179,27 @@ export default function CommercialSectorPage() {
         <div className={styles.heroShade} />
         <Container>
           <div className={styles.heroCard}>
-            <Link to="/business">
+            <a href="/business">
               <ArrowLeft aria-hidden="true" />
               All business sectors
-            </Link>
+            </a>
+            <strong className={styles.heroBrand}>ROBIGO</strong>
             <p>{sector.eyebrow}</p>
             <h1>{sector.title}</h1>
             <span>{sector.description}</span>
-            <Button
-              href={site.whatsappMessage(sector.whatsapp)}
-              target="_blank"
-              rel="noopener noreferrer"
-              size="lg"
-            >
-              Request a Free Quote
-            </Button>
+            <div className={styles.heroActions}>
+              <Button
+                href={site.whatsappMessage(sector.whatsapp)}
+                target="_blank"
+                rel="noopener noreferrer"
+                size="lg"
+              >
+                Request a Free Quote
+              </Button>
+              <small>
+                Out-of-hours available · Fixed quotation · 7 days a week
+              </small>
+            </div>
           </div>
         </Container>
       </section>
