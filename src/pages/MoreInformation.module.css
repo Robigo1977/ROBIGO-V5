@@ -1,0 +1,41 @@
+.intro {
+  padding: clamp(4rem, 9vw, 7rem) 1.25rem;
+  background: linear-gradient(135deg, #071426 0%, #123a70 100%);
+  color: #fff;
+  text-align: center;
+}
+
+.intro p {
+  margin: 0 0 0.75rem;
+  color: #bfdbfe;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.intro h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2.5rem, 9vw, 4.5rem);
+  line-height: 1;
+}
+
+.intro span {
+  display: block;
+  max-width: 46rem;
+  margin: 1.25rem auto 1.75rem;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  line-height: 1.65;
+}
+
+.intro a {
+  display: inline-flex;
+  padding: 0.8rem 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+}
