@@ -1,5 +1,7 @@
 import Container from "../../ui/Container";
 
+import styles from "./CarpetCleaningPage.module.css";
+
 const questions = [
   {
     question: "How much does carpet cleaning cost in Winchester?",
@@ -35,18 +37,23 @@ const questions = [
 
 export default function FAQ() {
   return (
-    <section aria-labelledby="carpet-cleaning-faq">
+    <section
+      className={`${styles.section} ${styles.alternate}`}
+      aria-labelledby="carpet-cleaning-faq"
+    >
       <Container>
-        <h2 id="carpet-cleaning-faq">Carpet Cleaning Questions</h2>
+        <header className={styles.sectionHeader}>
+          <h2 id="carpet-cleaning-faq">Carpet Cleaning Questions</h2>
 
-        <p>
-          Helpful answers about professional carpet cleaning in Winchester and
-          the surrounding Hampshire area.
-        </p>
+          <p>
+            Helpful answers about professional carpet cleaning in Winchester
+            and the surrounding Hampshire area.
+          </p>
+        </header>
 
-        <div>
+        <div className={styles.faqList}>
           {questions.map((item) => (
-            <details key={item.question}>
+            <details className={styles.faqItem} key={item.question}>
               <summary>{item.question}</summary>
               <p>{item.answer}</p>
             </details>
