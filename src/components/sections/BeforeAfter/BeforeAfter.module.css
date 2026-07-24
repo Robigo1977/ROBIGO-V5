@@ -281,3 +281,38 @@
   }
 
 }
+
+.compactSection {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+}
+
+.compactSection .featured {
+  margin-top: clamp(2rem, 5vw, 3rem);
+}
+
+.resultsLink {
+  display: inline-flex;
+  margin-top: 1.25rem;
+  color: var(--color-primary);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.resultsLink::after {
+  margin-left: 0.45rem;
+  content: "→";
+}
+
+@media (max-width: 767px) {
+  .compactSection .header h2 {
+    font-size: clamp(2rem, 9vw, 2.75rem);
+  }
+
+  .compactSection .featuredContent {
+    padding: 1.35rem;
+  }
+
+  .compactSection .story {
+    display: none;
+  }
+}
