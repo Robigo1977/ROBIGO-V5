@@ -1,3 +1,5 @@
+import { Route, Routes } from "react-router-dom";
+
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import FloatingWhatsApp from "./components/layout/FloatingWhatsApp/FloatingWhatsApp";
@@ -16,58 +18,45 @@ import ServiceAreas from "./components/sections/ServiceAreas";
 import FAQ from "./components/sections/FAQ";
 import Contact from "./components/sections/Contact";
 
+import CarpetCleaningWinchester from "./pages/CarpetCleaningWinchester";
 
-function App() {
-
+function HomePage() {
   return (
-
-    <>
-
-      <Navbar />
-
-
-      <main id="main-content">
-
-        <Hero />
-
-        <UrgentServices />
-
-        <TrustBar />
-
-        <QuoteCalculator />
-
-        <LocalTrust />
-
-        <BeforeAfter />
-
-        <Services />
-
-        <WhyChoose />
-
-        <Reviews />
-
-        <Pricing />
-
-        <ServiceAreas />
-
-        <FAQ />
-
-        <Contact />
-
-      </main>
-
-
-      <Footer />
-
-
-      <FloatingWhatsApp />
-
-
-    </>
-
+    <main id="main-content">
+      <Hero />
+      <UrgentServices />
+      <TrustBar />
+      <QuoteCalculator />
+      <LocalTrust />
+      <BeforeAfter />
+      <Services />
+      <WhyChoose />
+      <Reviews />
+      <Pricing />
+      <ServiceAreas />
+      <FAQ />
+      <Contact />
+    </main>
   );
-
 }
 
+function App() {
+  return (
+    <>
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/carpet-cleaning-winchester"
+          element={<CarpetCleaningWinchester />}
+        />
+      </Routes>
+
+      <Footer />
+      <FloatingWhatsApp />
+    </>
+  );
+}
 
 export default App;
