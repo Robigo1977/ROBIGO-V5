@@ -19,7 +19,7 @@ const sectors = [
   {
     icon: Utensils,
     title: "Restaurants & Cafés",
-    text: "Carpets, upholstered dining chairs, booths and customer-facing areas.",
+    text: "Carpets, dining chairs, banquettes and customer-facing areas.",
   },
   {
     icon: Building2,
@@ -29,12 +29,12 @@ const sectors = [
   {
     icon: BedDouble,
     title: "Airbnb & B&B",
-    text: "Fast refresh cleaning between guests and scheduled deep-clean plans.",
+    text: "Fast guest-change refreshes and scheduled deep-clean plans.",
   },
   {
     icon: KeyRound,
     title: "Estate Agencies",
-    text: "Move-in, move-out and presentation-ready carpet and upholstery cleaning.",
+    text: "Presentation-ready carpet and upholstery cleaning between tenancies.",
   },
 ];
 
@@ -49,9 +49,7 @@ const benefits = [
   "Evening and out-of-hours appointments",
   "Professional commercial equipment",
   "Clear fixed quotations before work begins",
-  "Card payments accepted",
   "No call-out charge within our regular service area",
-  "A real local professional - not a booking bot",
 ];
 
 export default function CommercialCleaningWinchester() {
@@ -66,16 +64,26 @@ export default function CommercialCleaningWinchester() {
           ogTitle: "Commercial Cleaning Winchester | ROBIGO",
           ogDescription:
             "Flexible professional cleaning for Winchester businesses.",
-          ogImage: "https://robigo.co.uk/og-image.jpg",
+          ogImage:
+            "https://robigo.co.uk/images/commercial/commercial-office-hero.webp",
           twitterTitle: "Commercial Cleaning Winchester | ROBIGO",
           twitterDescription:
             "Flexible professional cleaning for Winchester businesses.",
-          twitterImage: "https://robigo.co.uk/og-image.jpg",
+          twitterImage:
+            "https://robigo.co.uk/images/commercial/commercial-office-hero.webp",
         }}
         schema={businessSchema}
       />
 
       <section className={styles.hero}>
+        <img
+          className={styles.heroImage}
+          src="/images/commercial/commercial-office-hero.webp"
+          alt=""
+          aria-hidden="true"
+          fetchPriority="high"
+        />
+        <div className={styles.heroShade} />
         <Container>
           <div className={styles.heroContent}>
             <p className={styles.eyebrow}>
@@ -83,9 +91,8 @@ export default function CommercialCleaningWinchester() {
             </p>
             <h1>A cleaner space. A stronger first impression.</h1>
             <p className={styles.heroText}>
-              Professional carpet, upholstery and chemical-free steam floor
-              cleaning for businesses that care about presentation, hygiene and
-              customer confidence.
+              Premium carpet, upholstery and steam floor cleaning for businesses
+              that care about presentation, hygiene and customer confidence.
             </p>
             <div className={styles.actions}>
               <Button
@@ -111,16 +118,44 @@ export default function CommercialCleaningWinchester() {
         <Container>
           <header className={styles.sectionHeader}>
             <p>WHO WE HELP</p>
-            <h2>Professional cleaning built around your business</h2>
+            <h2>Immaculate spaces your customers will notice</h2>
           </header>
+
+          <div className={styles.showcase}>
+            <article className={styles.showcaseCard}>
+              <img
+                src="/images/commercial/commercial-restaurant-booths.webp"
+                alt="Elegant restaurant with premium upholstered booth seating"
+                loading="lazy"
+              />
+              <div>
+                <span>Restaurants & hospitality</span>
+                <h3>Beautiful seating. Better first impressions.</h3>
+              </div>
+            </article>
+            <article className={styles.showcaseCard}>
+              <img
+                src="/images/commercial/commercial-airbnb.webp"
+                alt="Premium clean Airbnb and boutique B&B interior"
+                loading="lazy"
+              />
+              <div>
+                <span>Airbnb, B&B & property</span>
+                <h3>Guest-ready rooms with a fresh, refined finish.</h3>
+              </div>
+            </article>
+          </div>
+
           <div className={styles.sectorGrid}>
             {sectors.map((sector) => {
               const Icon = sector.icon;
               return (
                 <article className={styles.sectorCard} key={sector.title}>
                   <Icon aria-hidden="true" />
-                  <h3>{sector.title}</h3>
-                  <p>{sector.text}</p>
+                  <div>
+                    <h3>{sector.title}</h3>
+                    <p>{sector.text}</p>
+                  </div>
                 </article>
               );
             })}
@@ -135,10 +170,10 @@ export default function CommercialCleaningWinchester() {
         <Container>
           <header className={styles.sectionHeader}>
             <p>STRAIGHTFORWARD BUSINESS RATES</p>
-            <h2>Competitive pricing without compromising standards</h2>
+            <h2>Competitive pricing. Premium standards.</h2>
             <span>
-              Every property is different. These guide prices help you plan;
-              your final fixed quotation is confirmed before work begins.
+              Guide prices help you plan; your final fixed quotation is
+              confirmed before work begins.
             </span>
           </header>
 
@@ -153,8 +188,8 @@ export default function CommercialCleaningWinchester() {
           </div>
 
           <p className={styles.minimum}>
-            Minimum booking £60. Large carpet areas are professionally laser
-            measured, so you pay only for the area cleaned.
+            Minimum booking £60. Large carpet areas are laser measured, so you
+            pay only for the area cleaned.
           </p>
         </Container>
       </section>
@@ -164,11 +199,10 @@ export default function CommercialCleaningWinchester() {
           <div className={styles.plan}>
             <div>
               <p className={styles.eyebrowDark}>REGULAR COMMERCIAL PLANS</p>
-              <h2>Fixed cleaning slots with less disruption</h2>
+              <h2>Premium results with less disruption</h2>
               <p>
-                Reserve a regular weekly or monthly appointment. Evening
-                cleaning is available to help offices, restaurants and guest
-                accommodation stay ready without interrupting normal business.
+                Reserve a weekly or monthly slot. Evening cleaning helps your
+                premises stay ready without interrupting normal business.
               </p>
             </div>
 
