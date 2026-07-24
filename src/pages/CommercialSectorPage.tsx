@@ -197,7 +197,7 @@ export default function CommercialSectorPage() {
                 Request a Free Quote
               </Button>
               <small>
-                Out-of-hours available · Fixed quotation · 7 days a week
+                Out-of-hours cleaning available · Fixed quotation · 7 days a week
               </small>
             </div>
           </div>
