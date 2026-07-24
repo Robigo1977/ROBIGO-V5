@@ -123,7 +123,7 @@ const sectors: Record<string, Sector> = {
     title: "Ready for handover, move-in or the next tenancy",
     description:
       "Carpet, upholstery and suitable hard-floor cleaning after move-out or before move-in, helping rental properties feel fresh and ready to occupy.",
-    image: "/images/commercial/commercial-airbnb.webp",
+    image: "/images/commercial/commercial-rental-property.webp",
     imageAlt: "Clean presentation-ready rental property interior",
     idealFor:
       "Landlords, tenants, letting agents, estate agencies, property managers and furnished rental-property owners.",
