@@ -1,0 +1,77 @@
+.section {
+  padding: clamp(2.75rem, 5vw, 4rem) 0;
+  background: #f4f8fc;
+}
+
+.panel {
+  display: grid;
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 5vw, 2.5rem);
+  border: 1px solid rgba(37, 99, 235, 0.14);
+  border-radius: 1.25rem;
+  background: #fff;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+.eyebrow {
+  margin: 0 0 0.55rem;
+  color: #2563eb;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.panel h2 {
+  margin: 0;
+  color: #0f172a;
+  text-wrap: balance;
+}
+
+.text {
+  max-width: 42rem;
+  margin: 0.8rem 0 0;
+  line-height: 1.65;
+}
+
+.list {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: #334155;
+  font-weight: 700;
+}
+
+.list svg {
+  width: 1.1rem;
+  color: #2563eb;
+}
+
+.link {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.6rem;
+  color: #1d4ed8;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.link svg {
+  width: 1.15rem;
+}
+
+@media (min-width: 850px) {
+  .panel {
+    grid-template-columns: minmax(0, 1.35fr) minmax(14rem, 0.8fr) auto;
+    align-items: center;
+  }
+}
