@@ -10,7 +10,6 @@ import TrustBar from "./components/sections/TrustBar";
 import QuoteCalculator from "./components/sections/QuoteCalculator";
 import BeforeAfter from "./components/sections/BeforeAfter";
 import Services from "./components/sections/Services";
-import Reviews from "./components/sections/Reviews";
 import ExploreMore from "./components/sections/ExploreMore/ExploreMore";
 import Contact from "./components/sections/Contact";
 
@@ -26,7 +25,6 @@ function HomePage() {
       <QuoteCalculator />
       <Services />
       <BeforeAfter compact />
-      <Reviews />
       <ExploreMore />
       <Contact />
     </main>
