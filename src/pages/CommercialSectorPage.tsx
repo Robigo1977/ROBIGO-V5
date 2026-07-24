@@ -29,6 +29,13 @@ type Sector = {
   whatsapp: string;
 };
 
+const sectorLinks = [
+  { slug: "offices", label: "Offices" },
+  { slug: "hospitality", label: "Hospitality" },
+  { slug: "accommodation", label: "Accommodation" },
+  { slug: "rental-properties", label: "Rental Properties" },
+];
+
 const sectors: Record<string, Sector> = {
   offices: {
     eyebrow: "OFFICES & OFFICE BUILDINGS",
@@ -73,6 +80,7 @@ const sectors: Record<string, Sector> = {
       "Dining chairs, bar seating and upholstered stools",
       "Booths, banquettes and fixed upholstered seating",
       "Carpets, entrance areas and customer walkways",
+      "Chemical-free dry steam for suitable sealed hard floors",
       "Reception sofas and waiting-area furniture",
       "Targeted treatment following a fabric and stain inspection",
       "A final presentation check before reopening",
@@ -103,6 +111,7 @@ const sectors: Record<string, Sector> = {
       "Sofas, armchairs, headboards and bedroom seating",
       "Professional mattress cleaning",
       "Rugs and upholstered guest-area furniture",
+      "Chemical-free dry steam for suitable sealed hard floors",
       "Scheduled deep cleans between busy booking periods",
       "Clear fixed quotations for repeat accommodation work",
     ],
@@ -201,6 +210,26 @@ export default function CommercialSectorPage() {
               </small>
             </div>
           </div>
+        </Container>
+      </section>
+
+      <section className={styles.sectorSwitcher}>
+        <Container>
+          <nav aria-label="Commercial cleaning sectors">
+            {sectorLinks.map((item) => {
+              const active = item.slug === sectorSlug;
+              return (
+                <a
+                  href={`/business/${item.slug}`}
+                  key={item.slug}
+                  aria-current={active ? "page" : undefined}
+                >
+                  <span>{item.label}</span>
+                  <small>{active ? "Current sector" : "View services"}</small>
+                </a>
+              );
+            })}
+          </nav>
         </Container>
       </section>
 
