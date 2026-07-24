@@ -3,6 +3,8 @@ import Button from "../../ui/Button";
 import SEO from "../../../seo/SEO";
 import businessSchema from "../../../seo/schema";
 
+import styles from "./CarpetCleaningPage.module.css";
+
 export default function Hero() {
   return (
     <>
@@ -17,30 +19,33 @@ export default function Hero() {
             "Professional carpet cleaning in Winchester with outstanding results.",
           ogImage: "https://robigo.co.uk/og-image.jpg",
           twitterTitle: "Carpet Cleaning Winchester | ROBIGO",
-          twitterDescription:
-            "Professional carpet cleaning in Winchester.",
+          twitterDescription: "Professional carpet cleaning in Winchester.",
           twitterImage: "https://robigo.co.uk/og-image.jpg",
         }}
         schema={businessSchema}
-      >
+      />
 
-      </SEO>
-
-      <section>
+      <section className={styles.hero}>
         <Container>
-          <span>WINCHESTER CARPET CLEANING SPECIALISTS</span>
+          <div className={styles.heroInner}>
+            <span className={styles.eyebrow}>
+              Winchester Carpet Cleaning Specialists
+            </span>
 
-          <h1>Professional Carpet Cleaning in Winchester</h1>
+            <h1 className={styles.heroTitle}>
+              Professional Carpet Cleaning in Winchester
+            </h1>
 
-          <p>
-            Bring your carpets back to life with professional deep cleaning.
-            ROBIGO removes embedded dirt, stains and odours while creating a
-            cleaner, fresher and healthier home.
-          </p>
+            <p className={styles.heroLead}>
+              Bring your carpets back to life with professional deep cleaning.
+              ROBIGO removes embedded dirt, stains and odours while creating a
+              cleaner, fresher and healthier home.
+            </p>
 
-          <Button href="/#contact">
-            Get My Free Quote
-          </Button>
+            <Button href="/#contact" size="lg">
+              Get My Free Quote
+            </Button>
+          </div>
         </Container>
       </section>
     </>
