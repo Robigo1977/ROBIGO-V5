@@ -7,6 +7,7 @@ import styles from "./ExploreMore.module.css";
 const topics = [
   "Meet Robert",
   "Before & after results",
+  "Customer reviews",
   "Prices and service areas",
   "Helpful cleaning answers",
 ];
@@ -34,10 +35,15 @@ export default function ExploreMore() {
             ))}
           </ul>
 
-          <a className={styles.link} href="/more-about-robigo">
-            More About ROBIGO
-            <ArrowRight aria-hidden="true" />
-          </a>
+          <div className={styles.links}>
+            <a className={styles.link} href="/more-about-robigo#reviews">
+              Read Customer Reviews
+              <ArrowRight aria-hidden="true" />
+            </a>
+            <a className={styles.secondaryLink} href="/more-about-robigo">
+              More About ROBIGO
+            </a>
+          </div>
         </div>
       </Container>
     </section>
