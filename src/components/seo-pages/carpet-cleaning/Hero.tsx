@@ -3,7 +3,7 @@ import Button from "../../ui/Button";
 import SEO from "../../../seo/SEO";
 import businessSchema from "../../../seo/schema";
 
-import carpetCleaningImage from "../../../assets/optimized/carpet-cleaning.webp";
+import carpetCleaningImage from "../../../assets/optimized/hero/robigo-campaign-hero.webp";
 
 import styles from "./CarpetCleaningPage.module.css";
 
@@ -32,7 +32,7 @@ export default function Hero() {
           <img
             className={styles.heroImage}
             src={carpetCleaningImage}
-            alt=""
+            alt="Professional carpet cleaning in a premium Winchester living room"
             decoding="async"
             fetchPriority="high"
           />
