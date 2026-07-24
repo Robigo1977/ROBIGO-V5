@@ -23,9 +23,7 @@
 }
 
 .heroShade {
-  background:
-    linear-gradient(90deg, rgba(4, 14, 29, 0.9) 0%, rgba(4, 14, 29, 0.64) 32%, rgba(4, 14, 29, 0.12) 62%, rgba(4, 14, 29, 0.03) 100%),
-    linear-gradient(0deg, rgba(4, 14, 29, 0.22), transparent 38%);
+  background: linear-gradient(0deg, rgba(4, 14, 29, 0.2), transparent 38%);
 }
 
 .hero :global(.container) {
@@ -34,7 +32,13 @@
 }
 
 .heroContent {
-  max-width: 43rem;
+  max-width: 40rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border: 1px solid rgba(125, 211, 252, 0.28);
+  border-left: 0.3rem solid #38bdf8;
+  border-radius: 1.2rem;
+  background: rgba(7, 20, 38, 0.86);
+  box-shadow: 0 24px 65px rgba(0, 0, 0, 0.28);
 }
 
 .heroBrand {
@@ -402,9 +406,13 @@
   }
 
   .heroShade {
-    background:
-      linear-gradient(0deg, rgba(4, 14, 29, 0.94) 0%, rgba(4, 14, 29, 0.6) 46%, rgba(4, 14, 29, 0.08) 100%),
-      linear-gradient(90deg, rgba(4, 14, 29, 0.26), transparent 64%);
+    background: linear-gradient(0deg, rgba(4, 14, 29, 0.2), transparent 45%);
+  }
+
+  .heroContent {
+    padding: 1.35rem;
+    border-radius: 1rem;
+    background: rgba(7, 20, 38, 0.9);
   }
 
   .showcaseCard {
