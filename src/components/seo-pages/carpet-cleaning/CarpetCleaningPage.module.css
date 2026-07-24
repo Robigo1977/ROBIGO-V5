@@ -110,6 +110,10 @@
   text-wrap: balance;
 }
 
+.processHeader {
+  margin-top: clamp(2.75rem, 5vw, 4rem);
+}
+
 .sectionHeader p {
   font-size: var(--text-lg);
   line-height: var(--line-relaxed);
