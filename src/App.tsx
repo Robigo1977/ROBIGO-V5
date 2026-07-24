@@ -48,6 +48,7 @@ function App() {
           path="/commercial-cleaning-winchester"
           element={<CommercialCleaningWinchester />}
         />
+        <Route path="/business" element={<CommercialCleaningWinchester />} />
       </Routes>
 
       <Footer />
