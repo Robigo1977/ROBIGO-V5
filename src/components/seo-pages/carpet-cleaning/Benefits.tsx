@@ -32,16 +32,38 @@ const benefits = [
   },
 ];
 
+const steps = [
+  {
+    number: "01",
+    title: "Inspection",
+    text: "We assess fibres and stains before choosing the safest cleaning method.",
+  },
+  {
+    number: "02",
+    title: "Pre-Treatment",
+    text: "Traffic lanes and visible stains are loosened before extraction.",
+  },
+  {
+    number: "03",
+    title: "Deep Extraction",
+    text: "Professional extraction removes deep dirt, allergens and odours.",
+  },
+  {
+    number: "04",
+    title: "Final Check",
+    text: "We inspect the result with you and provide simple after-care advice.",
+  },
+];
+
 export default function Benefits() {
   return (
     <section className={styles.section}>
       <Container>
         <header className={styles.sectionHeader}>
           <h2>Why Homeowners Choose ROBIGO</h2>
-
           <p>
-            Outstanding cleaning results with an easy, stress-free customer
-            experience from quotation to completion.
+            Outstanding results and an easy, stress-free experience from
+            quotation to completion.
           </p>
         </header>
 
@@ -54,12 +76,26 @@ export default function Benefits() {
                 <span className={styles.icon} aria-hidden="true">
                   <Icon />
                 </span>
-
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
               </article>
             );
           })}
+        </div>
+
+        <header className={`${styles.sectionHeader} ${styles.processHeader}`}>
+          <h2>Our Professional Cleaning Process</h2>
+          <p>Four careful steps for a cleaner, fresher carpet.</p>
+        </header>
+
+        <div className={styles.processGrid}>
+          {steps.map((step) => (
+            <article className={styles.step} key={step.number}>
+              <strong className={styles.stepNumber}>{step.number}</strong>
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+            </article>
+          ))}
         </div>
       </Container>
     </section>
