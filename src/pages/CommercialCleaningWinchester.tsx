@@ -93,6 +93,7 @@ export default function CommercialCleaningWinchester() {
         <div className={styles.heroShade} />
         <Container>
           <div className={styles.heroContent}>
+            <p className={styles.heroBrand}>ROBIGO</p>
             <p className={styles.eyebrow}>
               COMMERCIAL CLEANING FOR WINCHESTER BUSINESSES
             </p>

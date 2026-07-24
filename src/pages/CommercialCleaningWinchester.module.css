@@ -37,6 +37,26 @@
   max-width: 43rem;
 }
 
+.heroBrand {
+  margin: 0 0 0.65rem;
+  color: #fff;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  line-height: 1;
+  text-shadow: 0 4px 22px rgba(0, 0, 0, 0.32);
+}
+
+.heroBrand::after {
+  display: block;
+  width: 4.2rem;
+  height: 0.22rem;
+  margin-top: 0.65rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #38bdf8, #fff);
+  content: "";
+}
+
 .eyebrow,
 .sectionHeader > p,
 .ctaInner > p,
