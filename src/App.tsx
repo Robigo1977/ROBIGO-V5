@@ -15,6 +15,7 @@ import Contact from "./components/sections/Contact";
 
 import CarpetCleaningWinchester from "./pages/CarpetCleaningWinchester";
 import MoreInformation from "./pages/MoreInformation";
+import CommercialCleaningWinchester from "./pages/CommercialCleaningWinchester";
 
 function HomePage() {
   return (
@@ -43,6 +44,10 @@ function App() {
           element={<CarpetCleaningWinchester />}
         />
         <Route path="/more-about-robigo" element={<MoreInformation />} />
+        <Route
+          path="/commercial-cleaning-winchester"
+          element={<CommercialCleaningWinchester />}
+        />
       </Routes>
 
       <Footer />
