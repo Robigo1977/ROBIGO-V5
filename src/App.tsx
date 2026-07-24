@@ -8,17 +8,14 @@ import Hero from "./components/sections/Hero";
 import UrgentServices from "./components/sections/UrgentServices";
 import TrustBar from "./components/sections/TrustBar";
 import QuoteCalculator from "./components/sections/QuoteCalculator";
-import LocalTrust from "./components/sections/LocalTrust/LocalTrust";
 import BeforeAfter from "./components/sections/BeforeAfter";
 import Services from "./components/sections/Services";
-import WhyChoose from "./components/sections/WhyChoose";
 import Reviews from "./components/sections/Reviews";
-import Pricing from "./components/sections/Pricing/Pricing";
-import ServiceAreas from "./components/sections/ServiceAreas";
-import FAQ from "./components/sections/FAQ";
+import ExploreMore from "./components/sections/ExploreMore/ExploreMore";
 import Contact from "./components/sections/Contact";
 
 import CarpetCleaningWinchester from "./pages/CarpetCleaningWinchester";
+import MoreInformation from "./pages/MoreInformation";
 
 function HomePage() {
   return (
@@ -27,14 +24,10 @@ function HomePage() {
       <UrgentServices />
       <TrustBar />
       <QuoteCalculator />
-      <LocalTrust />
-      <BeforeAfter />
       <Services />
-      <WhyChoose />
+      <BeforeAfter compact />
       <Reviews />
-      <Pricing />
-      <ServiceAreas />
-      <FAQ />
+      <ExploreMore />
       <Contact />
     </main>
   );
@@ -51,6 +44,7 @@ function App() {
           path="/carpet-cleaning-winchester"
           element={<CarpetCleaningWinchester />}
         />
+        <Route path="/more-about-robigo" element={<MoreInformation />} />
       </Routes>
 
       <Footer />
