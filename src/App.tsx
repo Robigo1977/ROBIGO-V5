@@ -3,7 +3,6 @@ import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import FloatingWhatsApp from "./components/layout/FloatingWhatsApp/FloatingWhatsApp";
-import ClickFeedback from "./components/layout/ClickFeedback/ClickFeedback";
 
 import Hero from "./components/sections/Hero";
 import UrgentServices from "./components/sections/UrgentServices";
@@ -48,7 +47,6 @@ function App() {
 
       <Footer />
       <FloatingWhatsApp />
-      <ClickFeedback />
     </>
   );
 }
