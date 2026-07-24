@@ -1,5 +1,7 @@
 import Container from "../../ui/Container";
 
+import styles from "./CarpetCleaningPage.module.css";
+
 const benefits = [
   {
     title: "Deep Cleaning",
@@ -21,18 +23,20 @@ const benefits = [
 
 export default function Benefits() {
   return (
-    <section>
+    <section className={styles.section}>
       <Container>
-        <h2>Why homeowners choose ROBIGO</h2>
+        <header className={styles.sectionHeader}>
+          <h2>Why Homeowners Choose ROBIGO</h2>
 
-        <p>
-          We focus on delivering outstanding cleaning results together with an
-          easy, stress-free customer experience from quotation to completion.
-        </p>
+          <p>
+            Outstanding cleaning results with an easy, stress-free customer
+            experience from quotation to completion.
+          </p>
+        </header>
 
-        <div>
+        <div className={styles.grid}>
           {benefits.map((item) => (
-            <article key={item.title}>
+            <article className={styles.card} key={item.title}>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
             </article>
