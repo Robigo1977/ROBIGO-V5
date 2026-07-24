@@ -288,7 +288,8 @@
 
 @media (max-width: 767px) {
   .hero {
-    min-height: calc(100svh - 4.5rem);
+    min-height: min(46rem, calc(88svh - 4.5rem));
+    padding: 3.75rem 0;
   }
 
   .hero::before {
@@ -303,6 +304,63 @@
 
   .heroTitle {
     font-size: clamp(2.45rem, 10.5vw, 3.8rem);
+  }
+
+  .heroLead {
+    margin: 1.15rem 0 1.5rem;
+    line-height: 1.55;
+  }
+
+  .section {
+    padding: 3.5rem 0;
+  }
+
+  .sectionHeader {
+    margin-bottom: 1.75rem;
+  }
+
+  .sectionHeader p {
+    font-size: 1rem;
+  }
+
+  .grid,
+  .processGrid {
+    display: grid;
+    overflow-x: auto;
+    grid-auto-columns: min(84vw, 20rem);
+    grid-auto-flow: column;
+    grid-template-columns: none;
+    gap: 1rem;
+    margin-inline: -1rem;
+    padding: 0.25rem 1rem 1rem;
+    scroll-padding-inline: 1rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .grid::-webkit-scrollbar,
+  .processGrid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card,
+  .step {
+    min-height: 18rem;
+    padding: 1.4rem;
+    scroll-snap-align: start;
+  }
+
+  .faqList {
+    gap: 0.65rem;
+  }
+
+  .faqItem summary {
+    padding-block: 1rem;
+  }
+
+  .cta {
+    padding: 3.75rem 0;
   }
 }
 
