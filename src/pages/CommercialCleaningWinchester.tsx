@@ -4,10 +4,12 @@ import {
   CheckCircle2,
   ClipboardCheck,
   Clock3,
+  HeartPulse,
   Home,
   Hotel,
   KeyRound,
   MessageCircle,
+  Ruler,
   ShieldCheck,
   Utensils,
   Wrench,
@@ -23,14 +25,14 @@ import styles from "./CommercialCleaningWinchester.module.css";
 
 const trustItems = [
   {
+    icon: Ruler,
+    title: "Laser-Measured Fair Pricing",
+    text: "Pay for the carpet or dry-steam floor area we actually clean.",
+  },
+  {
     icon: Clock3,
     title: "Out-of-Hours Appointments",
     text: "Evening and weekend cleaning available.",
-  },
-  {
-    icon: ClipboardCheck,
-    title: "Clear Fixed Quotations",
-    text: "Know what is included before work begins.",
   },
   {
     icon: Wrench,
@@ -67,7 +69,7 @@ const audiences = [
   },
   {
     number: "02",
-    path: "/business/accommodation",
+    path: "/business/hotels",
     icon: Hotel,
     title: "Hotels",
     label: "Guest rooms and shared hotel areas",
@@ -77,7 +79,7 @@ const audiences = [
     services: [
       "Bedroom carpets, rugs and mattresses",
       "Headboards, chairs, sofas and reception seating",
-      "Appointments coordinated around quieter periods",
+      "Chemical-free dry steam on suitable hard surfaces",
     ],
   },
   {
@@ -112,6 +114,21 @@ const audiences = [
   },
   {
     number: "05",
+    path: "/business/clinics",
+    icon: HeartPulse,
+    title: "Private Clinics & Dental Practices",
+    label: "Hygiene-focused professional premises",
+    image: "/images/commercial/commercial-office-hero.webp",
+    alt: "Clean professional private clinic reception and treatment environment",
+    text: "Detailed cleaning for private clinics, dental practices and healthcare premises where appearance matters — but hygiene matters even more.",
+    services: [
+      "Reception carpets and waiting-room upholstery",
+      "Chemical-free dry steam on suitable hard surfaces",
+      "Helps reduce up to 99.9% of bacteria on tested surfaces",
+    ],
+  },
+  {
+    number: "06",
     path: "/business/rental-properties",
     icon: ClipboardCheck,
     title: "Estate Agents & Property Managers",
@@ -126,7 +143,7 @@ const audiences = [
     ],
   },
   {
-    number: "06",
+    number: "07",
     path: "/business/rental-properties",
     icon: KeyRound,
     title: "Landlords & Tenancy Properties",
@@ -153,8 +170,8 @@ const benefits = [
   "Evening and agreed weekend appointments",
   "Professional commercial Kärcher equipment",
   "Chemical-free dry steam for suitable sealed hard floors",
+  "Laser-measured carpet and dry-steam floor areas",
   "Clear fixed quotations before work begins",
-  "No call-out charge within our regular service area",
 ];
 
 export default function CommercialCleaningWinchester() {
@@ -164,7 +181,7 @@ export default function CommercialCleaningWinchester() {
         config={{
           title: "Commercial Carpet & Upholstery Cleaning Winchester | ROBIGO",
           description:
-            "Commercial carpet, upholstery and dry-steam cleaning for offices, hotels, Airbnb properties, restaurants, estate agents and landlords in Winchester.",
+            "Commercial carpet, upholstery and dry-steam cleaning for offices, hotels, Airbnb properties, restaurants, private clinics, dental practices, estate agents and landlords in Winchester.",
           canonical: "https://robigo.co.uk/commercial-cleaning-winchester",
           ogTitle: "Commercial Cleaning for Winchester Businesses | ROBIGO",
           ogDescription:
@@ -198,10 +215,10 @@ export default function CommercialCleaningWinchester() {
               Businesses
             </h1>
             <p className={styles.heroText}>
-              Reliable professional cleaning for offices, hotels, Airbnb
-              properties, restaurants, pubs, estate agents and managed properties.
-              Keep your premises cleaner, fresher and ready for staff, customers and
-              guests.
+              Reliable professional cleaning for offices, hotels, Airbnb properties,
+              restaurants, private clinics, dental practices and managed properties.
+              Keep your premises cleaner, fresher and ready for staff, customers,
+              patients and guests.
             </p>
             <div className={styles.actions}>
               <Button
@@ -217,8 +234,8 @@ export default function CommercialCleaningWinchester() {
               <a href="#business-rates">View Commercial Prices</a>
             </div>
             <p className={styles.heroMeta}>
-              Out-of-hours appointments · One-off and regular plans · Fully insured ·
-              7 days a week
+              Laser-measured pricing · Out-of-hours appointments · Regular plans ·
+              Fully insured
             </p>
           </div>
         </Container>
@@ -243,18 +260,16 @@ export default function CommercialCleaningWinchester() {
         </Container>
       </section>
 
-      <section
-        className={`${styles.section} ${styles.ratesSection}`}
-        id="business-rates"
-      >
+      <section className={`${styles.section} ${styles.ratesSection}`} id="business-rates">
         <Container>
           <header className={styles.sectionHeader}>
-            <p>COMMERCIAL GUIDE PRICES</p>
-            <h2>Clear starting prices before you request a quotation</h2>
+            <p>LASER-MEASURED. FAIRLY PRICED. PROFESSIONALLY CLEANED.</p>
+            <h2>Pay for the area we actually clean</h2>
             <span>
-              These guide prices help you plan. Your final fixed quotation is
-              confirmed before work begins and can combine several surfaces or
-              properties.
+              Carpeted areas and suitable hard-floor areas selected for dry-steam
+              cleaning are laser measured before work begins. Your quotation is based
+              on the actual measured area — not a rough estimate or oversized room
+              category.
             </span>
           </header>
 
@@ -270,9 +285,9 @@ export default function CommercialCleaningWinchester() {
 
           <p className={styles.minimum}>
             Minimum booking is normally £60. Dry-steam floor cleaning has a £50
-            minimum. Larger hotel, multi-property and recurring commercial work is
-            quoted individually. Carpet areas are laser measured, so you pay only for
-            the area cleaned.
+            minimum. Larger hotel, clinic, multi-property and recurring commercial work
+            is quoted individually. Standard upholstery is clearly priced by item;
+            large fitted upholstery and banquette seating are assessed separately.
           </p>
         </Container>
       </section>
