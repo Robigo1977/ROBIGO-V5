@@ -1,136 +1,285 @@
-# ROBIGO Commercial Airbnb / Hotel Copy — Approved Direction
+# ROBIGO Commercial Airbnb & Serviced Accommodation — Final Approved Copy
 
-Saved checkpoint for continuation.
+## Positioning
 
-## Approved positioning
-
-- Airbnb & Serviced Accommodation must be separate from Hotels.
+- Airbnb & Serviced Accommodation remains separate from Hotels.
 - ROBIGO does not provide curtain cleaning.
-- ROBIGO does not provide standard full turnover housekeeping between every guest stay.
-- The service is professional deep cleaning for carpets, upholstery, mattresses and suitable hard floor surfaces.
-- Appointments may be planned around check-out, check-in, maintenance access, photography and quieter booking periods.
+- ROBIGO does not provide a standard full turnover-housekeeping or linen-change service.
+- The service focuses on professional deep cleaning for carpets, rugs, upholstery, mattresses, suitable hard-floor surfaces and selected exterior areas.
+- Appointments may be planned around check-out, check-in, maintenance access, photography, seasonal refreshes and quieter booking periods.
 
-## Approved booking-calendar section
+## Hero
 
-### Deep Cleaning Planned Around Your Booking Calendar
+### Airbnb & Serviced Accommodation Cleaning
 
-Short-stay properties do not operate like ordinary homes.
+## Keep Every Property Fresh, Comfortable and Guest-Ready
 
-Cleaning often needs to fit between check-out, maintenance access, photography, quieter booking periods and the arrival of the next guests. ROBIGO plans professional deep-cleaning appointments around your property schedule wherever availability allows.
+Professional deep cleaning for Airbnb properties, serviced apartments and short-term accommodation in Winchester and surrounding areas.
 
-Suitable for:
+ROBIGO provides specialist carpet, upholstery, mattress, suitable hard-floor and selected exterior cleaning, arranged around your booking calendar wherever possible.
 
-- Planned deep cleaning between bookings
-- Quieter periods in the booking calendar
-- Seasonal property refreshes
-- Cleaning before professional photography
-- Deep cleaning after longer stays
-- Preparation before reopening a property
-- Scheduled work across several managed properties
+**One property or an entire portfolio — the same professional standard.**
 
-ROBIGO focuses on professional carpet, upholstery, mattress and suitable hard-floor deep cleaning. This is different from a standard turnover or housekeeping service between every guest stay.
+Primary CTA: **Get a Free Property Quote**
 
-Appointments can be coordinated with owners, hosts and property managers, including agreed key-access arrangements.
+Secondary CTA: **Call Robert**
 
-**Less disruption. Clear scheduling. A property prepared for its next guests.**
+Approved hero image direction: a modest, attractive short-stay apartment with guests arriving and unpacking, with a visible television showing natural scenic content.
 
-## Approved turnover-clean distinction
+## More Than a Quick Turnover Clean
 
-### More Than a Quick Turnover Clean
+A standard turnover clean keeps a property presentable between guests. Over time, however, carpets, sofas, mattresses and hard floors can begin to look tired or no longer feel genuinely fresh.
 
-Routine cleaning prepares a property for the next booking.
+ROBIGO provides deeper professional cleaning for the areas that routine housekeeping may not fully restore.
 
-Professional deep cleaning reaches the carpets, mattresses, upholstered furniture and suitable hard floors that ordinary turnover cleaning may not fully refresh.
+Appointments can be arranged around:
+
+- check-out and check-in periods;
+- quieter booking days;
+- maintenance appointments;
+- property photography;
+- seasonal refreshes;
+- preparation before important guests arrive.
+
+This is a specialist deep-cleaning service, not a complete housekeeping or linen-change service.
 
 **When the property looks clean but no longer feels fresh, it may be time for a deeper clean.**
 
-## Approved carpet / upholstery promotional block
+## This Is Not Standard Carpet or Upholstery Cleaning
 
-### This Is Not Standard Carpet or Upholstery Cleaning
+ROBIGO uses professional equipment, appropriate pre-treatment and deep extraction cleaning to refresh older, flattened and heavily used carpets and upholstery.
 
-ROBIGO uses professional equipment, pre-steam treatment and deep extraction cleaning to refresh older, flattened and heavily used carpets and upholstery.
+The process can help improve:
 
-This process helps loosen embedded dirt, lift tired fibres and improve the overall appearance far beyond a basic surface clean.
+- flattened carpet fibres;
+- tired-looking sofas and armchairs;
+- heavily used dining chairs;
+- guest-room mattresses;
+- upholstered headboards;
+- rugs and communal seating.
 
 **Professional equipment. Professional technique. Visible results.**
 
-### Before You Replace It, Let ROBIGO Refresh It
+## Before You Replace It, Let ROBIGO Refresh It
 
-Replacing carpets and upholstered furniture is expensive, disruptive and time-consuming.
+Replacing carpets and upholstered furniture can be expensive, disruptive and time-consuming.
 
 A professional deep clean may restore a fresher, better-cared-for appearance and help delay unnecessary replacement.
 
 **Let ROBIGO inspect it before you replace it.**
 
-This block is approved for both Airbnb and Hotels pages. The professional-method section must appear before the replacement-cost section.
+## Services
 
-## Approved dry-steam hard-floor section
+### Carpet and Rug Cleaning
 
-### Professional Dry-Steam Cleaning for Hard Floor Surfaces
+- bedrooms;
+- living rooms;
+- hallways and entrance areas;
+- communal spaces;
+- rugs;
+- larger carpeted areas.
 
-ROBIGO provides professional dry-steam deep cleaning for a wide range of suitable hard floor surfaces in Airbnb and serviced accommodation properties.
+### Upholstery Cleaning
 
-Suitable floor surfaces may include:
+- sofas;
+- armchairs;
+- dining chairs;
+- upholstered headboards;
+- guest seating;
+- fitted seating assessed separately.
 
-- Ceramic floor tiles
-- Porcelain floor tiles
-- Vinyl flooring
-- Suitable sealed laminate flooring
-- Marble flooring
-- Sealed stone flooring
-- Grout lines between floor tiles
-- Other suitable sealed hard floor surfaces
+### Mattress Cleaning
 
-Cork flooring is not included in the dry-steam service.
+- Single;
+- Double;
+- King;
+- Super King.
 
-Every floor is inspected before cleaning. Steam is only used where the material, seal and condition make the treatment safe and appropriate.
+### Chemical-Free Dry-Steam Hard-Floor Cleaning
 
-The professional dry-steam system provides chemical-free cleaning on suitable hard floor surfaces and can help reduce up to **99.9% of bacteria on tested surfaces** when the correct treatment method is used.
+Available for suitable:
+
+- ceramic floor tiles;
+- porcelain floor tiles;
+- vinyl flooring;
+- suitable sealed laminate flooring;
+- marble flooring;
+- sealed stone flooring;
+- grout lines between floor tiles;
+- other suitable sealed hard-floor surfaces.
+
+Every floor is inspected before treatment. Cork flooring is excluded.
+
+The professional dry-steam system provides chemical-free cleaning on suitable hard-floor surfaces and can help reduce up to **99.9% of bacteria on tested surfaces** when the correct treatment method is used.
 
 **This service applies to floor surfaces only. Wall tiles, splashbacks, worktops and other vertical surfaces are not included.**
 
-## Approved laser-measurement message
+### Exterior Pressure Washing
 
-### Laser-Measured. Fairly Priced. Professionally Cleaned.
+Professional pressure washing is available for suitable exterior areas, including:
 
-Carpeted areas and suitable hard-floor areas selected for dry-steam cleaning are laser measured before work begins.
+- external porches and entrance areas;
+- front steps;
+- pathways;
+- small patios;
+- outdoor guest areas;
+- suitable low walls and exterior ledges.
 
-Customers pay for the actual measured area cleaned — not a rough estimate or unnecessary square metres.
+Pressure washing can help remove built-up dirt, weather marks, surface algae and general outdoor grime, helping the property make a cleaner first impression before guests arrive.
 
-Standard chairs, sofas and mattresses are priced by item. Large fitted upholstery and banquette seating are assessed separately.
+**A suitable external water connection must be available at the property.**
 
-## Approved clinics direction
+Every surface is inspected first. Heavy moss, black spot, oil stains, weed removal, specialist treatments, re-sanding and sealing are quoted separately after inspection.
 
-Use a separate sector:
+## One Property or an Entire Portfolio
 
-**Private Clinics & Dental Practices**
+Whether you manage one Airbnb, several serviced apartments or a growing property portfolio, ROBIGO can provide consistent professional deep cleaning across every address.
 
-Key message:
+We can arrange:
 
-**Where appearance matters — but hygiene matters even more.**
+- one-off deep cleaning;
+- planned seasonal cleaning;
+- recurring carpet and upholstery care;
+- mattress-cleaning programmes;
+- suitable hard-floor dry-steam cleaning;
+- selected exterior pressure washing;
+- coordinated appointments across multiple properties;
+- urgent Priority 24H and Emergency requests.
 
-The dry-steam message must remain limited to suitable tested hard surfaces and use the restrained wording:
+### Clear Property-by-Property Pricing
 
-**helps reduce up to 99.9% of bacteria**
+Each property can be listed separately, showing:
 
-Do not present the service as a replacement for clinical sterilisation or infection-control procedures.
+- the property address;
+- the services requested;
+- the measured areas;
+- individual item prices;
+- the total quotation.
 
-## Approved hotel dry-steam message
+You deal directly with Robert when arranging access, discussing the work and confirming the quotation.
 
-### When Surface Cleaning Is No Longer Enough
+**One property. Several addresses. The same professional standard.**
 
-The section should explain that routine cleaning may no longer be sufficient for deeply embedded dirt in suitable hard-floor areas.
+Approved section-image direction: a large professional property-management office, a manager and client reviewing a residential-development scale model, and framed rental-property images displayed on the wall.
 
-Use the highlighted line:
+## Guide Prices
 
-**Do not replace it before ROBIGO has inspected it.**
+### Carpet Cleaning
 
-## Next continuation point
+- **Up to and including 100 m²: £2.50/m²**
+- **Over 100 m²: £2.00/m²**
 
-Continue by drafting and approving:
+### Chemical-Free Dry-Steam Hard-Floor Cleaning
 
-1. **One Property or an Entire Portfolio** section for Airbnb/property managers.
-2. Airbnb-specific service list and guide-pricing presentation.
-3. Airbnb FAQ.
-4. Final CTA.
-5. Only after approval, integrate the Airbnb sector content into `CommercialSectorPage.tsx` on branch `agent/commercial-homepage-phase-1`.
+- **Up to and including 100 m²: £2.50/m²**
+- **Over 100 m²: £2.00/m²**
+
+### Upholstery Cleaning
+
+- Dining chair: **from £10**
+- Armchair: **from £30**
+- 2-seater sofa: **from £50**
+- 3-seater sofa: **from £60**
+- 4-seater sofa: **from £70**
+- Corner sofa: **from £80**
+
+### Mattress Cleaning
+
+- Single: **from £30**
+- Double: **from £40**
+- King: **from £50**
+- Super King: **from £60**
+
+### Exterior Pressure Washing
+
+- **Up to and including 100 m²: from £4.00/m²**
+- **Over 100 m²: from £3.00/m²**
+- **Minimum pressure-washing booking: £80**
+
+### General Minimum Booking
+
+**Minimum commercial booking: £60**
+
+Larger quantities, multiple properties and recurring commercial arrangements may receive an individually structured quotation.
+
+## Laser-Measured Pricing
+
+### Laser-Measured. 100% Accurate.
+
+**You pay only for the exact area we clean. No estimates. No guesswork. No surprises.**
+
+Carpeted areas, suitable hard-floor areas and measurable pressure-washing areas are professionally laser measured before cleaning.
+
+Standard sofas, chairs and mattresses are priced by item. Large fitted upholstery, banquette seating and unusual surfaces are assessed separately.
+
+## Priority Booking Options
+
+### Priority 24H — +£30
+
+**Priority scheduling, normally within 24 hours where availability allows.**
+
+### Emergency — +£50
+
+**Our fastest available response — potentially within hours, subject to availability.**
+
+These are optional surcharges added to the standard cleaning price.
+
+## Frequently Asked Questions
+
+### Can you work between check-out and check-in?
+
+Yes, where the available time allows. Appointments can be planned around check-out, check-in, maintenance periods and quieter booking days.
+
+### Can you coordinate access with a property manager?
+
+Yes. Access can be arranged with the owner, host, property manager or an agreed key holder.
+
+### Can several properties be included in one quotation?
+
+Yes. ROBIGO can prepare a clear property-by-property quotation showing the services and cost for each address.
+
+### Is dry-steam hard-floor cleaning chemical-free?
+
+Yes, when used on a suitable floor with the correct method. Every surface is inspected before treatment.
+
+### Does dry-steam cleaning include wall tiles or kitchen surfaces?
+
+No. The service applies to suitable floor surfaces only. Wall tiles, splashbacks, worktops and other vertical surfaces are not included.
+
+### Can every stain be removed?
+
+No professional cleaner can honestly guarantee every stain. Results depend on the material, age of the stain, previous treatments and the overall condition. ROBIGO inspects the area first and explains realistic expectations before beginning.
+
+### How long do carpets and upholstery take to dry?
+
+Drying time depends on ventilation, room temperature, fabric type and the treatment required. ROBIGO will advise after inspection and help plan the cleaning around the next booking wherever possible.
+
+### What is required for pressure washing?
+
+A suitable external water connection must be available at the property. Every surface is inspected first to confirm that pressure washing is appropriate.
+
+## Final CTA
+
+### Preparing for Your Next Guests?
+
+Send Robert:
+
+- the property postcode;
+- several clear photographs;
+- the approximate number of rooms;
+- the carpets, mattresses, upholstered items, hard floors or exterior areas requiring cleaning;
+- your preferred date or booking window.
+
+ROBIGO will reply personally with the next steps and a clear quotation.
+
+### Request Your Free Property Quote
+
+**One property or several addresses — the same professional standard.**
+
+**Not needed today? Save our details so ROBIGO is easy to find when your property needs a professional deep clean.**
+
+## Integration status
+
+This copy is approved for integration into `src/pages/CommercialSectorPage.tsx` on branch `agent/commercial-homepage-phase-1`.
+
+The `master` branch must remain unchanged until the user approves deployment.
