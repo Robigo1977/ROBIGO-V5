@@ -8,7 +8,7 @@ export const heroData = {
 
   primaryButton: {
     label: "Get My Free WhatsApp Quote",
-    href: "/instant-quote",
+    href: "#services",
   },
 
   secondaryButton: {

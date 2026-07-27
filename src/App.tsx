@@ -8,8 +8,6 @@ import FloatingWhatsApp from "./components/layout/FloatingWhatsApp/FloatingWhats
 import Hero from "./components/sections/Hero";
 import UrgentServices from "./components/sections/UrgentServices";
 import TrustBar from "./components/sections/TrustBar";
-import Pricing from "./components/sections/Pricing/Pricing";
-import QuoteTeaser from "./components/sections/QuoteTeaser/QuoteTeaser";
 import BeforeAfter from "./components/sections/BeforeAfter";
 import Services from "./components/sections/Services";
 import ExploreMore from "./components/sections/ExploreMore/ExploreMore";
@@ -19,7 +17,6 @@ import CarpetCleaningWinchester from "./pages/CarpetCleaningWinchester";
 import MoreInformation from "./pages/MoreInformation";
 import CommercialCleaningWinchester from "./pages/CommercialCleaningWinchester";
 import CommercialSectorPage from "./pages/CommercialSectorPage";
-import InstantQuote from "./pages/InstantQuote";
 
 function HomePage() {
   return (
@@ -27,8 +24,6 @@ function HomePage() {
       <Hero />
       <UrgentServices />
       <TrustBar />
-      <Pricing compact />
-      <QuoteTeaser />
       <Services />
       <BeforeAfter compact />
       <ExploreMore />
@@ -64,7 +59,6 @@ function App() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/instant-quote" element={<InstantQuote />} />
         <Route
           path="/carpet-cleaning-winchester"
           element={<CarpetCleaningWinchester />}
