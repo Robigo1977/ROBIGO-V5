@@ -1,5 +1,6 @@
 import Button from "../../ui/Button/Button";
 import { site } from "../../../config/site";
+import { pricing } from "../Pricing/pricing.data";
 
 import type { ServiceItem } from "./services.data";
 import styles from "./Services.module.css";
@@ -22,6 +23,10 @@ export default function ServiceCard({
 
   const headingId =
     `service-${service.id}`;
+
+  const servicePricing = pricing.find(
+    (category) => category.id === service.id,
+  );
 
 
 
@@ -123,9 +128,16 @@ Thank you.`);
 
         </h3>
 
-
-
-
+        {servicePricing && (
+          <div className={styles.priceList} aria-label={`${service.title} prices`}>
+            {servicePricing.items.map((item) => (
+              <div className={styles.priceItem} key={item.label}>
+                <span>{item.label}</span>
+                <strong>{item.price}</strong>
+              </div>
+            ))}
+          </div>
+        )}
 
         <p>
 

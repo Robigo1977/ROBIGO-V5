@@ -41,10 +41,10 @@ export default function Services() {
         badge="WINCHESTER CLEANING SERVICES"
 
 
-        title="Professional Carpet & Upholstery Cleaning in Winchester"
+        title="Professional Cleaning Services & Prices in Winchester"
 
 
-        description="ROBIGO provides professional carpet cleaning, upholstery cleaning, mattress cleaning and chemical-free steam cleaning with transparent pricing, no call-out charges and friendly local service."
+        description="Choose the service you need and see the starting price immediately. Clear pricing, no call-out charges and friendly local service across Winchester and surrounding areas."
 
 
       />
