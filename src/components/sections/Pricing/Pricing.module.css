@@ -3,6 +3,10 @@
   background: linear-gradient(180deg, #f8fbfd 0%, #eef5fb 100%);
 }
 
+.compact {
+  padding: 3.5rem 0;
+}
+
 .header {
   text-align: center;
   margin-bottom: 2.5rem;
@@ -98,6 +102,15 @@
   color: #5c6b7a;
 }
 
+.secondaryLink {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 1rem;
+  color: #0f5fa8;
+  font-weight: 700;
+  text-underline-offset: 0.2em;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -118,5 +131,27 @@
 @media (min-width: 768px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .compact .card {
+    padding: 1.25rem;
+  }
+
+  .compact .cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .compact .cta p {
+    flex-basis: 100%;
+    margin: 0;
+  }
+
+  .compact .secondaryLink {
+    display: inline-flex;
+    margin: 0;
   }
 }

@@ -10,7 +10,6 @@ import QuoteActions from "./QuoteActions";
 import { calculateQuoteResult } from "./priceEngine";
 import type { QuoteExtras, QuoteItem, ServiceType } from "./types";
 import { fadeUp } from "../../../motion/variants";
-import { viewport } from "../../../motion/viewport";
 import styles from "./QuoteCalculator.module.css";
 
 const INITIAL_EXTRAS: QuoteExtras = {
@@ -69,8 +68,7 @@ export default function QuoteCalculator() {
           className={styles.calculator}
           variants={fadeUp}
           initial="hidden"
-          whileInView="show"
-          viewport={viewport}
+          animate="show"
         >
           <ProgressHeader currentStep={3} id="quote-heading" />
           <ServiceCards selected={service} onSelect={selectService} />

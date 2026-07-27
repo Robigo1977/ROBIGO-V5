@@ -11,7 +11,7 @@ import type {
 
 import {
   services,
-} from "./quote.data";
+} from "./data";
 import { SERVICE_PRICES } from "./servicePrices";
 
 import styles from "./QuoteCalculator.module.css";
