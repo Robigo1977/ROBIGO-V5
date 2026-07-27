@@ -1,0 +1,40 @@
+.intro {
+  padding: 7.5rem 1.25rem 1rem;
+  background: #081a33;
+  color: #ffffff;
+  text-align: center;
+}
+
+.intro span {
+  color: #93c5fd;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.intro h1 {
+  margin: 0.65rem 0;
+  font-size: clamp(2rem, 9vw, 3.75rem);
+  line-height: 1.05;
+}
+
+.intro p {
+  max-width: 42rem;
+  margin: 0 auto;
+  color: #cbd5e1;
+  line-height: 1.65;
+}
+
+.intro a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #ffffff;
+  font-weight: 700;
+  text-underline-offset: 0.2em;
+}
+
+@media (min-width: 768px) {
+  .intro {
+    padding-top: 9rem;
+  }
+}

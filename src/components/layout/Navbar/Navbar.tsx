@@ -22,8 +22,9 @@ export default function Navbar() {
             aria-label="Primary navigation"
           >
             <a href="/#services">Services</a>
-            <a href="/#quote">Quote</a>
-            <a href="/#reviews">Reviews</a>
+            <a href="/#pricing">Prices</a>
+            <a href="/instant-quote">Instant Quote</a>
+            <a href="/more-about-robigo#reviews">Reviews</a>
             <a href="/#contact">Contact</a>
           </nav>
 
