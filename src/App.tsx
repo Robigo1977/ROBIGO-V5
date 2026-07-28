@@ -22,9 +22,9 @@ function HomePage() {
   return (
     <main id="main-content">
       <Hero />
+      <Services />
       <UrgentServices />
       <TrustBar />
-      <Services />
       <BeforeAfter compact />
       <ExploreMore />
       <Contact />
