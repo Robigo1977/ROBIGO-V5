@@ -44,6 +44,9 @@ export default function Pricing() {
                     </div>
                 ))}
               </div>
+              {category.note && (
+                <p className={styles.note}>{category.note}</p>
+              )}
             </article>
           ))}
         </div>
