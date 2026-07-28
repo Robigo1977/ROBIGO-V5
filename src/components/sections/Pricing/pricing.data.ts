@@ -2,6 +2,7 @@ export interface PricingCategory {
   id: string;
   title: string;
   icon: string;
+  note?: string;
   items: {
     label: string;
     price: string;
@@ -15,12 +16,8 @@ export const pricing: PricingCategory[] = [
     icon: "🧼",
     items: [
       {
-        label: "Minimum Charge",
-        price: "£60",
-      },
-      {
         label: "30–49 m²",
-        price: "£3.00 / m²",
+        price: "£2.50 / m²",
       },
       {
         label: "50–99 m²",
@@ -31,10 +28,28 @@ export const pricing: PricingCategory[] = [
         price: "£1.80 / m²",
       },
       {
+        label: "Minimum Charge",
+        price: "£60",
+      },
+      {
+        label: "Single bedroom (approx. 8 m²)",
+        price: "about £20*",
+      },
+      {
+        label: "Double bedroom (approx. 12 m²)",
+        price: "about £30*",
+      },
+      {
+        label: "Average living room (approx. 20 m²)",
+        price: "about £50*",
+      },
+      {
         label: "Stairs (per step)",
         price: "£3.00",
       },
     ],
+    note:
+      "*Room examples show the area-based price at £2.50/m². The £60 minimum booking still applies, so combining rooms usually offers the best value.",
   },
 
   {
