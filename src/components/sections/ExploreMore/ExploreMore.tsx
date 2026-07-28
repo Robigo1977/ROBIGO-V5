@@ -36,6 +36,10 @@ export default function ExploreMore() {
           </ul>
 
           <div className={styles.links}>
+            <a className={styles.businessLink} href="/business">
+              Explore Business Cleaning
+              <ArrowRight aria-hidden="true" />
+            </a>
             <a className={styles.link} href="/more-about-robigo#reviews">
               Read Customer Reviews
               <ArrowRight aria-hidden="true" />
