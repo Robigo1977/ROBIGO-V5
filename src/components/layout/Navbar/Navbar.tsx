@@ -23,6 +23,9 @@ export default function Navbar() {
           >
             <a href="/#services">Services</a>
             <a href="/#services">Prices</a>
+            <a className="navbar-business-link" href="/business">
+              Business
+            </a>
             <a href="/more-about-robigo#reviews">Reviews</a>
             <a href="/#contact">Contact</a>
           </nav>
