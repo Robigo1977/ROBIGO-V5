@@ -62,6 +62,41 @@
   gap: 0.75rem;
 }
 
+.businessLink {
+  display: inline-flex;
+  min-height: 2.9rem;
+  padding: 0.75rem 1rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  border-radius: 0.75rem;
+  background: #1d4ed8;
+  box-shadow: 0 10px 24px rgba(29, 78, 216, 0.18);
+  color: #fff;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.businessLink:hover {
+  background: #1e40af;
+  transform: translateY(-1px);
+}
+
+.businessLink:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.3);
+  outline-offset: 3px;
+}
+
+.businessLink svg {
+  width: 1.15rem;
+  flex: 0 0 auto;
+}
+
 .link {
   display: inline-flex;
   width: fit-content;
@@ -88,5 +123,17 @@
   .panel {
     grid-template-columns: minmax(0, 1.35fr) minmax(14rem, 0.8fr) auto;
     align-items: center;
+  }
+}
+
+@media (max-width: 849px) {
+  .businessLink {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .businessLink {
+    transition: none;
   }
 }
