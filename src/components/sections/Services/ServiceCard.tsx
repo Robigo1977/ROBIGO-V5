@@ -136,6 +136,9 @@ Thank you.`);
                 <strong>{item.price}</strong>
               </div>
             ))}
+            {servicePricing.note && (
+              <p className={styles.priceNote}>{servicePricing.note}</p>
+            )}
           </div>
         )}
 

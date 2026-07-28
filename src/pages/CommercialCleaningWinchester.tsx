@@ -17,7 +17,6 @@ import styles from "./CommercialCleaningWinchester.module.css";
 
 const audiences = [
   {
-    number: "01",
     path: "/business/offices",
     icon: Building2,
     title: "Offices & Office Buildings",
@@ -32,7 +31,6 @@ const audiences = [
     ],
   },
   {
-    number: "02",
     path: "/business/hospitality",
     icon: Utensils,
     title: "Bars, Restaurants & Hospitality",
@@ -47,7 +45,6 @@ const audiences = [
     ],
   },
   {
-    number: "03",
     path: "/business/accommodation",
     icon: Hotel,
     title: "Airbnb, Hotels & Booking.com Properties",
@@ -62,7 +59,6 @@ const audiences = [
     ],
   },
   {
-    number: "04",
     path: "/business/rental-properties",
     icon: KeyRound,
     title: "Rental & Tenancy Properties",
@@ -172,14 +168,13 @@ export default function CommercialCleaningWinchester() {
             {audiences.map((audience) => {
               const Icon = audience.icon;
               return (
-                <article className={styles.audienceCard} key={audience.number}>
+                <article className={styles.audienceCard} key={audience.path}>
                   <div className={styles.audienceVisual}>
                     <img
                       src={audience.image}
                       alt={audience.alt}
                       loading="lazy"
                     />
-                    <strong>{audience.number}</strong>
                   </div>
                   <div className={styles.audienceBody}>
                     <div className={styles.audienceHeading}>
