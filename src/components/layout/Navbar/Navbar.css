@@ -123,6 +123,10 @@
   }
 
   .navbar-nav {
+    margin-left: auto;
+  }
+
+  .navbar-nav a:not(.navbar-business-link) {
     display: none;
   }
 }
@@ -130,10 +134,18 @@
 @media (max-width: 640px) {
   .navbar-container {
     min-height: 64px;
-    gap: var(--space-4);
+    gap: var(--space-3);
   }
 
   .navbar-logo {
     font-size: 1.3rem;
+  }
+
+  .navbar-nav {
+    gap: 0;
+  }
+
+  .navbar-business-link {
+    font-size: 0.78rem;
   }
 }
