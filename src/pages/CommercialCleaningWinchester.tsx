@@ -102,55 +102,57 @@ export default function CommercialCleaningWinchester() {
           ogDescription:
             "Flexible professional cleaning for Winchester businesses.",
           ogImage:
-            "https://robigo.co.uk/images/commercial/commercial-office-hero.webp",
+            "https://robigo.co.uk/images/commercial/business-hero-desktop.webp",
           twitterTitle: "Commercial Cleaning Winchester | ROBIGO",
           twitterDescription:
             "Flexible professional cleaning for Winchester businesses.",
           twitterImage:
-            "https://robigo.co.uk/images/commercial/commercial-office-hero.webp",
+            "https://robigo.co.uk/images/commercial/business-hero-desktop.webp",
         }}
         schema={businessSchema}
       />
 
       <section className={styles.hero}>
-        <img
-          className={styles.heroImage}
-          src="/images/commercial/commercial-office-hero.webp"
-          alt=""
-          aria-hidden="true"
-          fetchPriority="high"
-        />
+        <picture className={styles.heroMedia}>
+          <source
+            media="(max-width: 699px)"
+            srcSet="/images/commercial/business-hero-mobile.webp"
+          />
+          <img
+            className={styles.heroImage}
+            src="/images/commercial/business-hero-desktop.webp"
+            alt="Professional commercial carpet cleaning with Kärcher extraction equipment in a premium business interior"
+            fetchPriority="high"
+          />
+        </picture>
         <div className={styles.heroShade} />
-        <Container>
-          <div className={styles.heroContent}>
-            <p className={styles.heroBrand}>ROBIGO</p>
-            <p className={styles.eyebrow}>
-              COMMERCIAL CLEANING FOR WINCHESTER BUSINESSES
-            </p>
-            <h1>A cleaner space. A stronger first impression.</h1>
-            <p className={styles.heroText}>
-              Premium carpet and upholstery care, plus chemical-free dry-steam
-              cleaning for suitable hard floors — for businesses that care about
-              presentation, hygiene and customer confidence.
-            </p>
-            <div className={styles.actions}>
-              <Button
-                href={site.whatsappMessage(
-                  "Hi ROBIGO, I'd like a free commercial cleaning quotation.",
-                )}
-                target="_blank"
-                rel="noopener noreferrer"
-                size="lg"
-              >
-                Request a Free Business Quote
-              </Button>
-              <a href="#business-rates">View Business Rates</a>
+        <div className={styles.heroForeground}>
+          <Container>
+            <div className={styles.heroContent}>
+              <p className={styles.heroBrand}>ROBIGO</p>
+              <p className={styles.eyebrow}>
+                COMMERCIAL CLEANING FOR WINCHESTER BUSINESSES
+              </p>
+              <h1>
+                <span className={styles.desktopHeadline}>
+                  A cleaner space. A stronger first impression.
+                </span>
+                <span className={styles.mobileHeadline}>
+                  Commercial cleaning. First-class impressions.
+                </span>
+              </h1>
+              <p className={styles.heroText}>
+                Premium carpet and upholstery care, plus chemical-free dry-steam
+                cleaning for suitable hard floors — for businesses that care about
+                presentation, hygiene and customer confidence.
+              </p>
+              <p className={styles.heroMeta}>
+                Out-of-hours cleaning available · Fixed quotations · 7 days a week
+              </p>
             </div>
-            <p className={styles.heroMeta}>
-              Out-of-hours cleaning available · Fixed quotations · 7 days a week
-            </p>
-          </div>
-        </Container>
+          </Container>
+        </div>
+        <p className={styles.heroDomain}>robigo.co.uk</p>
       </section>
 
       <section className={styles.section}>
