@@ -92,11 +92,11 @@ Thank you.`);
 
           className={styles.image}
 
-          loading="lazy"
+          loading="eager"
 
           decoding="async"
 
-          fetchPriority="low"
+          fetchPriority="auto"
 
         />
 

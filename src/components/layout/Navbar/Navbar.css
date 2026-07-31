@@ -123,10 +123,6 @@
   }
 
   .navbar-nav {
-    margin-left: auto;
-  }
-
-  .navbar-nav a:not(.navbar-business-link) {
     display: none;
   }
 }
@@ -141,11 +137,4 @@
     font-size: 1.3rem;
   }
 
-  .navbar-nav {
-    gap: 0;
-  }
-
-  .navbar-business-link {
-    font-size: 0.78rem;
-  }
 }
