@@ -119,7 +119,7 @@ export default function CommercialCleaningWinchester() {
         <picture className={styles.heroMedia}>
           <source
             media="(max-width: 699px)"
-            srcSet="/images/commercial/business-hero-mobile.webp"
+            srcSet="/images/commercial/business-hero-mobile-safe.jpg"
           />
           <img
             className={styles.heroImage}
