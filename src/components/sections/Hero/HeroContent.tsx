@@ -13,7 +13,7 @@ export default function HeroContent() {
     <motion.div
       className={styles.content}
       variants={fadeUp}
-      initial="hidden"
+      initial={false}
       whileInView="show"
       viewport={viewport}
     >
