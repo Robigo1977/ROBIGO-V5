@@ -1,4 +1,4 @@
-import heroImage from "../../../assets/optimized/hero/robigo-campaign-hero.webp";
+import heroImage from "../../../assets/optimized/hero/robigo-campaign-hero-mobile-safe.jpg";
 
 import styles from "./Hero.module.css";
 

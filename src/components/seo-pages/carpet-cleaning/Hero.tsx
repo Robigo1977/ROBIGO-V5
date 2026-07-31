@@ -3,7 +3,7 @@ import Button from "../../ui/Button";
 import SEO from "../../../seo/SEO";
 import businessSchema from "../../../seo/schema";
 
-import carpetCleaningImage from "../../../assets/optimized/hero/robigo-campaign-hero.webp";
+import carpetCleaningImage from "../../../assets/optimized/hero/robigo-campaign-hero-mobile-safe.jpg";
 
 import styles from "./CarpetCleaningPage.module.css";
 
