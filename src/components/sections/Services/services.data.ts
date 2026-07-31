@@ -1,5 +1,5 @@
 import carpetImage from "../../../assets/optimized/carpet-cleaning-v2-mobile-safe.jpg";
-import upholsteryImage from "../../../assets/optimized/upholstery-cleaning-v2.webp";
+import upholsteryImage from "../../../assets/optimized/upholstery-cleaning-v2-mobile-safe.jpg";
 import mattressImage from "../../../assets/optimized/mattress-cleaning.webp";
 import steamImage from "../../../assets/optimized/servicessteam-cleaning.webp.webp";
 
