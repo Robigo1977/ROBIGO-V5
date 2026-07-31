@@ -164,6 +164,229 @@
   padding: clamp(3.75rem, 7vw, 5.5rem) 0;
 }
 
+.urgentSection {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(3.5rem, 7vw, 5.5rem) 0;
+  background:
+    radial-gradient(circle at 12% 0, rgba(56, 189, 248, 0.16), transparent 34%),
+    linear-gradient(145deg, #06111f 0%, #0a213a 58%, #10375c 100%);
+  color: #fff;
+}
+
+.urgentSection::after {
+  position: absolute;
+  right: -8rem;
+  bottom: -10rem;
+  width: 25rem;
+  height: 25rem;
+  border: 1px solid rgba(125, 211, 252, 0.13);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4rem rgba(125, 211, 252, 0.025);
+  content: "";
+  pointer-events: none;
+}
+
+.urgentIntro {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1.2rem;
+  margin-bottom: 2.1rem;
+}
+
+.urgentEyebrow {
+  margin: 0 0 0.7rem;
+  color: #7dd3fc;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+}
+
+.urgentIntro h2 {
+  max-width: 39rem;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2rem, 5vw, 3.35rem);
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.urgentIntro > p {
+  max-width: 38rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.76);
+  line-height: 1.75;
+}
+
+.urgentGrid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1.15rem;
+}
+
+.urgentCard {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem;
+  padding: clamp(1.35rem, 4vw, 2rem);
+  border: 1px solid rgba(186, 230, 253, 0.2);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.075);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(14px);
+}
+
+.priorityCard {
+  border-top: 3px solid #f6c453;
+}
+
+.emergencyCard {
+  border-top: 3px solid #ef4444;
+}
+
+.urgentIcon {
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid rgba(246, 196, 83, 0.3);
+  border-radius: 0.9rem;
+  place-items: center;
+  background: rgba(246, 196, 83, 0.12);
+  color: #f6c453;
+}
+
+.emergencyCard .urgentIcon {
+  border-color: rgba(239, 68, 68, 0.34);
+  background: rgba(239, 68, 68, 0.12);
+  color: #fb7185;
+}
+
+.urgentIcon svg {
+  width: 1.45rem;
+  height: 1.45rem;
+}
+
+.urgentBadge {
+  display: inline-flex;
+  margin-bottom: 0.75rem;
+  color: #f6c453;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+}
+
+.emergencyCard .urgentBadge {
+  color: #fb7185;
+}
+
+.urgentCard h3 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.55rem, 3vw, 2rem);
+}
+
+.urgentCardBody > p {
+  margin: 0.85rem 0 1.1rem;
+  color: rgba(255, 255, 255, 0.76);
+  line-height: 1.65;
+}
+
+.urgentCard ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.urgentCard li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.urgentCard li svg {
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.08rem;
+  flex: 0 0 auto;
+  color: #f6c453;
+}
+
+.emergencyCard li svg {
+  color: #fb7185;
+}
+
+.urgentPrice {
+  display: flex;
+  margin-top: 1.25rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(246, 196, 83, 0.26);
+  border-radius: 0.8rem;
+  background: rgba(4, 14, 29, 0.38);
+}
+
+.urgentPrice span {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.urgentPrice strong {
+  color: #f6c453;
+  font-size: 1.65rem;
+  line-height: 1;
+}
+
+.emergencyCard .urgentPrice {
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.emergencyCard .urgentPrice strong {
+  color: #fb7185;
+}
+
+.urgentAction {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 1.4rem;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
+  background: #fff;
+  color: #071426;
+  font-size: 0.88rem;
+  font-weight: 900;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.urgentAction svg {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.urgentAction:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
 .sectionHeader {
   max-width: 49rem;
   margin: 0 auto 2.3rem;
@@ -453,6 +676,15 @@
 }
 
 @media (min-width: 700px) {
+  .urgentIntro {
+    grid-template-columns: minmax(0, 1.08fr) minmax(20rem, 0.92fr);
+    align-items: end;
+  }
+
+  .urgentGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .audienceGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -480,6 +712,20 @@
 }
 
 @media (max-width: 699px) {
+  .urgentCard {
+    grid-template-columns: 1fr;
+  }
+
+  .urgentCard ul {
+    grid-template-columns: 1fr;
+  }
+
+  .urgentAction {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
   .hero {
     min-height: 760px;
     align-items: flex-start;
