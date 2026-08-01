@@ -58,10 +58,10 @@
 
 .badge {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
+  top: 0.65rem;
+  left: 0.65rem;
 
-  padding: 0.5rem 0.9rem;
+  padding: 0.4rem 0.7rem;
 
   border-radius: 999px;
 
@@ -75,7 +75,7 @@
 
   color: #ffffff;
 
-  font-size: 0.75rem;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -237,6 +237,14 @@
 }
 
 @media (max-width: 767px) {
+  .badge {
+    top: 0.5rem;
+    left: 0.5rem;
+    padding: 0.34rem 0.6rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.03em;
+  }
+
   .content {
     padding: 1.5rem;
   }
