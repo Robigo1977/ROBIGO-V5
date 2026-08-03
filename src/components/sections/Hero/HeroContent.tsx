@@ -32,7 +32,7 @@ export default function HeroContent() {
         {heroData.subtitle}
       </p>
 
-      <p className={styles.callout}>âœ“ No call-out charge</p>
+      <p className={styles.callout}>{"\u2713"} No call-out charge</p>
 
       <HeroButtons />
 
@@ -44,7 +44,7 @@ export default function HeroContent() {
           className={styles.stars}
           aria-hidden="true"
         >
-          â˜…â˜…â˜…â˜…â˜…
+          {"\u2605\u2605\u2605\u2605\u2605"}
         </span>
 
         <span className={styles.ratingText}>
