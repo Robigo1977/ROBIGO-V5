@@ -105,12 +105,12 @@ export default function CommercialCleaningWinchester() {
           ogDescription:
             "Flexible professional cleaning for Winchester businesses.",
           ogImage:
-            "https://robigo.co.uk/images/commercial/business-hero-desktop.webp",
+            "https://robigo.co.uk/images/commercial/business-hero-mobile-safe.jpg",
           twitterTitle: "Commercial Cleaning Winchester | ROBIGO",
           twitterDescription:
             "Flexible professional cleaning for Winchester businesses.",
           twitterImage:
-            "https://robigo.co.uk/images/commercial/business-hero-desktop.webp",
+            "https://robigo.co.uk/images/commercial/business-hero-mobile-safe.jpg",
         }}
         schema={businessSchema}
       />
@@ -123,7 +123,7 @@ export default function CommercialCleaningWinchester() {
           />
           <img
             className={styles.heroImage}
-            src="/images/commercial/commercial-hotel-robert-hero.webp"
+            src="/images/commercial/business-hero-mobile-safe.jpg"
             alt="Professional commercial carpet cleaning with KÃ¤rcher extraction equipment in a premium business interior"
             fetchPriority="high"
           />
