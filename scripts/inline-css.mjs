@@ -27,7 +27,7 @@ const scriptPath = resolve(distDir, scriptMatch[1].replace(/^\//, ""));
 const script = (await readFile(scriptPath, "utf8")).replace(/<\/script/gi, "<\\/script");
 html = html.replace(
   scriptPattern,
-  `<script type="module" data-robigo-app>${script}</script>`,
+  () => `<script type="module" data-robigo-app>${script}</script>`,
 );
 
 await writeFile(indexPath, html, "utf8");
