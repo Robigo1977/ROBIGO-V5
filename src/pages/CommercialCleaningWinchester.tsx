@@ -158,6 +158,58 @@ export default function CommercialCleaningWinchester() {
         <p className={styles.heroDomain}>The best quality. For less.</p>
       </section>
 
+      <section className={styles.section}>
+        <Container>
+          <header className={styles.sectionHeader}>
+            <p>CHOOSE YOUR BUSINESS TYPE</p>
+            <h2>Professional cleaning designed around your property</h2>
+            <span>
+              Select the section that best matches your premises and see the
+              services most relevant to you.
+            </span>
+          </header>
+
+          <div className={styles.audienceGrid}>
+            {audiences.map((audience) => {
+              const Icon = audience.icon;
+              return (
+                <article className={styles.audienceCard} key={audience.path}>
+                  <div className={styles.audienceVisual}>
+                    <img
+                      src={audience.image}
+                      alt={audience.alt}
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className={styles.audienceBody}>
+                    <div className={styles.audienceHeading}>
+                      <Icon aria-hidden="true" />
+                      <div>
+                        <span>{audience.label}</span>
+                        <h3>{audience.title}</h3>
+                      </div>
+                    </div>
+                    <p>{audience.text}</p>
+                    <ul>
+                      {audience.services.map((service) => (
+                        <li key={service}>
+                          <CheckCircle2 aria-hidden="true" />
+                          {service}
+                        </li>
+                      ))}
+                    </ul>
+                    <a className={styles.audienceLink} href={audience.path}>
+                      View sector services
+                      <span aria-hidden="true">&gt;</span>
+                    </a>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </Container>
+      </section>
+
       <section className={styles.urgentSection} aria-labelledby="urgent-business-heading">
         <Container>
           <div className={styles.urgentIntro}>
@@ -238,58 +290,6 @@ export default function CommercialCleaningWinchester() {
                 </a>
               </div>
             </article>
-          </div>
-        </Container>
-      </section>
-
-      <section className={styles.section}>
-        <Container>
-          <header className={styles.sectionHeader}>
-            <p>CHOOSE YOUR BUSINESS TYPE</p>
-            <h2>Professional cleaning designed around your property</h2>
-            <span>
-              Select the section that best matches your premises and see the
-              services most relevant to you.
-            </span>
-          </header>
-
-          <div className={styles.audienceGrid}>
-            {audiences.map((audience) => {
-              const Icon = audience.icon;
-              return (
-                <article className={styles.audienceCard} key={audience.path}>
-                  <div className={styles.audienceVisual}>
-                    <img
-                      src={audience.image}
-                      alt={audience.alt}
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className={styles.audienceBody}>
-                    <div className={styles.audienceHeading}>
-                      <Icon aria-hidden="true" />
-                      <div>
-                        <span>{audience.label}</span>
-                        <h3>{audience.title}</h3>
-                      </div>
-                    </div>
-                    <p>{audience.text}</p>
-                    <ul>
-                      {audience.services.map((service) => (
-                        <li key={service}>
-                          <CheckCircle2 aria-hidden="true" />
-                          {service}
-                        </li>
-                      ))}
-                    </ul>
-                    <a className={styles.audienceLink} href={audience.path}>
-                      View sector services
-                      <span aria-hidden="true">&gt;</span>
-                    </a>
-                  </div>
-                </article>
-              );
-            })}
           </div>
         </Container>
       </section>
