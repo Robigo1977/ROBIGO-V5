@@ -99,6 +99,19 @@
   text-shadow: 0 2px 14px rgba(0, 0, 0, .55);
 }
 
+.callout {
+  margin: 1rem 0 0;
+  padding: .55rem .85rem;
+  border: 1px solid rgba(201, 255, 53, .5);
+  border-radius: 999px;
+  background: rgba(7, 19, 18, .72);
+  color: #dfff73;
+  font-size: .92rem;
+  font-weight: 800;
+  letter-spacing: .01em;
+  backdrop-filter: blur(8px);
+}
+
 .actions {
   display: flex;
   width: 100%;
