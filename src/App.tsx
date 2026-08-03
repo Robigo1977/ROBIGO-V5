@@ -32,6 +32,14 @@ function HomePage() {
   );
 }
 
+function DrySteamRedirect() {
+  useEffect(() => {
+    window.location.replace("/dry-steam/index.html");
+  }, []);
+
+  return null;
+}
+
 function RouteScrollManager() {
   const { pathname, hash } = useLocation();
 
@@ -70,6 +78,7 @@ function App() {
         />
         <Route path="/business" element={<CommercialCleaningWinchester />} />
         <Route path="/business/:sector" element={<CommercialSectorPage />} />
+        <Route path="/dry-steam" element={<DrySteamRedirect />} />
       </Routes>
 
       <Footer />
