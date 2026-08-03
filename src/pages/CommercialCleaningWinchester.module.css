@@ -679,6 +679,15 @@
 }
 
 @media (min-width: 700px) {
+  .heroImage {
+    position: absolute;
+    top: 0;
+    right: 3%;
+    width: min(48%, 43rem);
+    height: calc(100svh - 5rem);
+    max-height: 100%;
+  }
+
   .urgentIntro {
     grid-template-columns: minmax(0, 1.08fr) minmax(20rem, 0.92fr);
     align-items: end;
