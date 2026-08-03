@@ -105,6 +105,7 @@
 
 @media (max-width: 768px) {
   .floating-whatsapp {
+    display: none;
     right: 12px;
     bottom: calc(env(safe-area-inset-bottom, 0px) + 12px);
     width: 50px;
