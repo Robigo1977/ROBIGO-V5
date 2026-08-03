@@ -283,8 +283,8 @@ export default function CommercialCleaningWinchester() {
                       ))}
                     </ul>
                     <a className={styles.audienceLink} href={audience.path}>
-                      View services for this sector
-                      <span aria-hidden="true">&rarr;</span>
+                      View sector services
+                      <span aria-hidden="true">&gt;</span>
                     </a>
                   </div>
                 </article>
