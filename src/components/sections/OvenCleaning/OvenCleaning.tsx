@@ -30,6 +30,23 @@ export default function OvenCleaning() {
             A careful deep clean for ovens, cookers and selected kitchen appliances.
             Clear fixed prices, friendly local service and no call-out charge within our service area.
           </p>
+
+          <div
+            role="img"
+            aria-label="ROBIGO technician professionally cleaning an oven with dry steam"
+            style={{
+              width: "100%",
+              aspectRatio: "16 / 9",
+              borderRadius: "18px",
+              margin: "1.25rem 0",
+              backgroundImage: "url(/images/preview/approved-sprite.jpg)",
+              backgroundSize: "300% 200%",
+              backgroundPosition: "0% 100%",
+              backgroundRepeat: "no-repeat",
+              boxShadow: "0 16px 40px rgba(15, 23, 42, 0.14)",
+            }}
+          />
+
           <ul className={styles.benefits}>
             <li>Built-up grease and burnt-on residue removed</li>
             <li>Racks, trays and accessible internal surfaces cleaned</li>
