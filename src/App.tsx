@@ -10,6 +10,7 @@ import UrgentServices from "./components/sections/UrgentServices";
 import TrustBar from "./components/sections/TrustBar";
 import BeforeAfter from "./components/sections/BeforeAfter";
 import Services from "./components/sections/Services";
+import OvenCleaning from "./components/sections/OvenCleaning";
 import ExploreMore from "./components/sections/ExploreMore/ExploreMore";
 import Contact from "./components/sections/Contact";
 
@@ -23,6 +24,7 @@ function HomePage() {
     <main id="main-content">
       <Hero />
       <Services />
+      <OvenCleaning />
       <UrgentServices />
       <TrustBar />
       <BeforeAfter compact />
