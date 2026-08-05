@@ -1,8 +1,3 @@
-import carpetImage from "../../../assets/optimized/carpet-cleaning-v2-mobile-safe.jpg";
-import upholsteryImage from "../../../assets/optimized/upholstery-cleaning-v2-mobile-safe.jpg";
-import mattressImage from "../../../assets/optimized/mattress-cleaning.webp";
-import steamImage from "../../../assets/optimized/servicessteam-cleaning.webp.webp";
-
 export type ServiceId = "carpet" | "upholstery" | "mattress" | "steam";
 
 export interface ServiceItem {
@@ -20,7 +15,7 @@ export const services: readonly ServiceItem[] = [
     title: "Carpet Cleaning",
     description:
       "Professional carpet cleaning in Winchester using deep extraction methods to remove embedded dirt, stains, allergens and everyday odours. Ideal for homes, families and pet owners.",
-    image: carpetImage,
+    image: "/images/preview/carpet.svg",
     features: [
       "Deep Dirt & Stain Removal",
       "Pet & Family Friendly",
@@ -33,7 +28,7 @@ export const services: readonly ServiceItem[] = [
     title: "Upholstery Cleaning",
     description:
       "Professional upholstery cleaning for sofas, armchairs and fabric furniture in Winchester. Restore freshness, comfort and appearance with careful professional treatment.",
-    image: upholsteryImage,
+    image: "/images/preview/upholstery.svg",
     features: [
       "Sofas & Chairs",
       "Fabric Safe Cleaning",
@@ -46,7 +41,7 @@ export const services: readonly ServiceItem[] = [
     title: "Mattress Cleaning",
     description:
       "Deep mattress cleaning designed to reduce dust, allergens and unwanted odours, helping create a fresher and healthier sleeping environment.",
-    image: mattressImage,
+    image: "/images/preview/mattress.svg",
     features: [
       "Dust & Allergen Reduction",
       "Odour Removal",
@@ -59,7 +54,7 @@ export const services: readonly ServiceItem[] = [
     title: "Chemical-Free Steam Cleaning",
     description:
       "High-temperature dry steam cleaning for kitchens, bathrooms and hard floors using professional equipment with little or no chemicals for powerful cleaning results.",
-    image: steamImage,
+    image: "/images/preview/steam.svg",
     features: [
       "Chemical-Free Cleaning",
       "Hard Floor Cleaning",
