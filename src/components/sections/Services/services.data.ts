@@ -15,7 +15,7 @@ export const services: readonly ServiceItem[] = [
     title: "Carpet Cleaning",
     description:
       "Professional carpet cleaning in Winchester using deep extraction methods to remove embedded dirt, stains, allergens and everyday odours. Ideal for homes, families and pet owners.",
-    image: "/images/preview/carpet.svg",
+    image: "/images/preview/hero-approved-micro.jpg",
     features: [
       "Deep Dirt & Stain Removal",
       "Pet & Family Friendly",
@@ -28,7 +28,7 @@ export const services: readonly ServiceItem[] = [
     title: "Upholstery Cleaning",
     description:
       "Professional upholstery cleaning for sofas, armchairs and fabric furniture in Winchester. Restore freshness, comfort and appearance with careful professional treatment.",
-    image: "/images/preview/upholstery.svg",
+    image: "/images/preview/upholstery-approved-micro.jpg",
     features: [
       "Sofas & Chairs",
       "Fabric Safe Cleaning",
@@ -41,7 +41,7 @@ export const services: readonly ServiceItem[] = [
     title: "Mattress Cleaning",
     description:
       "Deep mattress cleaning designed to reduce dust, allergens and unwanted odours, helping create a fresher and healthier sleeping environment.",
-    image: "/images/preview/mattress.svg",
+    image: "/images/preview/mattress-approved-micro.jpg",
     features: [
       "Dust & Allergen Reduction",
       "Odour Removal",
