@@ -65,7 +65,7 @@ export default function OvenCleaning() {
           <span className={styles.urgentBadge}>AVAILABLE NOW</span>
           <h3>Priority 24H</h3>
           <div className={styles.urgentPrice}>+£30</div>
-          <p>Priority scheduling, normally within 24 hours where availability allows.</p>
+          <p>Appointment within 24 hours.</p>
           <a href={priorityHref} target="_blank" rel="noreferrer">Book Priority 24H</a>
         </article>
 
