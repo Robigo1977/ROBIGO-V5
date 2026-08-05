@@ -1,9 +1,9 @@
-# Redeploy restored mobile layout: 2026-08-05 14:20 BST
+# ROBIGO production and preview deployment
 name: Deploy ROBIGO to Cloudflare Pages
 
 on:
   push:
-    branches: [master]
+    branches: [master, image-preview]
   workflow_dispatch:
 
 permissions:
@@ -36,4 +36,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=${{ env.CLOUDFLARE_PROJECT_NAME }} --branch=master
+          command: pages deploy dist --project-name=${{ env.CLOUDFLARE_PROJECT_NAME }} --branch=${{ github.ref_name }}
