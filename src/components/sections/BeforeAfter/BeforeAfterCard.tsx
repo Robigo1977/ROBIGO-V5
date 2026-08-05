@@ -14,11 +14,26 @@ export default function BeforeAfterCard({
       className={styles.card}
       aria-labelledby={`before-after-${item.id}`}
     >
-      <BeforeAfterSlider
-        beforeImage={item.beforeImage}
-        afterImage={item.afterImage}
-        title={item.title}
-      />
+      {item.featured ? (
+        <div
+          role="img"
+          aria-label="ROBIGO carpet cleaning before and after result"
+          style={{
+            width: "100%",
+            aspectRatio: "3 / 2",
+            backgroundImage: "url(/images/preview/approved-sprite.jpg)",
+            backgroundSize: "300% 200%",
+            backgroundPosition: "50% 100%",
+            backgroundRepeat: "no-repeat",
+          }}
+        />
+      ) : (
+        <BeforeAfterSlider
+          beforeImage={item.beforeImage}
+          afterImage={item.afterImage}
+          title={item.title}
+        />
+      )}
 
       <div className={styles.content}>
         <span className={styles.category}>
