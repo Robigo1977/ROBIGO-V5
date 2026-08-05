@@ -74,11 +74,21 @@ export default function OvenCleaning() {
                 <a href={priorityHref} target="_blank" rel="noreferrer">Book Priority 24H</a>
               </article>
 
-              <article className={`${styles.urgentCard} ${styles.emergencyCard}`}>
-                <span className={styles.urgentBadge}>EMERGENCY</span>
-                <div className={styles.urgentPrice}>From £50</div>
-                <p>The earliest available appointment.</p>
-                <a href={emergencyHref} target="_blank" rel="noreferrer">Request Emergency Help</a>
+              <article
+                className={`${styles.urgentCard} ${styles.emergencyCard}`}
+                style={{ color: "#ffffff" }}
+              >
+                <span className={styles.urgentBadge} style={{ color: "#ffffff" }}>EMERGENCY</span>
+                <div className={styles.urgentPrice} style={{ color: "#ffffff" }}>From £50</div>
+                <p style={{ color: "#ffffff" }}>The earliest available appointment.</p>
+                <a
+                  href={emergencyHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ background: "#ffffff", color: "#7f1d1d" }}
+                >
+                  Request Emergency Help
+                </a>
               </article>
             </div>
           </div>
