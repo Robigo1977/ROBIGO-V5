@@ -35,6 +35,7 @@
   width: 100%;
   aspect-ratio: 16 / 8;
   object-fit: cover;
+  object-position: center 28%;
   transition: transform 500ms ease, filter 500ms ease;
 }
 
@@ -114,10 +115,10 @@
 }
 
 .priceDropdown {
+  overflow: hidden;
   border: 1px solid rgba(37, 99, 235, 0.16);
   border-radius: 14px;
   background: #f8fbff;
-  overflow: hidden;
 }
 
 .priceSummary {
@@ -300,11 +301,20 @@
   }
 
   .image {
-    aspect-ratio: 16 / 7;
+    aspect-ratio: 4 / 3;
+    object-position: center 22%;
+  }
+
+  .shortDescription {
+    display: block;
+    overflow: visible;
+    font-size: 1rem;
+    line-height: 1.6;
+    -webkit-line-clamp: unset;
   }
 
   .content {
-    padding: 1rem;
+    padding: 1.1rem;
   }
 }
 
