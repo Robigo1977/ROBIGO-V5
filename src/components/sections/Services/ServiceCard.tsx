@@ -1,7 +1,6 @@
 import Button from "../../ui/Button/Button";
 import { site } from "../../../config/site";
 import { pricing } from "../Pricing/pricing.data";
-
 import type { ServiceItem } from "./services.data";
 import styles from "./Services.module.css";
 
@@ -11,24 +10,9 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ service }: ServiceCardProps) {
   const headingId = `service-${service.id}`;
-  const servicePricing = pricing.find(
-    (category) => category.id === service.id,
-  );
-
-  const whatsappMessage = site.whatsappMessage(`Hi ROBIGO,
-
-I'm interested in your ${service.title} service.
-
-Could you please send me a free quotation and let me know your next available appointment?
-
-Thank you.`);
-
-  const priorityHref = site.whatsappMessage(
-    `Hi ROBIGO, I'd like to book Priority 24H ${service.title}.`,
-  );
-
-  const emergencyHref = site.whatsappMessage(
-    `Hi ROBIGO, I need the earliest available appointment for ${service.title}.`,
+  const servicePricing = pricing.find((category) => category.id === service.id);
+  const quoteHref = site.whatsappMessage(
+    `Hi ROBIGO, I'm interested in your ${service.title} service. Could you please send me a free quotation?`,
   );
 
   return (
@@ -39,17 +23,12 @@ Thank you.`);
             Most Popular
           </span>
         )}
-
-        <div
+        <img
+          src={service.image}
+          alt={`${service.title} in Winchester - ROBIGO professional cleaning service`}
           className={styles.image}
-          role="img"
-          aria-label={`${service.title} in Winchester - ROBIGO professional cleaning service`}
-          style={{
-            backgroundImage: `url(${service.image})`,
-            backgroundSize: "300% 200%",
-            backgroundPosition: service.imagePosition,
-            backgroundRepeat: "no-repeat",
-          }}
+          loading="eager"
+          decoding="async"
         />
       </div>
 
@@ -63,14 +42,10 @@ Thank you.`);
               <span>Details & Prices</span>
               <span className={styles.summaryIcon} aria-hidden="true">⌄</span>
             </summary>
-
             <div className={styles.dropdownContent}>
               <ul className={styles.features}>
-                {service.features.map((feature) => (
-                  <li key={feature}>{feature}</li>
-                ))}
+                {service.features.map((feature) => <li key={feature}>{feature}</li>)}
               </ul>
-
               <div className={styles.priceList} aria-label={`${service.title} prices`}>
                 {servicePricing.items.map((item) => (
                   <div className={styles.priceItem} key={item.label}>
@@ -78,44 +53,14 @@ Thank you.`);
                     <strong>{item.price}</strong>
                   </div>
                 ))}
-                {servicePricing.note && (
-                  <p className={styles.priceNote}>{servicePricing.note}</p>
-                )}
-              </div>
-
-              <div className={styles.cardUrgentGrid} aria-label={`${service.title} fast booking options`}>
-                <div className={`${styles.cardUrgent} ${styles.cardPriority}`}>
-                  <span>PRIORITY 24H</span>
-                  <strong>+£30</strong>
-                  <p>We provide an appointment within 24 hours.</p>
-                  <a href={priorityHref} target="_blank" rel="noopener noreferrer">
-                    Book Priority 24H
-                  </a>
-                </div>
-
-                <div
-                  className={`${styles.cardUrgent} ${styles.cardEmergency}`}
-                  style={{ color: "#ffffff" }}
-                >
-                  <span style={{ color: "#ffffff" }}>EMERGENCY</span>
-                  <strong style={{ color: "#ffffff" }}>From £50</strong>
-                  <p style={{ color: "#ffffff" }}>The earliest available appointment.</p>
-                  <a
-                    href={emergencyHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ background: "#ffffff", color: "#7f1d1d" }}
-                  >
-                    Request Emergency Help
-                  </a>
-                </div>
+                {servicePricing.note && <p className={styles.priceNote}>{servicePricing.note}</p>}
               </div>
             </div>
           </details>
         )}
 
         <Button
-          href={whatsappMessage}
+          href={quoteHref}
           target="_blank"
           rel="noopener noreferrer"
           fullWidth
