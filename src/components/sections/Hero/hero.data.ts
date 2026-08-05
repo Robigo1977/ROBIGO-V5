@@ -1,10 +1,10 @@
 export const heroData = {
   badge: "WINCHESTER & SURROUNDING AREAS",
 
-  title: "Premium Carpet Cleaning in Winchester",
+  title: "Professional Cleaning Services in Winchester",
 
   subtitle:
-    "Carpets, upholstery and chemical-free steam cleaning across Winchester and nearby areas \u2014 professionally cleaned, beautifully finished.",
+    "Carpet and upholstery cleaning, chemical-free dry steam cleaning and professional oven cleaning — all from one trusted local service.",
 
   primaryButton: {
     label: "Get My Free WhatsApp Quote",
@@ -24,7 +24,7 @@ export const heroData = {
   ],
 
   stats: {
-    rating: "\u2605\u2605\u2605\u2605\u2605 5.0",
+    rating: "★★★★★ 5.0",
     reviews: "100+ Happy Customers",
   },
 };
