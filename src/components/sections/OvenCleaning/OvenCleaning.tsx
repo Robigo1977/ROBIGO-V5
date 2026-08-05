@@ -13,6 +13,12 @@ export default function OvenCleaning() {
   const whatsappHref = site.whatsappMessage(
     "Hi ROBIGO, I'd like to book oven cleaning. Please let me know your next available appointment."
   );
+  const priorityHref = site.whatsappMessage(
+    "Hi ROBIGO, I'd like to book Priority 24H oven cleaning."
+  );
+  const emergencyHref = site.whatsappMessage(
+    "Hi ROBIGO, I need emergency oven cleaning help."
+  );
 
   return (
     <section className={styles.section} id="oven-cleaning" aria-labelledby="oven-cleaning-title">
@@ -52,6 +58,24 @@ export default function OvenCleaning() {
             Hob and microwave prices apply when booked with an oven clean. Final suitability is confirmed before work begins.
           </p>
         </div>
+      </div>
+
+      <div className={styles.urgentGrid} aria-label="Fast oven cleaning options">
+        <article className={`${styles.urgentCard} ${styles.priorityCard}`}>
+          <span className={styles.urgentBadge}>AVAILABLE NOW</span>
+          <h3>Priority 24H</h3>
+          <div className={styles.urgentPrice}>+£30</div>
+          <p>Priority scheduling, normally within 24 hours where availability allows.</p>
+          <a href={priorityHref} target="_blank" rel="noreferrer">Book Priority 24H</a>
+        </article>
+
+        <article className={`${styles.urgentCard} ${styles.emergencyCard}`}>
+          <span className={styles.urgentBadge}>FASTEST RESPONSE</span>
+          <h3>Emergency Cleaning</h3>
+          <div className={styles.urgentPrice}>From £50</div>
+          <p>Our fastest available response for urgent situations, subject to availability.</p>
+          <a href={emergencyHref} target="_blank" rel="noreferrer">Request Emergency Help</a>
+        </article>
       </div>
     </section>
   );
