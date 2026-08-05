@@ -25,6 +25,14 @@ jobs:
           node-version: 22
           cache: npm
 
+      - name: Decode preview images
+        if: github.ref_name == 'image-preview'
+        run: |
+          for file in public/images/preview/*.jpg.base64; do
+            [ -e "$file" ] || continue
+            base64 --decode "$file" > "${file%.base64}"
+          done
+
       - name: Install dependencies
         run: npm ci
 
