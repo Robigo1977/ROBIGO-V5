@@ -40,13 +40,16 @@ Thank you.`);
           </span>
         )}
 
-        <img
-          src={service.image}
-          alt={`${service.title} in Winchester - ROBIGO professional cleaning service`}
+        <div
           className={styles.image}
-          loading="eager"
-          decoding="async"
-          fetchPriority="auto"
+          role="img"
+          aria-label={`${service.title} in Winchester - ROBIGO professional cleaning service`}
+          style={{
+            backgroundImage: `url(${service.image})`,
+            backgroundSize: "300% 200%",
+            backgroundPosition: service.imagePosition,
+            backgroundRepeat: "no-repeat",
+          }}
         />
       </div>
 
