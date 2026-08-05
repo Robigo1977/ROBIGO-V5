@@ -32,11 +32,7 @@ Thank you.`);
   );
 
   return (
-    <article
-      className={styles.card}
-      role="listitem"
-      aria-labelledby={headingId}
-    >
+    <article className={styles.card} role="listitem" aria-labelledby={headingId}>
       <div className={styles.imageWrapper}>
         {service.popular && (
           <span className={styles.badge} aria-label="Most popular service">
@@ -56,23 +52,22 @@ Thank you.`);
 
       <div className={styles.content}>
         <h3 id={headingId}>{service.title}</h3>
-
-        <p>{service.description}</p>
-
-        <ul className={styles.features}>
-          {service.features.map((feature) => (
-            <li key={feature}>{feature}</li>
-          ))}
-        </ul>
+        <p className={styles.shortDescription}>{service.description}</p>
 
         {servicePricing && (
           <details className={styles.priceDropdown}>
             <summary className={styles.priceSummary}>
-              <span>View Prices</span>
+              <span>Details & Prices</span>
               <span className={styles.summaryIcon} aria-hidden="true">⌄</span>
             </summary>
 
             <div className={styles.dropdownContent}>
+              <ul className={styles.features}>
+                {service.features.map((feature) => (
+                  <li key={feature}>{feature}</li>
+                ))}
+              </ul>
+
               <div className={styles.priceList} aria-label={`${service.title} prices`}>
                 {servicePricing.items.map((item) => (
                   <div className={styles.priceItem} key={item.label}>
@@ -115,7 +110,7 @@ Thank you.`);
           fullWidth
           aria-label={`Get a free ${service.title} quote`}
         >
-          Get Free {service.title} Quote
+          Get Free Quote
         </Button>
       </div>
     </article>
