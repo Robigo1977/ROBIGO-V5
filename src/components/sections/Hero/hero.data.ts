@@ -1,3 +1,4 @@
+// Homepage hero copy. Updating this file should trigger the production deployment.
 export const heroData = {
   badge: "WINCHESTER & SURROUNDING AREAS",
 
