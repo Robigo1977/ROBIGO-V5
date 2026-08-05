@@ -73,7 +73,7 @@ export default function OvenCleaning() {
           <span className={styles.urgentBadge}>FASTEST RESPONSE</span>
           <h3>Emergency Cleaning</h3>
           <div className={styles.urgentPrice}>From £50</div>
-          <p>Urgent oven cleaning when you need help fast.</p>
+          <p>The earliest available appointment.</p>
           <a href={emergencyHref} target="_blank" rel="noreferrer">Request Emergency Help</a>
         </article>
       </div>
