@@ -90,11 +90,19 @@ Thank you.`);
                   </a>
                 </div>
 
-                <div className={`${styles.cardUrgent} ${styles.cardEmergency}`}>
-                  <span>EMERGENCY</span>
-                  <strong>From £50</strong>
-                  <p>The earliest available appointment.</p>
-                  <a href={emergencyHref} target="_blank" rel="noopener noreferrer">
+                <div
+                  className={`${styles.cardUrgent} ${styles.cardEmergency}`}
+                  style={{ color: "#ffffff" }}
+                >
+                  <span style={{ color: "#ffffff" }}>EMERGENCY</span>
+                  <strong style={{ color: "#ffffff" }}>From £50</strong>
+                  <p style={{ color: "#ffffff" }}>The earliest available appointment.</p>
+                  <a
+                    href={emergencyHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ background: "#ffffff", color: "#7f1d1d" }}
+                  >
                     Request Emergency Help
                   </a>
                 </div>
