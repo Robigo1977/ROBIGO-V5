@@ -1,7 +1,7 @@
-import carpetImage from "../../../assets/optimized/carpet-cleaning-v2-mobile-safe.jpg";
-import upholsteryImage from "../../../assets/optimized/upholstery-cleaning-v2-mobile-safe.jpg";
+import carpetImage from "../../../assets/optimized/approved/carpet-cleaning-2026.jpg";
+import upholsteryImage from "../../../assets/optimized/approved/upholstery-cleaning-2026.jpg";
 import mattressImage from "../../../assets/optimized/mattress-cleaning.webp";
-import steamImage from "../../../assets/optimized/servicessteam-cleaning.webp.webp";
+import steamImage from "../../../assets/optimized/approved/steam-cleaning-2026.jpg";
 
 export type ServiceId = "carpet" | "upholstery" | "mattress" | "steam";
 
