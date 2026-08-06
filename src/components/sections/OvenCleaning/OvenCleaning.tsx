@@ -1,4 +1,3 @@
-import ovenImage from "../../../assets/optimized/approved/oven-cleaning-2026.svg";
 import { site } from "../../../config/site";
 import styles from "./OvenCleaning.module.css";
 
@@ -26,22 +25,6 @@ export default function OvenCleaning() {
       <div className={styles.inner}>
         <div className={styles.intro}>
           <span className={styles.badge}>NEW ROBIGO SERVICE</span>
-          <img
-            src={ovenImage}
-            alt="Professional oven cleaning in a modern Winchester kitchen"
-            width={640}
-            height={360}
-            loading="lazy"
-            decoding="async"
-            style={{
-              display: "block",
-              width: "100%",
-              height: "auto",
-              margin: "0.8rem 0 1rem",
-              borderRadius: "16px",
-              boxShadow: "0 18px 40px rgba(0, 0, 0, 0.28)",
-            }}
-          />
           <h2 id="oven-cleaning-title">Professional Oven Cleaning in Winchester</h2>
           <p>
             A careful deep clean for ovens, cookers and selected kitchen appliances.
