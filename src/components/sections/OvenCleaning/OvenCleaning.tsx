@@ -1,4 +1,4 @@
-import ovenImage from "../../../assets/optimized/approved/oven-clean-2026.jpg";
+const ovenImage = "https://raw.githubusercontent.com/Robigo1977/ROBIGO-V5/master/src/assets/optimized/approved/oven-clean-2026.jpg?v=202608061412";
 import { site } from "../../../config/site";
 import styles from "./OvenCleaning.module.css";
 
