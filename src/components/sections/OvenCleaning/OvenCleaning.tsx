@@ -1,4 +1,4 @@
-import ovenImage from "../../../assets/optimized/approved/oven-cleaning-2026.jpg";
+import ovenImage from "../../../assets/optimized/approved/oven-clean-2026.jpg";
 import { site } from "../../../config/site";
 import styles from "./OvenCleaning.module.css";
 
@@ -29,8 +29,8 @@ export default function OvenCleaning() {
           <img
             src={ovenImage}
             alt="Professional oven cleaning in a modern Winchester kitchen"
-            width={260}
-            height={146}
+            width={1200}
+            height={675}
             loading="eager"
             decoding="async"
             style={{
