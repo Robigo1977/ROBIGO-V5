@@ -29,11 +29,18 @@ export default function OvenCleaning() {
           <img
             src={ovenImage}
             alt="Professional oven cleaning in a modern Winchester kitchen"
-            className={styles.ovenImage}
             width={640}
             height={360}
             loading="lazy"
             decoding="async"
+            style={{
+              display: "block",
+              width: "100%",
+              height: "auto",
+              margin: "0.8rem 0 1rem",
+              borderRadius: "16px",
+              boxShadow: "0 18px 40px rgba(0, 0, 0, 0.28)",
+            }}
           />
           <h2 id="oven-cleaning-title">Professional Oven Cleaning in Winchester</h2>
           <p>
