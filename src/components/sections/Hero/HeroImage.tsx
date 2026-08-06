@@ -1,4 +1,4 @@
-import heroImage from "../../../assets/optimized/approved/hero-clean-2026.jpg";
+const heroImage = "https://raw.githubusercontent.com/Robigo1977/ROBIGO-V5/master/src/assets/optimized/approved/hero-clean-2026.jpg?v=202608061412";
 
 import styles from "./Hero.module.css";
 
