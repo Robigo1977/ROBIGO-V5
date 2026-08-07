@@ -1,4 +1,4 @@
-const carpetImage = "https://raw.githubusercontent.com/Robigo1977/ROBIGO-V5/master/src/assets/optimized/approved/carpet-clean-2026.jpg?v=202608061412";
+import carpetImage from "../../../assets/optimized/approved/carpet-clean-2026.jpg";
 import upholsteryImage from "../../../assets/optimized/approved/upholstery-cleaning-2026.jpg";
 import mattressImage from "../../../assets/optimized/mattress-cleaning.webp";
 import steamImage from "../../../assets/optimized/approved/steam-cleaning-2026.jpg";
