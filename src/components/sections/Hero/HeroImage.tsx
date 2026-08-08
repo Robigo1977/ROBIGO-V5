@@ -1,4 +1,4 @@
-import heroImage from "../../../assets/optimized/approved/hero-clean-web-2026.jpg";
+import heroImage from "../../../assets/optimized/approved/hero-mobile-final-2026.jpg";
 import styles from "./Hero.module.css";
 
 export default function HeroImage() {
