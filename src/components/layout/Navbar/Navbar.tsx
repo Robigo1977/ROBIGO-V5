@@ -1,6 +1,5 @@
 import "./Navbar.css";
 
-import Button from "../../ui/Button/Button";
 import Container from "../../ui/Container";
 import { site } from "../../../config/site";
 
@@ -26,16 +25,6 @@ export default function Navbar() {
             <a href="/more-about-robigo#reviews">Reviews</a>
             <a href="/#contact">Contact</a>
           </nav>
-
-          <Button
-            href={site.whatsappMessage()}
-            target="_blank"
-            rel="noopener noreferrer"
-            size="sm"
-            aria-label={`Contact ${site.business.name} on WhatsApp`}
-          >
-            {site.cta.whatsappLabel}
-          </Button>
         </div>
       </Container>
     </header>
