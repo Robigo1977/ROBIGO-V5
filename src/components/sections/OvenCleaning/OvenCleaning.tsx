@@ -1,4 +1,4 @@
-import ovenImage from "../../../assets/optimized/approved/oven-clean-2026.jpg";
+import ovenImage from "../../../assets/optimized/approved/oven-clean-web-2026.jpg";
 import { site } from "../../../config/site";
 import styles from "./OvenCleaning.module.css";
 
