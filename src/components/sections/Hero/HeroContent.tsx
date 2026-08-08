@@ -35,6 +35,8 @@ export default function HeroContent() {
         {heroData.title}
       </h1>
 
+      <h2 className={styles.serviceHeading}>Our Cleaning Services</h2>
+
       <ul
         className={styles.serviceList}
         aria-label="Our cleaning services"
