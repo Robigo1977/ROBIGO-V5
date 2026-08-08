@@ -105,6 +105,16 @@
   text-shadow: 0 2px 14px rgba(0, 0, 0, .55);
 }
 
+.serviceHeading {
+  margin: .8rem 0 0;
+  color: #c9ff35;
+  font-size: clamp(1.15rem, 5vw, 1.5rem);
+  font-weight: 900;
+  letter-spacing: .02em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
 .serviceList {
   display: grid;
   gap: .65rem;
