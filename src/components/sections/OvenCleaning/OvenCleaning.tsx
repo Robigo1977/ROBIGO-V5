@@ -1,4 +1,4 @@
-const ovenImage = "https://raw.githubusercontent.com/Robigo1977/ROBIGO-V5/master/src/assets/optimized/approved/oven-clean-2026.jpg?v=202608061412";
+import ovenImage from "../../../assets/optimized/approved/oven-clean-2026.jpg";
 import { site } from "../../../config/site";
 import styles from "./OvenCleaning.module.css";
 
@@ -29,10 +29,11 @@ export default function OvenCleaning() {
           <img
             src={ovenImage}
             alt="Professional oven cleaning in a modern Winchester kitchen"
-            width={1200}
-            height={675}
+            width={650}
+            height={366}
             loading="eager"
             decoding="async"
+            fetchPriority="auto"
             style={{
               display: "block",
               width: "100%",
