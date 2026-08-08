@@ -24,10 +24,6 @@ export default function HeroContent() {
       whileInView="show"
       viewport={viewport}
     >
-      <span className={styles.badge}>
-        {heroData.badge}
-      </span>
-
       <h1
         id="hero-title"
         className={styles.title}
