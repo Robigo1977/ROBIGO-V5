@@ -106,7 +106,7 @@
 }
 
 .serviceHeading {
-  margin: .8rem 0 0;
+  margin: 1.4rem 0 0;
   color: #c9ff35;
   font-size: clamp(1.15rem, 5vw, 1.5rem);
   font-weight: 900;
@@ -117,9 +117,13 @@
 
 .serviceList {
   display: grid;
-  gap: .65rem;
-  margin: 1.35rem 0 0;
-  padding: 0;
+  width: 100%;
+  gap: .7rem;
+  margin: .75rem 0 0;
+  padding: 1rem;
+  border: 1px solid rgba(201, 255, 53, .25);
+  border-radius: 1rem;
+  background: rgba(3, 12, 28, .72);
   list-style: none;
 }
 
@@ -137,7 +141,7 @@
   position: absolute;
   left: 0;
   color: #c9ff35;
-  content: "\\2713";
+  content: "✓";
   font-weight: 900;
 }
 
