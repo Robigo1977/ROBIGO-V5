@@ -78,7 +78,7 @@
   white-space: nowrap;
   color: #efffff;
   font-family: "Courier New", monospace;
-  font-size: clamp(1.05rem, 2.2vw, 1.7rem);
+  font-size: clamp(1.4rem, 3.2vw, 2.5rem);
   font-weight: 800;
   letter-spacing: .09em;
   line-height: 1;
@@ -318,7 +318,7 @@
   }
 
   .neonRun {
-    font-size: 1.08rem;
+    font-size: 1.4rem;
   }
 
   .contentLayout {
