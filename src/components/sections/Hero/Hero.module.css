@@ -379,3 +379,23 @@
     animation: none;
   }
 }
+
+
+/* Three-dimensional rotating neon service-area carousel */
+.neonCarousel { position: relative; height: clamp(3.8rem, 6vw, 5.25rem); perspective: 900px; transform-style: preserve-3d; }
+.neonCarouselPlace { position: absolute; top: 50%; left: 50%; display: inline-flex; align-items: center; gap: .8rem; white-space: nowrap; color: #efffff; font-family: "Courier New", monospace; font-size: clamp(1.15rem, 2.5vw, 2rem); font-weight: 800; letter-spacing: .08em; line-height: 1; text-transform: uppercase; text-shadow: 0 0 1px rgba(255,255,255,.9), 0 0 3px rgba(79,255,240,.82), 0 0 8px rgba(21,241,222,.7), 0 0 16px rgba(0,205,189,.55); opacity: 0; transform: translate(-50%,-50%) translateZ(-220px) scale(.5); transition: transform .9s cubic-bezier(.2,.75,.2,1), opacity .7s ease, filter .7s ease; }
+.neonCarouselPlace[data-offset="-2"] { opacity: .3; transform: translate(calc(-50% - 37vw),-50%) translateZ(-150px) rotateY(42deg) scale(.62); }
+.neonCarouselPlace[data-offset="-1"] { opacity: .62; transform: translate(calc(-50% - 23vw),-50%) translateZ(-75px) rotateY(28deg) scale(.78); }
+.neonCarouselPlace[data-offset="0"] { z-index: 3; opacity: 1; filter: drop-shadow(0 0 5px rgba(57,255,235,.72)); font-size: clamp(1.75rem,3.9vw,3.1rem); transform: translate(-50%,-50%) translateZ(70px) scale(1); }
+.neonCarouselPlace[data-offset="1"] { opacity: .62; transform: translate(calc(-50% + 23vw),-50%) translateZ(-75px) rotateY(-28deg) scale(.78); }
+.neonCarouselPlace[data-offset="2"] { opacity: .3; transform: translate(calc(-50% + 37vw),-50%) translateZ(-150px) rotateY(-42deg) scale(.62); }
+@media (max-width: 767px) {
+  .neonCarousel { height: 3.4rem; }
+  .neonCarouselPlace { gap: .4rem; font-size: .82rem; }
+  .neonCarouselPlace[data-offset="-2"] { transform: translate(calc(-50% - 62vw),-50%) translateZ(-150px) rotateY(42deg) scale(.55); }
+  .neonCarouselPlace[data-offset="-1"] { transform: translate(calc(-50% - 39vw),-50%) translateZ(-75px) rotateY(28deg) scale(.68); }
+  .neonCarouselPlace[data-offset="0"] { font-size: clamp(1.45rem,7vw,2rem); }
+  .neonCarouselPlace[data-offset="1"] { transform: translate(calc(-50% + 39vw),-50%) translateZ(-75px) rotateY(-28deg) scale(.68); }
+  .neonCarouselPlace[data-offset="2"] { transform: translate(calc(-50% + 62vw),-50%) translateZ(-150px) rotateY(-42deg) scale(.55); }
+}
+@media (prefers-reduced-motion: reduce) { .neonCarouselPlace { transition: none; } }
