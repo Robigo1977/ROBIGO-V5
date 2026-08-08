@@ -399,3 +399,17 @@
   .neonCarouselPlace[data-offset="2"] { transform: translate(calc(-50% + 62vw),-50%) translateZ(-150px) rotateY(-42deg) scale(.55); }
 }
 @media (prefers-reduced-motion: reduce) { .neonCarouselPlace { transition: none; } }
+
+
+/* Stronger depth for the rotating neon names */
+.neonCarousel { perspective: 650px; }
+.neonCarouselPlace[data-offset="-2"] { opacity: .18; filter: blur(.5px); transform: translate(calc(-50% - 39vw),-50%) translateZ(-230px) rotateY(58deg) scale(.48); }
+.neonCarouselPlace[data-offset="-1"] { opacity: .48; transform: translate(calc(-50% - 24vw),-50%) translateZ(-125px) rotateY(42deg) scale(.67); }
+.neonCarouselPlace[data-offset="0"] { filter: drop-shadow(0 0 8px rgba(57,255,235,.82)); transform: translate(-50%,-50%) translateZ(120px) scale(1.12); }
+.neonCarouselPlace[data-offset="1"] { opacity: .48; transform: translate(calc(-50% + 24vw),-50%) translateZ(-125px) rotateY(-42deg) scale(.67); }
+.neonCarouselPlace[data-offset="2"] { opacity: .18; filter: blur(.5px); transform: translate(calc(-50% + 39vw),-50%) translateZ(-230px) rotateY(-58deg) scale(.48); }
+@media (max-width: 767px) {
+  .neonCarouselPlace[data-offset="-1"] { transform: translate(calc(-50% - 40vw),-50%) translateZ(-115px) rotateY(44deg) scale(.58); }
+  .neonCarouselPlace[data-offset="0"] { transform: translate(-50%,-50%) translateZ(95px) scale(1.08); }
+  .neonCarouselPlace[data-offset="1"] { transform: translate(calc(-50% + 40vw),-50%) translateZ(-115px) rotateY(-44deg) scale(.58); }
+}
