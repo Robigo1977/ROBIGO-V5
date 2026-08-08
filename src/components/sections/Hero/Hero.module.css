@@ -413,3 +413,26 @@
   .neonCarouselPlace[data-offset="0"] { transform: translate(-50%,-50%) translateZ(95px) scale(1.08); }
   .neonCarouselPlace[data-offset="1"] { transform: translate(calc(-50% + 40vw),-50%) translateZ(-115px) rotateY(-44deg) scale(.58); }
 }
+
+
+/* Mobile readability: always keep the active place name fully on screen */
+@media (max-width: 767px) {
+  .neonCarouselPlace {
+    display: none;
+  }
+
+  .neonCarouselPlace[data-offset="0"] {
+    display: inline-flex;
+    width: 94vw;
+    max-width: 94vw;
+    justify-content: center;
+    overflow: visible;
+    font-size: clamp(1.35rem, 6.7vw, 1.9rem);
+    letter-spacing: .04em;
+    transform: translate(-50%,-50%) translateZ(55px) scale(1);
+  }
+
+  .neonCarouselPlace .neonStar {
+    display: none;
+  }
+}
