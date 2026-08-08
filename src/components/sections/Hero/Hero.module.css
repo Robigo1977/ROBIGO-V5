@@ -156,6 +156,36 @@
   display: none;
 }
 
+@media (max-width: 767px) {
+  .hero {
+    min-height: auto;
+    align-items: flex-start;
+    padding-top: 20.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .imageWrapper {
+    inset: 0 0 auto;
+    height: 22rem;
+  }
+
+  .heroImage {
+    object-position: 64% center;
+  }
+
+  .hero::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(3, 12, 28, .04) 0%,
+        rgba(3, 12, 28, .1) 42%,
+        rgba(7, 20, 38, .82) 72%,
+        #071426 88%,
+        #071426 100%
+      );
+  }
+}
+
 @media (min-width: 480px) {
   .actions {
     width: auto;
