@@ -347,6 +347,11 @@
     object-position: center;
   }
 
+  .neonWindow {
+    width: 54%;
+    margin-left: auto;
+  }
+
   .content {
     width: min(58%, 39rem);
   }
