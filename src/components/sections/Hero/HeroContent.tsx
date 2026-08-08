@@ -8,6 +8,13 @@ import { viewport } from "../../../motion/viewport";
 
 import styles from "./Hero.module.css";
 
+const services = [
+  "Carpet cleaning",
+  "Upholstery cleaning",
+  "Chemical-free dry steam cleaning",
+  "Professional oven cleaning",
+];
+
 export default function HeroContent() {
   return (
     <motion.div
@@ -28,9 +35,14 @@ export default function HeroContent() {
         {heroData.title}
       </h1>
 
-      <p className={styles.subtitle}>
-        {heroData.subtitle}
-      </p>
+      <ul
+        className={styles.serviceList}
+        aria-label="Our cleaning services"
+      >
+        {services.map((service) => (
+          <li key={service}>{service}</li>
+        ))}
+      </ul>
 
       <p className={styles.callout}>{"\u2713"} No call-out charge</p>
 
