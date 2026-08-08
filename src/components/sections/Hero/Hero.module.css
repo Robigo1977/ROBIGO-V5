@@ -84,11 +84,11 @@
   line-height: 1;
   text-transform: uppercase;
   text-shadow:
-    0 0 2px #fff,
-    0 0 6px #4ffff0,
-    0 0 14px #15f1de,
-    0 0 28px rgba(0, 205, 189, .92);
-  filter: drop-shadow(0 0 7px rgba(57, 255, 235, .95));
+    0 0 1px #fff,
+    0 0 4px #4ffff0,
+    0 0 10px rgba(21, 241, 222, .86),
+    0 0 20px rgba(0, 205, 189, .72);
+  filter: drop-shadow(0 0 5px rgba(57, 255, 235, .78));
   animation: neonPulse 2.8s ease-in-out infinite;
 }
 
@@ -125,7 +125,7 @@
   }
 
   60% {
-    filter: drop-shadow(0 0 11px rgba(57, 255, 235, 1));
+    filter: drop-shadow(0 0 8px rgba(57, 255, 235, .86));
   }
 }
 
