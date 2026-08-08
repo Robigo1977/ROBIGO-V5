@@ -119,7 +119,7 @@ export const pricing: PricingCategory[] = [
       },
       {
         label: "Any Area",
-        price: "£2.80 / m²",
+        price: "£2.50 / m²",
       },
       {
         label: "Hard Floors",
