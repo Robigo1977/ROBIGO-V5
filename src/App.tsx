@@ -60,10 +60,13 @@ function RouteScrollManager() {
 }
 
 function App() {
+  const { pathname } = useLocation();
+  const showNavbar = pathname !== "/";
+
   return (
     <>
       <RouteScrollManager />
-      <Navbar />
+      {showNavbar && <Navbar />}
 
       <Routes>
         <Route path="/" element={<HomePage />} />
