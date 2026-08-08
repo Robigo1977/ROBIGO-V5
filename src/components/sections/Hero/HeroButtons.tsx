@@ -19,11 +19,13 @@ export default function HeroButtons() {
       </Button>
 
       <Button
-        href={site.tel()}
+        href={site.whatsappMessage()}
         variant="secondary"
         size="lg"
+        target="_blank"
+        rel="noopener noreferrer"
       >
-        {site.cta.secondary}
+        WhatsApp Us
       </Button>
     </nav>
   );
