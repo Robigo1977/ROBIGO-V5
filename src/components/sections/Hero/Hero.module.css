@@ -78,17 +78,17 @@
   white-space: nowrap;
   color: #efffff;
   font-family: "Courier New", monospace;
-  font-size: clamp(1.4rem, 3.2vw, 2.5rem);
+  font-size: clamp(1.55rem, 3.6vw, 2.8rem);
   font-weight: 800;
   letter-spacing: .09em;
   line-height: 1;
   text-transform: uppercase;
   text-shadow:
-    0 0 1px #fff,
-    0 0 4px #4ffff0,
-    0 0 10px rgba(21, 241, 222, .86),
-    0 0 20px rgba(0, 205, 189, .72);
-  filter: drop-shadow(0 0 5px rgba(57, 255, 235, .78));
+    0 0 1px rgba(255, 255, 255, .9),
+    0 0 3px rgba(79, 255, 240, .82),
+    0 0 8px rgba(21, 241, 222, .7),
+    0 0 16px rgba(0, 205, 189, .55);
+  filter: drop-shadow(0 0 3px rgba(57, 255, 235, .6));
   animation: neonPulse 2.8s ease-in-out infinite;
 }
 
@@ -125,7 +125,7 @@
   }
 
   60% {
-    filter: drop-shadow(0 0 8px rgba(57, 255, 235, .86));
+    filter: drop-shadow(0 0 6px rgba(57, 255, 235, .7));
   }
 }
 
@@ -318,7 +318,7 @@
   }
 
   .neonRun {
-    font-size: 1.4rem;
+    font-size: 1.55rem;
   }
 
   .contentLayout {
