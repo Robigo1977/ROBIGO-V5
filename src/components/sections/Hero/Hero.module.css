@@ -105,6 +105,32 @@
   text-shadow: 0 2px 14px rgba(0, 0, 0, .55);
 }
 
+.serviceList {
+  display: grid;
+  gap: .65rem;
+  margin: 1.35rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.serviceList li {
+  position: relative;
+  padding-left: 1.75rem;
+  color: #fff;
+  font-size: clamp(1.08rem, 4.8vw, 1.35rem);
+  font-weight: 800;
+  line-height: 1.25;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, .6);
+}
+
+.serviceList li::before {
+  position: absolute;
+  left: 0;
+  color: #c9ff35;
+  content: "\\2713";
+  font-weight: 900;
+}
+
 .callout {
   margin: 1rem 0 0;
   padding: .55rem .85rem;
