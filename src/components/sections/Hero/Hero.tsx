@@ -12,7 +12,11 @@ export default function Hero() {
       className={styles.hero}
       aria-labelledby="hero-title"
     >
-      <div className={styles.imageWrapper}>
+      <div className={styles.mobileImage}>
+        <HeroImage />
+      </div>
+
+      <div className={styles.desktopImage}>
         <HeroImage />
       </div>
 
