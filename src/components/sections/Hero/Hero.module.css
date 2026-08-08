@@ -436,3 +436,41 @@
     display: none;
   }
 }
+
+
+/* Desktop readability with a stable three-position depth effect */
+@media (min-width: 768px) {
+  .neonCarouselPlace {
+    display: none;
+    filter: none;
+  }
+
+  .neonCarouselPlace[data-offset="-1"],
+  .neonCarouselPlace[data-offset="0"],
+  .neonCarouselPlace[data-offset="1"] {
+    display: inline-flex;
+  }
+
+  .neonCarouselPlace[data-offset="-1"] {
+    left: 18%;
+    opacity: .42;
+    transform: translate(-50%,-50%) rotateY(38deg) scale(.7);
+  }
+
+  .neonCarouselPlace[data-offset="0"] {
+    left: 50%;
+    opacity: 1;
+    filter: drop-shadow(0 0 8px rgba(57,255,235,.82));
+    transform: translate(-50%,-50%) scale(1.12);
+  }
+
+  .neonCarouselPlace[data-offset="1"] {
+    left: 82%;
+    opacity: .42;
+    transform: translate(-50%,-50%) rotateY(-38deg) scale(.7);
+  }
+
+  .neonCarouselPlace .neonStar {
+    display: none;
+  }
+}
