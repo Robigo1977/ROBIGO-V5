@@ -33,9 +33,9 @@
 .image {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 8;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
-  object-position: center 28%;
+  object-position: center;
   transition: transform 500ms ease, filter 500ms ease;
 }
 
@@ -302,7 +302,7 @@
 
   .image {
     aspect-ratio: 4 / 3;
-    object-position: center 22%;
+    object-position: center;
   }
 
   .shortDescription {
