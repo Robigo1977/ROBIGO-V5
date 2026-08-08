@@ -474,3 +474,13 @@
     display: none;
   }
 }
+
+
+/* Keep desktop side names bright while preserving the 3D scale */
+@media (min-width: 768px) {
+  .neonCarouselPlace[data-offset="-1"],
+  .neonCarouselPlace[data-offset="1"] {
+    opacity: 1;
+    filter: drop-shadow(0 0 4px rgba(57,255,235,.62));
+  }
+}
