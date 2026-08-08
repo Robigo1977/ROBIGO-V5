@@ -504,3 +504,11 @@
 .neonRun {
   transform: rotateX(-2deg);
 }
+
+
+/* Keep the desktop marquee uniformly bright; start the hero shading below it */
+@media (min-width: 768px) {
+  .hero::after {
+    top: clamp(5.5rem, 7vw, 7rem);
+  }
+}
