@@ -1,18 +1,39 @@
-import heroImage from "../../../assets/optimized/approved/hero-mobile-final-2026.jpg";
 import styles from "./Hero.module.css";
+
+const places = [
+  "Winchester",
+  "Southampton",
+  "Romsey",
+  "Eastleigh",
+  "Chandler’s Ford",
+  "Stockbridge",
+  "Hursley",
+  "Twyford",
+  "Sparsholt",
+  "Ampfield",
+];
 
 export default function HeroImage() {
   return (
-    <img
-      src={heroImage}
-      alt="Professional carpet cleaning in a premium Winchester living room"
+    <div
       className={styles.heroImage}
-      width={900}
-      height={506}
-      sizes="100vw"
-      loading="eager"
-      fetchPriority="high"
-      decoding="async"
-    />
+      role="img"
+      aria-label="ROBIGO service areas around Winchester"
+    >
+      <div className={styles.neonWindow}>
+        <div className={styles.neonTrack} aria-hidden="true">
+          {[0, 1].map((copy) => (
+            <div className={styles.neonRun} key={copy}>
+              {places.map((place) => (
+                <span className={styles.neonPlace} key={place}>
+                  {place}
+                  <b className={styles.neonStar}>★</b>
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
