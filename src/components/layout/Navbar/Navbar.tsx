@@ -1,20 +1,27 @@
+import { useLocation } from "react-router-dom";
+
 import "./Navbar.css";
 
 import Container from "../../ui/Container";
 import { site } from "../../../config/site";
 
 export default function Navbar() {
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
+
   return (
-    <header className="navbar">
+    <header className={`navbar${isHome ? " navbar-home" : ""}`}>
       <Container>
-        <div className="navbar-container">
-          <a
-            href="/"
-            className="navbar-logo"
-            aria-label={`${site.business.name} Home`}
-          >
-            {site.business.name}
-          </a>
+        <div className={`navbar-container${isHome ? " navbar-container-home" : ""}`}>
+          {!isHome && (
+            <a
+              href="/"
+              className="navbar-logo"
+              aria-label={`${site.business.name} Home`}
+            >
+              {site.business.name}
+            </a>
+          )}
 
           <nav
             className="navbar-nav"
