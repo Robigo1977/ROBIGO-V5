@@ -1,8 +1,9 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// GitHub Pages serves this repository below /ROBIGO-V5/.
+// The custom domain serves this site from https://robigo.co.uk/.
+// Root-relative build URLs keep images, scripts and styles on the live domain.
 export default defineConfig({
-  base: '/ROBIGO-V5/',
+  base: '/',
   plugins: [react()],
 })
