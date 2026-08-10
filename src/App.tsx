@@ -10,6 +10,7 @@ import TrustBar from "./components/sections/TrustBar";
 import BeforeAfter from "./components/sections/BeforeAfter";
 import Services from "./components/sections/Services";
 import OvenCleaning from "./components/sections/OvenCleaning";
+import Reviews from "./components/sections/Reviews";
 import ExploreMore from "./components/sections/ExploreMore/ExploreMore";
 import Contact from "./components/sections/Contact";
 
@@ -26,6 +27,7 @@ function HomePage() {
       <OvenCleaning />
       <TrustBar />
       <BeforeAfter compact />
+      <Reviews />
       <ExploreMore />
       <Contact />
     </main>
