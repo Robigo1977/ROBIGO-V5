@@ -18,13 +18,16 @@ import { site } from "../config/site";
 
 import styles from "./CommercialCleaningWinchester.module.css";
 
+const publicAsset = (path: string) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+
 const audiences = [
   {
     path: "/business/offices",
     icon: Building2,
     title: "Offices & Office Buildings",
     label: "Workplaces and managed office sites",
-    image: "/images/commercial/commercial-office-hero.webp",
+    image: publicAsset("/images/commercial/commercial-office-hero.webp"),
     alt: "Professional commercial carpet cleaning in a modern office building",
     text: "Keep receptions, meeting rooms and shared workspaces looking professional with flexible appointments that minimise disruption.",
     services: [
@@ -38,7 +41,7 @@ const audiences = [
     icon: Utensils,
     title: "Bars, Restaurants & Hospitality",
     label: "Customer-facing venues",
-    image: "/images/commercial/commercial-restaurant-booths.webp",
+    image: publicAsset("/images/commercial/commercial-restaurant-booths.webp"),
     alt: "Premium upholstered restaurant booth seating",
     text: "Professional care for the carpets and upholstered seating your guests see, touch and judge from the moment they arrive.",
     services: [
@@ -52,7 +55,7 @@ const audiences = [
     icon: Hotel,
     title: "Airbnb, Hotels & Booking.com Properties",
     label: "Guest accommodation",
-    image: "/images/commercial/commercial-airbnb.webp",
+    image: publicAsset("/images/commercial/commercial-airbnb.webp"),
     alt: "Clean premium Airbnb and hotel accommodation",
     text: "Guest-ready carpet, upholstery and mattress cleaning for better first impressions, comfortable stays and consistently high standards.",
     services: [
@@ -66,7 +69,7 @@ const audiences = [
     icon: KeyRound,
     title: "Rental & Tenancy Properties",
     label: "Landlords, tenants and estate agencies",
-    image: "/images/commercial/commercial-airbnb.webp",
+    image: publicAsset("/images/commercial/commercial-airbnb.webp"),
     alt: "Presentation-ready rental property interior",
     text: "Presentation-ready cleaning after move-out or before move-in, helping rental properties feel fresh, cared for and ready to occupy.",
     services: [
@@ -119,11 +122,11 @@ export default function CommercialCleaningWinchester() {
         <picture className={styles.heroMedia}>
           <source
             media="(max-width: 699px)"
-            srcSet="/images/commercial/business-hero-mobile-safe.jpg"
+            srcSet={publicAsset("/images/commercial/business-hero-mobile-safe.jpg")}
           />
           <img
             className={styles.heroImage}
-            src="/images/commercial/business-hero-mobile-safe.jpg"
+            src={publicAsset("/images/commercial/business-hero-mobile-safe.jpg")}
             alt="Professional commercial carpet cleaning with KÃ¤rcher extraction equipment in a premium business interior"
             fetchPriority="high"
           />
@@ -198,7 +201,7 @@ export default function CommercialCleaningWinchester() {
                         </li>
                       ))}
                     </ul>
-                    <a className={styles.audienceLink} href={audience.path}>
+                    <a className={styles.audienceLink} href={`#${audience.path}`}>
                       View sector services
                       <span aria-hidden="true">&gt;</span>
                     </a>
