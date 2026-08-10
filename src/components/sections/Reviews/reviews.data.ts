@@ -3,12 +3,20 @@ export interface Review {
   name: string;
   location: string;
   service: string;
-  rating: 5;
-  date: string;
-  verified: boolean;
-  featured?: boolean;
+  rating: 1 | 2 | 3 | 4 | 5;
   review: string;
+  approved?: boolean;
+  featured?: boolean;
+  created_at?: string;
 }
 
-// Add genuine customer feedback here only after it has been verified.
-export const reviews: Review[] = [];
+export interface ReviewSubmission {
+  name: string;
+  email: string;
+  location: string;
+  service: string;
+  rating: number;
+  review: string;
+  approved: false;
+  featured: false;
+}
