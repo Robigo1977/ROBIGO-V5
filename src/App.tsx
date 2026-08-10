@@ -10,7 +10,9 @@ import TrustBar from "./components/sections/TrustBar";
 import BeforeAfter from "./components/sections/BeforeAfter";
 import Services from "./components/sections/Services";
 import OvenCleaning from "./components/sections/OvenCleaning";
-import Reviews from "./components/sections/Reviews";\n\n// Live customer reviews use the moderated Supabase workflow.
+import Reviews from "./components/sections/Reviews";
+
+// Live customer reviews use the moderated Supabase workflow.
 import ExploreMore from "./components/sections/ExploreMore/ExploreMore";
 import Contact from "./components/sections/Contact";
 
@@ -37,7 +39,7 @@ function HomePage() {
 
 function DrySteamRedirect() {
   useEffect(() => {
-    window.location.replace("/dry-steam/index.html");
+    window.location.replace(`${import.meta.env.BASE_URL}dry-steam/index.html`);
   }, []);
 
   return null;
