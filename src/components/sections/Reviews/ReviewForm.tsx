@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { Send, Star } from "lucide-react";
 
-import { supabase } from "../../../lib/supabase";
+import { submitReview } from "../../../lib/supabase";
 
 import styles from "./ReviewForm.module.css";
 
@@ -24,7 +24,7 @@ export default function ReviewForm() {
     setStatus("sending");
     setMessage("");
 
-    const form = new FormData(event.currentTarget);
+    const formElement = event.currentTarget;\n    const form = new FormData(formElement);
     const website = String(form.get("website") ?? "");
 
     if (website) {
@@ -43,20 +43,16 @@ export default function ReviewForm() {
       featured: false,
     };
 
-    const { error } = await supabase
-      .from("reviews")
-      .insert(payload);
-
-    if (error) {
+    try {
+      await submitReview(payload);
+      formElement.reset();
+      setRating(5);
+      setStatus("success");
+      setMessage("Thank you. Your review was sent to ROBIGO for approval.");
+    } catch {
       setStatus("error");
       setMessage("We could not send your review. Please check the details and try again.");
-      return;
     }
-
-    event.currentTarget.reset();
-    setRating(5);
-    setStatus("success");
-    setMessage("Thank you. Your review was sent to ROBIGO for approval.");
   }
 
   if (status === "success") {
