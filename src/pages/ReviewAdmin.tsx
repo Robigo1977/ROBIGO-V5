@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { Check, LogOut, ShieldCheck, Star, Trash2 } from "lucide-react";
 import type { Session } from "@supabase/supabase-js";
 
@@ -14,49 +14,35 @@ interface PendingReview extends Review {
 }
 
 export default function ReviewAdmin() {
-  const [session, setSession] = useState<Session | null>(null);
+  const [session, setSession] = useState<AdminSession | null>(null);
   const [reviews, setReviews] = useState<PendingReview[]>([]);
   const [loading, setLoading] = useState(true);
   const [authMode, setAuthMode] = useState<"login" | "create">("login");
   const [notice, setNotice] = useState("");
   const [busyId, setBusyId] = useState<string | null>(null);
 
-  const loadReviews = useCallback(async () => {
+  async function loadReviews(token: string) {
     setLoading(true);
 
-    const { data, error } = await supabase
-      .from("reviews")
-      .select("id,name,email,location,service,rating,review,approved,featured,created_at")
-      .eq("approved", false)
-      .order("created_at", { ascending: true });
-
-    if (error) {
-      setNotice("The pending reviews could not be loaded.");
-    } else {
+    try {
+      const data = await fetchPendingReviews(token);
       setReviews((data ?? []) as PendingReview[]);
+    } catch {
+      setNotice("The pending reviews could not be loaded. Please sign in again.");
     }
 
     setLoading(false);
-  }, []);
+  }
 
   useEffect(() => {
-    void supabase.auth.getSession().then(({ data }) => {
-      setSession(data.session);
-      setLoading(false);
-    });
+    const storedSession = getStoredAdminSession();
+    setSession(storedSession);
+    setLoading(false);
 
-    const { data } = supabase.auth.onAuthStateChange((_event, nextSession) => {
-      setSession(nextSession);
-    });
-
-    return () => data.subscription.unsubscribe();
-  }, []);
-
-  useEffect(() => {
-    if (session?.user.email?.toLowerCase() === ADMIN_EMAIL) {
-      void loadReviews();
+    if (storedSession?.email.toLowerCase() === ADMIN_EMAIL) {
+      void loadReviews(storedSession.accessToken);
     }
-  }, [loadReviews, session]);
+  }, []);
 
   async function handleAuth(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -66,25 +52,22 @@ export default function ReviewAdmin() {
     const password = String(form.get("password") ?? "");
 
     if (authMode === "create") {
-      const { error } = await supabase.auth.signUp({
-        email: ADMIN_EMAIL,
-        password,
-      });
-
-      setNotice(
-        error
-          ? error.message
-          : "Admin account created. Check the ROBIGO email inbox to confirm the account, then sign in."
-      );
+      try {
+        await createAdminAccount(ADMIN_EMAIL, password);
+        setNotice(
+          "Admin account created. Check the ROBIGO email inbox to confirm the account, then sign in."
+        );
+      } catch (error) {
+        setNotice(error instanceof Error ? error.message : "The admin account could not be created.");
+      }
       return;
     }
 
-    const { error } = await supabase.auth.signInWithPassword({
-      email: ADMIN_EMAIL,
-      password,
-    });
-
-    if (error) {
+    try {
+      const nextSession = await signInAdmin(ADMIN_EMAIL, password);
+      setSession(nextSession);
+      await loadReviews(nextSession.accessToken);
+    } catch {
       setNotice("Incorrect password or the admin account has not been confirmed yet.");
     }
   }
@@ -93,15 +76,12 @@ export default function ReviewAdmin() {
     setBusyId(id);
     setNotice("");
 
-    const { error } = await supabase
-      .from("reviews")
-      .update({ approved: true })
-      .eq("id", id);
-
-    if (error) {
-      setNotice("The review could not be approved.");
-    } else {
+    try {
+      if (!session) throw new Error("No admin session");
+      await approveReviewById(session.accessToken, id);
       setReviews((current) => current.filter((review) => review.id !== id));
+    } catch {
+      setNotice("The review could not be approved. Please sign in again.");
     }
 
     setBusyId(null);
@@ -115,26 +95,24 @@ export default function ReviewAdmin() {
     setBusyId(id);
     setNotice("");
 
-    const { error } = await supabase
-      .from("reviews")
-      .delete()
-      .eq("id", id);
-
-    if (error) {
-      setNotice("The review could not be deleted.");
-    } else {
+    try {
+      if (!session) throw new Error("No admin session");
+      await deleteReviewById(session.accessToken, id);
       setReviews((current) => current.filter((review) => review.id !== id));
+    } catch {
+      setNotice("The review could not be deleted. Please sign in again.");
     }
 
     setBusyId(null);
   }
 
-  async function signOut() {
-    await supabase.auth.signOut();
+  function signOut() {
+    signOutAdmin();
+    setSession(null);
     setReviews([]);
   }
 
-  const isAdmin = session?.user.email?.toLowerCase() === ADMIN_EMAIL;
+  const isAdmin = session?.email.toLowerCase() === ADMIN_EMAIL;
 
   if (!isAdmin) {
     return (
