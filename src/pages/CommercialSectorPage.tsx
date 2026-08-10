@@ -15,6 +15,9 @@ import businessSchema from "../seo/schema";
 
 import styles from "./CommercialSectorPage.module.css";
 
+const publicAsset = (path: string) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+
 type Sector = {
   eyebrow: string;
   title: string;
@@ -43,7 +46,7 @@ const sectors: Record<string, Sector> = {
     title: "A cleaner workplace makes a stronger business impression",
     description:
       "Professional carpet, upholstery and suitable hard-floor cleaning for individual offices, managed office buildings, receptions, meeting rooms and shared spaces in Winchester.",
-    image: "/images/commercial/commercial-office-hero.webp",
+    image: publicAsset("/images/commercial/commercial-office-hero.webp"),
     imageAlt:
       "Professional commercial carpet cleaning inside a modern office building",
     idealFor:
@@ -90,7 +93,7 @@ const sectors: Record<string, Sector> = {
     title: "Guest-facing spaces that look cared for",
     description:
       "Detailed cleaning for the carpets, upholstered chairs, booths and banquettes your customers see and use throughout every service.",
-    image: "/images/commercial/commercial-restaurant-booths.webp",
+    image: publicAsset("/images/commercial/commercial-restaurant-booths.webp"),
     imageAlt: "Premium upholstered restaurant booths and dining seating",
     idealFor:
       "Restaurants, cafés, bars, pubs, private dining rooms, function spaces and other customer-facing hospitality venues.",
@@ -137,7 +140,7 @@ const sectors: Record<string, Sector> = {
     title: "Guest-ready rooms with a consistently fresh finish",
     description:
       "Professional deep cleaning for accommodation providers who depend on presentation, comfort and strong guest impressions.",
-    image: "/images/commercial/commercial-airbnb.webp",
+    image: publicAsset("/images/commercial/commercial-airbnb.webp"),
     imageAlt: "Premium guest-ready Airbnb and hotel accommodation",
     idealFor:
       "Airbnb hosts, boutique hotels, B&Bs, serviced accommodation and properties listed through Booking.com or similar platforms.",
@@ -184,7 +187,7 @@ const sectors: Record<string, Sector> = {
     title: "Ready for handover, move-in or the next tenancy",
     description:
       "Carpet, upholstery and suitable hard-floor cleaning after move-out or before move-in, helping rental properties feel fresh and ready to occupy.",
-    image: "/images/commercial/commercial-rental-property.webp",
+    image: publicAsset("/images/commercial/commercial-rental-property.webp"),
     imageAlt: "Clean presentation-ready rental property interior",
     idealFor:
       "Landlords, tenants, letting agents, estate agencies, property managers and furnished rental-property owners.",
@@ -257,7 +260,7 @@ export default function CommercialSectorPage() {
         <div className={styles.heroShade} />
         <Container>
           <div className={styles.heroCard}>
-            <a href="/business">
+            <a href="#/business">
               <ArrowLeft aria-hidden="true" />
               All business sectors
             </a>
@@ -289,7 +292,7 @@ export default function CommercialSectorPage() {
               const active = item.slug === sectorSlug;
               return (
                 <a
-                  href={`/business/${item.slug}`}
+                  href={`#/business/${item.slug}`}
                   key={item.slug}
                   aria-current={active ? "page" : undefined}
                 >
