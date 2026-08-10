@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.49.1",
     "framer-motion": "^12.42.2",
     "lucide-react": "^1.24.0",
     "react": "^19.2.7",
@@ -19,7 +18,7 @@
     "react-router-dom": "^7.18.1"
   },
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
+    "@eslint/js": "^10.6.0",
     "@squoosh/cli": "^0.7.1",
     "@types/node": "^24.13.2",
     "@types/react": "^19.2.17",
