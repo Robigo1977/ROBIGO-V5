@@ -1,8 +1,16 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { Check, LogOut, ShieldCheck, Star, Trash2 } from "lucide-react";
-import type { Session } from "@supabase/supabase-js";
 
-import { supabase } from "../lib/supabase";
+import {
+  approveReviewById,
+  createAdminAccount,
+  deleteReviewById,
+  fetchPendingReviews,
+  getStoredAdminSession,
+  signInAdmin,
+  signOutAdmin,
+  type AdminSession,
+} from "../lib/supabase";
 import type { Review } from "../components/sections/Reviews/reviews.data";
 
 import styles from "./ReviewAdmin.module.css";
