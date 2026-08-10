@@ -1,0 +1,249 @@
+.page {
+  min-height: calc(100svh - 5rem);
+  padding: clamp(3rem, 8vw, 6rem) 1rem;
+  background:
+    radial-gradient(circle at 85% 10%, rgba(15, 108, 189, .16), transparent 30rem),
+    #f8fafc;
+}
+
+.loginCard,
+.dashboard {
+  width: min(100%, 68rem);
+  margin: 0 auto;
+}
+
+.loginCard {
+  max-width: 30rem;
+  padding: clamp(1.5rem, 5vw, 2.5rem);
+  border: 1px solid rgba(15, 108, 189, .14);
+  border-radius: 1.5rem;
+  background: #fff;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, .12);
+}
+
+.adminIcon {
+  display: inline-grid;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 1rem;
+  background: rgba(15, 108, 189, .1);
+  color: var(--color-primary);
+  place-items: center;
+}
+
+.eyebrow {
+  margin: 1rem 0 .35rem;
+  color: var(--color-primary);
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+.loginCard h1,
+.dashboardHeader h1 {
+  margin: 0;
+  color: var(--color-heading);
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: -.035em;
+}
+
+.intro,
+.dashboardHeader p {
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+.loginCard form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.loginCard label {
+  color: var(--color-heading);
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.loginCard input {
+  width: 100%;
+  margin-top: .4rem;
+  padding: .85rem .9rem;
+  border: 1px solid #cbd5e1;
+  border-radius: .75rem;
+  background: #fff;
+  font: inherit;
+}
+
+.loginCard input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(15, 108, 189, .12);
+  outline: none;
+}
+
+.loginCard form button,
+.approve,
+.reject,
+.signOut {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .8rem 1rem;
+  border: 0;
+  border-radius: .75rem;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+}
+
+.loginCard form button,
+.approve {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.modeButton {
+  margin-top: 1rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-primary);
+  cursor: pointer;
+  font: inherit;
+  font-size: .88rem;
+  font-weight: 700;
+}
+
+.notice,
+.empty {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  border-radius: .8rem;
+  background: #eff6ff;
+  color: #1e40af;
+  line-height: 1.55;
+}
+
+.dashboardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.dashboardHeader .eyebrow {
+  margin-top: 0;
+}
+
+.signOut {
+  flex: 0 0 auto;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  color: var(--color-heading);
+}
+
+.reviewList {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.reviewCard {
+  padding: clamp(1.25rem, 4vw, 2rem);
+  border: 1px solid #e2e8f0;
+  border-radius: 1.25rem;
+  background: #fff;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, .06);
+}
+
+.cardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cardTop h2 {
+  margin: 0;
+  color: var(--color-heading);
+  font-size: 1.2rem;
+}
+
+.cardTop p {
+  margin: .25rem 0 0;
+  color: var(--color-text-muted);
+  font-size: .85rem;
+}
+
+.stars {
+  display: flex;
+  gap: .15rem;
+  color: #f5b301;
+}
+
+.reviewText {
+  margin: 1.25rem 0;
+  color: var(--color-text);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.reviewCard dl {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  margin: 0;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.reviewCard dl div {
+  display: grid;
+  gap: .2rem;
+}
+
+.reviewCard dt {
+  color: var(--color-text-muted);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.reviewCard dd {
+  margin: 0;
+  color: var(--color-heading);
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 1.25rem;
+}
+
+.reject {
+  border: 1px solid #fecaca;
+  background: #fff;
+  color: #b91c1c;
+}
+
+.actions button:disabled {
+  cursor: wait;
+  opacity: .55;
+}
+
+@media (max-width: 640px) {
+  .dashboardHeader,
+  .cardTop {
+    flex-direction: column;
+  }
+
+  .signOut,
+  .actions button {
+    width: 100%;
+  }
+}
