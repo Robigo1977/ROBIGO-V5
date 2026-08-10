@@ -24,7 +24,8 @@ export default function ReviewForm() {
     setStatus("sending");
     setMessage("");
 
-    const formElement = event.currentTarget;\n    const form = new FormData(formElement);
+    const formElement = event.currentTarget;
+    const form = new FormData(formElement);
     const website = String(form.get("website") ?? "");
 
     if (website) {
