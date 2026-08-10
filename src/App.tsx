@@ -18,6 +18,7 @@ import CarpetCleaningWinchester from "./pages/CarpetCleaningWinchester";
 import MoreInformation from "./pages/MoreInformation";
 import CommercialCleaningWinchester from "./pages/CommercialCleaningWinchester";
 import CommercialSectorPage from "./pages/CommercialSectorPage";
+import ReviewAdmin from "./pages/ReviewAdmin";
 
 function HomePage() {
   return (
@@ -74,6 +75,7 @@ function App() {
         <Route path="/commercial-cleaning-winchester" element={<CommercialCleaningWinchester />} />
         <Route path="/business" element={<CommercialCleaningWinchester />} />
         <Route path="/business/:sector" element={<CommercialSectorPage />} />
+        <Route path="/review-admin" element={<ReviewAdmin />} />
         <Route path="/dry-steam" element={<DrySteamRedirect />} />
       </Routes>
 
