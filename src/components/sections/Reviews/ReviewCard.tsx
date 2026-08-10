@@ -1,6 +1,6 @@
 import { MapPin, Star } from "lucide-react";
 
-import type { Review } from "../../../data/reviews.data";
+import type { Review } from "./reviews.data";
 
 import styles from "./ReviewCard.module.css";
 
