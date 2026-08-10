@@ -3,7 +3,7 @@ import { MessageSquareText, Star } from "lucide-react";
 
 import Section from "../../ui/Section";
 
-import { supabase } from "../../../lib/supabase";
+import { fetchApprovedReviews } from "../../../lib/supabase";
 
 import type { Review } from "./reviews.data";
 import ReviewCard from "./ReviewCard";
@@ -19,16 +19,16 @@ export default function Reviews() {
     let active = true;
 
     async function loadReviews() {
-      const { data } = await supabase
-        .from("reviews")
-        .select("id,name,location,service,rating,review,featured,created_at")
-        .eq("approved", true)
-        .order("featured", { ascending: false })
-        .order("created_at", { ascending: false });
+      try {
+        const data = await fetchApprovedReviews();
 
-      if (active) {
-        setReviews((data ?? []) as Review[]);
-        setLoading(false);
+        if (active) {
+          setReviews((data ?? []) as Review[]);
+        }
+      } finally {
+        if (active) {
+          setLoading(false);
+        }
       }
     }
 
