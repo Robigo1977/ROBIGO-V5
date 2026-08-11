@@ -18,11 +18,12 @@ function requestHeaders(token?: string) {
 async function parseError(response: Response) {
   const body = await response.json().catch(() => null) as {
     message?: string;
+    error?: string;
     error_description?: string;
     msg?: string;
   } | null;
 
-  return body?.message ?? body?.error_description ?? body?.msg ?? "Request failed";
+  return body?.message ?? body?.error ?? body?.error_description ?? body?.msg ?? "Request failed";
 }
 
 export async function fetchApprovedReviews() {
@@ -45,11 +46,11 @@ export async function fetchApprovedReviews() {
 }
 
 export async function submitReview(payload: Record<string, unknown>) {
-  const response = await fetch(`${supabaseUrl}/rest/v1/reviews`, {
+  const response = await fetch(`${supabaseUrl}/functions/v1/submit-review`, {
     method: "POST",
     headers: {
-      ...requestHeaders(),
-      Prefer: "return=minimal",
+      apikey: publishableKey,
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(payload),
   });
