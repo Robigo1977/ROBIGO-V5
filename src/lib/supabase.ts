@@ -5,6 +5,7 @@ const sessionKey = "robigo-review-admin-session";
 export interface AdminSession {
   accessToken: string;
   email: string;
+  expiresAt: number;
 }
 
 function requestHeaders(token?: string) {
@@ -35,7 +36,10 @@ export async function fetchApprovedReviews() {
 
   const response = await fetch(
     `${supabaseUrl}/rest/v1/reviews?${query.toString()}`,
-    { headers: requestHeaders() }
+    {
+      headers: requestHeaders(),
+      cache: "no-store",
+    }
   );
 
   if (!response.ok) {
@@ -63,8 +67,23 @@ export async function submitReview(payload: Record<string, unknown>) {
 export function getStoredAdminSession(): AdminSession | null {
   try {
     const stored = window.localStorage.getItem(sessionKey);
-    return stored ? JSON.parse(stored) as AdminSession : null;
+    if (!stored) return null;
+
+    const session = JSON.parse(stored) as Partial<AdminSession>;
+    const valid =
+      typeof session.accessToken === "string" &&
+      typeof session.email === "string" &&
+      typeof session.expiresAt === "number" &&
+      session.expiresAt * 1000 > Date.now() + 30_000;
+
+    if (!valid) {
+      window.localStorage.removeItem(sessionKey);
+      return null;
+    }
+
+    return session as AdminSession;
   } catch {
+    window.localStorage.removeItem(sessionKey);
     return null;
   }
 }
@@ -85,12 +104,16 @@ export async function signInAdmin(email: string, password: string) {
 
   const data = await response.json() as {
     access_token: string;
+    expires_at?: number;
+    expires_in?: number;
     user: { email?: string };
   };
 
+  const expiresAt = data.expires_at ?? Math.floor(Date.now() / 1000) + (data.expires_in ?? 3600);
   const session: AdminSession = {
     accessToken: data.access_token,
     email: data.user.email ?? email,
+    expiresAt,
   };
 
   window.localStorage.setItem(sessionKey, JSON.stringify(session));
@@ -122,7 +145,10 @@ export async function fetchPendingReviews(token: string) {
 
   const response = await fetch(
     `${supabaseUrl}/rest/v1/reviews?${query.toString()}`,
-    { headers: requestHeaders(token) }
+    {
+      headers: requestHeaders(token),
+      cache: "no-store",
+    }
   );
 
   if (!response.ok) {
@@ -133,13 +159,18 @@ export async function fetchPendingReviews(token: string) {
 }
 
 export async function approveReviewById(token: string, id: string) {
+  const query = new URLSearchParams({
+    id: `eq.${id}`,
+    select: "id,approved",
+  });
+
   const response = await fetch(
-    `${supabaseUrl}/rest/v1/reviews?id=eq.${encodeURIComponent(id)}`,
+    `${supabaseUrl}/rest/v1/reviews?${query.toString()}`,
     {
       method: "PATCH",
       headers: {
         ...requestHeaders(token),
-        Prefer: "return=minimal",
+        Prefer: "return=representation",
       },
       body: JSON.stringify({ approved: true }),
     }
@@ -148,18 +179,38 @@ export async function approveReviewById(token: string, id: string) {
   if (!response.ok) {
     throw new Error(await parseError(response));
   }
+
+  const rows = await response.json() as Array<{ id: string; approved: boolean }>;
+  if (rows.length !== 1 || rows[0]?.id !== id || rows[0]?.approved !== true) {
+    throw new Error("The approval was not saved. Please sign in again and retry.");
+  }
+
+  return rows[0];
 }
 
 export async function deleteReviewById(token: string, id: string) {
+  const query = new URLSearchParams({
+    id: `eq.${id}`,
+    select: "id",
+  });
+
   const response = await fetch(
-    `${supabaseUrl}/rest/v1/reviews?id=eq.${encodeURIComponent(id)}`,
+    `${supabaseUrl}/rest/v1/reviews?${query.toString()}`,
     {
       method: "DELETE",
-      headers: requestHeaders(token),
+      headers: {
+        ...requestHeaders(token),
+        Prefer: "return=representation",
+      },
     }
   );
 
   if (!response.ok) {
     throw new Error(await parseError(response));
+  }
+
+  const rows = await response.json() as Array<{ id: string }>;
+  if (rows.length !== 1 || rows[0]?.id !== id) {
+    throw new Error("The review was not deleted. Please sign in again and retry.");
   }
 }
