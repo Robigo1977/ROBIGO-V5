@@ -35,11 +35,18 @@ export default function ReviewAdmin() {
     try {
       const data = await fetchPendingReviews(token);
       setReviews((data ?? []) as PendingReview[]);
-    } catch {
-      setNotice("The pending reviews could not be loaded. Please sign in again.");
+    } catch (error) {
+      signOutAdmin();
+      setSession(null);
+      setReviews([]);
+      setNotice(
+        error instanceof Error
+          ? error.message
+          : "The pending reviews could not be loaded. Please sign in again."
+      );
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
   }
 
   useEffect(() => {
@@ -75,8 +82,12 @@ export default function ReviewAdmin() {
       const nextSession = await signInAdmin(ADMIN_EMAIL, password);
       setSession(nextSession);
       await loadReviews(nextSession.accessToken);
-    } catch {
-      setNotice("Incorrect password or the admin account has not been confirmed yet.");
+    } catch (error) {
+      setNotice(
+        error instanceof Error
+          ? error.message
+          : "Incorrect password or the admin account has not been confirmed yet."
+      );
     }
   }
 
@@ -85,14 +96,15 @@ export default function ReviewAdmin() {
     setNotice("");
 
     try {
-      if (!session) throw new Error("No admin session");
+      if (!session) throw new Error("Please sign in again before approving a review.");
       await approveReviewById(session.accessToken, id);
-      setReviews((current) => current.filter((review) => review.id !== id));
-    } catch {
-      setNotice("The review could not be approved. Please sign in again.");
+      await loadReviews(session.accessToken);
+      setNotice("Review approved and published successfully.");
+    } catch (error) {
+      setNotice(error instanceof Error ? error.message : "The review could not be approved.");
+    } finally {
+      setBusyId(null);
     }
-
-    setBusyId(null);
   }
 
   async function rejectReview(id: string) {
@@ -104,20 +116,22 @@ export default function ReviewAdmin() {
     setNotice("");
 
     try {
-      if (!session) throw new Error("No admin session");
+      if (!session) throw new Error("Please sign in again before deleting a review.");
       await deleteReviewById(session.accessToken, id);
-      setReviews((current) => current.filter((review) => review.id !== id));
-    } catch {
-      setNotice("The review could not be deleted. Please sign in again.");
+      await loadReviews(session.accessToken);
+      setNotice("Review deleted successfully.");
+    } catch (error) {
+      setNotice(error instanceof Error ? error.message : "The review could not be deleted.");
+    } finally {
+      setBusyId(null);
     }
-
-    setBusyId(null);
   }
 
   function signOut() {
     signOutAdmin();
     setSession(null);
     setReviews([]);
+    setNotice("");
   }
 
   const isAdmin = session?.email.toLowerCase() === ADMIN_EMAIL;
@@ -246,7 +260,7 @@ export default function ReviewAdmin() {
                     disabled={busyId === review.id}
                   >
                     <Check size={18} aria-hidden="true" />
-                    Approve and publish
+                    {busyId === review.id ? "Publishing..." : "Approve and publish"}
                   </button>
 
                   <button
