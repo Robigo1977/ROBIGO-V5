@@ -1,3 +1,5 @@
 # ROBIGO single-page application routes
+/dry-steam/ / 301
+/dry-steam / 301
 /business/* /index.html 200
 /* /index.html 200
