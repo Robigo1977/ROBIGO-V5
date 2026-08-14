@@ -17,11 +17,12 @@
 
 html {
   scroll-behavior: smooth;
+  background: #f3f6fa;
 }
 
 body {
   font-family: var(--font-family);
-  background: var(--color-white);
+  background: #f3f6fa;
   color: var(--color-text);
   line-height: var(--line-normal);
   -webkit-font-smoothing: antialiased;
@@ -104,6 +105,10 @@ p {
 
 main {
   overflow: hidden;
+  background:
+    radial-gradient(circle at 8% 18%, rgba(37, 99, 235, 0.055), transparent 28rem),
+    radial-gradient(circle at 92% 62%, rgba(15, 23, 42, 0.035), transparent 30rem),
+    linear-gradient(180deg, #f8fafc 0%, #f3f6fa 45%, #f7f9fc 100%);
 }
 
 .container {
@@ -113,6 +118,10 @@ main {
 
 .section {
   padding: 5rem 0;
+}
+
+.section + .section {
+  border-top: 1px solid rgba(148, 163, 184, 0.13);
 }
 
 @media (min-width: 768px) {
@@ -134,7 +143,8 @@ main {
 }
 
 .surface {
-  background: var(--color-surface);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(226, 232, 240, 0.9);
 }
 
 .rounded {
