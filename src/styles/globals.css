@@ -17,12 +17,12 @@
 
 html {
   scroll-behavior: smooth;
-  background: #f3f6fa;
+  background: #eef0f2;
 }
 
 body {
   font-family: var(--font-family);
-  background: #f3f6fa;
+  background: #eef0f2;
   color: var(--color-text);
   line-height: var(--line-normal);
   -webkit-font-smoothing: antialiased;
@@ -106,9 +106,9 @@ p {
 main {
   overflow: hidden;
   background:
-    radial-gradient(circle at 8% 18%, rgba(37, 99, 235, 0.055), transparent 28rem),
-    radial-gradient(circle at 92% 62%, rgba(15, 23, 42, 0.035), transparent 30rem),
-    linear-gradient(180deg, #f8fafc 0%, #f3f6fa 45%, #f7f9fc 100%);
+    radial-gradient(circle at 10% 18%, rgba(71, 85, 105, 0.04), transparent 28rem),
+    radial-gradient(circle at 90% 64%, rgba(15, 23, 42, 0.03), transparent 30rem),
+    linear-gradient(180deg, #f4f5f6 0%, #eceff1 46%, #f2f3f4 100%);
 }
 
 .container {
@@ -121,7 +121,7 @@ main {
 }
 
 .section + .section {
-  border-top: 1px solid rgba(148, 163, 184, 0.13);
+  border-top: 1px solid rgba(100, 116, 139, 0.14);
 }
 
 @media (min-width: 768px) {
@@ -143,8 +143,8 @@ main {
 }
 
 .surface {
-  background: rgba(255, 255, 255, 0.88);
-  border: 1px solid rgba(226, 232, 240, 0.9);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(203, 213, 225, 0.9);
 }
 
 .rounded {
@@ -168,14 +168,14 @@ main {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-surface);
+  background: #e5e7eb;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-primary-light);
+  background: #cbd5e1;
   border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-primary);
+  background: #94a3b8;
 }
