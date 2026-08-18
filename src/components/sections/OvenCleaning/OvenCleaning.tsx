@@ -60,26 +60,25 @@ export default function OvenCleaning() {
 
         <details className={styles.priceDropdown}>
           <summary className={styles.priceSummary}>
-            <span>View Oven Cleaning Prices</span>
-            <span className={styles.summaryIcon} aria-hidden="true">⌄</span>
+            <span className={styles.priceSummaryText}>
+              <strong>VIEW PRICES</strong>
+              <small>Tap here to see exactly how much</small>
+            </span>
+            <span className={styles.summaryIcon} aria-hidden="true">+</span>
           </summary>
 
           <div className={styles.dropdownContent}>
-            <div className={styles.pricing} aria-label="Oven cleaning prices">
-              <div className={styles.pricingHeader}>
-                <span>Service</span>
-                <span>Price</span>
-              </div>
+            <div className={styles.priceList} aria-label="Oven cleaning prices">
               {ovenPrices.map((item) => (
-                <div className={styles.priceRow} key={item.name}>
+                <div className={styles.priceItem} key={item.name}>
                   <div>
-                    <strong>{item.name}</strong>
+                    <span>{item.name}</span>
                     <small>{item.note}</small>
                   </div>
-                  <strong className={styles.price}>{item.price}</strong>
+                  <strong>{item.price}</strong>
                 </div>
               ))}
-              <p className={styles.smallPrint}>
+              <p className={styles.priceNote}>
                 Hob and microwave prices apply when booked with an oven clean. Final suitability is confirmed before work begins.
               </p>
             </div>
@@ -92,19 +91,11 @@ export default function OvenCleaning() {
                 <a href={priorityHref} target="_blank" rel="noreferrer">Book Priority 24H</a>
               </article>
 
-              <article
-                className={`${styles.urgentCard} ${styles.emergencyCard}`}
-                style={{ color: "#ffffff" }}
-              >
-                <span className={styles.urgentBadge} style={{ color: "#ffffff" }}>EMERGENCY</span>
-                <div className={styles.urgentPrice} style={{ color: "#ffffff" }}>From £50</div>
-                <p style={{ color: "#ffffff" }}>The earliest available appointment.</p>
-                <a
-                  href={emergencyHref}
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{ background: "#ffffff", color: "#7f1d1d" }}
-                >
+              <article className={`${styles.urgentCard} ${styles.emergencyCard}`}>
+                <span className={styles.urgentBadge}>EMERGENCY</span>
+                <div className={styles.urgentPrice}>From £50</div>
+                <p>The earliest available appointment.</p>
+                <a href={emergencyHref} target="_blank" rel="noreferrer">
                   Request Emergency Help
                 </a>
               </article>
