@@ -113,7 +113,7 @@ main {
 
 /* Stronger visual rhythm for the ROBIGO homepage. The hero remains untouched. */
 #main-content > section:nth-of-type(2) {
-  background: linear-gradient(135deg, #9fc9f3 0%, #c5e2fa 48%, #8abbea 100%);
+  background: linear-gradient(135deg, #0f4f78 0%, #176b96 52%, #0d3f63 100%);
 }
 
 #main-content > section:nth-of-type(3) {
