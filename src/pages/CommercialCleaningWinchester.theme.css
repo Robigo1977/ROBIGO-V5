@@ -1,0 +1,101 @@
+.commercial-page > section:nth-of-type(2) {
+  background: linear-gradient(135deg, #cfdde9 0%, #bccfe0 50%, #a9c0d5 100%);
+}
+
+.commercial-page > section:nth-of-type(2) header h2,
+.commercial-page > section:nth-of-type(2) header p,
+.commercial-page > section:nth-of-type(2) header span {
+  color: #000000 !important;
+}
+
+.commercial-page > section:nth-of-type(2) article {
+  border: 1px solid rgba(0, 0, 0, 0.16) !important;
+  background: linear-gradient(145deg, #dce7f0 0%, #c8d8e6 100%) !important;
+  box-shadow: 0 18px 42px rgba(15, 35, 61, 0.14) !important;
+}
+
+.commercial-page > section:nth-of-type(2) article:nth-child(2) {
+  background: linear-gradient(145deg, #cfe2df 0%, #b7d6d1 100%) !important;
+}
+
+.commercial-page > section:nth-of-type(2) article:nth-child(3) {
+  background: linear-gradient(145deg, #d8dff0 0%, #c3cde4 100%) !important;
+}
+
+.commercial-page > section:nth-of-type(2) article:nth-child(4) {
+  background: linear-gradient(145deg, #d4e5d9 0%, #bdd6c4 100%) !important;
+}
+
+.commercial-page > section:nth-of-type(2) article h3,
+.commercial-page > section:nth-of-type(2) article p,
+.commercial-page > section:nth-of-type(2) article li,
+.commercial-page > section:nth-of-type(2) article span {
+  color: #000000 !important;
+}
+
+.commercial-page > section:nth-of-type(2) article > div:last-child > a {
+  background: linear-gradient(135deg, #0d426d 0%, #11679a 100%) !important;
+  color: #ffffff !important;
+}
+
+.commercial-page > section:nth-of-type(4) {
+  background: linear-gradient(135deg, #b9d6cf 0%, #a8cbc3 52%, #94bbb2 100%) !important;
+}
+
+.commercial-page > section:nth-of-type(4) header h2,
+.commercial-page > section:nth-of-type(4) header p,
+.commercial-page > section:nth-of-type(4) header span,
+.commercial-page > section:nth-of-type(4) > div > p {
+  color: #000000 !important;
+}
+
+.commercial-page > section:nth-of-type(4) article {
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  background: linear-gradient(145deg, #dce7f0 0%, #c8d8e6 100%) !important;
+  box-shadow: 0 14px 34px rgba(15, 35, 61, 0.12) !important;
+}
+
+.commercial-page > section:nth-of-type(4) article:nth-child(2) {
+  background: linear-gradient(145deg, #cfe2df 0%, #b7d6d1 100%) !important;
+}
+
+.commercial-page > section:nth-of-type(4) article:nth-child(3) {
+  background: linear-gradient(145deg, #d8dff0 0%, #c3cde4 100%) !important;
+}
+
+.commercial-page > section:nth-of-type(4) article:nth-child(4) {
+  background: linear-gradient(145deg, #d4e5d9 0%, #bdd6c4 100%) !important;
+}
+
+.commercial-page > section:nth-of-type(4) article p,
+.commercial-page > section:nth-of-type(4) article strong,
+.commercial-page > section:nth-of-type(4) article span {
+  color: #000000 !important;
+}
+
+.commercial-page > section:nth-of-type(5) {
+  background: linear-gradient(135deg, #c7d7e5 0%, #b6cadb 50%, #a6bed2 100%);
+}
+
+.commercial-page > section:nth-of-type(5) > div > div {
+  border: 1px solid rgba(0, 0, 0, 0.18) !important;
+  background: linear-gradient(135deg, #d4e1ec 0%, #bfd2e1 100%) !important;
+  color: #000000 !important;
+}
+
+.commercial-page > section:nth-of-type(5) h2,
+.commercial-page > section:nth-of-type(5) p,
+.commercial-page > section:nth-of-type(5) span {
+  color: #000000 !important;
+}
+
+.commercial-page > section:nth-of-type(6) {
+  background: linear-gradient(135deg, #b8cfdf 0%, #a5c1d5 50%, #91b2ca 100%) !important;
+}
+
+.commercial-page > section:nth-of-type(6) h2,
+.commercial-page > section:nth-of-type(6) p,
+.commercial-page > section:nth-of-type(6) span,
+.commercial-page > section:nth-of-type(6) small {
+  color: #000000 !important;
+}
