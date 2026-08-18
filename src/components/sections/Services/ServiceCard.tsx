@@ -57,8 +57,11 @@ Thank you.`);
         {servicePricing && (
           <details className={styles.priceDropdown}>
             <summary className={styles.priceSummary}>
-              <span>Details & Prices</span>
-              <span className={styles.summaryIcon} aria-hidden="true">⌄</span>
+              <span className={styles.priceSummaryText}>
+                <strong>VIEW PRICES</strong>
+                <small>Tap here to see exactly how much</small>
+              </span>
+              <span className={styles.summaryIcon} aria-hidden="true">＋</span>
             </summary>
 
             <div className={styles.dropdownContent}>
