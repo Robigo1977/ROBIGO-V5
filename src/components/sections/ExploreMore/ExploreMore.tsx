@@ -1,4 +1,5 @@
 import { ArrowRight, CircleCheck } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import Container from "../../ui/Container";
 
@@ -36,17 +37,17 @@ export default function ExploreMore() {
           </ul>
 
           <div className={styles.links}>
-            <a className={styles.businessLink} href="/business">
+            <Link className={styles.businessLink} to="/business">
               Explore Business Cleaning
               <ArrowRight aria-hidden="true" />
-            </a>
-            <a className={styles.link} href="/more-about-robigo#reviews">
+            </Link>
+            <Link className={styles.link} to="/more-about-robigo#reviews">
               Read Customer Reviews
               <ArrowRight aria-hidden="true" />
-            </a>
-            <a className={styles.secondaryLink} href="/more-about-robigo">
+            </Link>
+            <Link className={styles.secondaryLink} to="/more-about-robigo">
               More About ROBIGO
-            </a>
+            </Link>
           </div>
         </div>
       </Container>
