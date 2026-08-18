@@ -117,7 +117,28 @@ main {
 }
 
 #main-content > section:nth-of-type(3) {
-  background: linear-gradient(135deg, #f2c35f 0%, #f8dc92 52%, #eab04a 100%);
+  background: linear-gradient(135deg, #e1ad2f 0%, #f0c85f 48%, #cf9220 100%);
+  color: #102a3d;
+}
+
+/* The oven section was originally designed for a dark background, so force
+   high-contrast navy copy when it sits on the gold homepage band. */
+#main-content > section:nth-of-type(3) h2,
+#main-content > section:nth-of-type(3) p,
+#main-content > section:nth-of-type(3) li,
+#main-content > section:nth-of-type(3) strong,
+#main-content > section:nth-of-type(3) small {
+  color: #102a3d;
+}
+
+#main-content > section:nth-of-type(3) [class*="badge"] {
+  color: #102a3d;
+  border-color: rgba(16, 42, 61, 0.45);
+  background: rgba(255, 255, 255, 0.42);
+}
+
+#main-content > section:nth-of-type(3) [class*="benefits"] li::before {
+  color: #102a3d;
 }
 
 #main-content > section:nth-of-type(4) {
