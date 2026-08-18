@@ -140,25 +140,26 @@ main {
   background: linear-gradient(135deg, #8bb8d8 0%, #b5d5e9 50%, #74a5c9 100%);
 }
 
-/* Readability rule: all medium/light coloured homepage bands use dark navy copy.
-   White text is reserved for genuinely dark backgrounds only. */
-#main-content > section:nth-of-type(n + 3):nth-of-type(-n + 8) {
-  color: #102a3d;
+/* Maximum readability: coloured homepage bands use black copy. */
+#main-content > section:nth-of-type(n + 2):nth-of-type(-n + 8),
+#main-content > section:nth-of-type(n + 2):nth-of-type(-n + 8) h2,
+#main-content > section:nth-of-type(n + 2):nth-of-type(-n + 8) h3,
+#main-content > section:nth-of-type(n + 2):nth-of-type(-n + 8) h4,
+#main-content > section:nth-of-type(n + 2):nth-of-type(-n + 8) p,
+#main-content > section:nth-of-type(n + 2):nth-of-type(-n + 8) li,
+#main-content > section:nth-of-type(n + 2):nth-of-type(-n + 8) small,
+#main-content > section:nth-of-type(n + 2):nth-of-type(-n + 8) label {
+  color: #000000;
 }
 
-#main-content > section:nth-of-type(n + 3):nth-of-type(-n + 8) h2,
-#main-content > section:nth-of-type(n + 3):nth-of-type(-n + 8) h3,
-#main-content > section:nth-of-type(n + 3):nth-of-type(-n + 8) h4,
-#main-content > section:nth-of-type(n + 3):nth-of-type(-n + 8) p,
-#main-content > section:nth-of-type(n + 3):nth-of-type(-n + 8) li,
-#main-content > section:nth-of-type(n + 3):nth-of-type(-n + 8) small,
-#main-content > section:nth-of-type(n + 3):nth-of-type(-n + 8) label {
-  color: #102a3d;
+/* Explicitly override the Services section header description. */
+#services p {
+  color: #000000 !important;
 }
 
 #main-content > section:nth-of-type(n + 3):nth-of-type(-n + 8) [class*="badge"] {
-  color: #102a3d;
-  border-color: rgba(16, 42, 61, 0.38);
+  color: #000000;
+  border-color: rgba(0, 0, 0, 0.38);
 }
 
 #main-content > section:nth-of-type(3) [class*="badge"] {
@@ -166,7 +167,7 @@ main {
 }
 
 #main-content > section:nth-of-type(3) [class*="benefits"] li::before {
-  color: #102a3d;
+  color: #000000;
 }
 
 #main-content > section:nth-of-type(n + 2) {
