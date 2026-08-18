@@ -296,6 +296,13 @@
   color: #941d1d;
 }
 
+/* First service card: maximum text contrast. */
+.card:first-child .shortDescription,
+.card:first-child .priceItem span,
+.card:first-child .priceNote {
+  color: #000000;
+}
+
 .content :global(.button) {
   margin-top: auto;
 }
