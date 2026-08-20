@@ -112,33 +112,33 @@ main {
     linear-gradient(180deg, #f4f5f6 0%, #eceff1 46%, #f2f3f4 100%);
 }
 
-/* Stronger visual rhythm for the ROBIGO homepage. The hero remains untouched. */
+/* Unified blue / grey-blue visual rhythm for the ROBIGO homepage. */
 #main-content > section:nth-of-type(2) {
   background: linear-gradient(135deg, #0f4f78 0%, #176b96 52%, #0d3f63 100%);
 }
 
 #main-content > section:nth-of-type(3) {
-  background: linear-gradient(135deg, #e1ad2f 0%, #f0c85f 48%, #cf9220 100%);
+  background: linear-gradient(135deg, #a9bdcf 0%, #c2d0dc 50%, #92abc0 100%);
 }
 
 #main-content > section:nth-of-type(4) {
-  background: linear-gradient(135deg, #74cbbd 0%, #a7dfd5 50%, #60b9ad 100%);
+  background: linear-gradient(135deg, #9fb7ca 0%, #b9c9d7 50%, #89a6bd 100%);
 }
 
 #main-content > section:nth-of-type(5) {
-  background: linear-gradient(135deg, #9daeea 0%, #c2ccf4 50%, #869be0 100%);
+  background: linear-gradient(135deg, #becbd7 0%, #d0dae2 50%, #aabccb 100%);
 }
 
 #main-content > section:nth-of-type(6) {
-  background: linear-gradient(135deg, #eda98d 0%, #f5c9b6 50%, #df9276 100%);
+  background: linear-gradient(135deg, #a7bacd 0%, #c0cfdb 50%, #91aac0 100%);
 }
 
 #main-content > section:nth-of-type(7) {
-  background: linear-gradient(135deg, #8dcc9d 0%, #b7dfc1 50%, #75b987 100%);
+  background: linear-gradient(135deg, #b3c3d1 0%, #cad5de 50%, #9db2c4 100%);
 }
 
 #main-content > section:nth-of-type(8) {
-  background: linear-gradient(135deg, #8bb8d8 0%, #b5d5e9 50%, #74a5c9 100%);
+  background: linear-gradient(135deg, #90aabe 0%, #afc1d0 50%, #7f9db4 100%);
 }
 
 /* Maximum readability: coloured homepage bands use black copy. */
