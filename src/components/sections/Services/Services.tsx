@@ -8,85 +8,34 @@ import { services } from "./services.data";
 
 import styles from "./Services.module.css";
 
-
-
 export default function Services() {
-
-
   if (services.length === 0) {
-
     return null;
-
   }
 
-
-
   return (
-
     <Section
-
       id="services"
-
       className={styles.section}
-
       background="default"
-
     >
-
-
-
       <SectionHeader
-
-
-        badge="WINCHESTER CLEANING SERVICES"
-
-
         title="Professional Cleaning Services & Prices in Winchester"
-
-
         description="Choose the service you need and see the starting price immediately. Clear pricing, no call-out charges and friendly local service across Winchester and surrounding areas."
-
-
       />
 
-
-
-
-
       <div
-
         className={styles.grid}
-
         role="list"
-
         aria-label="Professional cleaning services"
-
       >
-
-
-
         {services.map((service) => (
-
-
           <ServiceCard
-
             key={service.id}
-
             service={service}
-
           />
-
-
         ))}
-
-
-
       </div>
-
-
-
     </Section>
-
   );
-
 }
