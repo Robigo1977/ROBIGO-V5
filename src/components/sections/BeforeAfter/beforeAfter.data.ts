@@ -31,50 +31,6 @@ export interface BeforeAfterItem {
 
 export const beforeAfterItems: readonly BeforeAfterItem[] = [
   {
-    id: 1,
-
-    slug: "living-room-carpet-restoration",
-
-    featured: true,
-
-    title: "Living Room Carpet Restoration",
-
-    category: "Carpet Cleaning",
-
-    service: "Deep Carpet Cleaning",
-
-    location: "Winchester",
-
-    description:
-      "Heavy traffic marks, embedded dirt and dull fibres restored with professional deep extraction cleaning.",
-
-    story:
-      "After a full inspection, targeted pre-treatment was applied before high-temperature steam helped loosen embedded contamination. Professional extraction restored the carpet's appearance, leaving it noticeably cleaner, fresher and brighter.",
-
-    completedAt: "2026",
-
-    process: {
-      inspect: true,
-      preTreat: true,
-      steam: true,
-      extraction: true,
-    },
-
-    stains: [
-      "Traffic Marks",
-      "Embedded Dirt",
-      "General Soiling",
-      "Everyday Wear",
-    ],
-
-    beforeImage:
-      "/images/before-after/carpet-before.webp",
-
-    afterImage:
-      "/images/before-after/carpet-after.webp",
-  },
-
-  {
     id: 2,
 
     slug: "professional-upholstery-revival",
