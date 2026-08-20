@@ -15,16 +15,6 @@ export default function HeroButtons() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        {site.cta.primary}
-      </Button>
-
-      <Button
-        href={site.whatsappMessage()}
-        variant="secondary"
-        size="lg"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
         WhatsApp Us
       </Button>
     </nav>
