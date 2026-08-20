@@ -4,6 +4,7 @@ import HeroContent from "./HeroContent";
 import HeroImage from "./HeroImage";
 
 import styles from "./Hero.module.css";
+import "./HeroLighting.css";
 
 export default function Hero() {
   return (
