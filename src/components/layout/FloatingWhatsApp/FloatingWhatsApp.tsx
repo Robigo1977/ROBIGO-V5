@@ -7,6 +7,7 @@ import { site } from "../../../config/site";
 
 export default function FloatingWhatsApp() {
   const { pathname } = useLocation();
+  const isHomePage = pathname === "/";
   const isBusinessPage =
     pathname === "/business" ||
     pathname === "/commercial-cleaning-winchester" ||
@@ -29,7 +30,7 @@ export default function FloatingWhatsApp() {
     return () => window.removeEventListener("scroll", updateVisibility);
   }, [isBusinessPage]);
 
-  if (!hasPassedHero) {
+  if (isHomePage || !hasPassedHero) {
     return null;
   }
 
@@ -39,8 +40,8 @@ export default function FloatingWhatsApp() {
       href={site.whatsappMessage()}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Get a free quote on WhatsApp"
-      title="Get a free quote on WhatsApp"
+      aria-label="WhatsApp ROBIGO"
+      title="WhatsApp ROBIGO"
     >
       <span
         className="floating-whatsapp-icon"
@@ -53,11 +54,7 @@ export default function FloatingWhatsApp() {
       </span>
 
       <span className="floating-whatsapp-text">
-        <span className="floating-whatsapp-label">
-          Free Quote
-        </span>
-
-        <strong>Chat on WhatsApp</strong>
+        <strong>WhatsApp Us</strong>
       </span>
     </a>
   );
