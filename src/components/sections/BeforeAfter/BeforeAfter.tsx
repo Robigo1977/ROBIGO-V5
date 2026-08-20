@@ -52,29 +52,24 @@ export default function BeforeAfter({ compact = false }: BeforeAfterProps) {
 
         <motion.section
           className={`${styles.featured} ${compact ? styles.compactFeatured : ""}`}
-          aria-labelledby="featured-project-heading"
+          aria-labelledby={compact ? undefined : "featured-project-heading"}
           {...fadeUp}
         >
           <BeforeAfterCard item={featuredProject} />
 
-          <div className={styles.featuredContent}>
-            <span className={styles.category}>Featured Project</span>
-            <h3 id="featured-project-heading">{featuredProject.title}</h3>
-            <p className={styles.meta}>
-              <strong>{featuredProject.location}</strong>
-              {" • "}
-              {featuredProject.service}
-            </p>
-            <p>{featuredProject.description}</p>
-
-            {!compact && <p className={styles.story}>{featuredProject.story}</p>}
-
-            {compact && (
-              <a className={styles.resultsLink} href="/more-about-robigo#before-after">
-                See all before & after results
-              </a>
-            )}
-          </div>
+          {!compact && (
+            <div className={styles.featuredContent}>
+              <span className={styles.category}>Featured Project</span>
+              <h3 id="featured-project-heading">{featuredProject.title}</h3>
+              <p className={styles.meta}>
+                <strong>{featuredProject.location}</strong>
+                {" • "}
+                {featuredProject.service}
+              </p>
+              <p>{featuredProject.description}</p>
+              <p className={styles.story}>{featuredProject.story}</p>
+            </div>
+          )}
         </motion.section>
 
         {!compact && galleryItems.length > 0 && (
