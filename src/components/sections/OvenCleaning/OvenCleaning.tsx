@@ -43,7 +43,7 @@ export default function OvenCleaning() {
               boxShadow: "0 18px 40px rgba(0, 0, 0, 0.28)",
             }}
           />
-          <h2 id="oven-cleaning-title">Professional Oven Cleaning in Winchester</h2>
+          <h2 id="oven-cleaning-title">Professional Oven Cleaning in Hampshire</h2>
           <p>
             A careful deep clean for ovens, cookers and selected kitchen appliances.
             Clear fixed prices, friendly local service and no call-out charge within our service area.
