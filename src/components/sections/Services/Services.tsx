@@ -20,8 +20,8 @@ export default function Services() {
       background="default"
     >
       <SectionHeader
-        title="Professional Cleaning Services & Prices in Winchester"
-        description="Choose the service you need and see the starting price immediately. Clear pricing, no call-out charges and friendly local service across Winchester and surrounding areas."
+        title="Best Quality at the Best Price in Hampshire"
+        description="Premium results without premium prices."
       />
 
       <div
