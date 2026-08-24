@@ -53,6 +53,32 @@ export const pricing: PricingCategory[] = [
   },
 
   {
+    id: "rug",
+    title: "Rug Cleaning",
+    icon: "🧶",
+    items: [
+      {
+        label: "Small Rug",
+        price: "£18",
+      },
+      {
+        label: "Medium Rug",
+        price: "£25",
+      },
+      {
+        label: "Large Rug",
+        price: "£35",
+      },
+      {
+        label: "Extra Large Rug",
+        price: "From £45",
+      },
+    ],
+    note:
+      "Persian rugs are subject to an additional charge and are quoted individually before cleaning.",
+  },
+
+  {
     id: "upholstery",
     title: "Upholstery Cleaning",
     icon: "🛋",
