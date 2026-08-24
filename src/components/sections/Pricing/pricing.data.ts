@@ -59,7 +59,7 @@ export const pricing: PricingCategory[] = [
     items: [
       {
         label: "Small Rug (up to 1.5 × 1.0 m)",
-        price: "£18",
+        price: "£15",
       },
       {
         label: "Medium Rug (up to 2.0 × 1.5 m)",
