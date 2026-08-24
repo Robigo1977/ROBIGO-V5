@@ -58,19 +58,19 @@ export const pricing: PricingCategory[] = [
     icon: "🧶",
     items: [
       {
-        label: "Small Rug",
+        label: "Small Rug (up to 1.5 × 1.0 m)",
         price: "£18",
       },
       {
-        label: "Medium Rug",
+        label: "Medium Rug (up to 2.0 × 1.5 m)",
         price: "£25",
       },
       {
-        label: "Large Rug",
+        label: "Large Rug (up to 3.0 × 2.0 m)",
         price: "£35",
       },
       {
-        label: "Extra Large Rug",
+        label: "Extra Large Rug (over 3.0 × 2.0 m)",
         price: "From £45",
       },
     ],
