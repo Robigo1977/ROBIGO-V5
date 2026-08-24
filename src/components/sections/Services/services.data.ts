@@ -1,9 +1,10 @@
 import carpetImage from "../../../assets/optimized/approved/carpet-clean-web-2026.jpg";
+import rugImage from "../../../assets/generated/rug-cleaning-image";
 import upholsteryImage from "../../../assets/optimized/approved/upholstery-cleaning-2026.jpg";
 import mattressImage from "../../../assets/optimized/mattress-cleaning.webp";
 import steamImage from "../../../assets/optimized/approved/steam-cleaning-2026.jpg";
 
-export type ServiceId = "carpet" | "upholstery" | "mattress" | "steam";
+export type ServiceId = "carpet" | "rug" | "upholstery" | "mattress" | "steam";
 
 export interface ServiceItem {
   id: ServiceId;
@@ -26,6 +27,19 @@ export const services: readonly ServiceItem[] = [
       "Pet & Family Friendly",
       "Professional Equipment",
       "Clear Upfront Pricing",
+    ],
+  },
+  {
+    id: "rug",
+    title: "Rug Cleaning",
+    description:
+      "Professional rug cleaning for everyday household rugs across Hampshire, using careful deep extraction to lift dirt, refresh fibres and improve appearance.",
+    image: rugImage,
+    features: [
+      "Small, Medium, Large & XL Rugs",
+      "Deep Dirt Removal",
+      "Professional Extraction Cleaning",
+      "Persian Rugs: Extra Charge Applies",
     ],
   },
   {
