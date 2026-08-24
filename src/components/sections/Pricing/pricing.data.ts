@@ -45,7 +45,7 @@ export const pricing: PricingCategory[] = [
       },
       {
         label: "Stairs (per step)",
-        price: "£3.00",
+        price: "£2.50 / step",
       },
     ],
     note:
