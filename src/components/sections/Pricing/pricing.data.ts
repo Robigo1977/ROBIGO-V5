@@ -71,7 +71,7 @@ export const pricing: PricingCategory[] = [
       },
       {
         label: "Extra Large Rug (over 3.0 × 2.0 m)",
-        price: "From £45",
+        price: "£40",
       },
     ],
     note:
