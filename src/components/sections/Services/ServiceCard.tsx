@@ -23,10 +23,6 @@ Could you please send me a free quotation and let me know your next available ap
 
 Thank you.`);
 
-  const priorityHref = site.whatsappMessage(
-    `Hi ROBIGO, I'd like to book Priority 24H ${service.title}.`,
-  );
-
   const emergencyHref = site.whatsappMessage(
     `Hi ROBIGO, I need the earliest available appointment for ${service.title}.`,
   );
@@ -84,15 +80,6 @@ Thank you.`);
               </div>
 
               <div className={styles.cardUrgentGrid} aria-label={`${service.title} fast booking options`}>
-                <div className={`${styles.cardUrgent} ${styles.cardPriority}`}>
-                  <span>PRIORITY 24H</span>
-                  <strong>+£30</strong>
-                  <p>We provide an appointment within 24 hours.</p>
-                  <a href={priorityHref} target="_blank" rel="noopener noreferrer">
-                    Book Priority 24H
-                  </a>
-                </div>
-
                 <div
                   className={`${styles.cardUrgent} ${styles.cardEmergency}`}
                   style={{ color: "#ffffff" }}
