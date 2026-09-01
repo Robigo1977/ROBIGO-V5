@@ -14,9 +14,6 @@ export default function OvenCleaning() {
   const whatsappHref = site.whatsappMessage(
     "Hi ROBIGO, I'd like to book oven cleaning. Please let me know your next available appointment."
   );
-  const priorityHref = site.whatsappMessage(
-    "Hi ROBIGO, I'd like to book Priority 24H oven cleaning."
-  );
   const emergencyHref = site.whatsappMessage(
     "Hi ROBIGO, I need the earliest available oven cleaning appointment."
   );
@@ -84,16 +81,9 @@ export default function OvenCleaning() {
             </div>
 
             <div className={styles.urgentGrid} aria-label="Fast oven cleaning options">
-              <article className={`${styles.urgentCard} ${styles.priorityCard}`}>
-                <span className={styles.urgentBadge}>PRIORITY 24H</span>
-                <div className={styles.urgentPrice}>+£30</div>
-                <p>We provide an appointment within 24 hours.</p>
-                <a href={priorityHref} target="_blank" rel="noreferrer">Book Priority 24H</a>
-              </article>
-
               <article className={`${styles.urgentCard} ${styles.emergencyCard}`}>
                 <span className={styles.urgentBadge}>EMERGENCY</span>
-                <div className={styles.urgentPrice}>From £50</div>
+                <div className={styles.urgentPrice}>£50</div>
                 <p>The earliest available appointment.</p>
                 <a href={emergencyHref} target="_blank" rel="noreferrer">
                   Request Emergency Help
