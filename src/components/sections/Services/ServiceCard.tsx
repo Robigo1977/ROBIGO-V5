@@ -85,7 +85,7 @@ Thank you.`);
                   style={{ color: "#ffffff" }}
                 >
                   <span style={{ color: "#ffffff" }}>EMERGENCY</span>
-                  <strong style={{ color: "#ffffff" }}>From £50</strong>
+                  <strong style={{ color: "#ffffff" }}>£50</strong>
                   <p style={{ color: "#ffffff" }}>The earliest available appointment.</p>
                   <a
                     href={emergencyHref}
