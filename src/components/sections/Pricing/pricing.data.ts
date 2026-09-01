@@ -16,32 +16,12 @@ export const pricing: PricingCategory[] = [
     icon: "🧼",
     items: [
       {
-        label: "30–49 m²",
-        price: "£2.50 / m²",
-      },
-      {
-        label: "50–99 m²",
+        label: "Any Area",
         price: "£2.00 / m²",
-      },
-      {
-        label: "100+ m²",
-        price: "£1.80 / m²",
       },
       {
         label: "Minimum Charge",
         price: "£60",
-      },
-      {
-        label: "Single bedroom (approx. 8 m²)",
-        price: "about £20*",
-      },
-      {
-        label: "Double bedroom (approx. 12 m²)",
-        price: "about £30*",
-      },
-      {
-        label: "Average living room (approx. 20 m²)",
-        price: "about £50*",
       },
       {
         label: "Stairs (per step)",
@@ -49,7 +29,7 @@ export const pricing: PricingCategory[] = [
       },
     ],
     note:
-      "*Room examples show the area-based price at £2.50/m². The £60 minimum booking still applies, so combining rooms usually offers the best value.",
+      "Carpet cleaning is charged at one simple rate of £2.00/m². The £60 minimum booking still applies.",
   },
 
   {
@@ -145,7 +125,7 @@ export const pricing: PricingCategory[] = [
       },
       {
         label: "Any Area",
-        price: "£2.50 / m²",
+        price: "£2.00 / m²",
       },
       {
         label: "Hard Floors",
