@@ -1,5 +1,5 @@
-# ROBIGO single-page application routes
-/dry-steam/ / 301
-/dry-steam / 301
-/business/* /index.html 200
+# ROBIGO clean URL routing for Cloudflare Pages
+/dry-steam /dry-steam/index.html 200
+/dry-steam/ /dry-steam/index.html 200
+/dry-steam/* /dry-steam/index.html 200
 /* /index.html 200
