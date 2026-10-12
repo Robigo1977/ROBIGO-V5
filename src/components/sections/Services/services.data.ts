@@ -18,6 +18,21 @@ export interface ServiceItem {
 
 export const services: readonly ServiceItem[] = [
   {
+    id: "upholstery",
+    title: "Upholstery Cleaning",
+    description:
+      "Professional upholstery cleaning for sofas, armchairs and fabric furniture in Winchester. Restore freshness, comfort and appearance with careful professional treatment.",
+    image: upholsteryImage,
+    href: "/upholstery-cleaning-winchester",
+    features: [
+      "Sofas & Chairs",
+      "Fabric-Safe Cleaning",
+      "Fresh Finish",
+      "Professional Extraction Equipment",
+    ],
+    popular: true,
+  },
+  {
     id: "carpet",
     title: "Carpet Cleaning",
     description:
@@ -46,20 +61,6 @@ export const services: readonly ServiceItem[] = [
     ],
   },
   {
-    id: "upholstery",
-    title: "Upholstery Cleaning",
-    description:
-      "Professional upholstery cleaning for sofas, armchairs and fabric furniture in Winchester. Restore freshness, comfort and appearance with careful professional treatment.",
-    image: upholsteryImage,
-    href: "/upholstery-cleaning-winchester",
-    features: [
-      "Sofas & Chairs",
-      "Fabric Safe Cleaning",
-      "Fresh Finish",
-      "Family Friendly",
-    ],
-  },
-  {
     id: "mattress",
     title: "Mattress Cleaning",
     description:
@@ -75,17 +76,16 @@ export const services: readonly ServiceItem[] = [
   },
   {
     id: "steam",
-    title: "Chemical-Free Steam Cleaning",
+    title: "Hard-Floor Steam Cleaning",
     description:
-      "High-temperature dry steam cleaning for kitchens, bathrooms and hard floors using professional equipment with little or no chemicals for powerful cleaning results.",
+      "High-temperature dry steam cleaning for suitable hard floors in Winchester using professional Kärcher equipment without adding chemical cleaning product to the floor surface.",
     image: steamImage,
     href: "/steam-cleaning-winchester",
     features: [
-      "Chemical-Free Cleaning",
-      "Hard Floor Cleaning",
-      "Kitchen & Bathroom",
-      "Professional Steam Equipment",
+      "Chemical-Free Hard-Floor Method",
+      "Surface Checked First",
+      "High-Temperature Dry Steam",
+      "Professional Kärcher Equipment",
     ],
-    popular: true,
   },
 ] as const;
