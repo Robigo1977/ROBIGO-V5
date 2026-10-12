@@ -28,11 +28,15 @@ Thank you.`);
   );
 
   return (
-    <article className={styles.card} role="listitem" aria-labelledby={headingId}>
+    <article
+      className={`${styles.card} ${service.popular ? styles.featuredCard : ""}`}
+      role="listitem"
+      aria-labelledby={headingId}
+    >
       <div className={styles.imageWrapper}>
         {service.popular && (
           <span className={styles.badge} aria-label="Most popular service">
-            Most Popular
+            Featured Service
           </span>
         )}
 
