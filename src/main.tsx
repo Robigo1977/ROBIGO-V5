@@ -7,7 +7,14 @@ import App from "./App";
 
 import "./styles/globals.css";
 
-createRoot(document.getElementById("root")!).render(
+const rootElement = document.getElementById("root")!;
+
+// Service landing pages include a lightweight static HTML SEO shell at build
+// time. Once JavaScript loads, React replaces that shell with the full
+// interactive application.
+rootElement.replaceChildren();
+
+createRoot(rootElement).render(
   <StrictMode>
     <HelmetProvider>
       <BrowserRouter>
