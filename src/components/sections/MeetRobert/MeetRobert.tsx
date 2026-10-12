@@ -11,12 +11,12 @@ export default function MeetRobert() {
       <div className={styles.inner}>
         <div className={styles.imageWrap}>
           <img
-            src="/media/robert-portrait.webp"
+            src="/media/robert-profile.webp"
             alt="Robert from ROBIGO professional cleaning services in Winchester"
             loading="lazy"
             decoding="async"
-            width="640"
-            height="640"
+            width="480"
+            height="480"
           />
         </div>
 
@@ -26,7 +26,7 @@ export default function MeetRobert() {
           <p>
             ROBIGO is a local Winchester cleaning service. Robert handles your
             enquiry personally, explains the price clearly before the job and
-            uses professional Karcher equipment for the right cleaning method.
+            uses professional Kärcher equipment for the right cleaning method.
           </p>
           <p>
             Need help choosing a service? Send a photo on WhatsApp and get a
