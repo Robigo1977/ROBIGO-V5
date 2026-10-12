@@ -4,13 +4,14 @@ import HeroContent from "./HeroContent";
 import HeroImage from "./HeroImage";
 
 import styles from "./Hero.module.css";
+import halloween from "./HalloweenHero.module.css";
 import "./HeroLighting.css";
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className={styles.hero}
+      className={`${styles.hero} ${halloween.heroHalloween}`}
       aria-labelledby="hero-title"
     >
       <div className={styles.mobileImage}>
