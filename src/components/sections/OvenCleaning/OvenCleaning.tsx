@@ -3,11 +3,11 @@ import { site } from "../../../config/site";
 import styles from "./OvenCleaning.module.css";
 
 const ovenPrices = [
-  { name: "Single Oven", price: "£60", note: "Interior oven clean" },
-  { name: "Double Oven", price: "£80", note: "Both oven compartments" },
+  { name: "Single Oven", price: "£50", note: "Interior oven clean" },
+  { name: "Double Oven", price: "£70", note: "Both oven compartments" },
   { name: "Range Cooker", price: "£90", note: "Large range-style cooker" },
-  { name: "Hob", price: "£20", note: "Add-on hob cleaning" },
-  { name: "Microwave", price: "£20", note: "Add-on microwave cleaning" },
+  { name: "Hob", price: "£20", note: "Available with oven cleaning only" },
+  { name: "Microwave", price: "£20", note: "Microwave cleaning" },
 ] as const;
 
 export default function OvenCleaning() {
@@ -22,15 +22,15 @@ export default function OvenCleaning() {
     <section className={styles.section} id="oven-cleaning" aria-labelledby="oven-cleaning-title">
       <div className={styles.inner}>
         <div className={styles.intro}>
-          <span className={styles.badge}>NEW ROBIGO SERVICE</span>
+          <span className={styles.badge}>OVEN CLEANING</span>
           <img
             src={ovenImage}
             alt="Professional oven cleaning in a modern Winchester kitchen"
             width={650}
             height={366}
-            loading="eager"
+            loading="lazy"
             decoding="async"
-            fetchPriority="auto"
+            fetchPriority="low"
             style={{
               display: "block",
               width: "100%",
@@ -40,16 +40,19 @@ export default function OvenCleaning() {
               boxShadow: "0 18px 40px rgba(0, 0, 0, 0.28)",
             }}
           />
-          <h2 id="oven-cleaning-title">Professional Oven Cleaning in Hampshire</h2>
+          <h2 id="oven-cleaning-title">Professional Oven Cleaning in Winchester</h2>
           <p>
             A careful deep clean for ovens, cookers and selected kitchen appliances.
-            Clear fixed prices, friendly local service and no call-out charge within our service area.
+            Clear fixed prices, £50 minimum booking and no call-out charge within our service area.
           </p>
           <ul className={styles.benefits}>
             <li>Built-up grease and burnt-on residue removed</li>
             <li>Racks, trays and accessible internal surfaces cleaned</li>
             <li>Available seven days a week</li>
           </ul>
+          <a href="/oven-cleaning-winchester">
+            More about oven cleaning in Winchester →
+          </a>
           <a className={styles.cta} href={whatsappHref} target="_blank" rel="noreferrer">
             Book Oven Cleaning on WhatsApp
           </a>
@@ -76,14 +79,14 @@ export default function OvenCleaning() {
                 </div>
               ))}
               <p className={styles.priceNote}>
-                Hob and microwave prices apply when booked with an oven clean. Final suitability is confirmed before work begins.
+                Hob cleaning is £20 only when booked together with an oven clean. Minimum total booking is £50. Call-out is free.
               </p>
             </div>
 
             <div className={styles.urgentGrid} aria-label="Fast oven cleaning options">
               <article className={`${styles.urgentCard} ${styles.emergencyCard}`}>
                 <span className={styles.urgentBadge}>EMERGENCY</span>
-                <div className={styles.urgentPrice}>£50</div>
+                <div className={styles.urgentPrice}>from £50</div>
                 <p>The earliest available appointment.</p>
                 <a href={emergencyHref} target="_blank" rel="noreferrer">
                   Request Emergency Help
