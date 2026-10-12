@@ -20,14 +20,14 @@ export default function Services() {
       background="default"
     >
       <SectionHeader
-        title="Best Quality at the Best Price in Hampshire"
-        description="Premium results without premium prices."
+        title="Cleaning Services in Winchester"
+        description="Choose the job you need, see simple prices and ask Robert for a free quote if you are unsure."
       />
 
       <div
         className={styles.grid}
         role="list"
-        aria-label="Professional cleaning services"
+        aria-label="Professional cleaning services in Winchester"
       >
         {services.map((service) => (
           <ServiceCard
