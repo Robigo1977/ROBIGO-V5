@@ -35,10 +35,10 @@ function HomePage() {
       <TrustBar />
       <Services />
       <Pricing />
-      <SteamShowcase />
       <OvenCleaning />
       <BeforeAfter compact />
       <MeetRobert />
+      <SteamShowcase />
       <LocalAreas />
       <Reviews />
       <ExploreMore />
