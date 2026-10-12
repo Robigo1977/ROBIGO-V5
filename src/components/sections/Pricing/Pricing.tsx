@@ -16,8 +16,9 @@ export default function Pricing() {
           <h2 id="pricing-heading">Cleaning Prices in Winchester</h2>
           <p>
             Easy-to-understand prices for carpet cleaning, sofa cleaning, rug
-            cleaning, mattress cleaning and oven cleaning in Winchester. No
-            call-out charge and no hidden fees.
+            cleaning, mattress cleaning, hard-floor steam cleaning and oven
+            cleaning in Winchester. Minimum total booking £50. No call-out
+            charge and no hidden fees.
           </p>
         </div>
 
@@ -50,8 +51,9 @@ export default function Pricing() {
 
         <div className={styles.cta}>
           <p>
-            Not sure which price applies? Send Robert a photo on WhatsApp for a
-            fast, free quote.
+            Minimum total booking is £50. Call-out is free. Not sure which
+            price applies? Send Robert a photo on WhatsApp for a fast, free
+            quote.
           </p>
 
           <a
