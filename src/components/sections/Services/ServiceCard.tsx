@@ -40,15 +40,23 @@ Thank you.`);
           src={service.image}
           alt={`${service.title} in Winchester - ROBIGO professional cleaning service`}
           className={styles.image}
-          loading="eager"
+          loading="lazy"
           decoding="async"
-          fetchPriority="auto"
+          fetchPriority="low"
         />
       </div>
 
       <div className={styles.content}>
         <h3 id={headingId}>{service.title}</h3>
         <p className={styles.shortDescription}>{service.description}</p>
+
+        <a
+          className={styles.learnLink}
+          href={service.href}
+          aria-label={`Learn more about ${service.title} in Winchester`}
+        >
+          More about {service.title} in Winchester →
+        </a>
 
         {servicePricing && (
           <details className={styles.priceDropdown}>
