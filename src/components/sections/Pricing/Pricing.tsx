@@ -18,7 +18,7 @@ export default function Pricing() {
             Easy-to-understand prices for carpet cleaning, sofa cleaning, rug
             cleaning, mattress cleaning, hard-floor steam cleaning and oven
             cleaning in Winchester. Minimum total booking £50. No call-out
-            charge and no hidden fees.
+            charge. Your price is confirmed before the work begins.
           </p>
         </div>
 
