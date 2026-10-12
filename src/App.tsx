@@ -17,6 +17,7 @@ import Reviews from "./components/sections/Reviews";
 // Live customer reviews use the moderated Supabase workflow.
 import ExploreMore from "./components/sections/ExploreMore/ExploreMore";
 import Contact from "./components/sections/Contact";
+import SEO from "./seo/SEO";
 
 import CarpetCleaningWinchester from "./pages/CarpetCleaningWinchester";
 import MoreInformation from "./pages/MoreInformation";
@@ -38,6 +39,22 @@ function HomePage() {
       <ExploreMore />
       <Contact />
     </main>
+  );
+}
+
+function PrivateReviewAdmin() {
+  return (
+    <>
+      <SEO
+        config={{
+          title: "ROBIGO Review Administration",
+          description: "Private ROBIGO review administration area.",
+          canonical: "https://robigo.co.uk/review-admin",
+          noIndex: true,
+        }}
+      />
+      <ReviewAdmin />
+    </>
   );
 }
 
@@ -81,7 +98,7 @@ function App() {
         <Route path="/commercial-cleaning-winchester" element={<CommercialCleaningWinchester />} />
         <Route path="/business" element={<CommercialCleaningWinchester />} />
         <Route path="/business/:sector" element={<CommercialSectorPage />} />
-        <Route path="/review-admin" element={<ReviewAdmin />} />
+        <Route path="/review-admin" element={<PrivateReviewAdmin />} />
         <Route path="/dry-steam" element={<DrySteamRedirect />} />
       </Routes>
 
