@@ -2,15 +2,14 @@ import styles from "./Hero.module.css";
 
 const places = [
   "Winchester",
-  "Southampton",
-  "Romsey",
   "Eastleigh",
-  "Chandler’s Ford",
-  "Stockbridge",
-  "Hursley",
+  "Chandler's Ford",
+  "Shawford",
+  "Compton",
+  "Otterbourne",
   "Twyford",
-  "Sparsholt",
-  "Ampfield",
+  "King's Worthy",
+  "Hursley",
 ];
 
 export default function HeroImage() {
@@ -27,7 +26,8 @@ export default function HeroImage() {
               {places.map((place) => (
                 <span className={styles.neonPlace} key={place}>
                   {place}
-                  <b className={styles.neonStar}>★</b>
+                  <b className={styles.neonStar}>✦</b>
+                  <b className={styles.halloweenMark}>🎃</b>
                 </span>
               ))}
             </div>
