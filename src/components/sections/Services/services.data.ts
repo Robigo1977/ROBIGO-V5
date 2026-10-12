@@ -11,6 +11,7 @@ export interface ServiceItem {
   title: string;
   description: string;
   image: string;
+  href: string;
   features: string[];
   popular?: boolean;
 }
@@ -22,6 +23,7 @@ export const services: readonly ServiceItem[] = [
     description:
       "Professional carpet cleaning in Winchester using deep extraction methods to remove embedded dirt, stains, allergens and everyday odours. Ideal for homes, families and pet owners.",
     image: carpetImage,
+    href: "/carpet-cleaning-winchester",
     features: [
       "Deep Dirt & Stain Removal",
       "Pet & Family Friendly",
@@ -35,6 +37,7 @@ export const services: readonly ServiceItem[] = [
     description:
       "Professional rug cleaning for everyday household rugs across Hampshire, using careful deep extraction to lift dirt, refresh fibres and improve appearance.",
     image: rugImage,
+    href: "/rug-cleaning-winchester",
     features: [
       "Small, Medium, Large & XL Rugs",
       "Deep Dirt Removal",
@@ -48,6 +51,7 @@ export const services: readonly ServiceItem[] = [
     description:
       "Professional upholstery cleaning for sofas, armchairs and fabric furniture in Winchester. Restore freshness, comfort and appearance with careful professional treatment.",
     image: upholsteryImage,
+    href: "/upholstery-cleaning-winchester",
     features: [
       "Sofas & Chairs",
       "Fabric Safe Cleaning",
@@ -61,6 +65,7 @@ export const services: readonly ServiceItem[] = [
     description:
       "Deep mattress cleaning designed to reduce dust, allergens and unwanted odours, helping create a fresher and healthier sleeping environment.",
     image: mattressImage,
+    href: "/mattress-cleaning-winchester",
     features: [
       "Dust & Allergen Reduction",
       "Odour Removal",
@@ -74,6 +79,7 @@ export const services: readonly ServiceItem[] = [
     description:
       "High-temperature dry steam cleaning for kitchens, bathrooms and hard floors using professional equipment with little or no chemicals for powerful cleaning results.",
     image: steamImage,
+    href: "/steam-cleaning-winchester",
     features: [
       "Chemical-Free Cleaning",
       "Hard Floor Cleaning",
