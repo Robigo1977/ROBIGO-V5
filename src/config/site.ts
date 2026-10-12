@@ -54,30 +54,30 @@ export const site = {
   },
 
   branding: {
-    title: "ROBIGO | Carpet & Upholstery Cleaning in Winchester",
+    title: "ROBIGO | Professional Cleaning Services in Winchester",
 
     shortName: "ROBIGO",
 
     description:
-      "Professional carpet, upholstery, mattress and chemical-free steam cleaning in Winchester and surrounding areas.",
+      "Professional carpet, upholstery, rug, mattress, oven and chemical-free hard-floor steam cleaning in Winchester and surrounding areas.",
 
-    logo: "/logo.svg",
+    logo: "/favicon.svg",
 
     favicon: "/favicon.svg",
 
-    ogImage: "/og-image.jpg",
+    ogImage: "/images/services/hero.png",
 
     themeColor: "#0F6CBD",
   },
 
   seo: {
     defaultTitle:
-      "Professional Carpet Cleaning in Winchester | ROBIGO",
+      "Professional Cleaning Services in Winchester | ROBIGO",
 
     titleTemplate: "%s | ROBIGO",
 
     defaultDescription:
-      "Professional carpet, upholstery, mattress and chemical-free steam cleaning in Winchester. Honest pricing. No call-out charge. Free quotations.",
+      "Professional carpet, upholstery, rug, mattress, oven and chemical-free hard-floor steam cleaning in Winchester. £50 minimum booking, no call-out charge and free quotations.",
 
     keywords: [
       "carpet cleaning Winchester",
