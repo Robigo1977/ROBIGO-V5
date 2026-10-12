@@ -15,8 +15,8 @@ export default function MeetRobert() {
             alt="Robert from ROBIGO professional cleaning services in Winchester"
             loading="lazy"
             decoding="async"
-            width="480"
-            height="480"
+            width="640"
+            height="640"
           />
         </div>
 

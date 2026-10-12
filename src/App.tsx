@@ -12,7 +12,6 @@ import MeetRobert from "./components/sections/MeetRobert/MeetRobert";
 import LocalAreas from "./components/sections/LocalAreas/LocalAreas";
 import Reviews from "./components/sections/Reviews";
 import ExploreMore from "./components/sections/ExploreMore/ExploreMore";
-import Contact from "./components/sections/Contact";
 import SEO from "./seo/SEO";
 
 import CarpetCleaningWinchester from "./pages/CarpetCleaningWinchester";
@@ -26,13 +25,12 @@ function HomePage() {
   return (
     <main id="main-content">
       <Hero />
-      <TrustBar />
       <Services />
       <MeetRobert />
       <LocalAreas />
       <Reviews />
       <ExploreMore />
-      <Contact />
+      <TrustBar />
     </main>
   );
 }

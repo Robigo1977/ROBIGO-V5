@@ -10,7 +10,7 @@ import styles from "./TrustBar.module.css";
 
 export default function TrustBar() {
   return (
-    <section className={styles.bar}>
+    <section className={styles.bar} aria-label="Why choose ROBIGO">
       <Container>
         <motion.div
           className={styles.grid}
@@ -25,7 +25,7 @@ export default function TrustBar() {
               className={styles.item}
               variants={fadeUp}
             >
-              <Icon size={20} />
+              <Icon size={20} aria-hidden="true" />
               <span>{title}</span>
             </motion.div>
           ))}
