@@ -1,0 +1,197 @@
+.page {
+  background: #f7fafc;
+  color: #132238;
+}
+
+.hero {
+  padding: clamp(5rem, 10vw, 8rem) 1.25rem 4rem;
+  background:
+    radial-gradient(circle at 85% 10%, rgba(15, 108, 189, 0.16), transparent 34%),
+    linear-gradient(180deg, #eff7fd 0%, #ffffff 100%);
+}
+
+.heroInner,
+.sectionInner,
+.ctaInner {
+  width: min(1080px, 100%);
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin: 0 0 0.8rem;
+  color: #0f6cbd;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 900px;
+  margin: 0;
+  font-size: clamp(2.35rem, 6vw, 4.6rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.lead {
+  max-width: 760px;
+  margin: 1.4rem 0 0;
+  color: #526273;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.75;
+}
+
+.trustRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.7rem;
+}
+
+.trustRow span {
+  padding: 0.6rem 0.85rem;
+  border: 1px solid rgba(15, 108, 189, 0.16);
+  border-radius: 999px;
+  background: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.section {
+  padding: 4.5rem 1.25rem;
+}
+
+.sectionAlt {
+  padding: 4.5rem 1.25rem;
+  background: #edf5fb;
+}
+
+.section h2,
+.sectionAlt h2,
+.cta h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  letter-spacing: -0.025em;
+}
+
+.copy {
+  max-width: 800px;
+  color: #526273;
+  line-height: 1.8;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.card {
+  padding: 1.25rem;
+  border: 1px solid rgba(15, 108, 189, 0.12);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(20, 45, 70, 0.06);
+}
+
+.card h3 {
+  margin: 0 0 0.55rem;
+  font-size: 1.08rem;
+}
+
+.card p {
+  margin: 0;
+  color: #5d6b78;
+  line-height: 1.6;
+}
+
+.prices {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 1.6rem;
+}
+
+.priceRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid rgba(15, 108, 189, 0.12);
+}
+
+.priceRow strong {
+  color: #0f6cbd;
+  white-space: nowrap;
+}
+
+.note {
+  margin-top: 1rem;
+  color: #5d6b78;
+  font-size: 0.95rem;
+}
+
+.areas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.5rem;
+}
+
+.areas span {
+  padding: 0.62rem 0.82rem;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid rgba(15, 108, 189, 0.14);
+  font-weight: 700;
+}
+
+.cta {
+  padding: 4.5rem 1.25rem;
+  background: #132238;
+  color: #fff;
+}
+
+.cta p {
+  max-width: 700px;
+  color: #d4dee8;
+  line-height: 1.7;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.primary,
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.8rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.primary {
+  background: #25d366;
+  color: #082414;
+}
+
+.secondary {
+  border: 1px solid rgba(255,255,255,0.32);
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+  .priceRow {
+    align-items: flex-start;
+  }
+}
