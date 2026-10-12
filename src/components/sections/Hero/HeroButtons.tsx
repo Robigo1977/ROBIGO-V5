@@ -1,22 +1,39 @@
-import Button from "../../ui/Button";
+import { MessageCircle, Phone } from "lucide-react";
+
 import { site } from "../../../config/site";
 
 import styles from "./Hero.module.css";
+import halloween from "./HalloweenHero.module.css";
 
 export default function HeroButtons() {
   return (
     <nav
-      className={styles.actions}
-      aria-label="Hero call to actions"
+      className={`${styles.actions} ${halloween.heroActions}`}
+      aria-label="Contact ROBIGO"
     >
-      <Button
+      <a
+        className={`${halloween.contactButton} ${halloween.whatsappButton}`}
         href={site.whatsappMessage()}
-        size="lg"
         target="_blank"
         rel="noopener noreferrer"
       >
-        WhatsApp Us
-      </Button>
+        <MessageCircle aria-hidden="true" />
+        <span>
+          <strong>WhatsApp Us</strong>
+          <small>Send photos for a free quote</small>
+        </span>
+      </a>
+
+      <a
+        className={`${halloween.contactButton} ${halloween.phoneButton}`}
+        href={site.tel()}
+      >
+        <Phone aria-hidden="true" />
+        <span>
+          <small>Call Robert</small>
+          <strong>{site.business.phone}</strong>
+        </span>
+      </a>
     </nav>
   );
 }
