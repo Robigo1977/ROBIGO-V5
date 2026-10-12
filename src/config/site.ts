@@ -37,12 +37,14 @@ export const site = {
 
     serviceAreas: [
       "Winchester",
-      "Kings Worthy",
       "Eastleigh",
-      "Twyford",
-      "Hursley",
-      "Compton",
+      "Chandler's Ford",
       "Shawford",
+      "Compton",
+      "Otterbourne",
+      "Twyford",
+      "King's Worthy",
+      "Hursley",
     ],
 
     geo: {
@@ -83,6 +85,7 @@ export const site = {
       "mattress cleaning Winchester",
       "steam cleaning Winchester",
       "rug cleaning Winchester",
+      "oven cleaning Winchester",
       "professional carpet cleaner",
       "deep carpet cleaning",
       "pet stain removal",
