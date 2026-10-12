@@ -14,18 +14,22 @@
 .imageWrap {
   overflow: hidden;
   width: min(100%, 520px);
+  aspect-ratio: 1;
   margin: 0 auto;
   border-radius: 50%;
-  background: #071426;
+  background: transparent;
   box-shadow: 0 24px 64px rgba(15, 23, 42, 0.16);
 }
 
 .imageWrap img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   aspect-ratio: 1;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: 50% 50%;
+  border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
 }
 
 .copy {
@@ -91,6 +95,11 @@
 
   .imageWrap {
     width: min(82vw, 380px);
+    justify-self: center;
+  }
+
+  .imageWrap img {
+    object-position: 50% 50%;
   }
 }
 
