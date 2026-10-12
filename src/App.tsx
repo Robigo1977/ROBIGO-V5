@@ -10,7 +10,9 @@ import TrustBar from "./components/sections/TrustBar";
 import BeforeAfter from "./components/sections/BeforeAfter";
 import Services from "./components/sections/Services";
 import Pricing from "./components/sections/Pricing/Pricing";
+import SteamShowcase from "./components/sections/SteamShowcase/SteamShowcase";
 import OvenCleaning from "./components/sections/OvenCleaning";
+import MeetRobert from "./components/sections/MeetRobert/MeetRobert";
 import LocalAreas from "./components/sections/LocalAreas/LocalAreas";
 import Reviews from "./components/sections/Reviews";
 
@@ -33,8 +35,10 @@ function HomePage() {
       <TrustBar />
       <Services />
       <Pricing />
+      <SteamShowcase />
       <OvenCleaning />
       <BeforeAfter compact />
+      <MeetRobert />
       <LocalAreas />
       <Reviews />
       <ExploreMore />
