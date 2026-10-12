@@ -32,10 +32,8 @@ export default function ReviewAdmin() {
   const [notice, setNotice] = useState("");
   const [busyId, setBusyId] = useState<string | null>(null);
 
-  async function loadReviews(token: string, showLoading = true) {
-    if (showLoading) {
-      setLoading(true);
-    }
+  async function loadReviews(token: string) {
+    setLoading(true);
 
     try {
       const data = await fetchPendingReviews(token);
@@ -55,9 +53,39 @@ export default function ReviewAdmin() {
   }
 
   useEffect(() => {
-    if (initialSession?.email.toLowerCase() === ADMIN_EMAIL) {
-      void loadReviews(initialSession.accessToken, false);
+    if (initialSession?.email.toLowerCase() !== ADMIN_EMAIL) {
+      return;
     }
+
+    let active = true;
+
+    fetchPendingReviews(initialSession.accessToken)
+      .then((data) => {
+        if (active) {
+          setReviews((data ?? []) as PendingReview[]);
+        }
+      })
+      .catch((error: unknown) => {
+        if (!active) return;
+
+        signOutAdmin();
+        setSession(null);
+        setReviews([]);
+        setNotice(
+          error instanceof Error
+            ? error.message
+            : "The pending reviews could not be loaded. Please sign in again."
+        );
+      })
+      .finally(() => {
+        if (active) {
+          setLoading(false);
+        }
+      });
+
+    return () => {
+      active = false;
+    };
   }, [initialSession]);
 
   async function handleAuth(event: FormEvent<HTMLFormElement>) {
