@@ -82,6 +82,24 @@
   -webkit-line-clamp: 2;
 }
 
+.learnLink {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  color: #0f5fa8;
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1.4;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.learnLink:hover,
+.learnLink:focus-visible {
+  color: #083f73;
+  text-decoration: underline;
+}
+
 .features {
   display: grid;
   gap: 0.55rem;
