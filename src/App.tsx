@@ -20,6 +20,7 @@ import Contact from "./components/sections/Contact";
 import SEO from "./seo/SEO";
 
 import CarpetCleaningWinchester from "./pages/CarpetCleaningWinchester";
+import ServiceLandingPage from "./pages/ServiceLandingPage";
 import MoreInformation from "./pages/MoreInformation";
 import CommercialCleaningWinchester from "./pages/CommercialCleaningWinchester";
 import CommercialSectorPage from "./pages/CommercialSectorPage";
@@ -58,14 +59,6 @@ function PrivateReviewAdmin() {
   );
 }
 
-function DrySteamRedirect() {
-  useEffect(() => {
-    window.location.replace(`${import.meta.env.BASE_URL}dry-steam/index.html`);
-  }, []);
-
-  return null;
-}
-
 function RouteScrollManager() {
   const { pathname, hash } = useLocation();
 
@@ -94,12 +87,16 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/carpet-cleaning-winchester" element={<CarpetCleaningWinchester />} />
+        <Route path="/rug-cleaning-winchester" element={<ServiceLandingPage serviceKey="rug" />} />
+        <Route path="/upholstery-cleaning-winchester" element={<ServiceLandingPage serviceKey="upholstery" />} />
+        <Route path="/mattress-cleaning-winchester" element={<ServiceLandingPage serviceKey="mattress" />} />
+        <Route path="/steam-cleaning-winchester" element={<ServiceLandingPage serviceKey="steam" />} />
+        <Route path="/oven-cleaning-winchester" element={<ServiceLandingPage serviceKey="oven" />} />
         <Route path="/more-about-robigo" element={<MoreInformation />} />
         <Route path="/commercial-cleaning-winchester" element={<CommercialCleaningWinchester />} />
         <Route path="/business" element={<CommercialCleaningWinchester />} />
         <Route path="/business/:sector" element={<CommercialSectorPage />} />
         <Route path="/review-admin" element={<PrivateReviewAdmin />} />
-        <Route path="/dry-steam" element={<DrySteamRedirect />} />
       </Routes>
 
       <Footer />
