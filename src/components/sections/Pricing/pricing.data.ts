@@ -53,10 +53,10 @@ export const pricing: PricingCategory[] = [
     title: "Mattress Cleaning",
     icon: "🛏️",
     items: [
-      { label: "Single Mattress", price: "£30" },
-      { label: "Double Mattress", price: "£40" },
-      { label: "King Mattress", price: "£50" },
-      { label: "Super King Mattress", price: "£60" },
+      { label: "Single Mattress", price: "£20" },
+      { label: "Double Mattress", price: "£30" },
+      { label: "King Mattress", price: "£40" },
+      { label: "Super King Mattress", price: "£50" },
     ],
   },
   {
