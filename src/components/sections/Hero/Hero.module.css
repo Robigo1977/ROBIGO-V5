@@ -21,8 +21,8 @@
   z-index: 1;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(255,255,255,.12) 0%, rgba(255,255,255,.2) 32%, rgba(255,250,242,.88) 76%, rgba(255,250,242,.97) 100%),
-    linear-gradient(90deg, rgba(255,255,255,.88) 0%, rgba(255,255,255,.5) 50%, rgba(255,255,255,.08) 100%);
+    linear-gradient(180deg, rgba(255,255,255,.08) 0%, rgba(255,255,255,.16) 30%, rgba(255,250,242,.88) 76%, rgba(255,250,242,.97) 100%),
+    linear-gradient(90deg, rgba(255,255,255,.9) 0%, rgba(255,255,255,.5) 48%, rgba(255,255,255,.04) 100%);
 }
 
 .heroContent {
@@ -31,6 +31,21 @@
   width: min(1180px, calc(100% - 2rem));
   margin: 0 auto;
   padding: clamp(6.2rem, 14vw, 9rem) 0 8.4rem;
+}
+
+.seasonalBadge {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0 .7rem;
+  padding: .45rem .75rem;
+  border: 1px solid rgba(255,106,0,.35);
+  border-radius: 999px;
+  background: rgba(8,28,24,.9);
+  color: #ffb12a;
+  font-size: .78rem;
+  font-weight: 950;
+  letter-spacing: .08em;
+  box-shadow: 0 7px 20px rgba(15,23,42,.16);
 }
 
 .halloweenLine {
@@ -137,12 +152,20 @@
   font-weight: 850;
 }
 
+.bat,
 .ghost,
 .pumpkin {
   position: absolute;
   z-index: 2;
   pointer-events: none;
   filter: drop-shadow(0 8px 10px rgba(15,23,42,.16));
+}
+
+.bat {
+  top: 7.2rem;
+  right: 8%;
+  font-size: clamp(1.8rem, 4vw, 3.25rem);
+  transform: rotate(10deg);
 }
 
 .ghost {
@@ -224,28 +247,33 @@
 
 @media (max-width: 767px) {
   .hero {
-    min-height: 675px;
+    min-height: 710px;
   }
 
   .heroPhoto {
-    object-position: 50% 38%;
+    object-position: 50% 32%;
   }
 
   .heroShade {
-    background: linear-gradient(180deg, rgba(255,255,255,.05) 0%, rgba(255,255,255,.1) 29%, rgba(255,250,242,.9) 58%, rgba(255,250,242,.98) 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,.02) 0%, rgba(255,255,255,.08) 27%, rgba(255,250,242,.9) 57%, rgba(255,250,242,.98) 100%);
   }
 
   .heroContent {
     width: min(100% - 1.2rem, 620px);
-    padding-top: 8.2rem;
-    padding-bottom: 7.2rem;
+    padding-top: 7.4rem;
+    padding-bottom: 7.4rem;
     text-align: center;
+  }
+
+  .seasonalBadge {
+    margin-bottom: .65rem;
+    font-size: .72rem;
   }
 
   .halloweenLine {
     max-width: 11ch;
     margin: 0 auto;
-    font-size: clamp(2.7rem, 12vw, 4.35rem);
+    font-size: clamp(2.55rem, 11.7vw, 4.2rem);
   }
 
   .heroContent h1,
@@ -255,12 +283,12 @@
   }
 
   .heroContent h1 {
-    font-size: 1.25rem;
+    font-size: 1.22rem;
   }
 
   .heroText {
     max-width: 34rem;
-    font-size: .96rem;
+    font-size: .94rem;
   }
 
   .contactButtons {
@@ -295,6 +323,12 @@
     font-size: .76rem;
   }
 
+  .bat {
+    top: 6.1rem;
+    right: 4%;
+    font-size: 2rem;
+  }
+
   .ghost {
     right: 3%;
     bottom: 6.7rem;
@@ -327,7 +361,7 @@
 
 @media (max-width: 390px) {
   .hero {
-    min-height: 705px;
+    min-height: 745px;
   }
 
   .contactButtons {
@@ -338,6 +372,7 @@
     min-height: 58px;
   }
 
+  .bat,
   .ghost,
   .pumpkin {
     display: none;
