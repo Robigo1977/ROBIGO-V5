@@ -60,6 +60,18 @@ export const pricing: PricingCategory[] = [
     ],
   },
   {
+    id: "steam",
+    title: "Hard Floor / Chemical-Free Steam Cleaning",
+    icon: "✨",
+    items: [
+      { label: "Small Living Room", price: "£20" },
+      { label: "Large Living Room", price: "£40" },
+      { label: "Single Room", price: "£20" },
+      { label: "Double Room", price: "£30" },
+    ],
+    note: "Professional high-temperature dry steam cleaning for hard floors.",
+  },
+  {
     id: "oven",
     title: "Oven Cleaning",
     icon: "🔥",
