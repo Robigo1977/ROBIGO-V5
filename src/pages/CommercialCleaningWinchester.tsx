@@ -375,7 +375,7 @@ export default function CommercialCleaningWinchester() {
               WhatsApp ROBIGO
             </Button>
             <small>
-              +44 7777 449931 · robigo.hun@gmail.com · Winchester, Hampshire
+              {site.business.phone} · robigo.hun@gmail.com · Winchester, Hampshire
             </small>
           </div>
         </Container>
