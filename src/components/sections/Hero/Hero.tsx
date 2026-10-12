@@ -1,6 +1,7 @@
-import heroImage from "../../../assets/optimized/live/robigo-halloween-hero-2026.webp";
 import HeroButtons from "./HeroButtons";
 import styles from "./Hero.module.css";
+
+const heroImage = `${import.meta.env.BASE_URL}media/halloween-living-room.webp?v=20261012-hero2`;
 
 const places = [
   "Winchester",
