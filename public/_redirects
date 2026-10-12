@@ -1,5 +1,5 @@
 # ROBIGO clean URL routing for Cloudflare Pages
-/dry-steam /dry-steam/index.html 200
-/dry-steam/ /dry-steam/index.html 200
-/dry-steam/* /dry-steam/index.html 200
+/dry-steam /steam-cleaning-winchester 301
+/dry-steam/ /steam-cleaning-winchester 301
+/dry-steam/* /steam-cleaning-winchester 301
 /* /index.html 200
