@@ -20,7 +20,7 @@ export default function SteamShowcase() {
           </h2>
           <p>
             High-temperature dry steam for suitable hard floors. We check the
-            surface first, then use professional Karcher steam equipment without
+            surface first, then use professional Kärcher steam equipment without
             adding chemical cleaning product to the floor surface.
           </p>
         </header>
@@ -33,16 +33,17 @@ export default function SteamShowcase() {
               playsInline
               preload="none"
               poster="/media/steam-action.webp"
-              aria-label="ROBIGO professional steam cleaning demonstration"
+              aria-label="ROBIGO professional dry steam equipment in action"
             >
               <source src="/media/steam-cleaning.mp4" type="video/mp4" />
               Your browser does not support embedded video.
             </video>
             <div className={styles.videoCopy}>
-              <h3>See the steam cleaning process</h3>
+              <h3>See ROBIGO dry steam equipment in action</h3>
               <p>
-                The video loads only when needed, helping the page stay fast on
-                mobile while still showing the real ROBIGO cleaning process.
+                Watch the real ROBIGO steam-cleaning process. Chemical-free room
+                pricing on this website applies specifically to suitable hard
+                floors; other surfaces are assessed separately before cleaning.
               </p>
             </div>
           </div>
@@ -50,7 +51,7 @@ export default function SteamShowcase() {
           <figure className={styles.posterCard}>
             <img
               src="/media/pet-friendly-poster.webp"
-              alt="ROBIGO pet-friendly chemical-free steam cleaning with Robert and Pedro"
+              alt="ROBIGO chemical-free hard-floor steam cleaning information with Robert and Pedro"
               loading="lazy"
               decoding="async"
               width="520"
@@ -66,7 +67,7 @@ export default function SteamShowcase() {
 
         <div className={styles.trustRow} aria-label="Steam cleaning benefits">
           <span>Suitable hard floors</span>
-          <span>Professional Karcher equipment</span>
+          <span>Professional Kärcher equipment</span>
           <span>Simple room prices</span>
           <span>No call-out charge</span>
         </div>
