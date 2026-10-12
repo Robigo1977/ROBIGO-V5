@@ -1,3 +1,4 @@
+import heroImage from "../../../assets/optimized/live/robigo-halloween-hero-2026.webp";
 import HeroButtons from "./HeroButtons";
 import styles from "./Hero.module.css";
 
@@ -18,34 +19,26 @@ export default function Hero() {
     <section id="home" className={styles.hero} aria-labelledby="hero-title">
       <img
         className={styles.heroPhoto}
-        src="/media/halloween-living-room.webp?v=20261012b"
-        alt="Bright Halloween decorated living room with a freshly cleaned carpet in Winchester"
-        width="1280"
-        height="720"
+        src={heroImage}
+        alt="ROBIGO Halloween carpet and upholstery cleaning campaign in a decorated Winchester living room"
+        width="540"
+        height="959"
         fetchPriority="high"
         decoding="async"
       />
-      <div className={styles.heroShade} aria-hidden="true" />
-      <div className={styles.bat} aria-hidden="true">🦇</div>
-      <div className={styles.ghost} aria-hidden="true">👻</div>
-      <div className={styles.pumpkin} aria-hidden="true">🎃</div>
 
       <div className={styles.heroContent}>
-        <p className={styles.seasonalBadge}>🎃 HALLOWEEN SPECIAL</p>
-        <p className={styles.halloweenLine}>
-          DON&apos;T LET DIRT <span>HAUNT</span> YOUR HOME!
-        </p>
-        <h1 id="hero-title">Professional Carpet & Upholstery Cleaning in Winchester</h1>
-        <p className={styles.heroText}>
-          Also cleaning rugs, mattresses, ovens and chemical-free hard-floor steam cleaning.
-        </p>
-
-        <HeroButtons />
-
-        <div className={styles.heroTrust} aria-label="ROBIGO booking information">
-          <span>✓ No Call-Out Charge</span>
-          <span>✓ Minimum Booking £50</span>
-          <span>✓ 7 Days a Week</span>
+        <div className={styles.contactPanel}>
+          <HeroButtons />
+          <h1 id="hero-title">Professional Carpet & Upholstery Cleaning in Winchester</h1>
+          <p className={styles.heroText}>
+            Rugs, mattresses, ovens and chemical-free hard-floor steam cleaning also available.
+          </p>
+          <div className={styles.heroTrust} aria-label="ROBIGO booking information">
+            <span>✓ No Call-Out Charge</span>
+            <span>✓ Minimum Booking £50</span>
+            <span>✓ 7 Days a Week</span>
+          </div>
         </div>
       </div>
 

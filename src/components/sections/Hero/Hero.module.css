@@ -1,9 +1,9 @@
 .hero {
   position: relative;
   isolation: isolate;
-  min-height: 690px;
+  min-height: 760px;
   overflow: hidden;
-  background: #f8f4ed;
+  background: #08110f;
 }
 
 .heroPhoto {
@@ -12,104 +12,76 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center 52%;
-}
-
-.heroShade {
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.08) 0%, rgba(255,255,255,.16) 30%, rgba(255,250,242,.88) 76%, rgba(255,250,242,.97) 100%),
-    linear-gradient(90deg, rgba(255,255,255,.9) 0%, rgba(255,255,255,.5) 48%, rgba(255,255,255,.04) 100%);
+  object-fit: contain;
+  object-position: center top;
+  background: #08110f;
 }
 
 .heroContent {
   position: relative;
   z-index: 3;
-  width: min(1180px, calc(100% - 2rem));
+  display: flex;
+  width: min(1180px, calc(100% - 1.2rem));
+  min-height: 760px;
+  align-items: flex-end;
   margin: 0 auto;
-  padding: clamp(6.2rem, 14vw, 9rem) 0 8.4rem;
+  padding: 0 0 5.2rem;
 }
 
-.seasonalBadge {
-  display: inline-flex;
-  align-items: center;
-  margin: 0 0 .7rem;
-  padding: .45rem .75rem;
-  border: 1px solid rgba(255,106,0,.35);
-  border-radius: 999px;
-  background: rgba(8,28,24,.9);
-  color: #ffb12a;
-  font-size: .78rem;
-  font-weight: 950;
-  letter-spacing: .08em;
-  box-shadow: 0 7px 20px rgba(15,23,42,.16);
+.contactPanel {
+  width: min(760px, 100%);
+  margin: 0 auto;
+  padding: .8rem;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 22px;
+  background: rgba(4, 12, 11, .78);
+  box-shadow: 0 16px 42px rgba(0,0,0,.28);
+  backdrop-filter: blur(10px);
 }
 
-.halloweenLine {
-  max-width: 760px;
-  margin: 0;
-  color: #102c49;
-  font-size: clamp(2.3rem, 7vw, 5.6rem);
-  font-weight: 950;
-  letter-spacing: -.055em;
-  line-height: .91;
-  text-wrap: balance;
-  text-shadow: 0 2px 0 rgba(255,255,255,.78), 0 8px 24px rgba(17,24,39,.14);
-}
-
-.halloweenLine span {
-  color: #ff6a00;
-  font-family: Georgia, "Times New Roman", serif;
-  letter-spacing: -.04em;
-  text-shadow: 0 2px 0 #fff, 0 5px 18px rgba(255,106,0,.24);
-}
-
-.heroContent h1 {
-  max-width: 720px;
-  margin: .85rem 0 0;
-  color: #102c49;
-  font-size: clamp(1.28rem, 2.6vw, 2rem);
+.contactPanel h1 {
+  margin: .7rem auto 0;
+  color: #fff;
+  font-size: clamp(1.02rem, 2.4vw, 1.35rem);
   font-weight: 900;
-  line-height: 1.17;
+  line-height: 1.2;
+  text-align: center;
   text-wrap: balance;
 }
 
 .heroText {
-  max-width: 720px;
-  margin: .55rem 0 0;
-  color: #23384c;
-  font-size: clamp(1rem, 2vw, 1.14rem);
+  margin: .35rem auto 0;
+  color: rgba(255,255,255,.88);
+  font-size: .92rem;
   font-weight: 650;
-  line-height: 1.45;
+  line-height: 1.4;
+  text-align: center;
 }
 
 .contactButtons {
   display: grid;
-  width: min(720px, 100%);
+  width: 100%;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: .8rem;
-  margin-top: 1.2rem;
+  gap: .65rem;
+  margin: 0;
 }
 
 .contactButton {
   display: flex;
-  min-height: 72px;
+  min-height: 68px;
   align-items: center;
   justify-content: center;
-  gap: .65rem;
-  padding: .78rem 1rem;
-  border-radius: 999px;
+  gap: .6rem;
+  padding: .7rem .8rem;
+  border-radius: 18px;
   color: #fff;
   text-decoration: none;
-  box-shadow: 0 10px 24px rgba(15,23,42,.18);
+  box-shadow: 0 10px 24px rgba(0,0,0,.2);
 }
 
 .contactButton svg {
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 1.65rem;
+  height: 1.65rem;
   flex: 0 0 auto;
 }
 
@@ -120,66 +92,37 @@
 
 .contactButton small {
   color: inherit;
-  font-size: .82rem;
+  font-size: .78rem;
   font-weight: 800;
 }
 
 .contactButton strong {
   color: inherit;
-  font-size: clamp(1.05rem, 3.6vw, 1.42rem);
+  font-size: clamp(1rem, 3.7vw, 1.3rem);
   font-weight: 950;
   white-space: nowrap;
 }
 
 .whatsappButton {
+  border: 2px solid rgba(255,255,255,.85);
   background: linear-gradient(135deg, #12b957, #059445);
-  border: 2px solid rgba(255,255,255,.8);
 }
 
 .phoneButton {
-  background: linear-gradient(135deg, #ffc13d, #ff9418);
-  color: #0d2540;
-  border: 2px solid rgba(255,255,255,.8);
+  border: 2px solid rgba(255,255,255,.85);
+  background: linear-gradient(135deg, #ffc13d, #ff6a00);
+  color: #10233c;
 }
 
 .heroTrust {
   display: flex;
   flex-wrap: wrap;
-  gap: .55rem 1rem;
-  margin-top: .9rem;
-  color: #122c43;
-  font-size: .88rem;
+  justify-content: center;
+  gap: .35rem .8rem;
+  margin-top: .6rem;
+  color: #fff;
+  font-size: .78rem;
   font-weight: 850;
-}
-
-.bat,
-.ghost,
-.pumpkin {
-  position: absolute;
-  z-index: 2;
-  pointer-events: none;
-  filter: drop-shadow(0 8px 10px rgba(15,23,42,.16));
-}
-
-.bat {
-  top: 7.2rem;
-  right: 8%;
-  font-size: clamp(1.8rem, 4vw, 3.25rem);
-  transform: rotate(10deg);
-}
-
-.ghost {
-  right: 5%;
-  bottom: 9.2rem;
-  font-size: clamp(3.3rem, 7vw, 6rem);
-  transform: rotate(-5deg);
-}
-
-.pumpkin {
-  right: 15%;
-  bottom: 7.9rem;
-  font-size: clamp(2.7rem, 6vw, 5rem);
-  transform: rotate(6deg);
 }
 
 .ticker {
@@ -189,23 +132,24 @@
   bottom: 0;
   left: 0;
   display: flex;
-  min-height: 58px;
+  min-height: 54px;
   align-items: center;
   overflow: hidden;
-  background: #073d35;
+  border-top: 1px solid rgba(255,153,34,.45);
+  background: #08110f;
   color: #fff;
-  box-shadow: 0 -8px 22px rgba(15,23,42,.12);
+  box-shadow: 0 -8px 22px rgba(0,0,0,.18);
 }
 
 .tickerLabel {
   position: relative;
   z-index: 2;
   flex: 0 0 auto;
-  padding: 0 .9rem 0 1.15rem;
+  padding: 0 .7rem 0 .85rem;
   color: #ffae2e;
-  font-size: .92rem;
+  font-size: .82rem;
   white-space: nowrap;
-  background: #073d35;
+  background: #08110f;
 }
 
 .tickerViewport {
@@ -231,9 +175,9 @@
 .tickerRun span {
   display: inline-flex;
   align-items: center;
-  gap: 1.05rem;
-  padding-right: 1.05rem;
-  font-size: .95rem;
+  gap: .8rem;
+  padding-right: .8rem;
+  font-size: .84rem;
   font-weight: 750;
 }
 
@@ -246,136 +190,96 @@
 }
 
 @media (max-width: 767px) {
-  .hero {
-    min-height: 710px;
+  .hero,
+  .heroContent {
+    min-height: 760px;
   }
 
   .heroPhoto {
-    object-position: 50% 32%;
-  }
-
-  .heroShade {
-    background: linear-gradient(180deg, rgba(255,255,255,.02) 0%, rgba(255,255,255,.08) 27%, rgba(255,250,242,.9) 57%, rgba(255,250,242,.98) 100%);
+    object-fit: cover;
+    object-position: 50% 50%;
   }
 
   .heroContent {
-    width: min(100% - 1.2rem, 620px);
-    padding-top: 7.4rem;
-    padding-bottom: 7.4rem;
-    text-align: center;
+    width: min(100% - .8rem, 620px);
+    padding-bottom: 4.9rem;
   }
 
-  .seasonalBadge {
-    margin-bottom: .65rem;
-    font-size: .72rem;
-  }
-
-  .halloweenLine {
-    max-width: 11ch;
-    margin: 0 auto;
-    font-size: clamp(2.55rem, 11.7vw, 4.2rem);
-  }
-
-  .heroContent h1,
-  .heroText {
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .heroContent h1 {
-    font-size: 1.22rem;
-  }
-
-  .heroText {
-    max-width: 34rem;
-    font-size: .94rem;
+  .contactPanel {
+    padding: .55rem;
+    border-radius: 18px;
+    background: rgba(4, 12, 11, .72);
   }
 
   .contactButtons {
-    grid-template-columns: 1fr 1fr;
-    gap: .55rem;
-    margin-top: 1rem;
+    gap: .45rem;
   }
 
   .contactButton {
-    min-height: 65px;
-    gap: .45rem;
-    padding: .65rem .5rem;
-    border-radius: 18px;
+    min-height: 61px;
+    gap: .4rem;
+    padding: .55rem .45rem;
+    border-radius: 16px;
   }
 
   .contactButton svg {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.4rem;
+    height: 1.4rem;
   }
 
   .contactButton small {
-    font-size: .72rem;
+    font-size: .68rem;
   }
 
   .contactButton strong {
-    font-size: clamp(.93rem, 4.2vw, 1.05rem);
+    font-size: clamp(.88rem, 4vw, 1rem);
   }
 
-  .heroTrust {
-    justify-content: center;
-    gap: .35rem .7rem;
-    font-size: .76rem;
+  .contactPanel h1 {
+    font-size: 1rem;
   }
 
-  .bat {
-    top: 6.1rem;
-    right: 4%;
-    font-size: 2rem;
-  }
-
-  .ghost {
-    right: 3%;
-    bottom: 6.7rem;
-    font-size: 3rem;
-  }
-
-  .pumpkin {
-    left: 3%;
-    right: auto;
-    bottom: 6.55rem;
-    font-size: 2.65rem;
-  }
-
-  .ticker {
-    min-height: 54px;
-  }
-
-  .tickerLabel {
-    padding-left: .65rem;
-    padding-right: .55rem;
+  .heroText {
     font-size: .8rem;
   }
 
-  .tickerRun span {
-    gap: .75rem;
-    padding-right: .75rem;
-    font-size: .82rem;
+  .heroTrust {
+    font-size: .7rem;
   }
 }
 
 @media (max-width: 390px) {
-  .hero {
-    min-height: 745px;
+  .hero,
+  .heroContent {
+    min-height: 748px;
   }
 
   .contactButtons {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .contactButton {
     min-height: 58px;
   }
 
-  .bat,
-  .ghost,
-  .pumpkin {
-    display: none;
+  .contactButton strong {
+    font-size: .86rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .hero,
+  .heroContent {
+    min-height: 800px;
+  }
+
+  .heroPhoto {
+    object-fit: contain;
+    object-position: center top;
+  }
+
+  .contactPanel {
+    margin-bottom: .4rem;
   }
 }
 

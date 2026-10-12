@@ -1,3 +1,4 @@
+import robertImage from "../../../assets/optimized/live/robigo-meet-robert-2026.webp";
 import { site } from "../../../config/site";
 import styles from "./MeetRobert.module.css";
 
@@ -11,12 +12,12 @@ export default function MeetRobert() {
       <div className={styles.inner}>
         <div className={styles.imageWrap}>
           <img
-            src="/media/robert-meet-circle.webp"
+            src={robertImage}
             alt="Robert from ROBIGO professional cleaning services in Winchester"
             loading="lazy"
             decoding="async"
-            width="480"
-            height="480"
+            width="420"
+            height="420"
           />
         </div>
 
