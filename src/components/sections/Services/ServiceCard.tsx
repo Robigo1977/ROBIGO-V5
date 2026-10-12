@@ -1,4 +1,3 @@
-import Button from "../../ui/Button/Button";
 import { site } from "../../../config/site";
 import { pricing } from "../Pricing/pricing.data";
 
@@ -11,20 +10,9 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ service }: ServiceCardProps) {
   const headingId = `service-${service.id}`;
-  const servicePricing = pricing.find(
-    (category) => category.id === service.id,
-  );
-
-  const whatsappMessage = site.whatsappMessage(`Hi ROBIGO,
-
-I'm interested in your ${service.title} service.
-
-Could you please send me a free quotation and let me know your next available appointment?
-
-Thank you.`);
-
-  const emergencyHref = site.whatsappMessage(
-    `Hi ROBIGO, I need the earliest available appointment for ${service.title}.`,
+  const servicePricing = pricing.find((category) => category.id === service.id);
+  const whatsappMessage = site.whatsappMessage(
+    `Hi ROBIGO, I'd like a free quote for ${service.title}.`,
   );
 
   return (
@@ -33,95 +21,51 @@ Thank you.`);
       role="listitem"
       aria-labelledby={headingId}
     >
+      <div className={styles.cardHeading}>
+        <div>
+          <h3 id={headingId}>{service.title}</h3>
+          <p>{service.description}</p>
+        </div>
+        <span className={styles.halloweenAccent} aria-hidden="true">{service.halloween}</span>
+      </div>
+
       <div className={styles.imageWrapper}>
         {service.popular && (
-          <span className={styles.badge} aria-label="Most popular service">
-            Featured Service
-          </span>
+          <span className={styles.badge}>Most Popular</span>
         )}
-
         <img
           src={service.image}
-          alt={`${service.title} in Winchester - ROBIGO professional cleaning service`}
+          alt={`${service.title} by ROBIGO in Winchester`}
           className={styles.image}
           loading="lazy"
           decoding="async"
-          fetchPriority="low"
         />
       </div>
 
-      <div className={styles.content}>
-        <h3 id={headingId}>{service.title}</h3>
-        <p className={styles.shortDescription}>{service.description}</p>
-
-        <a
-          className={styles.learnLink}
-          href={service.href}
-          aria-label={`Learn more about ${service.title} in Winchester`}
-        >
-          More about {service.title} in Winchester →
-        </a>
-
-        {servicePricing && (
-          <details className={styles.priceDropdown}>
-            <summary className={styles.priceSummary}>
-              <span className={styles.priceSummaryText}>
-                <strong>VIEW PRICES</strong>
-                <small>Tap here to see exactly how much</small>
-              </span>
-              <span className={styles.summaryIcon} aria-hidden="true">＋</span>
-            </summary>
-
-            <div className={styles.dropdownContent}>
-              <ul className={styles.features}>
-                {service.features.map((feature) => (
-                  <li key={feature}>{feature}</li>
-                ))}
-              </ul>
-
-              <div className={styles.priceList} aria-label={`${service.title} prices`}>
-                {servicePricing.items.map((item) => (
-                  <div className={styles.priceItem} key={item.label}>
-                    <span>{item.label}</span>
-                    <strong>{item.price}</strong>
-                  </div>
-                ))}
-                {servicePricing.note && (
-                  <p className={styles.priceNote}>{servicePricing.note}</p>
-                )}
-              </div>
-
-              <div className={styles.cardUrgentGrid} aria-label={`${service.title} fast booking options`}>
-                <div
-                  className={`${styles.cardUrgent} ${styles.cardEmergency}`}
-                  style={{ color: "#ffffff" }}
-                >
-                  <span style={{ color: "#ffffff" }}>EMERGENCY</span>
-                  <strong style={{ color: "#ffffff" }}>£50</strong>
-                  <p style={{ color: "#ffffff" }}>The earliest available appointment.</p>
-                  <a
-                    href={emergencyHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ background: "#ffffff", color: "#7f1d1d" }}
-                  >
-                    Request Emergency Help
-                  </a>
-                </div>
-              </div>
+      {servicePricing && (
+        <div className={styles.priceList} aria-label={`${service.title} prices`}>
+          {servicePricing.items.map((item) => (
+            <div className={styles.priceItem} key={item.label}>
+              <span>{item.label}</span>
+              <strong>{item.price}</strong>
             </div>
-          </details>
-        )}
+          ))}
+          {servicePricing.note && <p className={styles.priceNote}>{servicePricing.note}</p>}
+        </div>
+      )}
 
-        <Button
+      <div className={styles.cardActions}>
+        <a className={styles.detailsLink} href={service.href}>
+          More details
+        </a>
+        <a
+          className={styles.quoteLink}
           href={whatsappMessage}
           target="_blank"
           rel="noopener noreferrer"
-          fullWidth
-          aria-label={`Get a free ${service.title} quote`}
         >
-          Get Free Quote
-        </Button>
+          WhatsApp quote
+        </a>
       </div>
     </article>
   );
