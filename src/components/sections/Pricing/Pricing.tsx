@@ -12,14 +12,12 @@ export default function Pricing() {
     >
       <Container>
         <div className={styles.header}>
-          <span className={styles.eyebrow}>TRANSPARENT CLEANING PRICES</span>
-          <h2 id="pricing-heading">
-            Professional Cleaning Prices in Winchester
-          </h2>
+          <span className={styles.eyebrow}>SIMPLE, CLEAR PRICES</span>
+          <h2 id="pricing-heading">Cleaning Prices in Winchester</h2>
           <p>
-            Clear carpet, upholstery, mattress and steam cleaning prices with
-            no hidden charges and no call-out fees. Contact ROBIGO on WhatsApp
-            for a personalised quotation.
+            Easy-to-understand prices for carpet cleaning, sofa cleaning, rug
+            cleaning, mattress cleaning and oven cleaning in Winchester. No
+            call-out charge and no hidden fees.
           </p>
         </div>
 
@@ -35,26 +33,25 @@ export default function Pricing() {
 
               <div className={styles.list}>
                 {category.items.map((item) => (
-                    <div
-                      key={`${category.id}-${item.label}`}
-                      className={styles.row}
-                    >
-                      <span className={styles.label}>{item.label}</span>
-                      <span className={styles.price}>{item.price}</span>
-                    </div>
+                  <div
+                    key={`${category.id}-${item.label}`}
+                    className={styles.row}
+                  >
+                    <span className={styles.label}>{item.label}</span>
+                    <span className={styles.price}>{item.price}</span>
+                  </div>
                 ))}
               </div>
-              {category.note && (
-                <p className={styles.note}>{category.note}</p>
-              )}
+
+              {category.note && <p className={styles.note}>{category.note}</p>}
             </article>
           ))}
         </div>
 
         <div className={styles.cta}>
           <p>
-            Need a personalised quotation? Send ROBIGO a WhatsApp message and
-            receive a clear, no-obligation estimate.
+            Not sure which price applies? Send Robert a photo on WhatsApp for a
+            fast, free quote.
           </p>
 
           <a
@@ -63,7 +60,7 @@ export default function Pricing() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Get a Free WhatsApp Quote
+            Ask Robert on WhatsApp
           </a>
         </div>
       </Container>
