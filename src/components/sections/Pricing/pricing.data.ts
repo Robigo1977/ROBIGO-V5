@@ -76,12 +76,13 @@ export const pricing: PricingCategory[] = [
     title: "Oven Cleaning",
     icon: "🔥",
     items: [
-      { label: "Single Oven", price: "£60" },
-      { label: "Double Oven", price: "£80" },
+      { label: "Single Oven", price: "£50" },
+      { label: "Double Oven", price: "£70" },
       { label: "Range Oven", price: "£90" },
-      { label: "Hob", price: "£20" },
+      { label: "Hob (with oven cleaning only)", price: "£20" },
       { label: "Microwave", price: "£20" },
     ],
+    note: "Hob cleaning is available for £20 only when booked together with oven cleaning.",
   },
   {
     id: "extras",
