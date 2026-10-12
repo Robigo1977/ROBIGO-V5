@@ -26,3 +26,21 @@ for (const file of encodedFiles) {
   await writeFile(output, Buffer.from(encoded, "base64"));
   console.log(`Decoded media: ${outputName}`);
 }
+
+const splitGroups = new Map();
+for (const file of files.filter((file) => /\.b64\.\d+$/.test(file))) {
+  const outputName = file.replace(/\.b64\.\d+$/, "");
+  const parts = splitGroups.get(outputName) ?? [];
+  parts.push(file);
+  splitGroups.set(outputName, parts);
+}
+
+for (const [outputName, parts] of splitGroups) {
+  parts.sort();
+  let encoded = "";
+  for (const part of parts) {
+    encoded += (await readFile(join(sourceDir, part), "utf8")).replace(/\s+/g, "");
+  }
+  await writeFile(join(outputDir, outputName), Buffer.from(encoded, "base64"));
+  console.log(`Decoded split media: ${outputName}`);
+}
