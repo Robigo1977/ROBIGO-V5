@@ -7,16 +7,10 @@ import FloatingWhatsApp from "./components/layout/FloatingWhatsApp/FloatingWhats
 
 import Hero from "./components/sections/Hero";
 import TrustBar from "./components/sections/TrustBar";
-import BeforeAfter from "./components/sections/BeforeAfter";
 import Services from "./components/sections/Services";
-import Pricing from "./components/sections/Pricing/Pricing";
-import SteamShowcase from "./components/sections/SteamShowcase/SteamShowcase";
-import OvenCleaning from "./components/sections/OvenCleaning";
 import MeetRobert from "./components/sections/MeetRobert/MeetRobert";
 import LocalAreas from "./components/sections/LocalAreas/LocalAreas";
 import Reviews from "./components/sections/Reviews";
-
-// Live customer reviews use the moderated Supabase workflow.
 import ExploreMore from "./components/sections/ExploreMore/ExploreMore";
 import Contact from "./components/sections/Contact";
 import SEO from "./seo/SEO";
@@ -34,11 +28,7 @@ function HomePage() {
       <Hero />
       <TrustBar />
       <Services />
-      <Pricing />
-      <OvenCleaning />
-      <BeforeAfter compact />
       <MeetRobert />
-      <SteamShowcase />
       <LocalAreas />
       <Reviews />
       <ExploreMore />
