@@ -8,6 +8,7 @@ export const site = {
     domain: "https://robigo.co.uk",
 
     phone: "07777 449931",
+    phoneInternational: "+447777449931",
 
     email: "robigo.hun@gmail.com",
 
@@ -114,7 +115,7 @@ export const site = {
   },
 
   tel() {
-    return `tel:${this.business.phone.replace(/\s+/g, "")}`;
+    return `tel:${this.business.phoneInternational}`;
   },
 
   mailto() {
