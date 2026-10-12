@@ -12,16 +12,15 @@ export default function FloatingWhatsApp() {
     pathname === "/business" ||
     pathname === "/commercial-cleaning-winchester" ||
     pathname.startsWith("/business/");
-  const [hasPassedHero, setHasPassedHero] = useState(!isBusinessPage);
+  const [hasPassedBusinessHero, setHasPassedBusinessHero] = useState(false);
 
   useEffect(() => {
     if (!isBusinessPage) {
-      setHasPassedHero(true);
       return;
     }
 
     const updateVisibility = () => {
-      setHasPassedHero(window.scrollY > window.innerHeight * 0.72);
+      setHasPassedBusinessHero(window.scrollY > window.innerHeight * 0.72);
     };
 
     updateVisibility();
@@ -29,6 +28,8 @@ export default function FloatingWhatsApp() {
 
     return () => window.removeEventListener("scroll", updateVisibility);
   }, [isBusinessPage]);
+
+  const hasPassedHero = !isBusinessPage || hasPassedBusinessHero;
 
   if (isHomePage || !hasPassedHero) {
     return null;
