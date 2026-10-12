@@ -21,7 +21,6 @@ export const pricing: PricingCategory[] = [
       { label: "Large Living Room", price: "£40" },
       { label: "Stairs", price: "£2 / step" },
     ],
-    note: "Minimum total booking: £60. No call-out charge.",
   },
   {
     id: "rug",
