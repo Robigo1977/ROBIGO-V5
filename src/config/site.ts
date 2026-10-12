@@ -7,11 +7,11 @@ export const site = {
 
     domain: "https://robigo.co.uk",
 
-    phone: "+447777449931",
+    phone: "07777 449931",
 
     email: "robigo.hun@gmail.com",
 
-    whatsapp: "+447777449931",
+    whatsapp: "07777 449931",
 
     priceRange: "££",
 
@@ -114,7 +114,7 @@ export const site = {
   },
 
   tel() {
-    return `tel:${this.business.phone}`;
+    return `tel:${this.business.phone.replace(/\s+/g, "")}`;
   },
 
   mailto() {
