@@ -9,7 +9,9 @@ import Hero from "./components/sections/Hero";
 import TrustBar from "./components/sections/TrustBar";
 import BeforeAfter from "./components/sections/BeforeAfter";
 import Services from "./components/sections/Services";
+import Pricing from "./components/sections/Pricing/Pricing";
 import OvenCleaning from "./components/sections/OvenCleaning";
+import LocalAreas from "./components/sections/LocalAreas/LocalAreas";
 import Reviews from "./components/sections/Reviews";
 
 // Live customer reviews use the moderated Supabase workflow.
@@ -26,10 +28,12 @@ function HomePage() {
   return (
     <main id="main-content">
       <Hero />
-      <Services />
-      <OvenCleaning />
       <TrustBar />
+      <Services />
+      <Pricing />
+      <OvenCleaning />
       <BeforeAfter compact />
+      <LocalAreas />
       <Reviews />
       <ExploreMore />
       <Contact />
