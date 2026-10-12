@@ -81,10 +81,10 @@ const audiences = [
 ];
 
 const rates = [
-  ["Commercial carpet areas", "from \u00a31.80/m\u00b2", "For areas of 100 m\u00b2 or more"],
-  ["Chemical-free steam", "\u00a32.50/m\u00b2", "Suitable hard floors \u00b7 minimum \u00a350"],
-  ["Upholstered chairs", "from \u00a38 each", "For bookings of 10 or more"],
-  ["Reception sofas", "from \u00a349", "Fabric inspection included"],
+  ["Commercial carpet areas", "from £1.80/m²", "For areas of 100 m² or more"],
+  ["Chemical-free steam", "£2.50/m²", "Suitable hard floors · minimum £50"],
+  ["Upholstered chairs", "from £8 each", "For bookings of 10 or more"],
+  ["Reception sofas", "from £49", "Fabric inspection included"],
 ];
 
 const benefits = [
@@ -102,7 +102,7 @@ export default function CommercialCleaningWinchester() {
         config={{
           title: "Commercial Cleaning Winchester | ROBIGO",
           description:
-            "Commercial cleaning for offices, office buildings, hospitality venues, hotels, Airbnb and rental properties in Winchester. Carpet, upholstery and suitable hard-floor care.",
+            "Commercial cleaning for offices, hospitality venues, hotels, Airbnb and rental properties in Winchester. Carpet, upholstery and suitable hard-floor care with a £50 minimum booking and no call-out charge.",
           canonical: "https://robigo.co.uk/commercial-cleaning-winchester",
           ogTitle: "Commercial Cleaning Winchester | ROBIGO",
           ogDescription:
@@ -127,7 +127,7 @@ export default function CommercialCleaningWinchester() {
           <img
             className={styles.heroImage}
             src={publicAsset("/images/commercial/business-hero-mobile-safe.jpg")}
-            alt="Professional commercial carpet cleaning with KÃ¤rcher extraction equipment in a premium business interior"
+            alt="Professional commercial carpet cleaning with Kärcher extraction equipment in a premium business interior"
             fetchPriority="high"
           />
         </picture>
@@ -149,11 +149,11 @@ export default function CommercialCleaningWinchester() {
               </h1>
               <p className={styles.heroText}>
                 Premium carpet and upholstery care, plus chemical-free dry-steam
-                cleaning for suitable hard floors {"\u2014"} for businesses that care about
+                cleaning for suitable hard floors — for businesses that care about
                 presentation, hygiene and customer confidence.
               </p>
               <p className={styles.heroMeta}>
-                Out-of-hours cleaning available {"\u00b7"} Fixed quotations {"\u00b7"} 7 days a week
+                Out-of-hours cleaning available · Fixed quotations · 7 days a week
               </p>
             </div>
           </Container>
@@ -246,7 +246,7 @@ export default function CommercialCleaningWinchester() {
                 </ul>
                 <div className={styles.urgentPrice}>
                   <span>Priority Upgrade</span>
-                  <strong>{"\u00a3"}30</strong>
+                  <strong>£30</strong>
                 </div>
                 <a
                   className={styles.urgentAction}
@@ -278,8 +278,8 @@ export default function CommercialCleaningWinchester() {
                   <li><CheckCircle2 aria-hidden="true" /> Accidental soiling</li>
                 </ul>
                 <div className={styles.urgentPrice}>
-                  <span>Emergency Call-Out</span>
-                  <strong>{"\u00a3"}50</strong>
+                  <span>Emergency Cleaning</span>
+                  <strong>from £50</strong>
                 </div>
                 <a
                   className={styles.urgentAction}
@@ -322,8 +322,8 @@ export default function CommercialCleaningWinchester() {
           </div>
 
           <p className={styles.minimum}>
-            Minimum booking {"\u00a3"}60. Large carpet areas are laser measured, so you
-            pay only for the area cleaned.
+            Minimum booking £50. No call-out charge within our regular service area.
+            Large carpet areas are laser measured, so you pay only for the area cleaned.
           </p>
         </Container>
       </section>
@@ -375,7 +375,7 @@ export default function CommercialCleaningWinchester() {
               WhatsApp ROBIGO
             </Button>
             <small>
-              +44 7777 449931 {"\u00b7"} robigo.hun@gmail.com {"\u00b7"} Winchester, Hampshire
+              +44 7777 449931 · robigo.hun@gmail.com · Winchester, Hampshire
             </small>
           </div>
         </Container>
