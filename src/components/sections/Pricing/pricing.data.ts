@@ -11,138 +11,52 @@ export interface PricingCategory {
 
 export const pricing: PricingCategory[] = [
   {
-    id: "carpet",
+    id: "rooms",
     title: "Carpet Cleaning",
     icon: "🧼",
     items: [
-      {
-        label: "Any Area",
-        price: "£2.00 / m²",
-      },
-      {
-        label: "Minimum Charge",
-        price: "£60",
-      },
-      {
-        label: "Stairs (per step)",
-        price: "£2.00 / step",
-      },
+      { label: "Single Room", price: "£20" },
+      { label: "Double Room", price: "£30" },
+      { label: "Small Living Room", price: "£20" },
+      { label: "Large Living Room", price: "£40" },
     ],
-    note:
-      "Carpet cleaning is charged at one simple rate of £2.00/m². The £60 minimum booking still applies.",
+    note: "Simple room prices with no call-out charge.",
   },
-
   {
-    id: "rug",
+    id: "upholstery",
+    title: "Sofa Cleaning",
+    icon: "🛋️",
+    items: [
+      { label: "2-Seater Sofa", price: "£45" },
+      { label: "3-Seater Sofa", price: "£55" },
+    ],
+    note: "For other sofa sizes, send a photo on WhatsApp for a fast quote.",
+  },
+  {
+    id: "rugs",
     title: "Rug Cleaning",
     icon: "🧶",
     items: [
-      {
-        label: "Small Rug (up to 1.5 × 1.0 m)",
-        price: "£15",
-      },
-      {
-        label: "Medium Rug (up to 2.0 × 1.5 m)",
-        price: "£25",
-      },
-      {
-        label: "Large Rug (up to 3.0 × 2.0 m)",
-        price: "£30",
-      },
-      {
-        label: "Extra Large Rug (over 3.0 × 2.0 m)",
-        price: "£40",
-      },
-    ],
-    note:
-      "Persian rugs are subject to an additional charge and are quoted individually before cleaning.",
-  },
-
-  {
-    id: "upholstery",
-    title: "Upholstery Cleaning",
-    icon: "🛋",
-    items: [
-      {
-        label: "Dining Chair (per chair)",
-        price: "£10",
-      },
-      {
-        label: "Armchair",
-        price: "£30",
-      },
-      {
-        label: "2-Seater Sofa",
-        price: "£45",
-      },
-      {
-        label: "3-Seater Sofa",
-        price: "£55",
-      },
-      {
-        label: "4-Seater Sofa",
-        price: "£65",
-      },
-      {
-        label: "Corner Sofa",
-        price: "£75",
-      },
+      { label: "Small Rug", price: "£15" },
+      { label: "Large Rug", price: "£30" },
     ],
   },
-
   {
     id: "mattress",
     title: "Mattress Cleaning",
-    icon: "🛏",
+    icon: "🛏️",
     items: [
-      {
-        label: "Single",
-        price: "£30",
-      },
-      {
-        label: "Double",
-        price: "£40",
-      },
-      {
-        label: "King",
-        price: "£50",
-      },
-      {
-        label: "Super King",
-        price: "£60",
-      },
+      { label: "Single Mattress", price: "£30" },
+      { label: "Double Mattress", price: "£40" },
     ],
   },
-
   {
-    id: "steam",
-    title: "Chemical-Free Steam Cleaning",
-    icon: "✨",
+    id: "oven",
+    title: "Oven Cleaning",
+    icon: "🔥",
     items: [
-      {
-        label: "Minimum Charge",
-        price: "£50",
-      },
-      {
-        label: "Any Area",
-        price: "£2.00 / m²",
-      },
-      {
-        label: "Hard Floors",
-        price: "Included",
-      },
-      {
-        label: "Bathrooms",
-        price: "Included",
-      },
-      {
-        label: "Kitchens",
-        price: "Included",
-      },
-      {
-        label: "Grout & Tiles",
-        price: "Included",
-      },
+      { label: "Single Oven Cleaning", price: "£60" },
+      { label: "Double Oven Cleaning", price: "£80" },
     ],
   },
 ];
