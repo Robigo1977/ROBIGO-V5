@@ -7,61 +7,53 @@ import { fadeUp } from "../../../motion/variants";
 import { viewport } from "../../../motion/viewport";
 
 import styles from "./Hero.module.css";
-
-const services = [
-  "Carpet cleaning",
-  "Sofa & upholstery cleaning",
-  "Rug cleaning",
-  "Mattress cleaning",
-  "Chemical-free hard-floor steam cleaning",
-  "Oven cleaning",
-];
+import halloween from "./HalloweenHero.module.css";
 
 export default function HeroContent() {
   return (
     <motion.div
-      className={styles.content}
+      className={`${styles.content} ${halloween.contentHalloween}`}
       variants={fadeUp}
       initial={false}
       whileInView="show"
       viewport={viewport}
     >
+      <p className={halloween.seasonalBadge}>🎃 HALLOWEEN SPECIAL</p>
+
+      <p className={halloween.campaignHeadline}>
+        DON&apos;T LET DIRT <span>HAUNT</span> YOUR HOME!
+      </p>
+
       <h1
         id="hero-title"
-        className={styles.title}
+        className={`${styles.title} ${halloween.seoTitle}`}
       >
         {heroData.title}
       </h1>
 
-      <h2 className={styles.serviceHeading}>Choose What You Need</h2>
+      <p className={`${styles.subtitle} ${halloween.heroSubtitle}`}>
+        Sofa & upholstery cleaning, carpet cleaning, rugs, mattresses, ovens and
+        chemical-free dry steam for suitable hard floors across Winchester and
+        nearby areas.
+      </p>
 
-      <ul
-        className={styles.serviceList}
-        aria-label="ROBIGO cleaning services in Winchester"
-      >
-        {services.map((service) => (
-          <li key={service}>{service}</li>
-        ))}
-      </ul>
-
-      <p className={styles.callout}>
-        {"\u2713"} £50 minimum booking · No call-out charge
+      <p className={`${styles.callout} ${halloween.heroCallout}`}>
+        £50 minimum booking · No call-out charge
       </p>
 
       <HeroButtons />
 
       <div
-        className={styles.rating}
+        className={`${styles.rating} ${halloween.ratingHalloween}`}
         aria-label="ROBIGO customer reviews"
       >
         <span
           className={styles.stars}
           aria-hidden="true"
         >
-          {"\u2605\u2605\u2605\u2605\u2605"}
+          {"★★★★★"}
         </span>
-
-        <span className={styles.ratingText}>Customer Reviews</span>
+        <span className={styles.ratingText}>Local Winchester cleaning service</span>
       </div>
     </motion.div>
   );
