@@ -1,5 +1,4 @@
 import { site } from "../../../config/site";
-import robertProfile from "../../../assets/optimized/hero/hero-robert.webp";
 import styles from "./MeetRobert.module.css";
 
 export default function MeetRobert() {
@@ -12,12 +11,12 @@ export default function MeetRobert() {
       <div className={styles.inner}>
         <div className={styles.imageWrap}>
           <img
-            src={robertProfile}
+            src="/media/robert-meet-circle.webp"
             alt="Robert from ROBIGO professional cleaning services in Winchester"
             loading="lazy"
             decoding="async"
-            width="640"
-            height="640"
+            width="480"
+            height="480"
           />
         </div>
 
