@@ -22,15 +22,20 @@ interface PendingReview extends Review {
 }
 
 export default function ReviewAdmin() {
-  const [session, setSession] = useState<AdminSession | null>(null);
+  const [initialSession] = useState<AdminSession | null>(() => getStoredAdminSession());
+  const [session, setSession] = useState<AdminSession | null>(initialSession);
   const [reviews, setReviews] = useState<PendingReview[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(
+    () => initialSession?.email.toLowerCase() === ADMIN_EMAIL,
+  );
   const [authMode, setAuthMode] = useState<"login" | "create">("login");
   const [notice, setNotice] = useState("");
   const [busyId, setBusyId] = useState<string | null>(null);
 
-  async function loadReviews(token: string) {
-    setLoading(true);
+  async function loadReviews(token: string, showLoading = true) {
+    if (showLoading) {
+      setLoading(true);
+    }
 
     try {
       const data = await fetchPendingReviews(token);
@@ -50,14 +55,10 @@ export default function ReviewAdmin() {
   }
 
   useEffect(() => {
-    const storedSession = getStoredAdminSession();
-    setSession(storedSession);
-    setLoading(false);
-
-    if (storedSession?.email.toLowerCase() === ADMIN_EMAIL) {
-      void loadReviews(storedSession.accessToken);
+    if (initialSession?.email.toLowerCase() === ADMIN_EMAIL) {
+      void loadReviews(initialSession.accessToken, false);
     }
-  }, []);
+  }, [initialSession]);
 
   async function handleAuth(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
