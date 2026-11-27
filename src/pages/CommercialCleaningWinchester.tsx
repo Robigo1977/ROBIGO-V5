@@ -201,7 +201,7 @@ export default function CommercialCleaningWinchester() {
                         </li>
                       ))}
                     </ul>
-                    <a className={styles.audienceLink} href={`#${audience.path}`}>
+                    <a className={styles.audienceLink} href={audience.path}>
                       View sector services
                       <span aria-hidden="true">&gt;</span>
                     </a>
@@ -375,7 +375,7 @@ export default function CommercialCleaningWinchester() {
               WhatsApp ROBIGO
             </Button>
             <small>
-              {site.business.phone} · robigo.hun@gmail.com · Winchester, Hampshire
+              <a href={site.tel()}>{site.business.phone}</a> · robigo.hun@gmail.com · Winchester, Hampshire
             </small>
           </div>
         </Container>

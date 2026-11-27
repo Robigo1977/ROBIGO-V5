@@ -1,4 +1,5 @@
-const whatsappNumber = "447777449931";
+const phoneInternational = "+447777449931";
+const whatsappNumber = phoneInternational.replace(/^\+/, "");
 
 export const site = {
   business: {
@@ -8,7 +9,7 @@ export const site = {
     domain: "https://robigo.co.uk",
 
     phone: "07777 449931",
-    phoneInternational: "+447777449931",
+    phoneInternational,
 
     email: "robigo.hun@gmail.com",
 

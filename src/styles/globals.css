@@ -244,3 +244,172 @@ main {
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
+
+
+/* Homepage-only compact layout. Keep all service prices, links and content. */
+#main-content .home-review-form {
+  min-width: 0;
+  border: 1px solid rgba(15, 54, 83, .18);
+  border-radius: 14px;
+  background: #fff;
+}
+#main-content .home-review-form > summary {
+  min-height: 48px;
+  padding: .75rem 1rem;
+  color: #102d49;
+  font-weight: 800;
+  cursor: pointer;
+}
+#main-content .home-review-form > summary:focus-visible {
+  outline: 2px solid #0f6cbd;
+  outline-offset: -3px;
+}
+@media (max-width: 719px) {
+  #main-content > section:not(#home) {
+    padding-block: 1.35rem;
+  }
+  #main-content #home,
+  #main-content #home > div:first-of-type {
+    min-height: clamp(520px, 76svh, 650px);
+  }
+  #main-content #home > div:first-of-type {
+    padding-bottom: 4rem;
+  }
+  #main-content #services h2 {
+    font-size: 1.65rem;
+    line-height: 1.15;
+    margin-bottom: .45rem;
+  }
+  #main-content #services h2 + p {
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+  #main-content #services [class*="_header_"] {
+    margin-bottom: 1rem;
+  }
+  #main-content #services article {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(94px, 33%);
+    align-items: center;
+    gap: .25rem .5rem;
+    padding: .6rem;
+  }
+  #main-content #services article > div:first-child {
+    padding: .25rem 0;
+    min-width: 0;
+  }
+  #main-content #services article h3 {
+    font-size: 1.2rem;
+    line-height: 1.15;
+  }
+  #main-content #services article > div:first-child p {
+    font-size: .88rem;
+    line-height: 1.35;
+  }
+  #main-content #services article > div:nth-child(2) {
+    margin: 0;
+    align-self: stretch;
+    min-height: 94px;
+  }
+  #main-content #services article img {
+    width: 100%;
+    height: 100%;
+    min-height: 94px;
+    max-height: 116px;
+    object-fit: cover;
+  }
+  #main-content #services article > div:nth-child(2) span {
+    position: absolute;
+    top: .25rem;
+    left: .25rem;
+    right: .25rem;
+    padding: .22rem;
+    font-size: .62rem;
+    line-height: 1.15;
+    text-align: center;
+  }
+  #main-content #services article > details,
+  #main-content #services article > div:last-child {
+    grid-column: 1 / -1;
+    margin: .15rem 0 0;
+  }
+  #main-content #services article > div:last-child {
+    padding: .2rem 0 0;
+  }
+  #main-content #meet-robert > div {
+    gap: .8rem;
+  }
+  #main-content #meet-robert > div > div:first-child {
+    width: min(44vw, 172px);
+  }
+  #main-content #meet-robert h2,
+  #main-content #service-areas h2,
+  #main-content #reviews h2,
+  #main-content #explore-title {
+    font-size: 1.65rem;
+    line-height: 1.18;
+  }
+  #main-content #meet-robert p:not(:first-child) {
+    margin-top: .55rem;
+    line-height: 1.5;
+  }
+  #main-content #meet-robert [class*="_points_"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .35rem;
+    margin-top: .75rem;
+  }
+  #main-content #meet-robert [class*="_points_"] span {
+    padding: .45rem .5rem;
+    font-size: .82rem;
+    text-align: center;
+  }
+  #main-content #meet-robert a { margin-top: .75rem; }
+  #main-content #service-areas [class*="_header_"],
+  #main-content #reviews [class*="_header_"] {
+    margin-bottom: .85rem;
+  }
+  #main-content #service-areas p,
+  #main-content #reviews [class*="_header_"] p {
+    margin-top: .5rem;
+    font-size: .95rem;
+    line-height: 1.5;
+  }
+  #main-content #reviews [class*="_contentGrid_"] { gap: .75rem; }
+  #main-content #reviews [class*="_summary_"] { margin-bottom: .75rem; }
+  #main-content section[aria-labelledby="explore-title"] [class*="_panel_"] {
+    gap: .75rem;
+    padding: .9rem;
+  }
+  #main-content section[aria-labelledby="explore-title"] [class*="_list_"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .35rem .5rem;
+    font-size: .85rem;
+  }
+  #main-content section[aria-labelledby="explore-title"] [class*="_list_"] svg {
+    flex-shrink: 0;
+  }
+  #root:has(> #main-content) > footer {
+    padding: 1.5rem 0 1.1rem;
+  }
+  #root:has(> #main-content) > footer [class*="_top_"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem .7rem;
+  }
+  #root:has(> #main-content) > footer [class*="_brand_"] {
+    grid-column: 1 / -1;
+  }
+  #root:has(> #main-content) > footer [class*="_column_"] {
+    text-align: left;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  #root:has(> #main-content) > footer [class*="_column_"] li {
+    margin-bottom: .4rem;
+    font-size: .85rem;
+  }
+  #root:has(> #main-content) > footer [class*="_bottom_"] {
+    margin-top: 1rem;
+    padding-top: .75rem;
+    gap: .5rem;
+  }
+}

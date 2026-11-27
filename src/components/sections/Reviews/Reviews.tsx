@@ -11,7 +11,7 @@ import ReviewForm from "./ReviewForm";
 
 import styles from "./Reviews.module.css";
 
-export default function Reviews() {
+export default function Reviews({ compact = false }: { compact?: boolean } = {}) {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -113,7 +113,14 @@ export default function Reviews() {
             )}
           </div>
 
-          <ReviewForm />
+          {compact ? (
+            <details className="home-review-form">
+              <summary>Leave ROBIGO a review</summary>
+              <ReviewForm />
+            </details>
+          ) : (
+            <ReviewForm />
+          )}
         </div>
       </div>
     </Section>
