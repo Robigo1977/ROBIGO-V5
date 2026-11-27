@@ -28,7 +28,7 @@ function HomePage() {
       <Services />
       <MeetRobert />
       <LocalAreas />
-      <Reviews />
+      <Reviews compact />
       <ExploreMore />
       <TrustBar />
     </main>
