@@ -1,7 +1,7 @@
 import HeroButtons from "./HeroButtons";
 import styles from "./Hero.module.css";
 
-const heroImage = `${import.meta.env.BASE_URL}media/halloween-living-room.webp?v=20261013-final`;
+import heroImage from "../../../assets/optimized/approved/carpet-clean-web-2026.jpg";
 
 const places = [
   "Winchester",
@@ -21,7 +21,7 @@ export default function Hero() {
       <img
         className={styles.heroPhoto}
         src={heroImage}
-        alt="ROBIGO Halloween carpet and upholstery cleaning campaign in a decorated Winchester living room"
+        alt="Professional carpet cleaning by ROBIGO in Winchester"
         width="480"
         height="853"
         fetchPriority="high"
@@ -35,6 +35,7 @@ export default function Hero() {
           <p className={styles.heroText}>
             Rugs, mattresses, ovens and chemical-free hard-floor steam cleaning also available.
           </p>
+          <p className={styles.heroText}>Speak to Robert or send pictures to Robert on WhatsApp for a free quotation.</p>
           <div className={styles.heroTrust} aria-label="ROBIGO booking information">
             <span>✓ No Call-Out Charge</span>
             <span>✓ Minimum Booking £50</span>
