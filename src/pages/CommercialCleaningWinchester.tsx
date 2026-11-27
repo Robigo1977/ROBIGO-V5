@@ -82,7 +82,7 @@ const audiences = [
 
 const rates = [
   ["Commercial carpet areas", "from £1.80/m²", "For areas of 100 m² or more"],
-  ["Chemical-free steam", "£2.50/m²", "Suitable hard floors · minimum £50"],
+  ["Chemical-free steam", "£1.80/m²", "Suitable hard floors · minimum £50"],
   ["Upholstered chairs", "from £8 each", "For bookings of 10 or more"],
   ["Reception sofas", "from £49", "Fabric inspection included"],
 ];
