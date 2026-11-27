@@ -36,7 +36,7 @@ export default function Services() {
         </div>
       )}
 
-      <p className={styles.minimum}>🎃 £50 minimum booking · No Call-Out Charge</p>
+      <p className={styles.minimum}>£50 minimum booking · No Call-Out Charge</p>
     </Section>
   );
 }
