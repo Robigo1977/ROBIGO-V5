@@ -12,7 +12,7 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center top;
   background: #08110f;
 }
@@ -103,15 +103,11 @@
   white-space: nowrap;
 }
 
-.whatsappButton {
-  border: 2px solid rgba(255,255,255,.85);
-  background: linear-gradient(135deg, #12b957, #059445);
-}
-
+.whatsappButton,
 .phoneButton {
   border: 2px solid rgba(255,255,255,.85);
-  background: linear-gradient(135deg, #ffc13d, #ff6a00);
-  color: #10233c;
+  background: linear-gradient(135deg, #087b43, #056536);
+  color: #fff;
 }
 
 .heroTrust {
@@ -135,7 +131,7 @@
   min-height: 54px;
   align-items: center;
   overflow: hidden;
-  border-top: 1px solid rgba(255,153,34,.45);
+  border-top: 1px solid rgba(255,255,255,.22);
   background: #08110f;
   color: #fff;
   box-shadow: 0 -8px 22px rgba(0,0,0,.18);
@@ -146,7 +142,7 @@
   z-index: 2;
   flex: 0 0 auto;
   padding: 0 .7rem 0 .85rem;
-  color: #ffae2e;
+  color: #fff;
   font-size: .82rem;
   white-space: nowrap;
   background: #08110f;
@@ -182,7 +178,7 @@
 }
 
 .tickerRun b {
-  color: #ff9a22;
+  color: #fff;
 }
 
 @keyframes areaTicker {
@@ -274,7 +270,7 @@
   }
 
   .heroPhoto {
-    object-fit: contain;
+    object-fit: cover;
     object-position: center top;
   }
 
