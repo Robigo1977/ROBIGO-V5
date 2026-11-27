@@ -1,0 +1,29 @@
+name: ROBIGO mobile preview checks
+on:
+  push:
+    branches: [agent/nov27-review-fixes]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  mobile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - run: npm run build
+      - run: npm install --no-save --package-lock=false playwright
+      - run: npx playwright install --with-deps chromium
+      - name: Test local preview
+        run: |
+          npm run preview -- --host 127.0.0.1 > /tmp/robigo-preview.log 2>&1 &
+          node scripts/mobile-preview-check.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mobile-preview-results
+          path: mobile-preview-results/
