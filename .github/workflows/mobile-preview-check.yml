@@ -2,6 +2,8 @@ name: ROBIGO mobile preview checks
 on:
   push:
     branches: [agent/nov27-review-fixes, agent/nov27-mobile-compact]
+  pull_request:
+    branches: [agent/nov27-review-fixes]
   workflow_dispatch:
 permissions:
   contents: read
