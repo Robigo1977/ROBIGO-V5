@@ -46,6 +46,52 @@ try {
     } catch(error) { failures.push({width,error:String(error)}); }
     finally { await page.close(); }
   }
+
+  // Compare actual desktop/tablet geometry, not just equal outer card heights.
+  for (const width of [768, 1024, 1120, 1280, 1440, 1920]) {
+    const page = await browser.newPage({ viewport: { width, height: 900 } });
+    await page.route('**/*', route => route.request().url().startsWith(url+'/') && ['GET','HEAD'].includes(route.request().method()) ? route.continue() : route.abort());
+    try {
+      await page.goto(url, { waitUntil: 'domcontentloaded' });
+      const cards = page.locator('#services article[role="listitem"]');
+      await cards.first().waitFor();
+      await page.evaluate(()=>document.fonts.ready);
+      assert.equal(await cards.count(), 6);
+      const measure = () => cards.evaluateAll(elements => elements.map(card => {
+        const rect = selector => card.querySelector(selector).getBoundingClientRect();
+        return { top: card.getBoundingClientRect().top, bottom: card.getBoundingClientRect().bottom,
+          title: rect('h3').top, description: rect('h3 + p').top,
+          image: rect('img').top, imageBottom: rect('img').bottom,
+          prices: rect('summary').top,
+          details: rect('a:first-child').top, detailsBottom: rect('a:first-child').bottom,
+          quote: rect('a:last-child').top, quoteBottom: rect('a:last-child').bottom };
+      }));
+      const checkRows = data => {
+        const count = width >= 1120 ? 3 : 2;
+        for (let offset = 0; offset < data.length; offset += count) {
+          const row = data.slice(offset, offset + count);
+          for (const key of Object.keys(row[0])) {
+            const values = row.map(card => card[key]);
+            assert.ok(Math.max(...values) - Math.min(...values) <= 1,
+              width + 'px row ' + (offset / count + 1) + ': ' + key + ' misaligned: ' + values.join(', '));
+          }
+        }
+      };
+      const closed = await measure();
+      checkRows(closed);
+      assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth <= innerWidth+1), 'Desktop horizontal overflow');
+      await page.locator('#services').screenshot({path:'mobile-preview-results/services-'+width+'.png'});
+      for (const index of [0, 3]) {
+        const toggle = cards.nth(index).locator('summary');
+        await toggle.click();
+        checkRows(await measure());
+        await toggle.click();
+        checkRows(await measure());
+      }
+      results.push({width, desktopAlignment:'passed', cards:closed});
+    } catch(error) { failures.push({width,error:String(error)}); }
+    finally { await page.close(); }
+  }
 } finally {
   await browser.close();
   await writeFile('mobile-preview-results/report.json',JSON.stringify({results,failures},null,2));
