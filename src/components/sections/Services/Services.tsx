@@ -13,7 +13,7 @@ export default function Services() {
     <Section id="services" className={styles.section} background="default">
       <SectionHeader
         title="Our Cleaning Services in Winchester"
-        description="Choose a service and see the price directly underneath. Upholstery cleaning is one of our most requested services."
+        description="Choose a service, view prices or request a free quote."
       />
 
       <div className={styles.grid} role="list" aria-label="Professional cleaning services in Winchester">
@@ -23,8 +23,8 @@ export default function Services() {
       </div>
 
       {extras && (
-        <div className={styles.extras} aria-label="Optional cleaning extras">
-          <h3>Optional Extras</h3>
+        <details className={styles.extras}>
+          <summary className={styles.priceToggle}>Optional extras</summary>
           <div className={styles.extrasGrid}>
             {extras.items.map((item) => (
               <div className={styles.extraItem} key={item.label}>
@@ -33,7 +33,7 @@ export default function Services() {
               </div>
             ))}
           </div>
-        </div>
+        </details>
       )}
 
       <p className={styles.minimum}>£50 minimum booking · No Call-Out Charge</p>
