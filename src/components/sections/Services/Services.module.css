@@ -1,8 +1,8 @@
 .section {
   padding: clamp(2.5rem, 6vw, 4.5rem) 0;
   background:
-    radial-gradient(circle at 8% 8%, rgba(255, 148, 38, .08), transparent 22%),
-    linear-gradient(180deg, #fffdf9 0%, #ffffff 100%);
+    radial-gradient(circle at 8% 8%, rgba(15, 108, 189, .06), transparent 22%),
+    linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
 }
 
 .grid {
@@ -20,9 +20,9 @@
 }
 
 .featuredCard {
-  border: 2px solid rgba(255, 122, 0, .62);
-  background: linear-gradient(180deg, #fff8f1 0%, #fff 45%);
-  box-shadow: 0 14px 34px rgba(255, 122, 0, .1), 0 8px 24px rgba(15, 23, 42, .06);
+  border: 2px solid rgba(15, 108, 189, .45);
+  background: linear-gradient(180deg, #f1f7fc 0%, #fff 45%);
+  box-shadow: 0 14px 34px rgba(15, 108, 189, .1), 0 8px 24px rgba(15, 23, 42, .06);
 }
 
 .cardHeading {
@@ -72,13 +72,13 @@
   left: .55rem;
   padding: .38rem .68rem;
   border-radius: 999px;
-  background: #ff6b13;
+  background: #0b4f7a;
   color: #fff;
   font-size: .72rem;
   font-weight: 900;
   letter-spacing: .02em;
   text-transform: uppercase;
-  box-shadow: 0 6px 16px rgba(255, 107, 19, .24);
+  box-shadow: 0 6px 16px rgba(11, 79, 122, .24);
 }
 
 .priceList {
@@ -86,7 +86,7 @@
   overflow: hidden;
   border: 1px solid rgba(15, 54, 83, .08);
   border-radius: 12px;
-  background: #fffdf9;
+  background: #f8fafc;
 }
 
 .priceItem {
@@ -134,7 +134,7 @@
 
 .cardActions a {
   display: inline-flex;
-  min-height: 42px;
+  min-height: 44px;
   align-items: center;
   justify-content: center;
   padding: .55rem .7rem;
@@ -159,9 +159,9 @@
 .extras {
   margin-top: 1.2rem;
   padding: 1rem;
-  border: 1px dashed rgba(255, 122, 0, .38);
+  border: 1px dashed rgba(15, 108, 189, .38);
   border-radius: 16px;
-  background: #fffaf4;
+  background: #f8fafc;
 }
 
 .extras h3 {
