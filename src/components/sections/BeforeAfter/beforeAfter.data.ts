@@ -41,8 +41,8 @@ export const beforeAfterItems: readonly BeforeAfterItem[] = [
       extraction: true,
     },
     stains: ["Traffic Marks", "Embedded Dirt", "General Soiling", "Everyday Wear"],
-    beforeImage: "/media/carpet-before.webp",
-    afterImage: "/media/carpet-after.webp",
+    beforeImage: "/images/before-after/carpet-before.webp",
+    afterImage: "/images/before-after/carpet-after.webp",
   },
   {
     id: 2,
