@@ -26,7 +26,6 @@ export default function ServiceCard({ service }: ServiceCardProps) {
           <h3 id={headingId}>{service.title}</h3>
           <p>{service.description}</p>
         </div>
-        <span className={styles.halloweenAccent} aria-hidden="true">{service.halloween}</span>
       </div>
 
       <div className={styles.imageWrapper}>
