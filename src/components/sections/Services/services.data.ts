@@ -13,7 +13,6 @@ export interface ServiceItem {
   description: string;
   image: string;
   href: string;
-  halloween: string;
   popular?: boolean;
 }
 
@@ -24,7 +23,6 @@ export const services: readonly ServiceItem[] = [
     description: "Sofas, armchairs, dining chairs and other fabric furniture.",
     image: upholsteryImage,
     href: "/upholstery-cleaning-winchester",
-    halloween: "👻",
     popular: true,
   },
   {
@@ -33,7 +31,6 @@ export const services: readonly ServiceItem[] = [
     description: "Deep carpet cleaning for cleaner, fresher rooms.",
     image: carpetImage,
     href: "/carpet-cleaning-winchester",
-    halloween: "🎃",
   },
   {
     id: "rug",
@@ -41,7 +38,6 @@ export const services: readonly ServiceItem[] = [
     description: "Careful cleaning for everyday household rugs.",
     image: rugImage,
     href: "/rug-cleaning-winchester",
-    halloween: "🍂",
   },
   {
     id: "mattress",
@@ -49,7 +45,6 @@ export const services: readonly ServiceItem[] = [
     description: "Deep cleaning to reduce dirt, allergens and odours.",
     image: mattressImage,
     href: "/mattress-cleaning-winchester",
-    halloween: "💀",
   },
   {
     id: "oven",
@@ -57,7 +52,6 @@ export const services: readonly ServiceItem[] = [
     description: "Professional cleaning for single and double ovens.",
     image: ovenImage,
     href: "/oven-cleaning-winchester",
-    halloween: "🎃",
   },
   {
     id: "steam",
@@ -65,6 +59,5 @@ export const services: readonly ServiceItem[] = [
     description: "Chemical-free dry steam cleaning for suitable hard floors.",
     image: steamImage,
     href: "/steam-cleaning-winchester",
-    halloween: "🦇",
   },
 ] as const;
