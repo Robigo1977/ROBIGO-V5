@@ -20,9 +20,16 @@ try {
       await page.goto(url, { waitUntil: 'domcontentloaded' });
       await page.locator('#services').waitFor();
       await page.evaluate(()=>document.fonts.ready);
+      await page.getByText('Loading customer reviews...').waitFor({state:'hidden'});
       const before = await page.evaluate(()=>({height:document.documentElement.scrollHeight,width:document.documentElement.scrollWidth,viewport:innerWidth}));
       await page.screenshot({path:'mobile-preview-results/home-'+width+'.png',fullPage:true});
       assert.ok(before.width <= before.viewport+1,'Horizontal overflow');
+      const reviewForm=page.locator('#reviews details.home-review-form');
+      assert.equal(await reviewForm.getAttribute('open'),null);
+      await reviewForm.locator('summary').click();
+      assert.ok(await reviewForm.locator('form').isVisible());
+      await reviewForm.locator('summary').click();
+      assert.equal(await reviewForm.getAttribute('open'),null);
       const prices=page.locator('#services details').filter({has:page.getByText('View prices',{exact:true})});
       assert.equal(await prices.count(),6);
       const first=prices.first();
@@ -35,6 +42,7 @@ try {
       assert.ok(await page.locator('#home a[href^="tel:+447777449931"]').count());
       assert.ok(await page.locator('#home a[href^="https://wa.me/447777449931"]').count());
       results.push({width,height:before.height,screenHeights:Math.round(before.height/844*10)/10,expandedHeight:expanded});
+      assert.ok(before.height <= 844*7.5, 'Homepage exceeds 7.5 screen heights: '+before.height);
     } catch(error) { failures.push({width,error:String(error)}); }
     finally { await page.close(); }
   }
