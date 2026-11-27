@@ -98,7 +98,7 @@ const pages: Record<ServiceKey, ServicePageConfig> = {
     bullets: [
       { title: "High-temperature dry steam", text: "Professional steam equipment provides powerful cleaning on suitable sealed hard-floor surfaces." },
       { title: "Simple room prices", text: "Single room, double room, small living room and large living room prices are easy to understand." },
-      { title: "Suitable-floor check", text: "We confirm that the floor type is suitable before carrying out steam cleaning." },
+      { title: "Suitable-floor check", text: "We confirm surface suitability before cleaning. WC and shower steam cleaning is also available." },
     ],
     processTitle: "How chemical-free hard-floor steam cleaning works",
     process: [
@@ -208,6 +208,23 @@ export default function ServiceLandingPage({ serviceKey }: { serviceKey: Service
         </div>
       </section>
 
+      {servicePricing && (
+        <section className={styles.section} aria-labelledby={`${page.key}-prices`}>
+          <div className={styles.sectionInner}>
+            <h2 id={`${page.key}-prices`}>{page.schemaName} prices</h2>
+            <p className={styles.copy}>All residential bookings have a £50 minimum total charge. No call-out charge.</p>
+            <div className={styles.prices}>
+              {servicePricing.items.map((item) => (
+                <div key={item.label} className={styles.priceRow}>
+                  <span>{item.label}</span><strong>{item.price}</strong>
+                </div>
+              ))}
+            </div>
+            {servicePricing.note && <p className={styles.note}>{servicePricing.note}</p>}
+          </div>
+        </section>
+      )}
+
       <section className={styles.section} aria-labelledby={`${page.key}-why`}>
         <div className={styles.sectionInner}>
           <h2 id={`${page.key}-why`}>Simple professional cleaning, explained clearly</h2>
@@ -238,26 +255,6 @@ export default function ServiceLandingPage({ serviceKey }: { serviceKey: Service
           </div>
         </div>
       </section>
-
-      {servicePricing && (
-        <section className={styles.section} aria-labelledby={`${page.key}-prices`}>
-          <div className={styles.sectionInner}>
-            <h2 id={`${page.key}-prices`}>{page.schemaName} prices</h2>
-            <p className={styles.copy}>
-              All residential bookings have a £50 minimum total charge. Call-out is free within our regular service area.
-            </p>
-            <div className={styles.prices}>
-              {servicePricing.items.map((item) => (
-                <div key={item.label} className={styles.priceRow}>
-                  <span>{item.label}</span>
-                  <strong>{item.price}</strong>
-                </div>
-              ))}
-            </div>
-            {servicePricing.note && <p className={styles.note}>{servicePricing.note}</p>}
-          </div>
-        </section>
-      )}
 
       <section className={styles.sectionAlt} aria-labelledby={`${page.key}-areas`}>
         <div className={styles.sectionInner}>
