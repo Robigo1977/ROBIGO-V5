@@ -245,3 +245,12 @@
     padding-left: .75rem;
   }
 }
+
+.priceToggle { cursor: pointer; padding: .7rem .65rem; min-height: 44px; font-weight: 800; color: #102d49; }
+.priceToggle:focus-visible { outline: 2px solid #0f6cbd; outline-offset: -3px; }
+@media (max-width: 719px) {
+  .image { height: clamp(112px, 32vw, 170px); }
+  .cardHeading { padding-bottom: .55rem; }
+  .section { padding: 1.5rem 0; }
+  .grid { gap: .75rem; }
+}
