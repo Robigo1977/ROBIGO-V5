@@ -13,7 +13,7 @@ const services = [
 
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer id="contact" className={styles.footer}>
       <Container>
         <div className={styles.top}>
           <section className={styles.brand}>
@@ -24,12 +24,9 @@ export default function Footer() {
               cleaning throughout Winchester and surrounding Hampshire.
             </p>
 
-            <a
-              href={site.whatsappMessage()}
-              className={styles.cta}
-            >
-              <Button>{site.cta.primary}</Button>
-            </a>
+            <Button href={site.whatsappMessage()} target="_blank" rel="noopener noreferrer">
+              {site.cta.primary}
+            </Button>
           </section>
 
           <section className={styles.column}>

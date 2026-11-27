@@ -1,6 +1,7 @@
 // src/components/sections/FAQ/FAQ.tsx
 
 import Container from "../../ui/Container/Container";
+import { site } from "../../../config/site";
 
 import FAQItem from "./FAQItem";
 import { faqs } from "./faq.data";
@@ -133,7 +134,9 @@ export default function FAQ() {
 
           <a
 
-            href="#quote"
+            href={site.whatsappMessage()}
+            target="_blank"
+            rel="noopener noreferrer"
 
             className={styles.link}
 

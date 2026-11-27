@@ -260,7 +260,7 @@ export default function CommercialSectorPage() {
         <div className={styles.heroShade} />
         <Container>
           <div className={styles.heroCard}>
-            <a href="#/business">
+            <a href="/business">
               <ArrowLeft aria-hidden="true" />
               All business sectors
             </a>
@@ -292,7 +292,7 @@ export default function CommercialSectorPage() {
               const active = item.slug === sectorSlug;
               return (
                 <a
-                  href={`#/business/${item.slug}`}
+                  href={`/business/${item.slug}`}
                   key={item.slug}
                   aria-current={active ? "page" : undefined}
                 >

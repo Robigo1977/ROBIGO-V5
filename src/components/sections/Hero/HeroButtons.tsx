@@ -11,24 +11,24 @@ export default function HeroButtons() {
         href={site.whatsappMessage()}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="WhatsApp ROBIGO on 07777 449931"
+        aria-label={`WhatsApp ROBIGO on ${site.business.phone}`}
       >
         <MessageCircle aria-hidden="true" />
         <span>
           <small>WhatsApp</small>
-          <strong>07777 449931</strong>
+          <strong>{site.business.phone}</strong>
         </span>
       </a>
 
       <a
         className={`${styles.contactButton} ${styles.phoneButton}`}
         href={site.tel()}
-        aria-label="Call ROBIGO on 07777 449931"
+        aria-label={`Call ROBIGO on ${site.business.phone}`}
       >
         <Phone aria-hidden="true" />
         <span>
           <small>Call Robert</small>
-          <strong>07777 449931</strong>
+          <strong>{site.business.phone}</strong>
         </span>
       </a>
     </div>

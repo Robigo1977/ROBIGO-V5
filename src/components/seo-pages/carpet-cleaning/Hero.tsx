@@ -1,5 +1,6 @@
 import Container from "../../ui/Container";
 import Button from "../../ui/Button";
+import { site } from "../../../config/site";
 
 import carpetCleaningImage from "../../../assets/optimized/hero/robigo-campaign-hero-mobile-safe.jpg";
 
@@ -34,7 +35,7 @@ export default function Hero() {
             professional extraction equipment and clear room-based prices.
           </p>
 
-          <Button href="/#contact" size="lg">
+          <Button href={site.whatsappMessage("Hi ROBIGO, I would like a free quotation for carpet cleaning.")} target="_blank" rel="noopener noreferrer" size="lg">
             Get My Free Quote
           </Button>
         </div>
