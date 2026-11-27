@@ -197,7 +197,7 @@
   }
 
   .heroContent {
-    width: min(100% - .8rem, 620px);
+    width: min(calc(100% - .8rem), 620px);
     padding-bottom: 4.9rem;
   }
 
@@ -281,4 +281,9 @@
 
 @media (prefers-reduced-motion: reduce) {
   .tickerTrack { animation: none; }
+}
+
+@media (max-width: 360px) {
+  .contactButtons { grid-template-columns: minmax(0, 1fr); }
+  .contactButton { min-height: 48px; }
 }
