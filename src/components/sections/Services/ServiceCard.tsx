@@ -42,7 +42,8 @@ export default function ServiceCard({ service }: ServiceCardProps) {
       </div>
 
       {servicePricing && (
-        <div className={styles.priceList} aria-label={`${service.title} prices`}>
+        <details className={styles.priceList}>
+          <summary className={styles.priceToggle}>View prices</summary>
           {servicePricing.items.map((item) => (
             <div className={styles.priceItem} key={item.label}>
               <span>{item.label}</span>
@@ -50,7 +51,7 @@ export default function ServiceCard({ service }: ServiceCardProps) {
             </div>
           ))}
           {servicePricing.note && <p className={styles.priceNote}>{servicePricing.note}</p>}
-        </div>
+        </details>
       )}
 
       <div className={styles.cardActions}>
